@@ -1,0 +1,100 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+body {
+  /* overflow-x: hidden; */
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 62.5%;
+  /* overflow-x: hidden; */
+}
+
+.team-back {
+  background-image: url(./assets/Backgroundball1.png);
+  background-size: 45rem;
+  background-repeat: repeat-x;
+  background-position-x: 13rem;
+  background-position-y: 15rem;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.footerList::before {
+  content: "-";
+  position: absolute;
+  margin-left: -5px;
+}
+
+.footerTop {
+  border-bottom: 2px solid #ffffff;
+}
+
+@layer components {
+  .bb {
+    border-bottom: 1px solid #cdcdce;
+  }
+  .line {
+    width: 535.006px;
+    height: 133.951px;
+    transform: rotate(-49.757deg);
+    flex-shrink: 0;
+  }
+  .arrowBtn {
+    border-radius: 50%;
+  }
+  .btnText {
+    @apply xs:text-[.5rem] mobile:text-[.7rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.3rem];
+  }
+  /* .heroResponsiveHeader {
+    @apply text-center mobile:text-[.9rem] mobile:leading-5 sm:text-[1.4rem] sm:leading-6 md:text-[1.7rem] md:leading-7 lg:text-[2rem] lg:leading-[2.4rem];
+  } */
+  .heroResponsiveText {
+    @apply text-center mobile:text-[1rem] mobile:leading-[1.5rem] sm:text-[1.4rem] sm:leading-[1.8rem] md:text-[1.6rem] md:leading-[2.2rem] lg:text-[1.9rem] lg:leading-[2.5rem];
+  }
+  .responsiveText {
+    @apply xs:text-[.8rem] xs:leading-3 mobile:text-[.9rem] mobile:leading-5 sm:text-[1rem] sm:leading-5 md:text-[1.2rem] md:leading-6 lg:text-[1.4rem] lg:leading-7;
+  }
+  .responsiveHeader {
+    @apply xs:text-[1.6rem] sm:text-[2.0rem] md:text-[2.5rem] lg:text-[2.8rem];
+  }
+  /* wn = Waec Neco */
+  .wn {
+    @apply xs:text-[1rem] smobile:text-[1.2rem] mobile:text-[1.4rem] lmobile:text-[1.6rem] sm:text-[1.8rem] md:text-[2rem] lg:text-[2.4rem];
+  }
+
+  .KYCResponsiveText {
+    @apply xs:text-[.6rem] xs:leading-[.85rem] smobile:text-[.68rem] smobile:leading-[.9rem] mobile:text-[.9rem] mobile:leading-[1.3rem] lmobile:text-[1rem] lmobile:leading-[1.4rem] sm:text-[1.1rem] sm:leading-6 md:text-[1.2rem] md:leading-7 lg:text-[1.4rem] lg:leading-8 xl:text-[1.7rem] xl:leading-10;
+  }
+  .SliderResponsiveText {
+    @apply xs:text-[.4rem] xs:leading-[1rem] smobile:text-[.5rem] smobile:leading-3 mobile:text-[.7rem] mobile:leading-4 lmobile:text-[.95rem] lmobile:leading-5 sm:text-[1.3rem] sm:leading-7 md:text-[1.4rem] md:leading-7 lg:text-[1.7rem] lg:leading-10;
+  }
+  /* KYC = know your chance */
+  .SliderResponsiveHeader {
+    @apply xs:text-[.8rem] xs:leading-[1rem] smobile:text-[1rem] smobile:leading-[1.1rem] mobile:text-[1.3rem] mobile:leading-[1.4rem] lmobile:text-[1.5rem] sm:text-[1.7rem] sm:leading-[2rem] md:text-[2rem] md:leading-[2rem] lg:text-[2.4rem] lg:leading-[3rem];
+  }
+  /* WCVCardHeader why choose VersityEdge card header */
+  .WCVCardHeader {
+    @apply font-semibold xs:text-[1rem] xs:leading-[1.4rem] mobile:text-[1.1rem] mobile:leading-[1.5rem] lmobile:text-[1.2rem] lmobile:leading-[1.8rem] md:text-[1.5rem] md:leading-[2rem] lg:text-[1.7rem] lg:leading-[2rem];
+  }
+  /* WCVCardHeader why choose VersityEdge line scales */
+  .WCVLines {
+    @apply mobile:scale-[16%] lmobile:scale-[24%] sm:scale-[39%] md:scale-[42%] Lmd:scale-[55%] lg:scale-[60%] semiLarge:scale-[70%] xl:scale-[85%] 2xl:scale-100;
+  }
+  .reponsiveMiniText {
+    @apply xs:w-[13rem] xs:text-[.6rem] xs:leading-3 smobile:w-[14rem] smobile:text-[.7rem] smobile:leading-[.9rem] mobile:w-[16rem] mobile:py-2 mobile:text-[.7rem] mobile:leading-[.9rem] lmobile:w-[18rem] lmobile:py-2 lmobile:text-[.8rem] lmobile:leading-[1.1rem] sm:w-[19rem] sm:px-[1rem] sm:py-4 sm:text-[.9rem] sm:leading-5 md:w-[22rem] md:gap-[1rem] md:py-4 md:text-[1rem] md:leading-5 lg:w-[27rem] lg:px-[2rem] lg:text-[1.3rem] lg:leading-7 xl:w-[30rem] xl:text-[1.5rem] xl:leading-8;
+  }
+  .reponsiveMiniText1 {
+    @apply xs:text-[.6rem] xs:leading-3 smobile:text-[.7rem] smobile:leading-[.9rem] mobile:text-[.7rem] mobile:leading-[.9rem] lmobile:text-[.8rem] lmobile:leading-[1.1rem] sm:text-[.9rem] sm:leading-5 md:text-[1rem] md:leading-5 lg:text-[1.3rem] lg:leading-7 xl:text-[1.5rem] xl:leading-8;
+  }
+  .generalPadding {
+    @apply px-[2rem] md:px-[4rem] lg:px-[5rem];
+  }
+}
