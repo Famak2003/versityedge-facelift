@@ -29,7 +29,7 @@
 }
 
 .logoSlides {
-  animation: 15s slide infinite linear;
+  animation: 30s slide infinite linear;
   width: max-content;
 }
 
