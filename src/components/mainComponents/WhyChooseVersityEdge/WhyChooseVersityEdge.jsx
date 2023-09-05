@@ -12,6 +12,8 @@ import LINE5 from "./../../../assets/mobileLine2.png";
 import LINE6 from "./../../../assets/mobileLine3.png";
 import WhyChooseVersityEdgeElements from "./WhyChooseVersityEdgeElements";
 
+const lines = [LINE1, LINE2, LINE3];
+
 const text = [
   {
     header: "Personalized Guidance",
@@ -45,7 +47,7 @@ const text = [
 export default function WhyChooseVersityEdge() {
   return (
     <section className=" bg-[#F8FBFF] py-[3rem]">
-      <article className=" generalPadding flex flex-col gap-[3rem] mobile:gap-[6rem] mobile:py-4 md:py-7">
+      <article className=" generalPadding flex flex-col items-center justify-center gap-[3rem] mobile:gap-[6rem] mobile:py-4 md:py-7">
         <div className=" flex flex-col items-center justify-center gap-[1rem]">
           <h1 className=" responsiveHeader font-extrabold">
             Why Choose VersityEdge?
@@ -62,28 +64,14 @@ export default function WhyChooseVersityEdge() {
             <WhyChooseVersityEdgeElements
               key={num}
               num={num}
+              line={lines[num - 1]}
               header={text[num - 1].header}
               img={text[num - 1].img}
             >
               {text[num - 1].wirteup}
             </WhyChooseVersityEdgeElements>
           ))}
-          {/* Lines */}
-          <img
-            className=" WCVLines absolute left-[12.5%] top-[.5rem] hidden mobile:left-[-13%] mobile:block lmobile:left-[-5.5%] sm:left-[.5%] md:left-[3.5%] md:top-[2rem] Lmd:left-[6.5%] lg:left-[9%] semiLarge:left-[11%] xl:left-[11.5%] Lxl:left-[13%] 2xl:left-[14%] "
-            src={LINE1}
-            alt="connection"
-          />
-          <img
-            className=" WCVLines absolute left-[38%] top-[-1rem] hidden mobile:left-[13%] mobile:block lmobile:left-[20.5%] sm:left-[26.5%] md:left-[29%] Lmd:left-[32.5%] lg:left-[35%] semiLarge:left-[37%] xl:left-[37.5%] Lxl:left-[38.5%] 2xl:left-[39.5%] "
-            src={LINE2}
-            alt="connection"
-          />
-          <img
-            className=" WCVLines absolute right-[13%] top-[.5rem] hidden mobile:left-[40%] mobile:block lmobile:left-[47%] sm:left-[52.5%] md:left-[56%] md:top-[2rem] Lmd:left-[58%] lg:left-[60%] semiLarge:left-[62%] xl:left-[63%] Lxl:right-[13%] 2xl:left-[66%] "
-            src={LINE3}
-            alt="connection"
-          />
+          {/* MobileLines */}
           <img
             className=" WCVLines absolute left-[24%] top-[24%] block scale-[50%] smobile:left-[31%] smobile:scale-[60%] mobile:hidden"
             src={LINE4}

@@ -39,7 +39,7 @@ export const team = [
 
 export default function OurTeamComp() {
   return (
-    <section className=" generalPadding team-back mobile:py[2rem] relative flex h-fit flex-col bg-[#F8FBFF] xs:gap-[1rem] xs:py-[3rem] mobile:gap-[3rem] lmobile:py-[5rem] md:gap-[5rem]">
+    <section className=" generalPadding team-back mobile:py[2rem] relative flex h-fit flex-col items-center bg-[#F8FBFF] xs:gap-[1rem] xs:py-[3rem] mobile:gap-[3rem] lmobile:py-[5rem] md:gap-[5rem]">
       <h1 className=" responsiveHeader text-center font-bold"> Our Team</h1>
 
       {/* slider */}
