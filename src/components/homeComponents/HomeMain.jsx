@@ -6,7 +6,7 @@ import TestimonialComp from "./TestimonialComp";
 import RatingComp from "./RatingComp/RatingComp";
 import KnowYourChancesComp from "./KnowYourChancesComp";
 import WaecNecoGceComp from "./WaecNecoGceComp/WaecNecoGceComp";
-import WhyChooseVersityEdge from "./WhyChooseVersityEdge/WhyChooseVersityEdge";
+import WhyChooseVersityEdge from "./WhyChooseVersityEdge";
 import Hero from "./Hero";
 
 export default function Main() {

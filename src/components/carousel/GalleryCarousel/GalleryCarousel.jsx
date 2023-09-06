@@ -53,7 +53,7 @@ export default function GalleryCarousel({ carouselData }) {
           return (
             <li
               key={idx}
-              className=" flex w-full items-center justify-center ring-2 smobile:gap-[1rem] mobile:gap-[2rem] sm:gap-[3rem] md:gap-[4rem] lg:gap-[5rem]"
+              className=" flex w-full items-center justify-center smobile:gap-[1rem] mobile:gap-[2rem] sm:gap-[3rem] md:gap-[4rem] lg:gap-[5rem]"
             >
               {obj.map((item, idx) => {
                 return (

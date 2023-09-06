@@ -1,17 +1,20 @@
-export default function WhyChooseVersityEdgeElements({
+export default function Hug({
   children,
   header,
+  staggered = false,
   img,
-  num,
+  id,
   line,
 }) {
   return (
-    <li className=" flex h-fit w-fit items-center justify-center ">
+    <li className=" flex h-fit min-w-[6rem] max-w-[14rem] items-center justify-center mobile:max-w-fit ">
       <div
         className={`${
-          num === 1 || num === 3
-            ? "w-full mobile:mt-[2rem] md:mt-[3rem]"
-            : "mt-[1rem] mobile:mt-0"
+          staggered
+            ? id === 1 || id === 3
+              ? "w-full mobile:mt-[2rem] md:mt-[3rem]"
+              : "mt-[1rem] mobile:mt-0"
+            : ""
         } relative flex flex-col items-center justify-center`}
       >
         {/* Lines */}

@@ -13,24 +13,38 @@ const dropdownContent = [
 export default function Menu() {
   const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
 
+  function selectionColor(e) {
+    e.preventDefault();
+    e.target.classList.toggle("text-[#0A66C2]");
+    console.log(e.target.className);
+  }
+
   function handleFeaturesClick() {
     setIsFeaturesOpen((open) => !open);
-    console.log(isFeaturesOpen);
   }
   return (
     <menu className="main-nav hidden gap-[1rem] mobile:flex sm:gap-[2rem] md:ml-[8rem] md:text-[1.8rem] ">
-      <li className=" heroResponsiveText cursor-pointer">
+      <li
+        onClick={(e) => selectionColor(e)}
+        className=" heroResponsiveText cursor-pointer hover:text-[#0A66C2]"
+      >
         <a className="" href="/">
           Home
         </a>
       </li>
-      <li className=" heroResponsiveText cursor-pointer">
+      <li
+        onClick={(e) => selectionColor(e)}
+        className=" heroResponsiveText cursor-pointer hover:text-[#0A66C2]"
+      >
         <a className="" href="/">
           Forum
         </a>
       </li>
 
-      <li className=" relative cursor-pointer duration-500">
+      <li
+        onClick={(e) => selectionColor(e)}
+        className=" relative cursor-pointer duration-500 hover:text-[#0A66C2]"
+      >
         <button
           onClick={handleFeaturesClick}
           className=" heroResponsiveText flex cursor-pointer items-center gap-[.5rem] "
@@ -48,12 +62,18 @@ export default function Menu() {
         </button>
         {isFeaturesOpen && <Dropdown content={dropdownContent} />}
       </li>
-      <li className=" heroResponsiveText cursor-pointer">
+      <li
+        onClick={(e) => selectionColor(e)}
+        className=" heroResponsiveText cursor-pointer hover:text-[#0A66C2]"
+      >
         <a className="" href="/">
           Blog
         </a>
       </li>
-      <li className=" heroResponsiveText cursor-pointer">
+      <li
+        onClick={(e) => selectionColor(e)}
+        className=" heroResponsiveText cursor-pointer hover:text-[#0A66C2]"
+      >
         <a className="" href="/">
           Contact us
         </a>

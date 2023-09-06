@@ -1,16 +1,16 @@
-import FRAME1 from "./../../../assets/Frame3.png";
-import FRAME2 from "./../../../assets/Frame5.png";
-import FRAME3 from "./../../../assets/Frame4.png";
-import FRAME4 from "./../../../assets/Frame6.png";
+import FRAME1 from "./../../assets/Frame3.png";
+import FRAME2 from "./../../assets/Frame5.png";
+import FRAME3 from "./../../assets/Frame4.png";
+import FRAME4 from "./../../assets/Frame6.png";
 
-import LINE1 from "./../../../assets/Line1.png";
-import LINE2 from "./../../../assets/Line2.png";
-import LINE3 from "./../../../assets/Line3.png";
+import LINE1 from "./../../assets/Line1.png";
+import LINE2 from "./../../assets/Line2.png";
+import LINE3 from "./../../assets/Line3.png";
 
-import LINE4 from "./../../../assets/mobileLine1.png";
-import LINE5 from "./../../../assets/mobileLine2.png";
-import LINE6 from "./../../../assets/mobileLine3.png";
-import WhyChooseVersityEdgeElements from "./WhyChooseVersityEdgeElements";
+import LINE4 from "./../../assets/mobileLine1.png";
+import LINE5 from "./../../assets/mobileLine2.png";
+import LINE6 from "./../../assets/mobileLine3.png";
+import Hug from "../common/Hug";
 
 const lines = [LINE1, LINE2, LINE3];
 
@@ -53,37 +53,39 @@ export default function WhyChooseVersityEdge() {
             Why Choose VersityEdge?
           </h1>
           <p className="responsiveText text-center ">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime
-            cupiditate vitae, deleniti laudantium esse tempore? Quae quibusdam
-            veniam consequatur recusandae.
+            Are you tired of feeling lost in the complex admission process?
+            VersityEdge is your ultimate solution to overcome challenges and
+            unlock a world of opportunities
           </p>
         </div>
 
-        <ul className=" relative grid h-fit grid-cols-2 gap-x-[5rem] gap-y-[2rem] smobile:gap-x-[7rem] mobile:flex mobile:gap-x-[2rem] md:gap-[3.5rem]">
-          {Array.from({ length: 4 }, (_, i) => i + 1).map((num) => (
-            <WhyChooseVersityEdgeElements
+        <ul className=" relative grid h-fit w-full grid-cols-2 place-items-center items-center justify-center gap-x-[2rem] gap-y-[2rem] ring-2 smobile:gap-x-[2rem] mobile:flex mobile:gap-[2rem] md:gap-[3.5rem]">
+          {Array.from({ length: text.length }, (_, i) => i + 1).map((num) => (
+            // Cards
+            <Hug
               key={num}
-              num={num}
+              id={num}
               line={lines[num - 1]}
               header={text[num - 1].header}
               img={text[num - 1].img}
+              staggered={true}
             >
               {text[num - 1].wirteup}
-            </WhyChooseVersityEdgeElements>
+            </Hug>
           ))}
           {/* MobileLines */}
           <img
-            className=" WCVLines absolute left-[24%] top-[24%] block scale-[50%] smobile:left-[31%] smobile:scale-[60%] mobile:hidden"
+            className=" WCVLines absolute left-[29%] block scale-[40%] xs:top-[24%] smobile:left-[30%] smobile:top-[20%] ss:left-[33%] mobile:hidden"
             src={LINE4}
             alt="connection"
           />
           <img
-            className=" WCVLines absolute left-[87%] top-[48%] block scale-[85%] smobile:left-[88%] smobile:top-[40%] smobile:scale-[100%] mobile:hidden "
+            className=" WCVLines absolute left-[87%] top-[45%] block scale-[85%] smobile:left-[85%] smobile:top-[40%] smobile:scale-[100%] mobile:hidden "
             src={LINE5}
             alt="connection"
           />
           <img
-            className=" WCVLines absolute left-[37%] top-[84%] block scale-[70%] smobile:left-[40%] smobile:top-[83%] smobile:scale-[90%] mobile:hidden "
+            className=" WCVLines absolute left-[38%] top-[84%] block scale-[48%] smobile:left-[40%] smobile:top-[83%] smobile:scale-[50%] ss:left-[41%] ss:scale-[70%] mobile:hidden "
             src={LINE6}
             alt="connection"
           />
