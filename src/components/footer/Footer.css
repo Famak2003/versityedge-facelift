@@ -1,0 +1,9 @@
+.footerList::before {
+  content: "-";
+  position: absolute;
+  margin-left: -5px;
+}
+
+.footerTop {
+  border-bottom: 2px solid #ffffff;
+}

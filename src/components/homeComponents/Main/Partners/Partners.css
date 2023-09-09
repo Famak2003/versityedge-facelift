@@ -1,0 +1,43 @@
+.logos:hover .logoSlides {
+  animation-play-state: paused;
+}
+.logos::after,
+.logos::before {
+  position: absolute;
+  top: 0;
+  width: 4rem;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+.logos::after {
+  left: 0;
+  background: linear-gradient(
+    to left,
+    rgb(255, 255, 255, 0),
+    rgba(248, 251, 255, 1)
+  );
+}
+
+.logos::before {
+  right: 0;
+  background: linear-gradient(
+    to right,
+    rgb(255, 255, 255, 0),
+    rgba(248, 251, 255, 1)
+  );
+}
+
+.logoSlides {
+  animation: 25s slide infinite linear;
+  width: max-content;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

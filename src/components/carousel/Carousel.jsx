@@ -118,7 +118,7 @@ const Carousel = ({ carouselData, quoteAuthor }) => {
                     <ColoredText
                       text={item.content}
                       colorWords={item.contentPaintedText}
-                      color={["#0A66C2", "#f2CE34"]}
+                      color={item.contentColor}
                     />
                   ) : (
                     item.content
