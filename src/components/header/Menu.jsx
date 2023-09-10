@@ -1,13 +1,15 @@
+import { Link } from "react-router-dom";
+
 import ARROW from "./../../assets/arrow.png";
 import Dropdown from "../common/Dropdown";
 import { useState } from "react";
 
 const dropdownContent = [
-  "Predict your chance",
-  "Join virtual tutouring program",
-  "Personalized study plan",
-  "Quiz-based assessment",
-  "Student/Parent community",
+  { content: "Predict your chance", link: "predictChance" },
+  { content: "Join virtual tutouring program", link: "virtualProgram" },
+  { content: "Personalized study plan", link: "personalStudy" },
+  { content: "Quiz-based assessment", link: "quiz" },
+  { content: "Student/Parent community", link: "studentCommunity" },
 ];
 
 export default function Menu() {
@@ -28,9 +30,9 @@ export default function Menu() {
         onClick={(e) => selectionColor(e)}
         className=" heroResponsiveText cursor-pointer hover:text-[#0A66C2]"
       >
-        <a className="" href="/">
+        <Link className="" to="/">
           Home
-        </a>
+        </Link>
       </li>
       <li
         onClick={(e) => selectionColor(e)}
