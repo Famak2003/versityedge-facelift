@@ -1,4 +1,4 @@
-import Forms from "./Forms/Forms";
+// import Forms from "./Forms/Forms";
 import PCLandingPage from "./LandingPage/PCLandingPage";
 
 export default function Main() {
