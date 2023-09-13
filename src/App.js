@@ -9,15 +9,17 @@ import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Home from "./components/homeComponents/Home";
 import PredictChance from "./components/predictChanceComponents/PredictChance";
-// import { Router } from "react-router-dom/cjs/react-router-dom";
+import ContactUs from "./components/contactUs/ContactUs";
+import ScrollToTop from "./components/ScrollToTop";
 
 export function App() {
   return (
     <Router>
-      <div className="App relative flex flex-col gap-[5rem] font-nunito text-xl">
+      <ScrollToTop />
+      <div className="App relative flex max-w-[150rem] flex-col gap-[2rem] font-nunito text-xl lmobile:gap-[3rem] md:gap-[5rem]">
         {/* <LoginModal /> */}
         <Header />
-        <div className="content">
+        <main className="content">
           <Switch>
             <Route exact path="/">
               <Home />
@@ -25,9 +27,12 @@ export function App() {
             <Route path="/predictChance">
               <PredictChance />
             </Route>
+            <Route path="/contactUs">
+              <ContactUs />
+            </Route>
           </Switch>
           {/* <Home /> */}
-        </div>
+        </main>
         <Footer />
       </div>
     </Router>

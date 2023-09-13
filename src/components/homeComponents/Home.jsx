@@ -2,8 +2,8 @@ import Main from "./Main/Main";
 
 export default function Home() {
   return (
-    <main>
+    <div>
       <Main />
-    </main>
+    </div>
   );
 }

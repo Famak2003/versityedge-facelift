@@ -3,7 +3,7 @@
 @import "tailwindcss/utilities";
 
 body {
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,7 +11,12 @@ body {
 
 html {
   font-size: 62.5%;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
+}
+
+.App {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .team-back {

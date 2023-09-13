@@ -12,74 +12,68 @@ const dropdownContent = [
   { content: "Student/Parent community", link: "studentCommunity" },
 ];
 
-export default function Menu() {
+const menuLinks = [
+  { text: "Home", link: "/" },
+  { text: "Forum", link: "/forum" },
+  { text: "Features" },
+  { text: "Blog", link: "/blog" },
+  { text: "Contact Us", link: "/contactUs" },
+];
+
+export default function Menu({ currentIndex, onCurrentIndex }) {
   const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
 
-  function selectionColor(e) {
-    e.preventDefault();
-    e.target.classList.toggle("text-[#0A66C2]");
-    console.log(e.target.className);
+  // handles which page is active
+  function handleCurrentPage(index) {
+    onCurrentIndex(index);
   }
 
+  // handles Features dropdow
   function handleFeaturesClick() {
     setIsFeaturesOpen((open) => !open);
   }
   return (
     <menu className="main-nav hidden gap-[1rem] mobile:flex sm:gap-[2rem] md:ml-[8rem] md:text-[1.8rem] ">
-      <li
-        onClick={(e) => selectionColor(e)}
-        className=" heroResponsiveText cursor-pointer hover:text-[#0A66C2]"
-      >
-        <Link className="" to="/">
-          Home
-        </Link>
-      </li>
-      <li
-        onClick={(e) => selectionColor(e)}
-        className=" heroResponsiveText cursor-pointer hover:text-[#0A66C2]"
-      >
-        <a className="" href="/">
-          Forum
-        </a>
-      </li>
-
-      <li
-        onClick={(e) => selectionColor(e)}
-        className=" relative cursor-pointer duration-500 hover:text-[#0A66C2]"
-      >
-        <button
-          onClick={handleFeaturesClick}
-          className=" heroResponsiveText flex cursor-pointer items-center gap-[.5rem] "
-        >
-          Features
-          <span>
-            <img
-              src={ARROW}
-              alt="img"
-              className={`h-[full] ${
-                !isFeaturesOpen ? "" : "rotate-180"
-              } scale-75`}
-            />
-          </span>
-        </button>
-        {isFeaturesOpen && <Dropdown content={dropdownContent} />}
-      </li>
-      <li
-        onClick={(e) => selectionColor(e)}
-        className=" heroResponsiveText cursor-pointer hover:text-[#0A66C2]"
-      >
-        <a className="" href="/">
-          Blog
-        </a>
-      </li>
-      <li
-        onClick={(e) => selectionColor(e)}
-        className=" heroResponsiveText cursor-pointer hover:text-[#0A66C2]"
-      >
-        <a className="" href="/">
-          Contact us
-        </a>
-      </li>
+      {menuLinks.map((item, index) => {
+        return item.text === "Features" ? (
+          <li
+            key={index}
+            onClick={() => handleCurrentPage(index)}
+            className={` relative cursor-pointer duration-500 hover:text-[#0A66C2] ${
+              currentIndex === index ? "text-[#0A66C2]" : ""
+            }`}
+          >
+            <button
+              onClick={handleFeaturesClick}
+              className=" heroResponsiveText flex cursor-pointer items-center gap-[.5rem] "
+            >
+              {item.text}
+              <span>
+                <img
+                  src={ARROW}
+                  alt="img"
+                  className={`h-[full] ${
+                    !isFeaturesOpen ? "" : "rotate-180"
+                  } scale-75`}
+                />
+              </span>
+            </button>
+            {isFeaturesOpen && <Dropdown content={dropdownContent} />}
+          </li>
+        ) : (
+          <li
+            key={index}
+            onClick={(e) => handleCurrentPage(index)}
+            className={` heroResponsiveText cursor-pointer hover:text-[#0A66C2] ${
+              currentIndex === index ? "text-[#0A66C2]" : ""
+            } `}
+          >
+            <Link className="" to={item.link}>
+              {item.text}
+            </Link>
+          </li>
+        );
+      })}
     </menu>
   );
 }
