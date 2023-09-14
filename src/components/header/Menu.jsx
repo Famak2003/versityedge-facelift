@@ -68,7 +68,7 @@ export default function Menu() {
         onClick={(e) => selectionColor(e)}
         className=" heroResponsiveText cursor-pointer hover:text-[#0A66C2]"
       >
-        <a className="" href="/">
+        <a className="" href="/blogs">
           Blog
         </a>
       </li>
