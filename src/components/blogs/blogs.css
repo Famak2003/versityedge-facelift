@@ -1,0 +1,55 @@
+.blogs {
+    background : linear-gradient(180deg #fff, #f8fbff);
+}
+.admissions {
+    padding: 5%;
+}
+.admcard {
+    max-width: 400px;
+    text-align : center;
+    border-radius: 24px;
+    border: 1px solid var(--Primary-White-5, #CDCDCD);
+    background: #FFF;
+    box-shadow: 0px 40px 80px 0px rgba(176, 176, 176, 0.25);
+}
+.admcard img {
+    border-radius: 24px 24px 0px 0px;
+}
+.adm-btn {
+    background-color : #0a66c2;
+    color : #fff;
+    font-size : 12px;
+    padding : 6px 10px;
+    border-radius : 4px;
+    margin : 18px;
+}
+.black {
+    color: #f8fbff;
+    background-color: #0f0f0f;
+}
+.hero-text {
+    padding: 10px;
+    position : absolute;
+    top : 105px;
+    right : 78px;
+    max-width : 583px;
+    color : #0F0F0F;
+    font-family : 'Nunito';
+    font-weight : 700;
+    font-size : 20px;
+    text-align : left;
+    line-height : normal
+}
+.hero-btn {
+    position: absolute;
+    right: 78px;
+    bottom: 20px;
+    font-size : 15px;
+    padding : 12px 25px;
+    border-radius : 8px;
+}
+.admissions h2 {
+    margin: 60px auto;
+    font-size: 20px;
+    font-weight: 700;
+}
