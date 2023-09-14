@@ -5,19 +5,19 @@ import Dropdown from "../common/Dropdown";
 import { useState } from "react";
 
 const dropdownContent = [
-  { content: "Predict your chance", link: "predictChance" },
-  { content: "Join virtual tutouring program", link: "virtualProgram" },
-  { content: "Personalized study plan", link: "personalStudy" },
-  { content: "Quiz-based assessment", link: "quiz" },
-  { content: "Student/Parent community", link: "studentCommunity" },
+  { content: "Predict your chance", path: "predictChance" },
+  { content: "Join virtual tutouring program", path: "virtualProgram" },
+  { content: "Personalized study plan", path: "personalStudy" },
+  { content: "Quiz-based assessment", path: "quiz" },
+  { content: "Student/Parent community", path: "studentCommunity" },
 ];
 
 const menuLinks = [
-  { text: "Home", link: "/" },
-  { text: "Forum", link: "/forum" },
+  { text: "Home", path: "/" },
+  { text: "Forum", path: "/forum" },
   { text: "Features" },
-  { text: "Blog", link: "/blog" },
-  { text: "Contact Us", link: "/contactUs" },
+  { text: "Blog", path: "/blog" },
+  { text: "Contact Us", path: "/contactUs" },
 ];
 
 export default function Menu({ currentIndex, onCurrentIndex }) {
@@ -68,7 +68,7 @@ export default function Menu({ currentIndex, onCurrentIndex }) {
               currentIndex === index ? "text-[#0A66C2]" : ""
             } `}
           >
-            <Link className="" to={item.link}>
+            <Link className="" to={item.path}>
               {item.text}
             </Link>
           </li>

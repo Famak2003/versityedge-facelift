@@ -15,7 +15,7 @@ export default function Dropdown({ content }) {
           className="bb mobile:reponsiveMiniText1 w-[15rem] px-[2rem] pb-[.5rem] text-[1rem] leading-5 sm:w-[17rem] md:w-[19rem] lg:w-[22rem] xl:w-[25rem] "
           key={id}
         >
-          <Link to={`/${item.link}`}>{item.content}</Link>
+          <Link to={`/${item.path}`}>{item.content}</Link>
         </li>
       ))}
     </ul>
