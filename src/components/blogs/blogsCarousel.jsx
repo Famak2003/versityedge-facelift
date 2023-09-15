@@ -11,7 +11,7 @@ const BlogsCarousel = ({ carouselDetails }) => {
             position : "relative",
             width : "90%",
             borderRadius : "20px",
-            minHeight : "368px",
+            minHeight : "318px",
             maxHeight : "400px",
             margin : "0 5% 57px 5%"
           }} >

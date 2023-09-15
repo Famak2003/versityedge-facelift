@@ -68,11 +68,7 @@ const AdmissionTip = () => {
   return (
     <div className="admissions">
         <h2>Admission Tips</h2>
-        <div style={{
-        display : "grid",
-        grid: "auto / auto auto auto",
-        gap : "60px"
-        }}>
+        <div className='grid'>
         {admissionCards && admissionCards.map((admcard) => (
             <div className='admcard'>
                 <img src={admcard.image} alt="" />

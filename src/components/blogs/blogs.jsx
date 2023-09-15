@@ -1,10 +1,13 @@
 import BlogsCarousel from "./blogsCarousel";
 import ImgHero1 from '../../assets/blog-hero1.jpeg'
 import ImgHero2 from '../../assets/blog-hero2.jpeg'
-import ImgHero3 from '../../assets/blog-hero3.jpeg'
+import ImgHero3 from '../../assets/blogPopular3.png'
 import ImgHero4 from '../../assets/blog-hero4.jpeg'
 import AdmissionTip from "./admissionTips";
 import './blogs.css'
+import PopularNews from "./popular";
+import HotNews from "./hotposts";
+
 
 
 const Blogs = () => {
@@ -35,6 +38,8 @@ const Blogs = () => {
         
     }}>
         <BlogsCarousel carouselDetails={carouselDetails} />
+        <HotNews />
+        <PopularNews />
         <AdmissionTip />
     </div>
   )
