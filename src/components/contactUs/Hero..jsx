@@ -56,6 +56,7 @@ export default function Hero() {
       {/* Lines */}
       {Array.from({ length: 3 }, (_, i) => i + 1).map((num) => (
         <Xarrow
+          key={`line${num}`}
           style
           start={"logo"}
           end={`LINE${num}`}
@@ -63,9 +64,6 @@ export default function Hero() {
           zIndex={2}
           strokeWidth={1}
           dashness={true}
-          startAnchor={` ${
-            num === 1 ? "top" : num === 2 ? "auto" : num === 3 ? "bottom" : ""
-          } `}
           color={"#CDCDCE"}
         />
       ))}
@@ -75,6 +73,7 @@ export default function Hero() {
         {cards.map((card, index) => {
           return (
             <li
+              key={card.id}
               style={{ zIndex: `${index + 1}`, position: "relative" }}
               className={` max-w-[70%] rounded-[1rem] px-[.8rem] py-[.6rem] shadow-[0_20px_30px_0_rgba(176,176,176,0.25)] ring-1 ring-[#EFF1F3] mobile:px-[1rem]
                  mobile:py-[.8rem] lmobile:px-[1.5rem] lmobile:py-[1rem] sm:rounded-[2rem] sm:px-[2rem] sm:py-[1rem] lg:px-[3rem] lg:py-[3rem] 

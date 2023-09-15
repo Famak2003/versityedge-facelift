@@ -3,11 +3,20 @@ export default function Hug({
   header,
   staggered = false,
   img,
-  id,
-  line,
+  shadow = false,
+  curvedEdge = false,
+  id = "",
+  line = "",
 }) {
   return (
-    <li className=" flex h-fit min-w-[6rem] max-w-[14rem] items-center justify-center mobile:max-w-fit ">
+    <li
+      className={`${
+        shadow &&
+        "shadow-[0px_10.743005752563477px_21.486011505126953px_0px_rgba(180,180,180,0.25)]"
+      } ${
+        curvedEdge && "rounded-3xl"
+      } flex h-fit min-w-[6rem] max-w-[14rem] items-center justify-center mobile:max-w-fit `}
+    >
       <div
         className={`${
           staggered

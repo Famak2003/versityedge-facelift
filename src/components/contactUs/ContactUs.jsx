@@ -1,10 +1,12 @@
-import HaveQuestions from "./HaveQuestions";
+import HaveQuestions from "./HaveQuestions/HaveQuestions";
+import HearFromYou from "./HearFromYou";
 import Hero from "./Hero.";
 
 function ContactUs() {
   return (
     <div className=" flex flex-col gap-[2rem] lmobile:gap-[3rem] md:gap-[5rem]">
       <Hero />
+      <HearFromYou />
       <HaveQuestions />
     </div>
   );
