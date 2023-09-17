@@ -2,6 +2,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+:root {
+  --blue-texture: #0a66c2;
+}
+
 body {
   overflow-x: hidden;
   margin: 0;

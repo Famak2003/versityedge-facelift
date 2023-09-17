@@ -10,7 +10,7 @@ import LINE3 from "./../../../assets/Line3.png";
 import LINE4 from "./../../../assets/mobileLine1.png";
 import LINE5 from "./../../../assets/mobileLine2.png";
 import LINE6 from "./../../../assets/mobileLine3.png";
-import Hug from "./../../common/Hug";
+import Hug from "../../common/Hug/Hug";
 
 const lines = [LINE1, LINE2, LINE3];
 
@@ -63,6 +63,7 @@ export default function WhyChooseVersityEdge() {
           {Array.from({ length: text.length }, (_, i) => i + 1).map((num) => (
             // Cards
             <Hug
+              lined={true}
               key={num}
               id={num}
               line={lines[num - 1]}

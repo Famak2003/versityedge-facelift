@@ -2,7 +2,7 @@ import "./HaveQuestions.css";
 
 import { useState } from "react";
 import Button from "../../common/Button";
-import LOGO from "./../../../assets/versityedge-Large-Logo.png";
+import LOGO from "./../../../assets/Logowithripple.png";
 // import RIPPLE from "./../../../assets/Ripple.png";
 
 const forms = [
@@ -51,7 +51,7 @@ function HaveQuestions() {
         Have questions or need assistance? <br /> Feel free to reach out to us.{" "}
       </h1>
       <div className=" ml-auto mr-auto flex gap-[2rem] xs:flex-col md:flex-row">
-        <div className="right flex w-full flex-col gap-[2rem] px-10 mobile:px-5 md:w-[70%] ">
+        <div className="right flex w-full flex-col gap-[1.5rem] px-10 mobile:px-5 md:w-[70%] ">
           <p className="KYCResponsiveText hidden font-semibold lmobile:block ">
             Have a specific query or need more information? Use the form below
             to send us a message. We'll get back to you as soon as possible.
@@ -82,7 +82,7 @@ function HaveQuestions() {
                       {item.text}
                     </label>
                     <input
-                      className=" mobile:reponsiveMiniText1 w-full rounded-lg py-[.6rem] pl-[1.5rem] text-[1rem] ring-1 ring-[#D9DADB] active:ring-black"
+                      className=" mobile:reponsiveMiniText1 w-full rounded-lg py-[.7rem] pl-[1.5rem] text-[1rem] ring-1 ring-[#D9DADB] active:ring-black"
                       required
                       name={textToLowerCase}
                       id={textToLowerCase}
@@ -103,7 +103,7 @@ function HaveQuestions() {
                 Leave a message
               </label>
               <textarea
-                className=" mobile:reponsiveMiniText1 h-[12rem] w-full resize-none rounded-lg px-[.5rem] py-[.5rem] text-[1rem] ring-1 ring-[#D9DADB] active:ring-black"
+                className=" mobile:reponsiveMiniText1 h-[13rem] w-full resize-none rounded-lg px-[.5rem] py-[.5rem] text-[1rem] ring-1 ring-[#D9DADB] active:ring-black"
                 id="message"
                 name="message"
                 placeholder="Type a text"
@@ -119,13 +119,9 @@ function HaveQuestions() {
             </Button>
           </form>
         </div>
-        <div className="left flex flex-col items-center justify-between pt-[5rem] mobile:px-[3rem] md:w-[30%]">
+        <div className="left flex flex-col items-center gap-[12rem] pt-[5rem] mobile:px-[3rem] md:w-[30%]">
           <figure className=" hidden h-[12rem] w-[12rem] items-center justify-center rounded-full bg-white shadow-[0px_10.743005752563477px_21.486011505126953px_0px_rgba(180,180,180,0.25)] lmobile:h-[14rem] lmobile:w-[14rem] sm:h-[16rem] sm:w-[16rem] md:flex md:h-[18rem] md:w-[18rem] lg:h-[20rem] lg:w-[20rem] ">
-            <img
-              src={LOGO}
-              className=" scale-90 lmobile:scale-100 "
-              alt="VersityEdge"
-            />
+            <img src={LOGO} className=" scale-[260%]" alt="VersityEdge" />
           </figure>
           <div className=" mobile:KYCResponsiveText grid grid-cols-2 flex-col gap-x-[2rem] text-[1.1rem] md:flex">
             <p className=" ">Email: versityedge@gmail.com</p>
