@@ -1,4 +1,4 @@
-import Hug from "../../common/Hug";
+import Hug from "../../common/Hug/Hug";
 import FRAME1 from "./../../../assets/input your information.png";
 import FRAME2 from "./../../../assets/Pancakes.png";
 import FRAME3 from "./../../../assets/carbon_calculation.png";

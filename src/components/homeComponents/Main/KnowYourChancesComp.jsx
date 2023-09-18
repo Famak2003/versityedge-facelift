@@ -31,6 +31,7 @@ const content = [
     content:
       " Wondering about your chances of acceptance? Our Predictive Admissions model analyzes vast amounts of historical admission data, including academic performance, exam scores, and other relevant factors, to provide you with personalized insights into your likelihood of acceptance so that you can strategize your admissions plan with confidence.",
     btnText: "Know your chance",
+    path: "predictChance",
   },
   {
     displaceImg: [
@@ -52,6 +53,7 @@ const content = [
     contentPaintedText: "Versity Edge",
     contentColor: ["#0A66C2", "#f2CE34"],
     btnText: "Get Tutored",
+    path: "getTutored",
   },
   {
     displaceImg: [
@@ -71,6 +73,7 @@ const content = [
     content:
       " Knowing where you excel and where you can improve provides a tremendous confidence boost. With each test you take, our intelligent algorithms analyze your performance, identifying your unique strengths and areas that need improvement so that you walk into the exam hall with a newfound self-assurance that sets you apart from the rest.",
     btnText: "Stay one step ahead",
+    path: "oneStepAhead",
   },
   {
     displaceImg: [

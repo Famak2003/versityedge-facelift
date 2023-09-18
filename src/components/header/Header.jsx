@@ -1,4 +1,4 @@
-import Menu from "./Menu";
+import Menu from "./Menu/Menu";
 import AvatarAndLogout from "./AvatarAndLogout";
 import Logo from "./Logo";
 import MobileHeader from "./MobileHeader";

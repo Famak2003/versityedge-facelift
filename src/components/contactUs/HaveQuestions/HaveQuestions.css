@@ -1,0 +1,9 @@
+@media only screen and (max-width: 760px) {
+  .haveQuestion {
+    background-image: url(./../../../assets/Logowithripple.png);
+    background-repeat: no-repeat;
+    background-size: 48rem;
+    background-position: -10rem;
+    background-position-y: -2rem;
+  }
+}
