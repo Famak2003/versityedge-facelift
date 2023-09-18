@@ -18,9 +18,9 @@
 .adm-btn {
     background-color : #0a66c2;
     color : #fff;
-    font-size : 12px;
-    padding : 6px 10px;
-    border-radius : 4px;
+    font-size : 15px;
+    padding : 12px 25px;
+    border-radius : 8px;
     margin : 18px;
 }
 .black {
@@ -130,10 +130,10 @@
 }
 .hot-news {
     overflow-x: scroll;
-    padding: 0% 5%;
+    padding: 0% 5% 40px 5%;
 }
 .hot-news::-webkit-scrollbar {
-    height: 3px;
+    display: none;
 }
 .hot-news::-webkit-scrollbar-thumb {
     background-color: #CDCDCD;
@@ -148,7 +148,7 @@
     padding: 10px 0 40px 0;
 }
 .hot-news h3 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     padding: 5px 0;
 }
