@@ -1,6 +1,8 @@
 const BlogDetails = () => {
     return (
-      <div>BlogDetails</div>
+      <div class="blog">
+
+      </div>
     )
   }
   
