@@ -4,7 +4,7 @@ import img2 from '../../assets/hotpost2.png';
 import img3 from '../../assets/hotpost3.png';
 import uiLogo from '../../assets/universityOfIbadan.png';
 import ulLogo from '../../assets/universityOfLagos.png';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+// import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 const HotNews = () => {
     const hotPosts = [
         {
@@ -62,11 +62,11 @@ const HotNews = () => {
         <div className="flex hot-news-flex">
             {hotPosts && hotPosts.map((hotPost) => (
                 <div>
-                    {hotPost.id < 5 && <Link to="/">
+                    {hotPost.id < 5 && <div to="/">
                         <div className="hot-news-col">
                             <img src={hotPost.image} alt="" />
                             <div className="flex-center">
-                                <img src={hotPost.uniLogo} alt="" width={hotPost.uniLogo === ulLogo ? 30 : 50} height={hotPost.uniLogo === ulLogo ? 30 : 50} />
+                                <img className="unilogo" src={hotPost.uniLogo} alt="" width={hotPost.uniLogo === ulLogo ? 30 : 45} height={hotPost.uniLogo === ulLogo ? 30 : 50} />
                                 <p> {hotPost.uniName} ~ {hotPost.postTime} hours ago</p>
                             </div>
                             <h3>{ hotPost.postHeader}</h3>
@@ -82,7 +82,7 @@ const HotNews = () => {
                                 </h6>
                             </div>
                         </div>
-                    </Link>}
+                    </div>}
                 </div>
             ))}
         </div>

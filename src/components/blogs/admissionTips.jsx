@@ -16,6 +16,7 @@ const AdmissionTip = () => {
             Geomude bolundare maren dekadyck. Belose krodeligt dät och dekaligen, förutom gigarasam. 
             Tidade homogisk, och metrofili och pöpygt, liksom 
             `,
+            header : "Campus",
             id : 1
         },
         {
@@ -25,6 +26,7 @@ const AdmissionTip = () => {
             Geomude bolundare maren dekadyck. Belose krodeligt dät och dekaligen, förutom gigarasam. 
             Tidade homogisk, och metrofili och pöpygt, liksom 
             `,
+            header : "Campus",
             id : 2
         },
         {
@@ -34,6 +36,7 @@ const AdmissionTip = () => {
             Geomude bolundare maren dekadyck. Belose krodeligt dät och dekaligen, förutom gigarasam. 
             Tidade homogisk, och metrofili och pöpygt, liksom 
             `,
+            header : "Campus",
             id : 3
         },
         {
@@ -43,6 +46,7 @@ const AdmissionTip = () => {
             Geomude bolundare maren dekadyck. Belose krodeligt dät och dekaligen, förutom gigarasam. 
             Tidade homogisk, och metrofili och pöpygt, liksom 
             `,
+            header : "Campus",
             id : 4
         },
         {
@@ -52,6 +56,7 @@ const AdmissionTip = () => {
             Geomude bolundare maren dekadyck. Belose krodeligt dät och dekaligen, förutom gigarasam. 
             Tidade homogisk, och metrofili och pöpygt, liksom 
             `,
+            header : "Campus",
             id : 5
         },
         {
@@ -61,6 +66,7 @@ const AdmissionTip = () => {
             Geomude bolundare maren dekadyck. Belose krodeligt dät och dekaligen, förutom gigarasam. 
             Tidade homogisk, och metrofili och pöpygt, liksom 
             `,
+            header : "Campus",
             id : 6
         }
 
@@ -72,6 +78,7 @@ const AdmissionTip = () => {
         {admissionCards && admissionCards.map((admcard) => (
             <div className='admcard'>
                 <img src={admcard.image} alt="" />
+                <h3>{admcard.header}</h3>
                 <p style={{
                     padding : "10px",
                     textAlign : "center"

@@ -71,7 +71,8 @@ const PopularNews = () => {
               backgroundPosition: 'center',
               minHeight : '370px',
               width : '70%',
-              position : 'absolute'
+              position : 'absolute',
+              borderRadius : '20px'
             }}></div>
             <div className="text">
               <h3>{popularPost.header}</h3>
