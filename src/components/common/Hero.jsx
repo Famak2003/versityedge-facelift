@@ -30,11 +30,15 @@ function Hero({
       >
         {header ? (
           <h1 className=" font-extrabold xs:text-[2.5rem] xs:leading-[2.5rem] mobile:pr-0 mobile:text-[1.8rem] mobile:leading-[2rem] lmobile:text-[2rem] lmobile:leading-[2.3rem] sm:text-[2.5rem] sm:leading-[2.5rem] md:text-[2.9rem] md:leading-[3rem] lg:text-[4rem] lg:leading-[5rem] ">
-            <ColoredText
-              text={header}
-              color={paint}
-              colorWords={painHeaderText}
-            />
+            {painHeaderText ? (
+              <ColoredText
+                text={header}
+                color={paint}
+                colorWords={painHeaderText}
+              />
+            ) : (
+              header
+            )}
           </h1>
         ) : (
           ""

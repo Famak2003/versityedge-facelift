@@ -4,6 +4,9 @@
 
 :root {
   --blue-texture: #0a66c2;
+  --lightblue-texture: #f8fbff;
+  --yellow-texture: #ffcb21;
+  --gray-texture: #cdcdce;
 }
 
 body {
