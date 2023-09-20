@@ -1,5 +1,5 @@
 import FooterButtom from "./FooterButtom";
-import FooterTop from "./FooterTop/FooterTop";
+import FooterTop from "./footertop/FooterTop";
 
 export const footerContent = [
   {

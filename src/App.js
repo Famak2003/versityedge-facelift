@@ -4,6 +4,8 @@ import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Home from "./components/homeComponents/Home";
 import PredictChance from "./components/predictChanceComponents/PredictChance";
+import Blogs from "./components/blogs/blogs";
+// import { Router } from "react-router-dom/cjs/react-router-dom";
 import ContactUs from "./components/contactUs/ContactUs";
 import ScrollToTop from "./components/ScrollToTop";
 import AboutUs from "./components/aboutUs/AboutUs";
