@@ -24,7 +24,7 @@ const cards = [
   },
 ];
 
-export default function Hero() {
+export default function HeroComp() {
   return (
     <section className=" generalPadding flex justify-between">
       {/* Left */}
