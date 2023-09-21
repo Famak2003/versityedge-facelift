@@ -76,7 +76,7 @@ const AdmissionTip = () => {
         <h2>Admission Tips</h2>
         <div className='grid'>
         {admissionCards && admissionCards.map((admcard) => (
-            <div className='admcard'>
+            <div className='admcard' key={admcard.id}>
                 <img src={admcard.image} alt="" />
                 <h3>{admcard.header}</h3>
                 <p style={{

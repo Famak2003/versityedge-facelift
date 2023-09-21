@@ -13,7 +13,7 @@ const BlogsCarousel = ({ carouselDetails }) => {
             borderRadius : "20px",
             minHeight : "318px",
             maxHeight : "400px",
-            margin : "0 5% 57px 5%"
+            margin : "40px 5% 57px 5%"
           }} >
             <div className="hero-text">
                 {carouselDetail.text}
@@ -28,6 +28,7 @@ const BlogsCarousel = ({ carouselDetails }) => {
         infiniteLoop={true}
         interval={2500}
         showStatus={false}
+        showThumbs={false}
         className="carousel-container"
       >
         {renderSlides}

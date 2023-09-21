@@ -61,7 +61,7 @@ const HotNews = () => {
         <h2>Hot News</h2>
         <div className="flex hot-news-flex">
             {hotPosts && hotPosts.map((hotPost) => (
-                <div>
+                <div key={hotPost.id}>
                     {hotPost.id < 5 && <div to="/">
                         <div className="hot-news-col">
                             <img src={hotPost.image} alt="" />
