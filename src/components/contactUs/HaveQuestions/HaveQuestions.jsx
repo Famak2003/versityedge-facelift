@@ -99,7 +99,6 @@ function HaveQuestions() {
                 className=" mobile:reponsiveMiniText1 w-full text-[1rem]"
                 htmlFor="message"
               >
-                {" "}
                 Leave a message
               </label>
               <textarea

@@ -8,7 +8,7 @@ import Blogs from "./components/blogs/blogs";
 // import { Router } from "react-router-dom/cjs/react-router-dom";
 import ContactUs from "./components/contactUs/ContactUs";
 import ScrollToTop from "./components/ScrollToTop";
-import AboutUs from "./components/aboutUs/AboutUs";
+// import AboutUs from "./components/aboutUs/AboutUs";
 
 export function App() {
   return (
@@ -21,7 +21,7 @@ export function App() {
             <Route exact path="/" element={<Home />}></Route>
             <Route path="/predictChance" element={<PredictChance />}></Route>
             <Route path="/contactUs" element={<ContactUs />}></Route>
-            <Route path="/blog" element={<AboutUs />}></Route>
+            <Route path="/blog" element={<Blogs />}></Route>
           </Routes>
         </main>
 
