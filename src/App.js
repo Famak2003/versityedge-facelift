@@ -17,8 +17,7 @@ export function App() {
       <div className="App relative flex max-w-[150rem] flex-col gap-[2rem] font-nunito text-xl lmobile:gap-[3rem] md:gap-[5rem]">
         <Header />
         <div className="content">
-          <Blog />
-          {/* <Switch>
+          <Switch>
             <Route exact path="/">
               <Home />
             </Route>
@@ -28,7 +27,7 @@ export function App() {
             <Route path="/blogs">
               <Blogs />
             </Route>
-          </Switch> */}
+          </Switch>
           {/* <Home /> */}
         </div>
         <Footer />
