@@ -44,11 +44,15 @@ function OurTeam() {
         {teamImg.map((obj, index) => {
           return (
             <figure key={index} className=" w-full ">
-              <img className=" w-fit object-contain " src={obj.img} alt="img" />
+              <img
+                className=" w-fit object-contain ring-1 ring-red-500 "
+                src={obj.img}
+                alt="img"
+              />
               <figcaption className=" flex flex-col gap-[1rem] text-left ">
-                <p className="WCVCardHeader">{obj.name}</p>
+                <p className="text-[24px]">{obj.name}</p>
                 <div className=" flex gap-[1rem]">
-                  <p className="text-[15px]">{obj.position}</p>
+                  <p className="text-[20px]">{obj.position}</p>
                   <img
                     className=" object-contain"
                     src={SOCIAL1}
