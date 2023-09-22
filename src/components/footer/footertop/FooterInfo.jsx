@@ -1,4 +1,3 @@
-import "./../Footer.css";
 export default function FooterInfo({ header, content }) {
   return (
     <dl className=" flex flex-col gap-[1rem]">

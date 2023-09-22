@@ -18,7 +18,7 @@ const menuLinks = [
   { text: "Home", path: "/" },
   { text: "Forum", path: "/forum" },
   { text: "Features" },
-  { text: "Blog", path: "/blog" },
+  { text: "Blog", path: "/blogs" },
   { text: "Contact Us", path: "/contactUs" },
 ];
 
@@ -53,41 +53,3 @@ export default function Menu() {
     </menu>
   );
 }
-
-// return item.text === "Features" ? (
-//   <li
-//     key={index}
-//     onClick={() => handleCurrentPage(index)}
-//     className={` relative cursor-pointer duration-500 hover:text-[#0A66C2] ${
-//       currentIndex === index ? "text-[#0A66C2]" : ""
-//     }`}
-//   >
-//     <button
-//       onClick={handleFeaturesClick}
-//       className=" heroResponsiveText flex cursor-pointer items-center gap-[.5rem] "
-//     >
-//       {item.text}
-//       <span>
-//         <img
-//           src={ARROW}
-//           alt="img"
-//           className={`h-[full] ${
-//             !isFeaturesOpen ? "" : "rotate-180"
-//           } scale-75`}
-//         />
-//       </span>
-//     </button>
-//     {isFeaturesOpen && <Dropdown content={dropdownContent} />}
-//   </li>
-// ) : (
-//   <li
-//     key={index}
-//     onClick={(e) => handleCurrentPage(index)}
-//     className={` heroResponsiveText cursor-pointer hover:text-[#0A66C2] ${
-//       currentIndex === index ? "text-[#0A66C2]" : ""
-//     } `}
-//   >
-//     <NavLink className="" to={item.path}>
-//       {item.text}
-//     </NavLink>
-//   </li>

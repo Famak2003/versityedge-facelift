@@ -1,3 +1,15 @@
+.upperInputArea {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 2rem;
+  column-gap: 5rem;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+
 @media only screen and (max-width: 760px) {
   .haveQuestion {
     background-image: url(./../../../assets/Logowithripple.png);
@@ -5,5 +17,16 @@
     background-size: 48rem;
     background-position: -10rem;
     background-position-y: -2rem;
+  }
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .upperInputArea {
+    grid-template-columns: 1fr;
   }
 }

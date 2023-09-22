@@ -7,3 +7,10 @@
 .footerTop {
   border-bottom: 2px solid #ffffff;
 }
+
+@media only screen and (max-width: 420px) {
+  .footerListing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

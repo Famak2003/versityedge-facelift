@@ -1,3 +1,4 @@
+import "./AboutUs.css";
 import Hero from "./Hero";
 import OurStory from "./OurStory";
 import OurTeam from "./OurTeam";

@@ -36,9 +36,9 @@ export default function FooterTop() {
           Stay ahead, join our newsletter for admission tips and updates.
         </p>
       </div>
-
+      {/* grid grid-cols-2 */}
       {/* Footer Listings */}
-      <div className=" grid grid-cols-2 gap-[2rem] mobile:flex mobile:flex-grow mobile:gap-[1rem] mobile:px-[2rem] md:gap-[2rem] ">
+      <div className=" footerListing gap-[2rem] mobile:flex mobile:flex-grow mobile:gap-[1rem] mobile:px-[2rem] md:gap-[2rem] ">
         {footerContent.map((obj, id) => (
           <FooterInfo key={id} header={obj.header} content={obj.content} />
         ))}

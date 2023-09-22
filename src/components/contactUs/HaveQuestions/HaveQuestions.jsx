@@ -64,7 +64,7 @@ function HaveQuestions() {
             className=" flex flex-col gap-[3rem]"
           >
             {/* Upper input area */}
-            <div className=" grid grid-cols-1 gap-x-[2rem] gap-y-[2rem] md:grid-cols-2 ">
+            <div className="upperInputArea">
               {forms.map((item, index) => {
                 const textToLowerCase = item.text
                   .split(" ")
@@ -122,7 +122,7 @@ function HaveQuestions() {
           <figure className=" hidden h-[12rem] w-[12rem] items-center justify-center rounded-full bg-white shadow-[0px_10.743005752563477px_21.486011505126953px_0px_rgba(180,180,180,0.25)] lmobile:h-[14rem] lmobile:w-[14rem] sm:h-[16rem] sm:w-[16rem] md:flex md:h-[18rem] md:w-[18rem] lg:h-[20rem] lg:w-[20rem] ">
             <img src={LOGO} className=" scale-[260%]" alt="VersityEdge" />
           </figure>
-          <div className=" mobile:KYCResponsiveText grid grid-cols-2 flex-col gap-x-[2rem] text-[1.1rem] md:flex">
+          <div className="contact mobile:KYCResponsiveText">
             <p className=" ">Email: versityedge@gmail.com</p>
             <p className=" order-3 md:order-2">Phone: +2348127111398</p>
             <p className=" order-2 md:order-3">

@@ -47,7 +47,7 @@ function OurStory() {
           innovation and tech to simplify the intricate journey.
         </p>
       </div>
-      <ul className=" grid w-[90%] grid-cols-2">
+      <ul className=" ourStory w-[90%]">
         {content.map((item, index) => {
           console.log(index % 2);
           return (
