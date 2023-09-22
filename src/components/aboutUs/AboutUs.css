@@ -2,3 +2,30 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+.ourTeam {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 9%;
+  row-gap: 4%;
+}
+
+.thumbnail {
+  overflow-x: scroll;
+}
+.thumbnail::-webkit-scrollbar {
+  display: none;
+}
+.thumbnail::-webkit-scrollbar-thumb {
+  display: none;
+}
+@media only screen and (max-width: 700px) {
+  .ourTeam {
+    column-gap: 7%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .ourTeam {
+    column-gap: 4%;
+    row-gap: 3%;
+  }
+}
