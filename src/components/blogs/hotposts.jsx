@@ -4,7 +4,7 @@ import img2 from "../../assets/hotpost2.png";
 import img3 from "../../assets/hotpost3.png";
 import uiLogo from "../../assets/universityOfIbadan.png";
 import ulLogo from "../../assets/universityOfLagos.png";
-import { Link } from "react-router-dom";
+// import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 const HotNews = () => {
   const hotPosts = [
     {
@@ -66,16 +66,17 @@ const HotNews = () => {
       <div className="hot-news-flex flex">
         {hotPosts &&
           hotPosts.map((hotPost) => (
-            <div>
+            <div key={hotPost.id}>
               {hotPost.id < 5 && (
-                <Link to="/">
+                <div to="/">
                   <div className="hot-news-col">
                     <img src={hotPost.image} alt="" />
                     <div className="flex-center">
                       <img
+                        className="unilogo"
                         src={hotPost.uniLogo}
                         alt=""
-                        width={hotPost.uniLogo === ulLogo ? 30 : 50}
+                        width={hotPost.uniLogo === ulLogo ? 30 : 45}
                         height={hotPost.uniLogo === ulLogo ? 30 : 50}
                       />
                       <p>
@@ -99,7 +100,7 @@ const HotNews = () => {
                       <h6>{hotPost.readTime} mins read</h6>
                     </div>
                   </div>
-                </Link>
+                </div>
               )}
             </div>
           ))}
