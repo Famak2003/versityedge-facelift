@@ -1,4 +1,5 @@
 import img1 from './../../assets/blog-hero4.jpeg'
+import Comments from './comments'
 const Blog = () => {
   const blogDetail = {
     image : img1,
@@ -79,6 +80,7 @@ const Blog = () => {
           </div>
         </div>
         <p className="blog-contents">{blogDetail.postContent}</p>
+        <Comments />
       </div>
     )
   }
