@@ -4,7 +4,7 @@ import IMG from "./../../assets/Logowithripple.png";
 
 function HeroComp() {
   return (
-    <section className="">
+    <section className="generalPadding">
       <Hero
         header={
           <p>

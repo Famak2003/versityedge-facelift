@@ -8,9 +8,7 @@ export default function Card({ header, img, children }) {
         <h1 className=" text-[.9rem] font-semibold leading-[1.3rem] lmobile:text-[1.1rem] lmobile:leading-[1.5rem] sm:text-[1.3rem] sm:leading-[1.8rem] md:text-[1.5rem] md:leading-[2rem] lg:text-[1.8rem] lg:leading-[2.3rem] ">
           {header}
         </h1>
-        <p className=" text-center text-[.7rem] leading-[.9rem] lmobile:text-[.8rem] lmobile:leading-[1.1rem] sm:text-[.9rem] sm:leading-5 md:text-[1rem] md:leading-5 lg:text-[1.3rem] lg:leading-7 xl:text-[1.5rem] xl:leading-8">
-          {children}
-        </p>
+        <p className=" Text16px text-center">{children}</p>
       </article>
       <Button addstyle="self-center text-[#ffff] xs:text-[.5rem] smobile:text-[.7rem] mobile:text-[.8rem] md:text-[1.2rem] lg:text-[1.4rem] btnText xs:py-[.1rem] mobile:py-[.2rem] sm:py-[.5rem] md:py-[.7rem]">
         Read More

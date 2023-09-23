@@ -35,7 +35,7 @@ const content = [
 
 function OurStory() {
   return (
-    <section className=" flex flex-col items-center justify-center gap-[4rem] bg-[var(--lightblue-texture)] py-[2rem] mobile:py-[3rem] md:py-[5rem] ">
+    <section className=" generalPadding flex flex-col items-center justify-center gap-[4rem] bg-[var(--lightblue-texture)] py-[2rem] mobile:py-[3rem] md:py-[5rem] ">
       <div className=" flex flex-col gap-[1rem]">
         <h1 className="responsiveHeader text-center font-extrabold ">
           Our Story

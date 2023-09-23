@@ -1,15 +1,14 @@
 import { Routes, Route } from "react-router-dom";
-
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Home from "./components/homeComponents/Home";
 import PredictChance from "./components/predictChanceComponents/PredictChance";
 import Blogs from "./components/blogs/blogs";
-
+// import { Router } from "react-router-dom/cjs/react-router-dom";
 import ContactUs from "./components/contactUs/ContactUs";
 import ScrollToTop from "./components/ScrollToTop";
-import Blog from "./components/blogs/blogDetail";
-import AboutUs from "./components/aboutUs/AboutUs";
+// import Blog from "./components/blogs/blogDetail";
+// import AboutUs from "./components/aboutUs/AboutUs";
 
 export function App() {
   return (
@@ -23,7 +22,11 @@ export function App() {
             <Route path="/predictChance" element={<PredictChance />}></Route>
             <Route path="/contactUs" element={<ContactUs />}></Route>
             <Route path="/blogs" element={<Blogs />}></Route>
+<<<<<<< HEAD
             <Route path="/blog/:id" element={<Blog />}></Route>
+=======
+            {/* <Route path="/about-us " element={<AboutUs />}></Route> */}
+>>>>>>> 5a760c3334876ffa963df163c9b4adfabff38fb3
           </Routes>
         </main>
 

@@ -1,16 +1,17 @@
-import FRAME1 from "./../../../assets/Frame3.png";
-import FRAME2 from "./../../../assets/Frame5.png";
-import FRAME3 from "./../../../assets/Frame4.png";
-import FRAME4 from "./../../../assets/Frame6.png";
+import "./WhyChooseVersityEdge.css";
+import FRAME1 from "./../../../../assets/Frame3.png";
+import FRAME2 from "./../../../../assets/Frame5.png";
+import FRAME3 from "./../../../../assets/Frame4.png";
+import FRAME4 from "./../../../../assets/Frame6.png";
 
-import LINE1 from "./../../../assets/Line1.png";
-import LINE2 from "./../../../assets/Line2.png";
-import LINE3 from "./../../../assets/Line3.png";
+import LINE1 from "./../../../../assets/Line1.png";
+import LINE2 from "./../../../../assets/Line2.png";
+import LINE3 from "./../../../../assets/Line3.png";
 
-import LINE4 from "./../../../assets/mobileLine1.png";
-import LINE5 from "./../../../assets/mobileLine2.png";
-import LINE6 from "./../../../assets/mobileLine3.png";
-import Hug from "../../common/Hug/Hug";
+import LINE4 from "./../../../../assets/mobileLine1.png";
+import LINE5 from "./../../../../assets/mobileLine2.png";
+import LINE6 from "./../../../../assets/mobileLine3.png";
+import Hug from "./../../../common/Hug/Hug";
 
 const lines = [LINE1, LINE2, LINE3];
 
@@ -59,7 +60,7 @@ export default function WhyChooseVersityEdge() {
           </p>
         </div>
 
-        <ul className=" relative grid h-fit w-full grid-cols-2 place-items-center items-center justify-center gap-x-[2rem] gap-y-[2rem] smobile:gap-x-[2rem] mobile:flex mobile:gap-[2rem] md:gap-[3.5rem]">
+        <ul className="cards relative h-fit w-full  place-items-center items-center justify-center gap-x-[2rem] gap-y-[2rem] smobile:gap-x-[2rem] mobile:flex mobile:gap-[2rem] md:gap-[3.5rem]">
           {Array.from({ length: text.length }, (_, i) => i + 1).map((num) => (
             // Cards
             <Hug

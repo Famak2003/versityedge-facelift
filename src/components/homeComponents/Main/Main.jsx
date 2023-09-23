@@ -6,7 +6,7 @@ import RatingComp from "./RatingComp/RatingComp";
 import OurTeamComp from "./Team";
 import TestimonialComp from "./TestimonialComp";
 import WaecNecoGceComp from "./WaecNecoGceComp/WaecNecoGceComp";
-import WhyChooseVersityEdge from "./WhyChooseVersityEdge";
+import WhyChooseVersityEdge from "./WhyChooseVersityEdge/WhyChooseVersityEdge";
 import HeroComp from "./HeroComp";
 
 function Main() {
