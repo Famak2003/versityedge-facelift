@@ -82,7 +82,11 @@ const Comments = () => {
             ))}
          </div>
         </div>
-        <div className="commenting"></div>
+        <form className="comment-form" action="">
+            <h1>Write a comment</h1>
+            <textarea name=""></textarea>
+            <button>Submit</button>
+        </form>
     </div>
   )
 }

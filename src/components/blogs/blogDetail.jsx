@@ -31,7 +31,7 @@ const Blog = () => {
     id : 1
   }
     return (
-      <div class="blog">
+      <div className="blog">
         <div className="blog-hero">
           <div className="blog-hero-text">
             <h2 className="blog-hero-header">{blogDetail.postHeader}</h2>
