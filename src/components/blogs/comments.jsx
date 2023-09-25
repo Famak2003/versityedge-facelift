@@ -81,6 +81,12 @@ const Comments = () => {
               </div>
             ))}
          </div>
+         <form action="" className="mobile-comment-form">
+                  <input 
+                    type="text" 
+                    placeholder='Write a comment...' />
+                  <button>send</button>
+                </form>
         </div>
         <form className="comment-form" action="">
             <h1>Write a comment</h1>
