@@ -13,7 +13,7 @@ function Hero({
 }) {
   return (
     <div className=" flex h-fit xs:flex-col mobile:flex-row lg:h-[50rem] ">
-      {/* flipped checks to know what layout too render */}
+      {/* flipped checks to know what layout to render */}
       <figure
         className={` ${
           flipped ? "mobile:order-2 " : "mobile:order-1 "
@@ -22,7 +22,7 @@ function Hero({
         <img className=" h-[100%] " src={heroImg} alt="img" />
       </figure>
 
-      {/* flipped checks to know what layout too render */}
+      {/* flipped checks to know what layout to render */}
       <div
         className={` ${
           flipped ? "mobile:order-1 " : "mobile:order-2 "

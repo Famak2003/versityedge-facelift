@@ -1,7 +1,7 @@
 import CARDIMG1 from "./../../../../assets/Rectangle14.png";
 import CARDIMG2 from "./../../../../assets/Rectangle15.png";
 import CARDIMG3 from "./../../../../assets/Rectangle16.png";
-import Card from "./Card";
+import Card from "../../../common/Card";
 
 export const cardInfo = [
   {
