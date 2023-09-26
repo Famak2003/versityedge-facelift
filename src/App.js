@@ -8,14 +8,9 @@ import Blogs from "./components/blogs/blogs";
 
 import ContactUs from "./components/contactUs/ContactUs";
 import ScrollToTop from "./components/ScrollToTop";
-<<<<<<< HEAD
 // import AboutUs from "./components/aboutUs/AboutUs";
 // import Blog from "./components/blogs/blogDetail";
 // import AboutUs from "./components/aboutUs/AboutUs";
-=======
-import Blog from "./components/blogs/blogDetail";
-import AboutUs from "./components/aboutUs/AboutUs";
->>>>>>> c2c142c2c3ecbe21b4b21c2a9fb4feaffb5c48f1
 
 export function App() {
   return (
@@ -29,8 +24,8 @@ export function App() {
             <Route path="/predictChance" element={<PredictChance />}></Route>
             <Route path="/contactUs" element={<ContactUs />}></Route>
             <Route path="/blogs" element={<Blogs />}></Route>
-            <Route path="/about-us " element={<AboutUs />}></Route>
-            <Route path="/blog/:id" element={<Blog />}></Route>
+            {/* <Route path="/about-us " element={<AboutUs />}></Route> */}
+            <Route path="/blog/:id" element={<Blogs />}></Route>
           </Routes>
         </main>
 
