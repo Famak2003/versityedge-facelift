@@ -2,10 +2,10 @@ import FACEBOOK from "./../../../assets/ic_round-facebook.png";
 import INSTA from "./../../../assets/insta.png";
 import LINKEDIN from "./../../../assets/Linkedin.png";
 import FooterInfo from "./FooterInfo";
-import { footerContent } from "./../Footer";
-import Email from "../../common/Email";
+import { footerContent } from "./Footer";
+import Email from "../common/Email";
 
-function FooterTopComp() {
+function FooterTop() {
   return (
     <div className=" footerTop mobil3:gap-0 flex flex-col gap-[2rem] py-[3rem] text-[#ffff] mobile:flex-row sm:gap-[3rem] md:gap-[5rem] lg:gap-[7rem]">
       <div className=" flex flex-col gap-[1rem]">
@@ -45,4 +45,4 @@ function FooterTopComp() {
     </div>
   );
 }
-export default FooterTopComp;
+export default FooterTop;
