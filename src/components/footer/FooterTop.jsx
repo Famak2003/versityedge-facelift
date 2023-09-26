@@ -1,6 +1,6 @@
-import FACEBOOK from "./../../../assets/ic_round-facebook.png";
-import INSTA from "./../../../assets/insta.png";
-import LINKEDIN from "./../../../assets/Linkedin.png";
+import FACEBOOK from "./../../assets/ic_round-facebook.png";
+import INSTA from "./../../assets/insta.png";
+import LINKEDIN from "./../../assets/Linkedin.png";
 import FooterInfo from "./FooterInfo";
 import { footerContent } from "./Footer";
 import Email from "../common/Email";
