@@ -23,7 +23,6 @@ function HaveQuestions() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target);
 
     // use FormData to collect form data
     const formDataObject = new FormData(e.target);
