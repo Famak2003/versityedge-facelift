@@ -44,7 +44,7 @@ function HaveQuestions() {
       message,
     });
   };
-
+  console.log(formData);
   return (
     <section className="haveQuestion generalPadding flex flex-col gap-[2rem] ">
       <h1 className=" mobile:SliderResponsiveHeader text-center text-[1.5rem] font-bold ">
