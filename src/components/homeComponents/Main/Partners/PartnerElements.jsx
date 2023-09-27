@@ -3,7 +3,7 @@ export default function PartnerElements({ img }) {
   return (
     <img
       src={img}
-      className="mx-[4rem] inline-block h-full object-contain "
+      className=" mx-[2rem] inline-block h-full object-contain sm:mx-[3rem] md:mx-[4rem] "
       alt="img"
     />
   );

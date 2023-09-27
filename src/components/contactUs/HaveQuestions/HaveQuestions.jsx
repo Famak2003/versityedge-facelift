@@ -23,7 +23,6 @@ function HaveQuestions() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target);
 
     // use FormData to collect form data
     const formDataObject = new FormData(e.target);
@@ -44,7 +43,7 @@ function HaveQuestions() {
       message,
     });
   };
-
+  console.log(formData);
   return (
     <section className="haveQuestion generalPadding flex flex-col gap-[2rem] ">
       <h1 className=" mobile:SliderResponsiveHeader text-center text-[1.5rem] font-bold ">

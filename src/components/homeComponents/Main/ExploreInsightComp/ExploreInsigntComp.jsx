@@ -1,7 +1,7 @@
 import CARDIMG1 from "./../../../../assets/Rectangle14.png";
 import CARDIMG2 from "./../../../../assets/Rectangle15.png";
 import CARDIMG3 from "./../../../../assets/Rectangle16.png";
-import Card from "./Card";
+import Card from "../../../common/Card";
 
 export const cardInfo = [
   {
@@ -29,7 +29,7 @@ export default function ExploreInsigntComp() {
       <div className=" flex w-full">
         <ul className=" flex h-full w-full flex-wrap justify-center gap-[2rem] py-[1rem] md:gap-[2rem] lg:gap-[4rem] ">
           {cardInfo.map((obj, id) => (
-            <Card key={id} img={obj.img} header={obj.header}>
+            <Card key={id} img={obj.img} header={obj.header} normal={true}>
               {obj.text}
             </Card>
           ))}

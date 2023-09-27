@@ -56,7 +56,7 @@ function HearFromYou() {
                   " left-[7%] top-[12%] mobile:left-[15%] lmobile:left-[22%] sm:left-[20%] md:left-[25%]"
                 } ${
                   index === 2 &&
-                  " right-[12%] top-[6rem] translate-x-[50%] ring-1 smobile:right-[10%] mobile:right-[10%] sm:right-[12%] md:right-[12%] Lmd:right-[16%] lg:right-[18%] xl:right-[20%] Lxl:right-[25%]"
+                  " right-[12%] top-[6rem] translate-x-[50%] smobile:right-[10%] mobile:right-[10%] sm:right-[12%] md:right-[12%] Lmd:right-[16%] lg:right-[18%] xl:right-[20%] Lxl:right-[25%]"
                 } ${
                   index === 3 &&
                   "bottom-[34%] right-0 smobile:right-[6%] mobile:right-[10%] lmobile:right-[20%] lg:right-[23%]"

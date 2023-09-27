@@ -1,5 +1,5 @@
 import { useState } from "react";
-import GallryCarouselImg from "./GalleryCarouselImg";
+import TeamImg from "./TeamImg";
 import { useEffect } from "react";
 
 import BUTTON from "./../../../assets/forward.png";
@@ -53,11 +53,11 @@ export default function GalleryCarousel({ carouselData }) {
           return (
             <li
               key={idx}
-              className=" flex w-full items-center justify-center smobile:gap-[1rem] mobile:gap-[2rem] sm:gap-[3rem] md:gap-[4rem] lg:gap-[5rem]"
+              className=" flex w-full items-center justify-center smobile:gap-[1rem] mobile:gap-[2rem] sm:gap-[2rem] md:gap-[3rem] lg:gap-[5rem]"
             >
               {obj.map((item, idx) => {
                 return (
-                  <GallryCarouselImg
+                  <TeamImg
                     key={idx}
                     img={item.img}
                     name={item.name}
