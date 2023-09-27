@@ -4,9 +4,11 @@
 
 :root {
   --blue-texture: #0a66c2;
+  --white-texture: #ffffff;
   --lightblue-texture: #f8fbff;
   --yellow-texture: #ffcb21;
   --gray-texture: #cdcdce;
+  --light-grey-texture: #e7e8e9;
 }
 
 body {
