@@ -32,6 +32,24 @@
   color: #f8fbff;
   background-color: #0f0f0f;
 }
+.btn-div {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  margin-bottom: 20px;
+}
+.go-back-btn {
+  padding: 10px 18px;
+  font-size: 15px;
+  background-color: #0a66c2;
+  color: #FFF;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  position: absolute;
+  right: 5%;
+
+}
 .hero-text {
   padding: 10px;
   position: absolute;
@@ -39,9 +57,7 @@
   right: 78px;
   max-width: 583px;
   color: #f8fbff;
-  background-color: #0f0f0f;
   border-radius: 10px;
-  opacity: 0.7;
   font-family: "Nunito";
   font-weight: 700;
   font-size: 20px;
@@ -55,6 +71,7 @@
   font-size: 15px;
   padding: 12px 25px;
   border-radius: 20px;
+  z-index: 100;
 }
 .admissions h2 {
   margin: 60px auto;
@@ -340,7 +357,7 @@
   height : 560px;
   display: flex;
   flex-direction: column;
-  border: 1px solid #0f0f0f;
+  border: 1px solid #CDCDCE;
   border-radius: 24px;
   box-shadow: 0px 20px 40px 0px rgba(176, 176, 176, 0.25);
   min-width: calc(50% - 15px);
@@ -365,9 +382,9 @@
 .comment-form button {
   height: 50px;
   color: #FFF;
-  background: #0f0f0f;
+  background: #0a66c2;
   border-radius:0 0 24px 24px;
-  font-size: 20px;
+  font-size: 15px;
 }
 .mobile-comment-form {
   display: none;

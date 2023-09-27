@@ -1,5 +1,6 @@
 import img1 from './../../assets/blog-hero4.jpeg'
 import Comments from './comments'
+import { Link } from "react-router-dom"
 const Blog = () => {
   const blogDetail = {
     image : img1,
@@ -81,6 +82,9 @@ const Blog = () => {
         </div>
         <p className="blog-contents">{blogDetail.postContent}</p>
         <Comments />
+        <div className="btn-div">
+          <Link to="/blogs" className="go-back-btn right">Go back</Link>
+        </div>
       </div>
     )
   }
