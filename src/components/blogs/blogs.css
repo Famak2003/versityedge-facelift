@@ -301,9 +301,9 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  text-align : justify;
 }
-.read-time,
-.impre {
+.read-time, .impre {
   display: flex;
   align-items: center;
   gap: 10px;
