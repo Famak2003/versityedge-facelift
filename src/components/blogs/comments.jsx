@@ -89,7 +89,7 @@ const Comments = () => {
                 </form>
         </div>
         <form className="comment-form" action="">
-            <h1>Write a comment</h1>
+            <h1>Add a comment</h1>
             <textarea placeholder='Write a comment...'></textarea>
             <button>Submit</button>
         </form>

@@ -1,10 +1,8 @@
-.blogs {
-  background: linear-gradient(180deg #fff, #f8fbff);
-}
 .admissions {
   padding: 5%;
 }
 .admcard {
+  min-width: 210px;
   max-width: 400px;
   text-align: center;
   border-radius: 24px;
@@ -233,12 +231,12 @@
 }
 .blog-author h5 {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
   line-height: normal;
 }
 .blog-author h6 {
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 16px;
   line-height: normal;
 }
 .blog-author img {
@@ -267,17 +265,17 @@
 }
 .img-6-deg {
   transform: rotate(2.5deg);
-  
+  filter: grayscale(60%);
   z-index: 2;
-  left: 15px;
-  top: -15px;
+  left: 11px;
+  top: -11px;
 }
 .img-12-deg {
   transform: rotate(4deg);
   filter: grayscale(90%);
   z-index: 0;
-  left: 30px;
-  top: -30px;
+  left: 20px;
+  top: -20px;
 }
 .impression-readTime-section {
   display: flex;
@@ -320,8 +318,7 @@
 }
 .commented {
   height: 560px;
-  min-width: calc(50% - 15px);
-  max-width: 450px;
+  min-width: calc(40%);
   border-radius: 24px;
   border: 1px solid var(--Primary-Black-7, #CDCDCE);
   background: #FFF;
@@ -358,7 +355,15 @@
   border: 1px solid var(--Primary-Black-7, #CDCDCE);
 }
 .comments::-webkit-scrollbar {
-  display: none;
+  width: 5px;
+  background-color: transparent;
+}
+.comments::-webkit-scrollbar-thumb {
+  background-color: #CDCDCE;
+  border-radius: 40px;
+}
+.comments::-webkit-scrollbar-thumb:hover {
+  background-color: #0a66c2;
 }
 .comment {
   padding: 20px 0;
@@ -370,7 +375,7 @@
   border: 1px solid #CDCDCE;
   border-radius: 24px;
   box-shadow: 0px 20px 40px 0px rgba(176, 176, 176, 0.25);
-  min-width: calc(50% - 15px);
+  min-width: calc(40%);
   max-width: 450px;
 }
 .comment-form h1 {
@@ -422,9 +427,20 @@ form:focus-within {
 }
 @media screen and (max-width: 767.9px) {
   .grid {
-    display: grid;
-    grid: auto / auto auto;
+    display: flex;
+    overflow-x: scroll;
     gap: 20px;
+  }
+  .grid::-webkit-scrollbar {
+    height: 5px;
+    background-color: transparent;
+  }
+  .grid::-webkit-scrollbar-thumb {
+    background-color: #CDCDCE;
+    border-radius: 40px;
+  }
+  .grid::-webkit-scrollbar-thumb:hover {
+    background-color: #0a66c2;
   }
   .one .section .text,
   .two .section .text {
@@ -494,9 +510,9 @@ form:focus-within {
 @media screen and (max-width: 319.9px) {
   .grid {
     display: flex;
-
     gap: 18px;
   }
+  
   .one .section .text,
   .two .section .text {
     width: 82.5%;

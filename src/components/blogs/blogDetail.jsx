@@ -52,7 +52,7 @@ const Blog = () => {
               backgroundImage : `url(${blogDetail.image})`,
             }}></div>
             <div className="blog-img img-0-deg" style={{
-              backgroundImage : `url(${blogDetail.image})`,
+              backgroundImage : `url(${blogDetail.image}) `,
             }}></div>
           </div>
         </div>
