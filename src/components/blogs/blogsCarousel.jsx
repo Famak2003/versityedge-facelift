@@ -10,15 +10,17 @@ const BlogsCarousel = ({ carouselDetails }) => {
             backgroundPosition: 'center',
             position : "relative",
             width : "90%",
-            borderRadius : "20px",
+            borderRadius : "24px",
             minHeight : "368px",
             maxHeight : "400px",
             margin : "0 5% 57px 5%"
           }} >
-            <div className="hero-text">
-                {carouselDetail.text}
+            <div className="hero-bg">
+              <div className="hero-text">
+                  {carouselDetail.text}
+              </div>
+              <button className="btn black hero-btn">Read More</button>
             </div>
-            <button className="btn black hero-btn">Read More</button>
         </div>
 ))
     return (

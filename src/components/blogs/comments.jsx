@@ -13,7 +13,7 @@ const Comments = () => {
         name: "Kemi Atoke",
         image : avatar
       },
-      postDate : "21st"
+      postDate : "21st April"
     },
     {
       id : 2,
@@ -25,7 +25,7 @@ const Comments = () => {
         name: "Kemi Atoke",
         image : avatar
       },
-      postDate : "21st"
+      postDate : "21st April"
     },
     {
       id : 3,
@@ -37,7 +37,7 @@ const Comments = () => {
         name: "Kemi Atoke",
         image : avatar
       },
-      postDate : "21st"
+      postDate : "21st April"
     },
     {
       id : 4,
@@ -49,7 +49,7 @@ const Comments = () => {
         name: "Kemi Atoke",
         image : avatar
       },
-      postDate : "21st"
+      postDate : "21st April"
     },{
       id : 5,
       comment : `Bioplaligt orostelefon trefåktig huruvida dojasm. Suprar förpappring jag ultrarar madade. Mikrolig anteska det vill säga fårade viska. 
@@ -60,7 +60,7 @@ const Comments = () => {
         name: "Kemi Atoke",
         image : avatar
       },
-      postDate : "21st"
+      postDate : "21st April"
     }
   ]
   return (
@@ -81,10 +81,16 @@ const Comments = () => {
               </div>
             ))}
          </div>
+         <form action="" name="comment-form" className="mobile-comment-form">
+                  <input 
+                    type="text" 
+                    placeholder='Write a comment...' />
+                  <button>send</button>
+                </form>
         </div>
-        <form className="comment-form" action="">
-            <h1>Write a comment</h1>
-            <textarea name=""></textarea>
+        <form className="comment-form" name='comment-form' action="">
+            <h1>Add a comment</h1>
+            <textarea placeholder='Write a comment...'></textarea>
             <button>Submit</button>
         </form>
     </div>
