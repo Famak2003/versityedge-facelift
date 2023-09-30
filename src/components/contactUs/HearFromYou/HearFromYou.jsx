@@ -66,7 +66,7 @@ function HearFromYou() {
                   header={card.header}
                   img={card.img}
                   bg={true}
-                  dot={true}
+                  type={"dot"}
                   dotPosition={card.dotPosition}
                 >
                   {card.body}

@@ -1,0 +1,7 @@
+.congSlider::-webkit-scrollbar {
+  display: none;
+}
+
+.congSlider::-webkit-scrollbar-thumb {
+  display: none;
+}

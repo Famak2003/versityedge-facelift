@@ -1,4 +1,3 @@
-// import { Dot } from "./Dot";
 import { Dot } from "./Dot";
 import { Line } from "./Line";
 
@@ -7,41 +6,15 @@ export default function Hug({
   header,
   staggered = false,
   separateImg = false,
-  normal = false,
   img,
-  lined = false,
+  type = "",
   id = "",
   line = "",
-  dot = "",
   dotPosition = "",
 }) {
-  return (
-    <>
-      {normal && (
-        <div
-          className={` flex min-w-[6rem] max-w-[14rem] ${
-            separateImg ? "flex-row gap-[2rem]" : "flex-col"
-          } items-center justify-center mobile:max-w-fit`}
-        >
-          {/* Card Content */}
-          <figure
-            className={`${
-              separateImg && "self-start"
-            } mb-[.5rem] h-[3rem] mobile:mb-[1.5rem] md:h-[3rem]`}
-          >
-            <img className=" h-full object-contain" src={img} alt="img" />
-          </figure>
-          <div>
-            <h3 className=" WCVCardHeader text-center mobile:pb-[.5rem] md:pb-[1rem]">
-              {header}
-            </h3>
-            <p className=" reponsiveMiniText1 min-w-fit max-w-[35rem] text-center">
-              {children}
-            </p>
-          </div>
-        </div>
-      )}
-      {lined && (
+  switch (type) {
+    case "lined":
+      return (
         <li
           className={`flex h-fit min-w-[6rem] max-w-[14rem] items-center justify-center mobile:max-w-fit `}
         >
@@ -69,8 +42,10 @@ export default function Hug({
             </p>
           </div>
         </li>
-      )}
-      {dot && (
+      );
+
+    case "dot":
+      return (
         <div className=" relative flex w-full flex-col items-center justify-center rounded-3xl bg-white px-[1rem] py-[.4rem] shadow-[0px_10.743005752563477px_21.486011505126953px_0px_rgba(180,180,180,0.25)] mobile:px-[2rem] mobile:py-[.7rem] sm:px-[3rem] sm:py-[1rem] md:gap-[.4rem]">
           <Dot dotPosition={dotPosition} img={img} />
           <figure className=" mb-[.2rem] h-[1.5rem] mobile:mb-[.5rem] sm:h-[2rem]">
@@ -83,7 +58,32 @@ export default function Hug({
             {children}
           </p>
         </div>
-      )}
-    </>
-  );
+      );
+
+    default:
+      return (
+        <div
+          className={` flex min-w-[6rem] max-w-[14rem] ${
+            separateImg ? "flex-row gap-[2rem]" : "flex-col"
+          } items-center justify-center mobile:max-w-fit`}
+        >
+          {/* Card Content */}
+          <figure
+            className={`${
+              separateImg && "self-start"
+            } mb-[.5rem] h-[3rem] mobile:mb-[1.5rem] md:h-[3rem]`}
+          >
+            <img className=" h-full object-contain" src={img} alt="img" />
+          </figure>
+          <div>
+            <h3 className=" WCVCardHeader text-center mobile:pb-[.5rem] md:pb-[1rem]">
+              {header}
+            </h3>
+            <p className=" reponsiveMiniText1 min-w-fit max-w-[35rem] text-center">
+              {children}
+            </p>
+          </div>
+        </div>
+      );
+  }
 }

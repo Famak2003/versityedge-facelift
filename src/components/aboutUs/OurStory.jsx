@@ -49,7 +49,6 @@ function OurStory() {
       </div>
       <ul className=" ourStory w-[90%]">
         {content.map((item, index) => {
-          console.log(index % 2);
           return (
             <li
               key={index}
@@ -89,12 +88,7 @@ function OurStory() {
                 // backgroundPosition: `${"-100%"}`,
               }}
             >
-              <Hug
-                separateImg={true}
-                normal={true}
-                header={item.header}
-                img={item.img}
-              >
+              <Hug separateImg={true} header={item.header} img={item.img}>
                 {item.body}
               </Hug>
             </li>

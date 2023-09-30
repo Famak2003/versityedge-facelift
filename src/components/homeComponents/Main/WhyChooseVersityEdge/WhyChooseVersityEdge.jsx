@@ -64,7 +64,7 @@ export default function WhyChooseVersityEdge() {
           {Array.from({ length: text.length }, (_, i) => i + 1).map((num) => (
             // Cards
             <Hug
-              lined={true}
+              type={"lined"}
               key={num}
               id={num}
               line={lines[num - 1]}

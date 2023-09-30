@@ -47,13 +47,13 @@ function OurTeam() {
       <div className="flex w-full flex-col gap-[10rem]">
         <div className="ourTeam h-fit w-full">
           {teamImg.map((obj, index) => {
-            return <TeamImg index={index} obj={obj} />;
+            return <TeamImg key={index} index={index} obj={obj} />;
           })}
         </div>
         <div className="thumbnail w-full">
           <div className="flex w-fit gap-[1rem]">
-            {teamThumbnail.map((obj) => (
-              <Thumbnail obj={obj} />
+            {teamThumbnail.map((obj, index) => (
+              <Thumbnail key={index} obj={obj} />
             ))}
           </div>
         </div>

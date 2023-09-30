@@ -43,7 +43,7 @@ export default function OurTeamComp() {
       <h1 className=" responsiveHeader text-center font-bold"> Our Team</h1>
 
       {/* slider */}
-      <GalleryCarousel carouselData={team} />
+      <GalleryCarousel carouselData={team} type={"team"} />
     </section>
   );
 }

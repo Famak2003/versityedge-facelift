@@ -1,4 +1,6 @@
 import Hero from "./Hero";
+import InstititionForYou from "./InstititionForYou";
+import OurRecommendations from "./OurRecommendations";
 import PredictYourChances from "./PredictYourChances";
 
 function Congratulations() {
@@ -6,6 +8,8 @@ function Congratulations() {
     <>
       <Hero />
       <PredictYourChances />
+      <InstititionForYou />
+      <OurRecommendations />
     </>
   );
 }

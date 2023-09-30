@@ -29,7 +29,7 @@ export default function ExploreInsigntComp() {
       <div className=" flex w-full">
         <ul className=" flex h-full w-full flex-wrap justify-center gap-[2rem] py-[1rem] md:gap-[2rem] lg:gap-[4rem] ">
           {cardInfo.map((obj, id) => (
-            <Card key={id} img={obj.img} header={obj.header} normal={true}>
+            <Card key={id} img={obj.img} header={obj.header}>
               {obj.text}
             </Card>
           ))}

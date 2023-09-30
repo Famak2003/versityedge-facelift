@@ -3,8 +3,9 @@ import TeamImg from "./TeamImg";
 import { useEffect } from "react";
 
 import BUTTON from "./../../../assets/forward.png";
+import Card from "../../common/Card";
 
-export default function GalleryCarousel({ carouselData }) {
+export default function GalleryCarousel({ carouselData, type = "" }) {
   const [slideNum, setSlideNum] = useState(0);
   const [translatePosition, setTranslatePosition] = useState(0);
   const [carouselSliderWidth, setCarouselSliderWidth] = useState(
@@ -51,21 +52,38 @@ export default function GalleryCarousel({ carouselData }) {
       >
         {carouselData.map((obj, idx) => {
           return (
-            <li
-              key={idx}
-              className=" flex w-full items-center justify-center smobile:gap-[1rem] mobile:gap-[2rem] sm:gap-[2rem] md:gap-[3rem] lg:gap-[5rem]"
-            >
-              {obj.map((item, idx) => {
-                return (
-                  <TeamImg
-                    key={idx}
-                    img={item.img}
-                    name={item.name}
-                    idx={obj.length % (idx + 1)}
-                  />
-                );
-              })}
-            </li>
+            <div key={idx} className="w-full">
+              {type === "team" && (
+                <li className=" flex w-full items-center justify-center smobile:gap-[1rem] mobile:gap-[2rem] sm:gap-[2rem] md:gap-[3rem] lg:gap-[5rem]">
+                  {obj.map((item, idx) => {
+                    return (
+                      <TeamImg
+                        key={idx}
+                        img={item.img}
+                        name={item.name}
+                        idx={obj.length % (idx + 1)}
+                      />
+                    );
+                  })}
+                </li>
+              )}
+              {type === "card" && (
+                <ul className="flex h-full w-full justify-center gap-[4%] py-[1rem] lg:gap-[6%]">
+                  {obj.map((item, index) => {
+                    return (
+                      <Card
+                        key={index}
+                        header={item.header}
+                        img={item.image}
+                        type={"universityCard"}
+                      >
+                        {item.content}
+                      </Card>
+                    );
+                  })}
+                </ul>
+              )}
+            </div>
           );
         })}
       </ul>
@@ -90,13 +108,13 @@ export default function GalleryCarousel({ carouselData }) {
       <div className="absolute bottom-[10%] right-0 z-20 flex w-fit gap-x-5">
         <button
           onClick={() => prevBtn()}
-          className={`grid h-3 w-3 cursor-pointer place-items-center rounded-full bg-white shadow-[0_1.2863757610321045px_2.572751522064209px_0_rgba(180,180,180,0.25)] mobile:h-4 mobile:w-4 lmobile:h-6 lmobile:w-6 md:h-10 md:w-10`}
+          className=" flex h-3 w-3 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_1.2863757610321045px_2.572751522064209px_0_rgba(180,180,180,0.25)] mobile:h-4 mobile:w-4 lmobile:h-6 lmobile:w-6 md:h-10 md:w-10"
         >
           <img className="rotate-180 scale-50" src={BUTTON} alt="back" />
         </button>
         <button
           onClick={() => nextBtn()}
-          className={`grid h-3 w-3 cursor-pointer place-items-center rounded-full bg-white shadow-[0_2.572751522064209px_5.145503044128418px_0_rgba(180,180,180,0.25)] mobile:h-4 mobile:w-4 lmobile:h-6 lmobile:w-6 md:h-10 md:w-10`}
+          className="flex h-3 w-3 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_2.572751522064209px_5.145503044128418px_0_rgba(180,180,180,0.25)] mobile:h-4 mobile:w-4 lmobile:h-6 lmobile:w-6 md:h-10 md:w-10"
         >
           <img className="scale-50" src={BUTTON} alt="back" />
         </button>
