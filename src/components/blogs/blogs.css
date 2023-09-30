@@ -339,6 +339,9 @@
   height: calc(100% - 50px);
   overflow-y: scroll;
 }
+.comment {
+  margin-top: 15px;
+}
 .comments .flex {
   gap: 15px;
   display: flex;

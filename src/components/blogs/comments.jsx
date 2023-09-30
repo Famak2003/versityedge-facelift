@@ -81,14 +81,14 @@ const Comments = () => {
               </div>
             ))}
          </div>
-         <form action="" className="mobile-comment-form">
+         <form action="" name="comment-form" className="mobile-comment-form">
                   <input 
                     type="text" 
                     placeholder='Write a comment...' />
                   <button>send</button>
                 </form>
         </div>
-        <form className="comment-form" action="">
+        <form className="comment-form" name='comment-form' action="">
             <h1>Add a comment</h1>
             <textarea placeholder='Write a comment...'></textarea>
             <button>Submit</button>
