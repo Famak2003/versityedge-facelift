@@ -3,13 +3,13 @@ import { Link } from "react-router-dom"
 const ForumBlogs = ({forumPosts}) => {
     return (
         <div className="forum-blogs">
-            <div className="grid table-header">
+            <div className="grid-0 table-header">
                 <h3>topic</h3>
                 <h3>comment</h3>
                 <h3>date</h3>
             </div>
             {forumPosts && forumPosts.map((post) => (
-                <Link to={`/forums/${post.title}`} className="post grid" key={post.id}>
+                <Link to={`/forums/${post.title}`} className="post grid-0" key={post.id}>
                     <div className="post-preview">
                         <div className="unilogo"></div>
                         <div className="text">

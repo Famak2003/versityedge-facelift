@@ -86,7 +86,7 @@
     line-height: normal;
 }
 /* forumBlogs */
-.grid {
+.grid-0 {
     display: grid;
     grid-template-columns: auto 25% 17.5%;
     gap: 20px;
@@ -132,6 +132,74 @@
     line-height: normal;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
+}
+/* forum-blog */
+.forum-blog {
+    padding: 0 5%;
+}
+.blog-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.blog-header .text {
+    width: calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.blog-header .text h1{
+    font-size: 30px;
+    font-weight: 600;
+    line-height: normal;
+}
+.blog-header .text .uni-section {
+    display: grid;
+    grid-template-columns: 40px auto;
+    gap: 20px;
+    align-items: center;
+}
+.uni-section .unilogo-sm {
+    height: 40px;
+    width: 40px;
+    border: 1px solid #cdcdcd;
+    border-radius: 50%;
+}
+.uni-section .text-0 h4 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+}
+.uni-section .text-0 h6 {
+    font-size: 15px;
+    line-height: normal;
+}
+.blog-header .logo {
+    width: calc(50%);
+    position: relative;
+    min-height: 300px;
+}
+.logo .unilogo-lg {
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    border: 1.2px solid #cdcdcd;
+    background-color: #fff;
+    z-index: 30;
+}
+.mini-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+}
+.mini-section .share-impressions-section {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
 }
 @media screen and (max-width : 767.9px) {
     .forum-hero {
