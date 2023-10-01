@@ -207,8 +207,8 @@ const ForumHome = () => {
             <div className="recent-discussions">
                 <h1>Recent Discussions</h1>
                 <p>Connect with fellow aspirants pursuing your dream course at your desired university. Exchange insights, receive expert advice, and stay updated on the latest admission trends.</p>
-                <ForumBlogs />
             </div>
+                <ForumBlogs forumPosts={forumPosts}/>
         </div>
     )
 }
