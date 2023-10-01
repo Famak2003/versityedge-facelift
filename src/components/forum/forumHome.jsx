@@ -3,7 +3,7 @@ import "./forum.css"
 import heroImage from '../../assets/PredictChance -Hero image.png'
 import forumJoinASessionImg from '../../assets/forumJoinASession.png'
 import startADiscussionImg from '../../assets/blogPopular2.png'
-import ForumBlogs from "./forumBlogs"
+import ForumFilter from "./forumFilter"
 const ForumHome = () => {
     const forumPosts = [
         {
@@ -204,11 +204,7 @@ const ForumHome = () => {
                     </Link>
                 </div>
             </div>
-            <div className="recent-discussions">
-                <h1>Recent Discussions</h1>
-                <p>Connect with fellow aspirants pursuing your dream course at your desired university. Exchange insights, receive expert advice, and stay updated on the latest admission trends.</p>
-            </div>
-                <ForumBlogs forumPosts={forumPosts}/>
+                <ForumFilter forumPosts={forumPosts}/>
         </div>
     )
 }
