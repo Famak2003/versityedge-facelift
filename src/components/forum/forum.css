@@ -1,0 +1,85 @@
+/* Forum-home */
+.forum-hero {
+    padding: 20px 5%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+}
+.forum-hero img {
+    max-width: 400px;
+}
+.forum-hero .text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.forum-hero .text h1 {
+    font-size: 36px;
+    line-height: normal;
+}
+.forum-hero .text p {
+    line-height: normal;
+    font-size: 18px;
+}
+.forum-hero button, .forum-join-a-session button, .forum-start-a-discussion button {
+    padding: 10px 15px;
+    color: #fff;
+    background: #0a66c2;
+    border-radius: 10px;
+    width: max-content;
+}
+.forum-join-a-session, .forum-start-a-discussion {
+    background: var(--Alternate-blue, #f8fbff);
+    padding: 50px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+.forum-start-a-discussion {
+    background: #fff;
+}
+.forum-join-a-session .text, .forum-start-a-discussion .text{
+    position: absolute;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px;
+    width: 50%;
+    max-height: 320px;
+    border-radius: 60px 60px 60px 0px;
+    z-index: 2;
+    border: 1px solid var(#EFF1F3);
+    background: #FFF;
+    box-shadow: 0px 40px 80px 0px rgba(176, 176, 176, 0.25);
+}
+.forum-start-a-discussion .text {
+    border-radius: 60px 60px 0px 60px;
+    left: 5%;
+}
+.forum-join-a-session .text h1, .forum-start-a-discussion .text h1 {
+    font-size: 18px;
+    font-weight: 700;
+}
+@media screen and (max-width : 767.9px) {
+    .forum-hero {
+        flex-direction: column;
+    }
+    .forum-hero img {
+        max-width: 80%;
+        justify-self: right;
+    }
+    .forum-join-a-session .text p{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        line-height: 20px;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+    }
+}
