@@ -5,19 +5,24 @@ export default function Card({ header, img, children, type }) {
   switch (type) {
     case "universityCard":
       return (
-        <li className=" flex h-[fit] w-[27.65%] flex-col items-center justify-between overflow-hidden rounded-[7%] shadow-[0_40px_80px_0_rgba(176,176,176,0.25)] ring-1 ring-[var(--light-grey-texture)] lg:w-[27%]">
-          <figure className="flex h-[60%] w-full items-center justify-center md:pt-[2rem] ">
+        <li className=" flex h-[18rem] w-[18rem] flex-col items-center justify-between overflow-hidden rounded-[7%] pt-[.5rem] shadow-[0_40px_80px_0_rgba(176,176,176,0.25)] ring-1 ring-[var(--light-grey-texture)] mobile:h-[20rem] mobile:w-[20rem] lmobile:h-[24rem] sm:h-[26rem] sm:w-[28rem] md:h-[29rem] md:pt-[1rem] lg:h-[35rem] lg:w-[33rem]">
+          <figure className="flex h-[60%] w-full items-center justify-center ">
             <img
+              style={{
+                height: "100%",
+                width: "100%",
+                // objectFit: "center",
+              }}
               className=" h-full scale-[75%] object-contain sm:scale-[80%] md:scale-90 lg:scale-100"
               src={img}
               alt="img"
             />
           </figure>
-          <h2 className="h-[10%] self-center whitespace-nowrap px-[1rem] text-[.8rem] font-bold mobile:text-[.9rem] lmobile:text-[1.2rem] sm:text-[1.4rem] md:text-[1.8rem] lg:text-[2rem]">
+          <h2 className=" mobile:Text24px self-center whitespace-nowrap px-[1rem] font-bold ">
             {header}
           </h2>
 
-          <article className=" flex h-fit w-full flex-col justify-center gap-2 bg-[var(--blue-texture)] px-[1rem] text-center ring-1 md:px-[2rem] md:leading-6 lg:leading-8 ">
+          <article className=" flex h-fit w-full flex-col justify-center gap-2 bg-[var(--blue-texture)] px-[1rem] py-[1rem] text-center ring-1 md:px-[2rem] md:leading-6 lg:leading-8 ">
             <ul className=" list-disc px-[8%] text-[var(--white-texture)]">
               {children.map((text, index) => (
                 <li
@@ -33,7 +38,7 @@ export default function Card({ header, img, children, type }) {
       );
     case "institution":
       return (
-        <li className=" flex h-[16rem] w-[27%] min-w-[16rem] flex-col items-center overflow-hidden rounded-[7%] shadow-[0_40px_80px_0_rgba(176,176,176,0.25)] ring-1 ring-[var(--light-grey-texture)] mobile:h-[20rem] lmobile:h-[24rem] sm:h-[28rem] md:h-[32rem] lg:h-[36rem]">
+        <li className=" flex h-[18rem] w-[18rem] flex-col items-center justify-between overflow-hidden rounded-[7%] shadow-[0_40px_80px_0_rgba(176,176,176,0.25)] ring-1 ring-[var(--light-grey-texture)] mobile:h-[20rem] mobile:w-[20rem] lmobile:h-[24rem] sm:h-[26rem] sm:w-[28rem] md:h-[29rem] lg:h-[35rem] lg:w-[33rem]">
           <figure className="relative flex h-[65%] w-full items-center justify-center ">
             <img
               style={{
@@ -44,7 +49,7 @@ export default function Card({ header, img, children, type }) {
               src={img}
               alt="img"
             />
-            <h2 className="Text24px absolute bottom-0 left-[50%] translate-x-[-50%] self-center whitespace-nowrap font-bold text-[var(--white-texture)]">
+            <h2 className="mobile:Text24px absolute bottom-2 left-[50%] translate-x-[-50%] self-center whitespace-nowrap font-bold text-[var(--white-texture)] md:bottom-4">
               {header}
             </h2>
           </figure>

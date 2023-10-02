@@ -1,7 +1,7 @@
 import IMG1 from "./../../../assets/universityOfIbadan.png";
 import IMG2 from "./../../../assets/universityOfLagos.png";
 import IMG3 from "./../../../assets/PolythecnicOfIbadan.png";
-import GalleryCarousel from "../../carousel/GalleryCarousel/GalleryCarousel";
+import Card from "../../common/Card";
 
 const cards = [
   [
@@ -95,13 +95,31 @@ const cards = [
 
 function PredictYourChances() {
   return (
-    <section className="generalPadding flex flex-col gap-[5rem]">
+    <section className="generalPadding flex flex-col gap-[5rem] py-[5rem]">
       <h1 className=" responsiveHeader text-center font-extrabold">
         Predict Chances
       </h1>
-      <div className=" w-full ">
-        <GalleryCarousel carouselData={cards} type="card" />
+      <div className=" congSlider w-full justify-center overflow-scroll">
+        <ul className=" flex h-fit w-fit justify-start gap-[2%] px-[1rem] py-[1rem] sm:justify-center">
+          {cards.map((item) =>
+            item.map((obj, index) => {
+              return (
+                <Card
+                  key={index}
+                  header={obj.header}
+                  img={obj.image}
+                  type={"universityCard"}
+                >
+                  {obj.content}
+                </Card>
+              );
+            }),
+          )}
+        </ul>
       </div>
+      {/* <div className=" w-full ">
+        <GalleryCarousel carouselData={cards} type="card" />
+      </div> */}
     </section>
   );
 }

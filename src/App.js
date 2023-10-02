@@ -24,7 +24,7 @@ export function App() {
             <Route path="/predictChance" element={<PredictChance />}></Route>
             <Route path="/contactUs" element={<ContactUs />}></Route>
             <Route path="/blogs" element={<Blogs />}></Route>
-            {/* <Route path="/about-us " element={<AboutUs />}></Route> */}
+            {/* <Route path="/forum " element={<Forum/>}></Route> */}
             <Route path="/blog/:id" element={<Blog />}></Route>
           </Routes>
         </main>
