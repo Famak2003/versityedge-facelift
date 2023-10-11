@@ -9,6 +9,7 @@ import PopularNews from "./popular";
 import HotNews from "./hotposts";
 
 const Blogs = () => {
+  const baseURL = "http://versityedge1.eastus.cloudapp.azure.com/"
   const carouselDetails = [
     {
       image: ImgHero1,
@@ -34,7 +35,7 @@ const Blogs = () => {
   return (
     <div className="blogs" style={{}}>
       <BlogsCarousel carouselDetails={carouselDetails} />
-      <HotNews />
+      <HotNews baseURL={ baseURL }/>
       <PopularNews />
       <AdmissionTip />
     </div>
