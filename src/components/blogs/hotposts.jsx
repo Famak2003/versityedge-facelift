@@ -7,7 +7,7 @@ import ulLogo from "../../assets/universityOfLagos.png";
 import useFetch from "../useFetch/useFetch";
 // import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 const HotNews = ({ baseURL }) => {
-  const {data: hotPosts, error, isPending} = useFetch(baseURL); 
+  const {data: hotPosts, error, isPending} = useFetch("https://jsonplaceholder.typicode.com/posts"); 
   return (
     <div className="hot-news">
       <h2>Hot News</h2>
@@ -16,27 +16,27 @@ const HotNews = ({ baseURL }) => {
         {isPending && <div>Loading...</div>}
         {hotPosts &&
           hotPosts.map((hotPost) => (
-            <div key={hotPost.headline}>
-              {hotPost.headline && (
+            <div key={hotPost.id}>
+              {hotPost.id < 7 && (
                 <div to="/">
                   <div className="hot-news-col">
                     <img src={hotPost.img_url} alt="" />
                     <div className="flex-center">
-                      {/* <img
+                      <img
                         className="unilogo"
                         src={hotPost.uniLogo}
                         alt=""
                         width={hotPost.uniLogo === ulLogo ? 30 : 45}
                         height={hotPost.uniLogo === ulLogo ? 30 : 50}
-                      /> */}
-                      {/* <p>
+                      />
+                      <p>
                         {" "}
                         {hotPost.uniName} ~ {hotPost.postTime} hours ago
-                      </p> */}
+                      </p>
                     </div>
-                    <h3>{hotPost.topic}</h3>
+                    <h3>{hotPost.title}</h3>
                     <p>{hotPost.body}</p>
-                    {/* <div className="flex-center">
+                    <div className="flex-center">
                       <h6
                         style={{
                           color: "#0a66c2",
@@ -48,7 +48,7 @@ const HotNews = ({ baseURL }) => {
                         Edu
                       </h6>
                       <h6>{hotPost.readTime} mins read</h6>
-                    </div> */}
+                    </div>
                   </div>
                 </div>
               )}
