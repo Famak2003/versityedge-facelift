@@ -14,24 +14,24 @@ const HotNews = ({ baseURL }) => {
       <div className="hot-news-flex flex">
         {error && <div>{ error }</div>}
         {isPending && <div>Loading...</div>}
-        {hotPosts &&
+        {!hotPosts ? "" :
           hotPosts.map((hotPost) => (
             <div key={hotPost.id}>
               {hotPost.id < 7 && (
                 <div to="/">
                   <div className="hot-news-col">
-                    <img src={hotPost.img_url} alt="" />
+                    <img src={!hotPost.img_url ? img3 : hotPost.img_url} alt="" />
                     <div className="flex-center">
                       <img
                         className="unilogo"
-                        src={hotPost.uniLogo}
+                        src={!hotPost.uniLogo ? uiLogo : hotPost.uniLogo}
                         alt=""
                         width={hotPost.uniLogo === ulLogo ? 30 : 45}
                         height={hotPost.uniLogo === ulLogo ? 30 : 50}
                       />
                       <p>
                         {" "}
-                        {hotPost.uniName} ~ {hotPost.postTime} hours ago
+                        {!hotPost.uniName ? "University news" : hotPost.uniName} ~ {!hotPost.postTime ? "Unknown" : hotPost.postTime } hours ago
                       </p>
                     </div>
                     <h3>{hotPost.title}</h3>
@@ -44,10 +44,9 @@ const HotNews = ({ baseURL }) => {
                           paddingRight: "10px",
                         }}
                       >
-                        {" "}
-                        Edu
+                        {!hotPost.category ? "UTME" : hotPost.category}
                       </h6>
-                      <h6>{hotPost.readTime} mins read</h6>
+                      <h6>{!hotPost.readTime ? "5" : hotPost.readTime} mins read</h6>
                     </div>
                   </div>
                 </div>

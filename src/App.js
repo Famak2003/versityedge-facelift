@@ -11,6 +11,7 @@ import ContactUs from "./components/contactUs/ContactUs";
 import ScrollToTop from "./components/ScrollToTop";
 import ForumBlog from "./components/forum/forumBlog";
 import Signup from "./components/logIn/Signup";
+import CreateBlog from "./components/blogs/newBlog";
 // import AboutUs from "./components/aboutUs/AboutUs";
 // import AboutUs from "./components/aboutUs/AboutUs";
 
@@ -27,6 +28,7 @@ export function App() {
             <Route path="/contactUs" element={<ContactUs />}></Route>
             <Route path="/blogs" element={<Blogs />}></Route>
             <Route path="/blog/post/:id" element={<Blog />}></Route>
+            <Route path="/blog/create" element={<CreateBlog />}></Route>
             <Route path="/forum" element={<ForumHome />}></Route>
             <Route path="/forums/:title" element={<ForumBlog />}></Route>
             <Route path="/signUp" element={<Signup />}></Route>
