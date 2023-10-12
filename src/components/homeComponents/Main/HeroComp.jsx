@@ -14,9 +14,9 @@ export default function HeroComp() {
         showBtnMobile={true}
         painHeaderText={"journey simple"}
       >
-        Attend daily live classes, recieve study materials, clarify your doubt,
-        and do mock tests identify your weaknesses. Recieve personalized
-        guidiance that sets you apart from your peers.
+        Attend daily live classes, receive study materials, clarify your doubts,
+        and do mock tests to identify your strengths and pinpoint your weaknesses. Receive personalized
+        guidance that sets you apart from your peers.
       </Hero>
     </section>
   );
