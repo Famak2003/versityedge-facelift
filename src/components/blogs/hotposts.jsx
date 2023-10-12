@@ -1,13 +1,13 @@
 import React from "react";
-import img1 from "../../assets/hotpost1.png";
-import img2 from "../../assets/hotpost2.png";
+// import img1 from "../../assets/hotpost1.png";
+// import img2 from "../../assets/hotpost2.png";
 import img3 from "../../assets/hotpost3.png";
 import uiLogo from "../../assets/universityOfIbadan.png";
 import ulLogo from "../../assets/universityOfLagos.png";
 import useFetch from "../useFetch/useFetch";
 // import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 const HotNews = ({ baseURL }) => {
-  const {data: hotPosts, error, isPending} = useFetch("https://jsonplaceholder.typicode.com/posts"); 
+  const {data: hotPosts, error, isPending} = useFetch(baseURL + "posts"); 
   return (
     <div className="hot-news">
       <h2>Hot News</h2>
