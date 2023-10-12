@@ -10,6 +10,7 @@ import ForumHome from "./components/forum/forumHome";
 import ContactUs from "./components/contactUs/ContactUs";
 import ScrollToTop from "./components/ScrollToTop";
 import ForumBlog from "./components/forum/forumBlog";
+import Signup from "./components/logIn/Signup";
 // import AboutUs from "./components/aboutUs/AboutUs";
 // import AboutUs from "./components/aboutUs/AboutUs";
 
@@ -27,6 +28,7 @@ export function App() {
             <Route path="/blogs" element={<Blogs />}></Route>
             <Route path="/forum" element={<ForumHome />}></Route>
             <Route path="/forums/:title" element={<ForumBlog />}></Route>
+            <Route path="/signUp" element={<Signup />}></Route>
             {/* <Route path="/about-us " element={<AboutUs />}></Route> */}
             <Route path="/blog/:id" element={<Blog />}></Route>
           </Routes>

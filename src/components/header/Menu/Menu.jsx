@@ -33,7 +33,7 @@ export default function Menu() {
     <menu className="main-nav hidden gap-[1rem] mobile:flex sm:gap-[2rem] md:ml-[8rem] md:text-[1.8rem] ">
       {menuLinks.map((item, index) => {
         return item.text === "Features" ? (
-          <li key={index} className={` duration-500} relative cursor-pointer`}>
+          <li key={index} className={`relative cursor-pointer duration-500`}>
             <Features
               handleFeaturesClick={handleFeaturesClick}
               isFeaturesOpen={isFeaturesOpen}

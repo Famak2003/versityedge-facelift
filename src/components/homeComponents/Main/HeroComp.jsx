@@ -4,21 +4,19 @@ import Hero from "../../common/Hero";
 
 export default function HeroComp() {
   return (
-    <section className=" generalPadding flex h-fit xs:flex-col mobile:flex-row lg:h-[50rem] ">
+    <section className=" generalPadding mb-[2rem] flex h-fit xs:flex-col mobile:flex-row lmobile:mb-[3rem] md:mb-[5rem] lg:h-[50rem] ">
       <Hero
-        header={"Say Goodbye to Admission Failure"}
+        header={"Admission journey is overwhelming, we make it simple and fun"}
         heroImg={HEROIMG1}
         flipped={true}
         paint={["#0A66C2", "#FFCB21"]}
         btnText="Sign up"
         showBtnMobile={true}
-        painHeaderText={"Goodbye Failure"}
+        painHeaderText={"journey simple"}
       >
-        At VersityEdge, we understand the challenges you face in navigating the
-        complex admission process. The lack of personalized mentorship and
-        guidance can be daunting, leaving you uncertain about the right path to
-        take. But fear not – we are here to empower you with the solutions you
-        need!
+        Attend daily live classes, recieve study materials, clarify your doubt,
+        and do mock tests identify your weaknesses. Recieve personalized
+        guidiance that sets you apart from your peers.
       </Hero>
     </section>
   );

@@ -48,7 +48,7 @@ function Hero({
           <Button
             addstyle={`${
               showBtnMobile ? "mobile:hidden block" : ""
-            } self-start xs:text-[.9rem] smobile:text-[1rem] mobile:self-end py-[.7rem] mobile:py-[1rem] text-[#ffff] mobile:text-[1rem] md:text-[1.2rem] lg:text-[1.4rem] btnText xs:py-0 mobile:py-[.2rem] sm:py-[.5rem] md:py-[.7rem] lg:py-[1rem] `}
+            } self-start xs:text-[1rem] smobile:text-[1.2rem] mobile:self-end text-[#ffff] mobile:text-[1rem] md:text-[1.2rem] lg:text-[1.4rem] btnText xs:py-0 mobile:py-[.2rem] sm:py-[.5rem] md:py-[.7rem] lg:py-[1rem] `}
           >
             {btnText}
           </Button>

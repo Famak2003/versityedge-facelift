@@ -144,11 +144,12 @@ const Carousel = ({ carouselData, quoteAuthor }) => {
 
                 {/* BUTTON */}
                 {item.btnText && (
-                  <div className="self-center">
+                  <div className="self-center ">
                     <Button
                       path={item.path}
+                      externalLink={item?.externalLink}
                       children={item.btnText}
-                      addstyle="py-3 text-[#ffff] xs:text-[.5rem] smobile:text-[.7rem] mobile:text-[1rem] md:text-[1.2rem] lg:text-[1.4rem] btnText xs:py-0 mobile:py-[.2rem] sm:py-[.5rem] md:py-[.7rem]"
+                      addstyle="py-3 text-[#ffff] xs:text-[.8rem] smobile:text-[.9rem] mobile:text-[1rem] md:text-[1.2rem] lg:text-[1.4rem] btnText xs:py-[.2rem] mobile:py-[.2rem] sm:py-[.5rem] md:py-[.7rem]"
                     />
                   </div>
                 )}
@@ -179,13 +180,13 @@ const Carousel = ({ carouselData, quoteAuthor }) => {
       <div className="absolute right-[8%] top-0 z-20 flex w-fit gap-x-5">
         <button
           onClick={() => prevBtn()}
-          className=" flex h-3 w-3 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_1.2863757610321045px_2.572751522064209px_0_rgba(180,180,180,0.25)] mobile:h-4 mobile:w-4 lmobile:h-6 lmobile:w-6 md:h-10 md:w-10"
+          className=" flex h-4 w-4 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_1.2863757610321045px_2.572751522064209px_0_rgba(180,180,180,0.25)]  lmobile:h-6 lmobile:w-6 md:h-10 md:w-10"
         >
           <img className="rotate-180 scale-50" src={ARROWBTN} alt="back" />
         </button>
         <button
           onClick={() => nextBtn()}
-          className="flex h-3 w-3 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_2.572751522064209px_5.145503044128418px_0_rgba(180,180,180,0.25)] mobile:h-4 mobile:w-4 lmobile:h-6 lmobile:w-6 md:h-10 md:w-10"
+          className="flex h-4 w-4 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_2.572751522064209px_5.145503044128418px_0_rgba(180,180,180,0.25)]  lmobile:h-6 lmobile:w-6 md:h-10 md:w-10"
         >
           <img className="scale-50" src={ARROWBTN} alt="back" />
         </button>

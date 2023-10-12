@@ -68,7 +68,7 @@ export default function Card({ header, img, children, type }) {
 
     default:
       return (
-        <li className=" flex w-[25rem] flex-col items-center gap-[1rem] overflow-hidden rounded-[1rem] pb-[2rem] shadow-[0_40px_80px_0_rgba(176,176,176,0.25)] mobile:rounded-[2rem] md:w-[28rem] lg:w-[35rem]">
+        <li className=" flex min-w-[18rem] max-w-[35rem] flex-col items-center gap-[1rem] overflow-hidden rounded-[1rem] pb-[2rem] shadow-[0_40px_80px_0_rgba(176,176,176,0.25)] mobile:rounded-[2rem]">
           <figure className="relative">
             <img className=" w-full object-contain" src={img} alt="img" />
           </figure>

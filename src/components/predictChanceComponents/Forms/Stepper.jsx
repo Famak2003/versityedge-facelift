@@ -1,14 +1,14 @@
 import { useEffect, useState, useRef } from "react";
 
-export default function Stepper({ steps, currentStep }) {
+export default function Stepper({ steps, currentStep, handleClick }) {
   const [newStep, setNewStep] = useState([]);
   const stepRef = useRef();
 
   const updateStep = (stepNumber, step) => {
-    const newSteps = [...steps];
+    const newSteps = [...step];
     let count = 0;
 
-    while (count < newSteps.lemgth) {
+    while (count < newSteps.length) {
       //current step
       if (count === stepNumber) {
         newSteps[count] = {
@@ -59,6 +59,7 @@ export default function Stepper({ steps, currentStep }) {
 
     stepRef.current = stepState;
     const current = updateStep(currentStep - 1, stepRef.current);
+
     setNewStep(current);
   }, [steps, currentStep]);
 
@@ -74,19 +75,24 @@ export default function Stepper({ steps, currentStep }) {
       >
         <div className=" relative flex flex-col items-center">
           <p
-            className={` flex h-[3rem] w-[3rem] items-center justify-center rounded-full text-center  duration-500 ease-in-out ${
-              step.selected ? "bg-#0A66C2 text-white" : "ring-1 ring-[#0A66C2]"
+            onClick={() => handleClick(index + 1)}
+            className={` flex h-[3rem] w-[3rem] items-center justify-center rounded-full text-center  ring-1 ring-[#0A66C2] duration-500 ease-in-out
+            ${
+              step.highlighted
+                ? "bg-[var(--blue-texture)] text-white"
+                : "bg-transparent text-[var(--blue-texture)]"
+            }
+            ${
+              step.completed
+                ? "bg-[var(--blue-texture)] text-[var-(--blue-texture)]"
+                : "bg-transparent"
             }`}
           >
             {/* Display number */}
-            {step.completed ? (
-              <span className=" text-white">done</span>
-            ) : (
-              index + 1
-            )}
+            {index + 1}
           </p>
           <p
-            className={` absolute top-0 mt-[4rem] w-32 ${
+            className={` absolute top-0 mt-[4rem] w-fit whitespace-nowrap ${
               step.highlighted ? "text-gray-900" : "text-gray-400"
             }`}
           >
@@ -107,7 +113,7 @@ export default function Stepper({ steps, currentStep }) {
   });
 
   return (
-    <div className=" mx-[5rem] flex w-full items-center justify-between ">
+    <div className=" mx-[5rem] flex w-[75%] items-center justify-between sm:w-[70%] lg:w-[50%] ">
       {displaySteps}
     </div>
   );
