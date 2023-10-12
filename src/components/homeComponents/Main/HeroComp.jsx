@@ -1,5 +1,5 @@
 // import Button from "./../../common/Button";
-import HEROIMG1 from "./../../../assets/LoginHeroImage.png";
+import HEROIMG1 from "./../../../assets/New hero image.png";
 import Hero from "../../common/Hero";
 
 export default function HeroComp() {
