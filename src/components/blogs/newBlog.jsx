@@ -1,19 +1,36 @@
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-const CreateBlog = () => {
-    // const navigate = useNavigate();
+const CreateBlog = ({baseURL}) => {
+    const navigate = useNavigate();
 
     const [title, setTitle] = useState("");
     const [img_url, setImg_url] = useState("");
-    const [body, setBody] = useState("");
+    const [content, setContent] = useState("");
     // const [author, setAuthor] = useState("");
     // const [authPosition, setAuthPosition] = useState("");
-    // const [uniName, setUniName] = useState("");
+    const [uniName, setUniName] = useState("");
     const [category, setCategory] = useState("");
+
+    const [isPending, setIsPending] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const post = {title, img_url, content, category, uniName};
+        setIsPending(true);
+        fetch("https://jsonplaceholder.typicode.com/posts", {
+            method : "POST",
+            headers: {"Content-type" : "application/json"},
+            body: JSON.stringify(post)
+        })
+        .then(() => {
+            setIsPending(false)
+            navigate("/blogs")
+        })
+    }
     return (
         <div className="create-blog">
-            <form action="" method="post">
+            <form onSubmit={handleSubmit}>
                 <label>Blog Title: </label>
                 <input 
                 type="text"
@@ -30,8 +47,8 @@ const CreateBlog = () => {
                 <input 
                 type="text"
                 required
-                value={body}
-                onChange={(e) => setBody(e.target.value)} />
+                value={content}
+                onChange={(e) => setContent(e.target.value)} />
                 <label>Blog Category: </label>
                 <input 
                 type="text"
@@ -39,8 +56,16 @@ const CreateBlog = () => {
                 placeholder="post-UTME, JAMB, ..."
                 value={category}
                 onChange={(e) => setCategory(e.target.value)} />
+                <label>University Name: </label>
+                <input 
+                type="text"
+                required
+                placeholder="University of Abuja"
+                value={uniName}
+                onChange={(e) => setUniName(e.target.value)} />
 
-                <button>Create Blog!</button>
+                {!isPending && <button>Create Blog!</button>}
+                {isPending && <button disabled>Creating Blog...</button>}
             </form>
         </div>
     )

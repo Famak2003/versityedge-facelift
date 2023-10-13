@@ -15,6 +15,7 @@ import CreateBlog from "./components/blogs/newBlog";
 // import AboutUs from "./components/aboutUs/AboutUs";
 
 export function App() {
+  
   return (
     <>
       <ScrollToTop />
