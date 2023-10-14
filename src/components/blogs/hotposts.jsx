@@ -7,7 +7,7 @@ import ulLogo from "../../assets/universityOfLagos.png";
 import useFetch from "../useFetch/useFetch";
 // import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 const HotNews = ({ baseURL }) => {
-  const {data: hotPosts, error, isPending} = useFetch(baseURL + "posts"); 
+  const {data: hotPosts, error, isPending} = useFetch(baseURL + "blog/posts"); 
   return (
     <div className="hot-news">
       <h2>Hot News</h2>
@@ -17,7 +17,7 @@ const HotNews = ({ baseURL }) => {
         {!hotPosts ? "" :
           hotPosts.map((hotPost) => (
             <div key={hotPost.id}>
-              {hotPost.id < 7 && (
+              {hotPost.id && (
                 <div to="/">
                   <div className="hot-news-col">
                     <img src={!hotPost.img_url ? img3 : hotPost.img_url} alt="" />

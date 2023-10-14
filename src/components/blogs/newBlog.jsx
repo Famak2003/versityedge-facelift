@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import "./blogs.css"
 
 const CreateBlog = ({baseURL}) => {
     const navigate = useNavigate();
@@ -18,7 +19,7 @@ const CreateBlog = ({baseURL}) => {
         e.preventDefault();
         const post = {title, img_url, content, category, uniName};
         setIsPending(true);
-        fetch("https://jsonplaceholder.typicode.com/posts", {
+        fetch("http://versityedge1.eastus.cloudapp.azure.com/blog", {
             method : "POST",
             headers: {"Content-type" : "application/json"},
             body: JSON.stringify(post)
@@ -30,6 +31,7 @@ const CreateBlog = ({baseURL}) => {
     }
     return (
         <div className="create-blog">
+            <h1>Create a Blog</h1>
             <form onSubmit={handleSubmit}>
                 <label>Blog Title: </label>
                 <input 
@@ -65,7 +67,7 @@ const CreateBlog = ({baseURL}) => {
                 onChange={(e) => setUniName(e.target.value)} />
 
                 {!isPending && <button>Create Blog!</button>}
-                {isPending && <button disabled>Creating Blog...</button>}
+                {isPending && <button className="disabled" disabled>Creating Blog...</button>}
             </form>
         </div>
     )
