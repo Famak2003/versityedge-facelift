@@ -4,7 +4,7 @@ export function Features({ handleFeaturesClick, isFeaturesOpen, item }) {
   return (
     <button
       onClick={handleFeaturesClick}
-      className=" heroResponsiveText flex cursor-pointer items-center gap-[.5rem] "
+      className=" features heroResponsiveText flex cursor-pointer items-center gap-[.5rem] "
     >
       {item.text}
       <span>

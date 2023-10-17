@@ -1,4 +1,18 @@
+import { Select, Space } from "antd";
+
 export default function Input({ children, comment, num, input }) {
+  const options = [];
+  for (let i = 10; i < 36; i++) {
+    options.push({
+      label: i.toString(36) + i,
+      value: i.toString(36) + i,
+    });
+  }
+
+  const handleChange = (value) => {
+    console.log(`selected ${value}`);
+  };
+
   return (
     <li className=" w-[90%]">
       <div className=" flex">
@@ -16,30 +30,69 @@ export default function Input({ children, comment, num, input }) {
           )}
         </label>
 
-        {input === "text" && (
-          <input
-            className=" h-[2.8rem] w-[35%] min-w-[15rem] rounded-lg py-[.7rem] pl-[1.5rem] ring-1 ring-[#D9DADB] active:ring-black "
-            type={input}
-            id={`input${num}`}
-            name={`input${num}`}
-          />
+        {input === "dropDown" && (
+          <Space
+            style={{
+              width: "35%",
+            }}
+            direction="vertical"
+            wrap
+          >
+            <Select
+              defaultValue="lucy"
+              style={{
+                width: "100%",
+              }}
+              onChange={handleChange}
+              options={[
+                {
+                  value: "jack",
+                  label: "Jack",
+                },
+                {
+                  value: "lucy",
+                  label: "Lucy",
+                },
+                {
+                  value: "Yiminghe",
+                  label: "yiminghe",
+                },
+                {
+                  value: "disabled",
+                  label: "Disabled",
+                  disabled: true,
+                },
+              ]}
+            />
+          </Space>
         )}
-        {input === "select" && (
-          <select className="Text16px h-[2.8rem] w-[35%] min-w-[15rem] rounded-lg py-[.2rem] pl-[1.5rem] ring-1 ring-[#D9DADB]">
-            <option className="" selected disabled>
-              Please select
-            </option>
-            <option value={"vhsjhjjwwj"}>vhsjhjjwwj</option>
-            <option value={"vhsjhjjwwj"}>vhsjhjjwwj</option>
-            <option value={"vhsjhjjwwj"}>vhsjhjjwwj</option>
-            <option value={"vhsjhjjwwj"}>vhsjhjjwwj</option>
-          </select>
+        {input === "multipleSelection" && (
+          <Space
+            style={{
+              width: "35%",
+            }}
+            direction="vertical"
+          >
+            <Select
+              mode="multiple"
+              allowClear
+              style={{
+                width: "100%",
+              }}
+              placeholder="Please select"
+              defaultValue={["a10", "c12"]}
+              onChange={handleChange}
+              options={options}
+            />
+          </Space>
         )}
         {input === "number" && (
           <input
             className=" h-[2.8rem] w-[35%] min-w-[15rem] rounded-lg py-[.7rem] pl-[1.5rem] ring-1 ring-[#D9DADB] active:ring-black "
             type={input}
             id={`input${num}`}
+            max={10}
+            min={0}
             name={`input${num}`}
           />
         )}

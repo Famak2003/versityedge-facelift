@@ -42,7 +42,6 @@ export default function Form() {
       />
 
       <form className=" w-full px-[3rem] pt-[3rem]">
-        <label></label>
         {displayStep(currentStep)}
       </form>
 

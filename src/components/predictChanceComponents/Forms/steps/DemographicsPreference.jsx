@@ -4,38 +4,41 @@ import NigeriaStates from "./../Files/nigeria-states.json";
 const formContent = [
   {
     label: "Please list the tertiary institutions you are interested in",
-    input: "text",
+    input: "multipleSelection",
   },
-  { label: "Please list the courses you are interested in", input: "text" },
+  {
+    label: "Please list the courses you are interested in",
+    input: "multipleSelection",
+  },
   {
     label: "State of origin",
     comment:
       '"knowing your state of origin helps us account for any state-based admission quotas"',
-    input: "select",
+    input: "dropDown",
     content: NigeriaStates,
   },
   {
     label: "Are You Currently in Secondary School or Have You Graduated?",
     comment:
       '"Please select the option that best describes your current educational status"',
-    input: "select",
+    input: "dropDown",
   },
   {
     label: "Year of Graduation or Expected Graduation:",
     comment:
       '"We want to understand your education timeline. Enter the year you graduated from or expect to geaduate from secondary school"',
-    input: "select",
+    input: "dropDown",
   },
   {
     label: "Study Hours:",
     comment:
       '"On average, how many hours do you dedicate to studying or preparing for your upcoming exams per week?"',
-    input: "select",
+    input: "dropDown",
   },
   {
     label: "Secondary School Type",
     comment: '"Did you attend a private or public secondary school?"',
-    input: "select",
+    input: "dropDown",
   },
   {
     label: "Academic Reputation Rating",
