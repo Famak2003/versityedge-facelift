@@ -19,7 +19,7 @@ function Hero({
           flipped ? "mobile:order-2 " : "mobile:order-1 "
         } order-2 flex h-[50%] w-[100%] items-center justify-center mobile:order-1 mobile:h-[100%] mobile:w-[50%] `}
       >
-        <img className=" h-[100%] " src={heroImg} alt="img" />
+        <img className=" h-[100%] object-contain " src={heroImg} alt="img" />
       </figure>
 
       {/* flipped checks to know what layout to render */}
