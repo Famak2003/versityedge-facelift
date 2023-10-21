@@ -3,15 +3,18 @@ import { Routes, Route } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Home from "./components/homeComponents/Home";
-import PredictChance from "./components/predictChanceComponents/PredictChance";
+// import PredictChance from "./components/predictChanceComponents/PredictChance";
 import Blogs from "./components/blogs/blogs";
 import Blog from "./components/blogs/blogDetail";
 import ForumHome from "./components/forum/forumHome";
 import ContactUs from "./components/contactUs/ContactUs";
 import ScrollToTop from "./components/ScrollToTop";
 import ForumBlog from "./components/forum/forumBlog";
-import Signup from "./components/logIn/Signup";
+import Signup from "./components/Signup/Signup";
 import CreateBlog from "./components/blogs/newBlog";
+import PredictChanceForm from "./components/predictChanceComponents/Forms/Forms";
+import PredictChance from "./components/predictChanceComponents/PredictChance/PredictChance";
+import PredictChanceCongratulations from "./components/predictChanceComponents/Congratulations/Congratulations";
 // import AboutUs from "./components/aboutUs/AboutUs";
 // import AboutUs from "./components/aboutUs/AboutUs";
 
@@ -25,6 +28,14 @@ export function App() {
           <Routes>
             <Route exact path="/" element={<Home />}></Route>
             <Route path="/predictChance" element={<PredictChance />}></Route>
+            <Route
+              path="/predictChance/congratulation"
+              element={<PredictChanceCongratulations />}
+            ></Route>
+            <Route
+              path="/predictChance/form"
+              element={<PredictChanceForm />}
+            ></Route>
             <Route path="/contactUs" element={<ContactUs />}></Route>
             <Route path="/blogs" element={<Blogs />}></Route>
             <Route path="/blog/post/:id" element={<Blog />}></Route>

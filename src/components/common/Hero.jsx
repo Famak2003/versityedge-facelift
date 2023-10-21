@@ -4,6 +4,7 @@ import Button from "./Button";
 function Hero({
   heroImg,
   btnText = "",
+  btnPath = "",
   flipped = false,
   header,
   painHeaderText,
@@ -44,17 +45,20 @@ function Hero({
           ""
         )}
         <p className=" heroResponsiveText text-left">{children}</p>
-        {btnText ? (
-          <Button
-            addstyle={`${
-              showBtnMobile ? "mobile:hidden block" : ""
-            } self-start xs:text-[1rem] smobile:text-[1.2rem] mobile:self-end text-[#ffff] mobile:text-[1rem] md:text-[1.2rem] lg:text-[1.4rem] btnText xs:py-0 mobile:py-[.2rem] sm:py-[.5rem] md:py-[.7rem] lg:py-[1rem] `}
-          >
-            {btnText}
-          </Button>
-        ) : (
-          ""
-        )}
+        <div className=" flex mobile:justify-end">
+          {btnText ? (
+            <Button
+              path={btnPath ? btnPath : ""}
+              addstyle={`${
+                showBtnMobile ? "mobile:hidden block" : ""
+              } self-start xs:text-[1rem] smobile:text-[1.2rem] mobile:self-end text-[#ffff] mobile:text-[1rem] md:text-[1.2rem] lg:text-[1.4rem] btnText xs:py-0 mobile:py-[.2rem] sm:py-[.5rem] md:py-[.7rem] lg:py-[1rem] `}
+            >
+              {btnText}
+            </Button>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </div>
   );

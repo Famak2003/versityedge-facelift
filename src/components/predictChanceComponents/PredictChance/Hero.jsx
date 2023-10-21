@@ -11,6 +11,7 @@ export default function HeroComp() {
         painHeaderText={"dream institution"}
         heroImg={HEROIMG1}
         btnText={"Predict admission"}
+        btnPath="/predictChance/form"
       >
         VersityEdge’s admission prediction tool takes the guess work out of your
         admission journey by analyzing your academic details and provide you
