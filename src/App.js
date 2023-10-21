@@ -15,8 +15,10 @@ import CreateBlog from "./components/blogs/newBlog";
 import PredictChanceForm from "./components/predictChanceComponents/Forms/Forms";
 import PredictChance from "./components/predictChanceComponents/PredictChance/PredictChance";
 import PredictChanceCongratulations from "./components/predictChanceComponents/Congratulations/Congratulations";
+
 // import AboutUs from "./components/aboutUs/AboutUs";
 // import AboutUs from "./components/aboutUs/AboutUs";
+
 
 export function App() {
   return (
@@ -42,7 +44,7 @@ export function App() {
             <Route path="/blog/create" element={<CreateBlog />}></Route>
             <Route path="/forum" element={<ForumHome />}></Route>
             <Route path="/forums/:title" element={<ForumBlog />}></Route>
-            <Route path="/signUp" element={<Signup />}></Route>
+            <Route path="/signup" element={<Signup />}></Route>
             {/* <Route path="/about-us " element={<AboutUs />}></Route> */}
             <Route path="/blog/:id" element={<Blog />}></Route>
           </Routes>
