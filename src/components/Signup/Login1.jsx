@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 const Login1 =() => {
     return (
         <div className="flex flex-col items-center justify-start text-left">
@@ -21,9 +23,11 @@ const Login1 =() => {
                 </div>
                 <div className="absolute top-[0px] left-[0px] rounded bg-primary-white-2 shadow-[0px_4px_4px_rgba(176,_176,_176,_0.25)_inset] box-border w-[19px] h-[19px] border-[1px] border-solid border-primary-black-7" />
               </div>
-              <div className="absolute top-[0px] left-[279px] text-primary-blue-1">
+             <Link to="/password1">
+             <div className="absolute top-[0px] left-[279px] text-primary-blue-1">
                 Forgot password?
               </div>
+             </Link>
             </div>
             <div className="absolute top-[0px] left-[0px] w-[391px] h-[146px] text-lg text-primary-black-7">
               <div className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
@@ -39,13 +43,17 @@ const Login1 =() => {
             </div>
           </div>
           <div className="relative w-[391px] h-[87px] text-base">
-            <div className="absolute top-[65px] left-[0px] font-light">
+           <Link to="/signup">
+           <div className="absolute top-[65px] left-[0px] font-light">
               <span>{`Don’t have an account?   `}</span>
               <span className="text-primary-blue-1">Sign up</span>
             </div>
+           </Link>
+            <Link to="/login2">
             <div className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-blue-1 box-border w-[391px] overflow-hidden flex flex-row items-center justify-center py-[11px] px-[24px] text-xl text-primary-white-1 border-[1px] border-solid border-primary-blue-1">
               <div className="relative font-medium">Login</div>
             </div>
+            </Link>
           </div>
         </div>
       </div>

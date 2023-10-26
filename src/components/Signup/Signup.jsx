@@ -1,21 +1,22 @@
 import React from 'react';
 
-import flag from './../../assets/twemoji_flag-nigeria.png'
+import { Link } from 'react-router-dom';
 
-const Signup = () => {
+import flag from './../../assets/twemoji_flag-nigeria.png'
+import Stepper from './stepper';
+
+
+const Signup = ({onSignUpSuccess}) => {
+
+    const handleSignup = (e) =>{
+      e.preventDefault();
+    }
+    const txt1 = "text-primary-white-1"
     return (
       <div className="relative w-full flex flex-col items-center justify-start gap-[40px] text-center text-5xl text-primary-blue-1 font-text-xl-medium">
         <div className="relative w-[289px] h-[59px]">
           <div className="absolute top-[29.5px] left-[58.5px] box-border w-[172px] h-px border-t-[1px] border-solid border-primary-blue-7" />
-          <div className="absolute top-[0px] left-[0px] rounded-17xl bg-primary-blue-1 overflow-hidden flex flex-col items-center justify-center py-[13px] px-[22px] text-primary-white-1 border-[1px] border-solid border-primary-blue-1">
-            <div className="relative">1</div>
-          </div>
-          <div className="absolute top-[0px] left-[115px] rounded-17xl bg-primary-white-1 overflow-hidden flex flex-col items-center justify-center py-[13px] px-[22px] border-[1px] border-solid border-primary-blue-1">
-            <div className="relative">2</div>
-          </div>
-          <div className="absolute top-[0px] left-[230px] rounded-17xl bg-primary-white-1 overflow-hidden flex flex-col items-center justify-center py-[13px] px-[22px] border-[1px] border-solid border-primary-blue-1">
-            <div className="relative">3</div>
-          </div>
+          <Stepper bg1={"bg-primary-blue-1"} txt1={txt1}/>
         </div>
         <div className="flex flex-col items-center justify-start gap-[40px] text-left text-29xl text-black">
           <div className="relative w-[510px] h-[139px]">
@@ -55,18 +56,21 @@ const Signup = () => {
               <div className="absolute top-[0px] left-[0px] rounded bg-primary-white-2 shadow-[0px_4px_4px_rgba(176,_176,_176,_0.25)_inset] box-border w-[19px] h-[19px] border-[1px] border-solid border-primary-black-7" />
             </div>
           </div>
-
+          <Link to='/signUp2'>
           <div className="relative top-[0px] left-[0px] mt-6 rounded-2xl bg-primary-blue-1 box-border 
             w-[391px] overflow-hidden flex flex-row items-center justify-center 
             py-[11px] px-[24px] text-xl text-primary-white-1 border-[1px] border-solid border-primary-blue-1">
               <div className="relative font-medium">Sign Up</div>
             </div>
+          </Link>
+          
           <div className="relative w-[391px] h-[20px] text-sm text-center">
+            <Link to='/login1'>
             <div className="absolute top-[0px] left-[0px] font-light">
               <span>{`Already have an account?   `}</span>
               <span className="text-primary-blue-1">Login</span>
             </div>
-           
+            </Link>
           </div>
         </div>
       </div>

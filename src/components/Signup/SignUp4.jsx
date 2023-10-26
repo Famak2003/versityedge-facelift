@@ -1,19 +1,17 @@
 import React from 'react'
+import Stepper from './stepper'
+
+import { Link } from 'react-router-dom'
 
 const SignUp4 =() => {
+    const bg3 = "bg-primary-blue-1"
+    const txt3 = "text-primary-white-1"
+
     return(
         <div className="flex flex-col items-center justify-start gap-[40px] text-5xl text-primary-blue-1">
         <div className="relative w-[289px] h-[59px]">
           <div className="absolute top-[29.5px] left-[58.5px] box-border w-[172px] h-px border-t-[1px] border-solid border-primary-blue-7" />
-          <div className="absolute top-[0px] left-[0px] rounded-17xl bg-primary-white-1 overflow-hidden flex flex-col items-center justify-center py-[13px] px-[22px] border-[1px] border-solid border-primary-blue-1">
-            <div className="relative">1</div>
-          </div>
-          <div className="absolute top-[0px] left-[115px] rounded-17xl bg-primary-white-1 overflow-hidden flex flex-col items-center justify-center py-[13px] px-[22px] border-[1px] border-solid border-primary-blue-1">
-            <div className="relative">2</div>
-          </div>
-          <div className="absolute top-[0px] left-[230px] rounded-17xl bg-primary-blue-1 overflow-hidden flex flex-col items-center justify-center py-[13px] px-[22px] text-primary-white-1 border-[1px] border-solid border-primary-blue-1">
-            <div className="relative">3</div>
-          </div>
+          <Stepper bg3={bg3} txt3={txt3}/>
         </div>
         <div className="flex flex-col items-center justify-start gap-[40px] text-left text-29xl text-black">
           <div className="relative w-[510px] h-[139px]">
@@ -57,13 +55,17 @@ const SignUp4 =() => {
             </div>
           </div>
           <div className="relative w-[391px] h-[87px] text-base">
-            <div className="absolute top-[65px] left-[0px] font-light">
+          <Link to='/login1'>
+          <div className="absolute top-[65px] left-[0px] font-light">
               <span>{`Already have an account?   `}</span>
               <span className="text-primary-blue-1">Login</span>
             </div>
+          </Link>
+            <Link to='/congrats1'>
             <div className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-blue-1 box-border w-[391px] overflow-hidden flex flex-row items-center justify-center py-[11px] px-[24px] text-xl text-primary-white-1 border-[1px] border-solid border-primary-blue-1">
               <div className="relative font-medium">Sign up</div>
             </div>
+            </Link>
           </div>
         </div>
       </div>

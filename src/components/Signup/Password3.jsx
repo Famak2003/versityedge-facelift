@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom';
+
 const Password3  =() => {
     return(
         <div className="flex flex-col items-center justify-start text-left">
@@ -25,9 +27,11 @@ const Password3  =() => {
             </div>
           </div>
           <div className="relative w-[391px] h-[49px] text-xl text-primary-white-1">
-            <div className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-blue-1 box-border w-[391px] overflow-hidden flex flex-row items-center justify-center py-[11px] px-[24px] border-[1px] border-solid border-primary-blue-1">
+           <Link to='/password4'>
+           <div className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-blue-1 box-border w-[391px] overflow-hidden flex flex-row items-center justify-center py-[11px] px-[24px] border-[1px] border-solid border-primary-blue-1">
               <div className="relative font-medium">Submit</div>
             </div>
+           </Link>
           </div>
         </div>
       </div>
