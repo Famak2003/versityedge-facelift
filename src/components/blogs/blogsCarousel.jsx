@@ -30,6 +30,7 @@ const BlogsCarousel = ({ carouselDetails }) => {
         infiniteLoop={true}
         interval={2500}
         showStatus={false}
+        showThumbs={false}
         className="carousel-container"
       >
         {renderSlides}
