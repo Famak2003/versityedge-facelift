@@ -19,7 +19,7 @@ const CreateBlog = ({baseURL}) => {
         e.preventDefault();
         const post = {title, img_url, content, category, uniName};
         setIsPending(true);
-        fetch("http://versityedge1.eastus.cloudapp.azure.com/blog", {
+        fetch("http://versityedge1.eastus.cloudapp.azure.com/v1/blog/posts", {
             method : "POST",
             headers: {"Content-type" : "application/json"},
             body: JSON.stringify(post)
@@ -38,6 +38,7 @@ const CreateBlog = ({baseURL}) => {
                 type="text"
                 placeholder="minimum of three characters"
                 required
+                minLength={3}
                 value={title}
                 onChange={(e) => setTitle(e.target.value)} />
                 <label>Image Link: </label>
@@ -46,11 +47,13 @@ const CreateBlog = ({baseURL}) => {
                 value={img_url}
                 onChange={(e) => setImg_url(e.target.value)} />
                 <label>Blog Content: </label>
-                <input 
+                <textarea 
                 type="text"
                 required
+                minLength={10}
+                placeholder="minimum of ten characters"
                 value={content}
-                onChange={(e) => setContent(e.target.value)} />
+                onChange={(e) => setContent(e.target.value)} ></textarea>
                 <label>Blog Category: </label>
                 <input 
                 type="text"

@@ -17,7 +17,7 @@ const HotNews = ({ baseURL }) => {
         {!hotPosts ? "" :
           hotPosts.map((hotPost) => (
             <div key={hotPost.id}>
-              {hotPost.id && (
+              {hotPost.category === "hotnews"  && (
                 <div to="/">
                   <div className="hot-news-col">
                     <img src={!hotPost.img_url ? img3 : hotPost.img_url} alt="" />

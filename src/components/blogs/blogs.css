@@ -435,13 +435,14 @@ form:focus-within {
 .create-blog h1 {
   font-size: 22px;
   font-weight: 600;
+  padding-bottom: 50px;
 }
 .create-blog label {
   text-align: center;
   display: block;
   font-weight: 700;
 }
-.create-blog input{
+.create-blog input, .create-blog textarea{
   width: 100%;
   padding: 10px;
   margin: 10px auto ;
