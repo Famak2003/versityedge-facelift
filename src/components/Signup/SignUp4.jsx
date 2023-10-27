@@ -28,31 +28,39 @@ const SignUp4 =() => {
             </div>
           </div>
           <div className="relative w-[391px] h-[419px] text-lg text-primary-black-1">
-            <div className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
+          <input type='tel' placeholder='Adedamola' className="absolute mt-0 text-black top-[1px] px-[24px] left-[1px] 
+              rounded-2xl bg-primary-white-1 box-border w-[391px] 
+              h-[55px] outline-none overflow-hidden border-[1px] 
+              border-solid border-primary-black-7 top-[15px] left-[29px] font-light" />
+            {/* <div className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
               <div className="absolute top-[15px] left-[29px] font-light">
                 Adedamola
               </div>
-            </div>
-            <div className="absolute top-[91px] left-[0px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
-              <div className="absolute top-[15px] left-[29px] font-light">
+            </div> */}
+            <input type='text' placeholder='Akin' className="absolute top-[91px] left-[0px] rounded-2xl bg-primary-white-1 box-border 
+            w-[391px] h-[55px] outline-none px-[24px] text-black font-light overflow-hidden border-[1px] border-solid border-primary-black-7" />
+              {/* <div className="absolute top-[15px] left-[29px] font-light">
                 Akin
-              </div>
-            </div>
-            <div className="absolute top-[182px] left-[0px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
-              <div className="absolute top-[15px] left-[29px] font-light">
+              </div> */}
+            {/* </div> */}
+            <input type='email' placeholder='adedamola@gmail.com' className="absolute top-[182px] left-[0px] rounded-2xl bg-primary-white-1 box-border 
+            w-[391px] h-[55px] outline-none px-[24px] text-black font-light overflow-hidden border-[1px] border-solid border-primary-black-7" />
+              {/* <div className="absolute top-[15px] left-[29px] font-light">
                 adedamola@gmail.com
               </div>
-            </div>
-            <div className="absolute top-[273px] left-[0px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
-              <div className="absolute top-[15px] left-[29px] font-light">
+            </div> */}
+            <input type='password' placeholder='**********' className="absolute top-[273px] left-[0px] rounded-2xl bg-primary-white-1 box-border 
+            w-[391px] h-[55px] outline-none px-[24px] text-black font-light overflow-hidden border-[1px] border-solid border-primary-black-7" />
+              {/* <div className="absolute top-[15px] left-[29px] font-light">
                 **********
               </div>
-            </div>
-            <div className="absolute top-[364px] left-[0px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
-              <div className="absolute top-[15px] left-[29px] font-light">
+            </div> */}
+            <input type='password' placeholder='**********' className="absolute top-[364px] left-[0px] rounded-2xl bg-primary-white-1 box-border 
+            w-[391px] h-[55px] outline-none px-[24px] text-black font-light overflow-hidden border-[1px] border-solid border-primary-black-7" />
+              {/* <div className="absolute top-[15px] left-[29px] font-light">
                 **********
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="relative w-[391px] h-[87px] text-base">
           <Link to='/login1'>

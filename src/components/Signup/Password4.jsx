@@ -15,16 +15,18 @@ const Password4 =()=> {
             </div>
           </div>
           <div className="relative w-[391px] h-[146px] text-lg text-primary-black-1">
-            <div className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
-              <div className="absolute top-[15px] left-[29px] font-light">
+            <input type='password' placeholder='**********' className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-white-1 box-border 
+            w-[391px] h-[55px] px-[24px] text-black font-light outline-none overflow-hidden border-[1px] border-solid border-primary-black-7" />
+              {/* <div className="absolute top-[15px] left-[29px] font-light">
+                ********
+              </div> */}
+            {/* </div> */}
+            <input type='password' placeholder='**********' className="absolute top-[91px] left-[0px] rounded-2xl bg-primary-white-1 box-border 
+            w-[391px] h-[55px] px-[24px] text-black font-light outline-none overflow-hidden border-[1px] border-solid border-primary-black-7" />
+              {/* <div className="absolute top-[15px] left-[29px] font-light">
                 ********
               </div>
-            </div>
-            <div className="absolute top-[91px] left-[0px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
-              <div className="absolute top-[15px] left-[29px] font-light">
-                ********
-              </div>
-            </div>
+            </div> */}
           </div>
           <div className="relative w-[391px] h-[49px] text-xl text-primary-white-1">
             <Link to="/congrats2">

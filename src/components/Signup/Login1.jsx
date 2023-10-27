@@ -21,7 +21,7 @@ const Login1 =() => {
                 <div className="absolute top-[0px] left-[35px]">
                   Keep me logged in
                 </div>
-                <div className="absolute top-[0px] left-[0px] rounded bg-primary-white-2 shadow-[0px_4px_4px_rgba(176,_176,_176,_0.25)_inset] box-border w-[19px] h-[19px] border-[1px] border-solid border-primary-black-7" />
+                <input type='checkbox' className="absolute top-[0px] left-[0px] rounded bg-primary-white-2 shadow-[0px_4px_4px_rgba(176,_176,_176,_0.25)_inset] box-border w-[19px] h-[19px] outline-none border-[1px] border-solid border-primary-black-7" />
               </div>
              <Link to="/password1">
              <div className="absolute top-[0px] left-[279px] text-primary-blue-1">
@@ -30,16 +30,18 @@ const Login1 =() => {
              </Link>
             </div>
             <div className="absolute top-[0px] left-[0px] w-[391px] h-[146px] text-lg text-primary-black-7">
-              <div className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
-                <div className="absolute top-[15px] left-[29px] font-light">
+              <input type='email/tel'placeholder='Email/Phone number' className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-white-1 box-border 
+              w-[391px] h-[55px] outline-none px-[24px] text-black font-light overflow-hidden border-[1px] border-solid border-primary-black-7" />
+                {/* <div className="absolute top-[15px] left-[29px] font-light">
                   Email/Phone number
                 </div>
-              </div>
-              <div className="absolute top-[91px] left-[0px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
-                <div className="absolute top-[15px] left-[29px] font-light">
+              </div> */}
+              <input type='Password' placeholder='Password' className="absolute top-[91px] left-[0px] rounded-2xl bg-primary-white-1 box-border 
+              w-[391px] h-[55px] outline-none px-[24px] text-black font-light overflow-hidden border-[1px] border-solid border-primary-black-7" />
+                {/* <div className="absolute top-[15px] left-[29px] font-light">
                   Password
-                </div>
-              </div>
+                </div> */}
+              {/* </div> */}
             </div>
           </div>
           <div className="relative w-[391px] h-[87px] text-base">

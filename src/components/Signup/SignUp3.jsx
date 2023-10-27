@@ -25,31 +25,44 @@ const SignUp3 = () => {
             </div>
           </div>
           <div className="relative w-[391px] h-[419px] text-lg text-primary-black-7">
-            <div className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
+          <input type='tel' placeholder='First name' className="absolute mt-0 text-black top-[1px] px-[24px] left-[1px] 
+              rounded-2xl bg-primary-white-1 box-border w-[391px] 
+              h-[55px] outline-none overflow-hidden border-[1px] 
+              border-solid border-primary-black-7 top-[15px] left-[29px] font-light" />
+          {/* <div className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-white-1 
+          box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
               <div className="absolute top-[15px] left-[29px] font-light">
                 First name
               </div>
-            </div>
-            <div className="absolute top-[91px] left-[0px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
-              <div className="absolute top-[15px] left-[29px] font-light">
+            </div> */}
+            <input type='text' placeholder='Last name' className="absolute top-[91px] left-[0px] 
+            rounded-2xl bg-primary-white-1 box-border font-light 
+            w-[391px] h-[55px] outline-none overflow-hidden border-[1px] 
+            border-solid px-[24px] text-black border-primary-black-7" />
+              {/* <div className="absolute top-[15px] left-[29px] font-light">
                 Last name
-              </div>
-            </div>
-            <div className="absolute top-[182px] left-[0px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
-              <div className="absolute top-[15px] left-[29px] font-light">
+              </div> */}
+            {/* </div> */}
+            <input type='email' placeholder='Email' className="absolute top-[182px] left-[0px] 
+            rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] outline-none px-[24px] 
+            font-light text-black overflow-hidden border-[1px] border-solid border-primary-black-7" />
+              {/* <div className="absolute top-[15px] left-[29px] font-light">
                 Email
-              </div>
-            </div>
-            <div className="absolute top-[273px] left-[0px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
-              <div className="absolute top-[15px] left-[29px] font-light">
+              </div> */}
+            {/* </div> */}
+            <input type='password' placeholder='Enter password' className="absolute top-[273px] left-[0px] rounded-2xl bg-primary-white-1 box-border 
+            w-[391px] h-[55px] outline-none px-[24px] text-black font-light overflow-hidden border-[1px] 
+            border-solid border-primary-black-7" />
+              {/* <div className="absolute top-[15px] left-[29px] font-light">
                 Password
-              </div>
-            </div>
-            <div className="absolute top-[364px] left-[0px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
-              <div className="absolute top-[15px] left-[29px] font-light">
+              </div> */}
+            {/* </div> */}
+            <input type='password' placeholder='Re-enter password' className="absolute top-[364px] left-[0px] rounded-2xl bg-primary-white-1 box-border 
+            w-[391px] h-[55px] outline-none px-[24px] text-black font-light  overflow-hidden border-[1px] border-solid border-primary-black-7" />
+              {/* <div className="absolute top-[15px] left-[29px] font-light">
                 Re-enter password
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
           </div>
          
           <div className="relative w-[391px] h-[87px] text-base">

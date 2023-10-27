@@ -34,11 +34,14 @@ const Signup = ({onSignUpSuccess}) => {
           </div>
           <div className="relative w-[535px] h-[98px] text-lg text-primary-black-7">
             <div className="absolute top-[0px] left-[0px] w-[535px] h-[55px]">
-              <div className="absolute mt-6 top-[0px] left-[144px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
-                <div className="absolute top-[15px] left-[29px] font-light">
+              <input type='tel' placeholder='Phone number' className="relative mt-0 ml-40 text-black top-[0px] px-[24px] left-[144px] 
+              rounded-2xl bg-primary-white-1 box-border w-[391px] 
+              h-[55px] outline-none overflow-hidden border-[1px] border-solid border-primary-black-7 top-[15px] left-[29px] font-light" />
+              {/* <div className="absolute mt-6 top-[0px] left-[144px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
+              <div className="absolute top-[15px] left-[29px] font-light">
                   Phone number
                 </div>
-              </div>
+              </div> */}
               <div className="absolute mt-6 top-[0px] left-[0px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-start py-[9.5px] px-4 gap-[16px] text-black border-[1px] border-solid border-primary-black-7">
                 <img
                   className="relative w-9 h-9 overflow-hidden shrink-0"
@@ -53,7 +56,9 @@ const Signup = ({onSignUpSuccess}) => {
                 By signing up, you agree to our terms of services and privacy
                 policy.
               </div>
-              <div className="absolute top-[0px] left-[0px] rounded bg-primary-white-2 shadow-[0px_4px_4px_rgba(176,_176,_176,_0.25)_inset] box-border w-[19px] h-[19px] border-[1px] border-solid border-primary-black-7" />
+              <input type='checkbox' className="absolute top-[0px] left-[0px] rounded bg-primary-white-2 
+              shadow-[0px_4px_4px_rgba(176,_176,_176,_0.25)_inset] box-border w-[19px] h-[19px] border-[1px] 
+              border-solid border-primary-black-7" />
             </div>
           </div>
           <Link to='/signUp2'>

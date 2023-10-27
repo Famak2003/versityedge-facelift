@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import { Link } from 'react-router-dom';
 
 const Login2 = () => {
@@ -21,27 +22,31 @@ const Login2 = () => {
                 <div className="absolute top-[0px] left-[35px]">
                   Keep me logged in
                 </div>
-                <div className="absolute top-[0px] left-[0px] rounded bg-primary-blue-1 shadow-[0px_4px_4px_rgba(176,_176,_176,_0.25)_inset] box-border w-[19px] h-[19px] border-[1px] border-solid border-primary-black-7" />
+                <input type='checkbox' className="absolute top-[0px] left-[0px] rounded shadow-[0px_4px_4px_rgba(176,_176,_176,_0.25)_inset] box-border w-[19px] h-[19px] border-[1px] border-solid border-primary-black-7" />
               </div>
-              <div className="absolute top-[0px] left-[279px] text-primary-blue-1">
+             <Link to="/password1">
+             <div className="absolute top-[0px] left-[279px] text-primary-blue-1">
                 Forgot password?
               </div>
+             </Link>
             </div>
             <div className="absolute top-[0px] left-[0px] w-[391px] h-[146px] text-lg text-primary-black-1">
-              <div className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
-                <a
+              <input type='email' placeholder='adedamola@gmail.com' className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-white-1 box-border 
+              w-[391px] h-[55px] outline-none px-[24px] text-black font-light overflow-hidden border-[1px] border-solid border-primary-black-7" />
+                {/* <a
                   className="absolute top-[15px] left-[29px] font-light text-[inherit] [text-decoration:none]"
                   href="mailto:adedamola@gmail.com"
                   target="_blank"
                 >
                   adedamola@gmail.com
                 </a>
-              </div>
-              <div className="absolute top-[91px] left-[0px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
-                <div className="absolute top-[15px] left-[29px] font-light">
+              </div> */}
+              <input type='password' placeholder='**********' className="absolute top-[91px] left-[0px] rounded-2xl bg-primary-white-1 box-border 
+              w-[391px] h-[55px] outline-none px-[24px] text-black font-light overflow-hidden border-[1px] border-solid border-primary-black-7" />
+                {/* <div className="absolute top-[15px] left-[29px] font-light">
                   ********
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="relative w-[391px] h-[87px] text-base">
