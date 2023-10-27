@@ -10,9 +10,9 @@ const Login1 =() => {
             <div className="absolute top-[0px] left-[167px] text-6xl font-semi-bold">
               Login
             </div>
-            <div className="absolute px-3 top-[73px] left-[0px] text-5xl font-light">
-              <p className="m-0">Kindly input your email/phone number with</p>
-              <p className="m-0">password to login.</p>
+            <div className="absolute px-9 top-[73px] left-[0px] text-5xl font-light">
+              <p className="m-0">Kindly input your phone number with password to login.</p>
+             
             </div>
           </div>
           <div className="relative w-[392px] h-[183px] text-sm">
@@ -30,7 +30,7 @@ const Login1 =() => {
              </Link>
             </div>
             <div className="absolute top-[0px] left-[0px] w-[391px] h-[146px] text-lg text-primary-black-7">
-              <input type='email/tel'placeholder='Email/Phone number' className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-white-1 box-border 
+              <input type='tel'placeholder='Phone number' className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-white-1 box-border 
               w-[391px] h-[55px] outline-none px-[24px] text-black font-light overflow-hidden border-[1px] border-solid border-primary-black-7" />
                 {/* <div className="absolute top-[15px] left-[29px] font-light">
                   Email/Phone number
@@ -51,7 +51,7 @@ const Login1 =() => {
               <span className="text-primary-blue-1">Sign up</span>
             </div>
            </Link>
-            <Link to="/login2">
+            <Link to="/">
             <div className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-blue-1 box-border w-[391px] overflow-hidden flex flex-row items-center justify-center py-[11px] px-[24px] text-xl text-primary-white-1 border-[1px] border-solid border-primary-blue-1">
               <div className="relative font-medium">Login</div>
             </div>

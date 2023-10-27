@@ -10,11 +10,10 @@ const Password1 =() => {
               Forgot password
             </div>
             <div className="absolute top-[73px] left-[0px] text-5xl font-light">
-              <p className="m-0">Enter phone number/email to reset password</p>
-              <p className="m-0">+23481 27*** 98/ abdulm***@gmail.com</p>
+              <p className="m-0">Enter phone number to reset password +23481 27*** 98/ abdulm***@gmail.com</p>
             </div>
           </div>
-          <input type='email/tel' placeholder='Email/Phone number' className="relative rounded-2xl bg-primary-white-1 box-border 
+          <input type='tel' placeholder='Phone number' className="relative rounded-2xl bg-primary-white-1 box-border 
           w-[391px] h-[55px] px-[24px] text-black font-light outline-none overflow-hidden shrink-0 text-lg border-[1px] 
           border-solid border-primary-black-7" />
             {/* <div className="absolute top-[15px] left-[29px] font-light">

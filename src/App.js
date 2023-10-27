@@ -21,15 +21,13 @@ import PredictChanceCongratulations from "./components/predictChanceComponents/C
 
 import SignUp2 from "./components/Signup/SignUp2";
 import SignUp3 from "./components/Signup/SignUp3";
-import SignUp4 from "./components/Signup/SignUp4";
 import Login1 from "./components/Signup/Login1";
-import Login2 from "./components/Signup/Login2";
 import Congrats1 from "./components/Signup/Congrats1";
 import Congrats2 from "./components/Signup/Congrats2";
 import Password1 from "./components/Signup/Password1";
 import Password2 from "./components/Signup/Password2";
 import Password3 from "./components/Signup/Password3";
-import Password4 from "./components/Signup/Password4";
+
 
 
 
@@ -45,13 +43,10 @@ export function App() {
           <Route path="/signup" element={<Signup />}></Route>
             <Route exact path="/signup2" element={<SignUp2/>}></Route>
             <Route exact path="/signup3" element={<SignUp3/>}></Route>
-            <Route exact path="/signup4" element={<SignUp4/>}></Route>
             <Route exact path="/login1" element={<Login1/>}></Route>
-            <Route exact path="/login2" element={<Login2 />}></Route>
             <Route exact path="/password1" element={<Password1 />}></Route>
             <Route exact path="/password2" element={<Password2 />}></Route>
             <Route exact path="/password3" element={<Password3 />}></Route>
-            <Route exact path="/password4" element={<Password4 />}></Route>
             <Route exact path="/congrats1" element={<Congrats1 />}></Route>
             <Route exact path="/congrats2" element={<Congrats2 />}></Route>      
 

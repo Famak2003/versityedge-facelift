@@ -17,18 +17,17 @@ const SignUp3 = () => {
             <div className="absolute top-[0px] left-[164px] font-semibold">
               Sign up
             </div>
-            <div className="absolute top-[73px] left-[0px] text-5xl font-light text-center">
+            <div className="absolute top-[73px] left-[8px] text-5xl font-light text-center">
               <p className="m-0">
-                Kindly fill in the information below to complete
+                Kindly fill in the information below to complete the sign up process.
               </p>
-              <p className="m-0">the sign up process.</p>
             </div>
           </div>
           <div className="relative w-[391px] h-[419px] text-lg text-primary-black-7">
           <input type='tel' placeholder='First name' className="absolute mt-0 text-black top-[1px] px-[24px] left-[1px] 
               rounded-2xl bg-primary-white-1 box-border w-[391px] 
               h-[55px] outline-none overflow-hidden border-[1px] 
-              border-solid border-primary-black-7 top-[15px] left-[29px] font-light" />
+              border-solid border-primary-black-7 top-[15px] left-[0px] font-light" />
           {/* <div className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-white-1 
           box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
               <div className="absolute top-[15px] left-[29px] font-light">
@@ -72,7 +71,7 @@ const SignUp3 = () => {
               <span className="text-primary-blue-1">Login</span>
             </div>
            </Link>
-            <Link to="/signup4">
+            <Link to="/congrats1">
             <div className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-blue-1 box-border w-[391px] overflow-hidden flex flex-row items-center justify-center py-[11px] px-[24px] text-xl text-primary-white-1 border-[1px] border-solid border-primary-blue-1">
               <div className="relative font-medium">Sign up</div>
             </div>
