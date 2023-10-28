@@ -10,7 +10,7 @@ const Password3  =() => {
             <div className="absolute top-[0px] text-6xl right-[40px] left-[40px] font-semibold">
               Password reset
             </div>
-            <div className="absolute top-[73px] left-[0px] text-5xl font-light">
+            <div className="absolute top-[73px] left-[40px] right-[40px] text-5xl font-light lmobile:left-[0px] lmobile:right-[0px]">
               Enter a new password for your account.
             </div>
           </div>

@@ -12,7 +12,7 @@ const Congrats1 =() => {
             <div className="absolute top-[0px] text-6xl px-24 right-[70px] left-[70px] font-semibold">
               Congratulations!
             </div>
-            <div className="absolute top-[73px] text-center left-[0px] right-[0px] text-5xl font-light">
+            <div className="absolute top-[73px] text-center left-[60px] right-[60px] text-5xl font-light lmobile:left-[0px] lmobile:right-[0px]">
               <p className="m-0">
                 Congratulations, your account has been created
               </p>
@@ -20,7 +20,7 @@ const Congrats1 =() => {
             </div>
           </div>
           <img
-            className="relative w-[126px] h-[126px] overflow-hidden shrink-0"
+            className="relative w-[126px] h-[126px] mt-6 overflow-hidden shrink-0 lmobile:mt-0" 
             alt=""
             src={teenyicon}
           />

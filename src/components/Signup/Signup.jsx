@@ -22,7 +22,7 @@ const Signup = () => {
             <div className="absolute top-[0px] left-[172px] font-semibold">
               Sign up
             </div>
-            <div className="absolute top-[73px] left-[0px] text-4xl font-light whitespace-pre-wrap text-center">
+            <div className="absolute top-[90px] left-[80px] text-2xl font-light whitespace-pre-wrap text-center lmobile:left-[0px] lmobile:text-4xl lmobile:top-[73px]">
               <p className="m-4">
                 <span className="text-black">{`Admission success is `}</span>
                 <span className="text-primary-blue-1">guaranteed.</span>
@@ -68,9 +68,9 @@ const Signup = () => {
             </div>
           </Link>
           
-          <div className="relative w-[391px] h-[20px] text-sm text-center">
+          <div className="relative w-[270px] h-[20px] text-sm text-center lmobile:w-[391px]">
             <Link to='/login1'>
-            <div className="absolute top-[0px] left-[0px] font-light">
+            <div className="absolute top-[-10px] left-[0px] font-light lmobile:top-[0px]">
               <span>{`Already have an account?   `}</span>
               <span className="text-primary-blue-1">Login</span>
             </div>

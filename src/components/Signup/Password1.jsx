@@ -9,12 +9,12 @@ const Password1 =() => {
             <div className="absolute top-[0px] left-[52px] text-6xl right-[52px] font-semibold">
               Forgot password
             </div>
-            <div className="absolute top-[73px] left-[0px] text-5xl font-light">
+            <div className="absolute top-[73px] left-[80px] right-[80px] text-5xl font-light lmobile:left-[0px] lmobile:right-[0px]">
               <p className="m-0">Enter phone number to reset password +23481 27*** 98/ abdulm***@gmail.com</p>
             </div>
           </div>
           <input type='tel' placeholder='Phone number' className="relative rounded-2xl bg-primary-white-1 box-border 
-          w-[270px] h-[55px] px-[24px] text-black font-light outline-none overflow-hidden shrink-0 text-lg border-[1px] 
+          w-[270px] h-[55px] px-[24px] mt-12 text-black font-light outline-none overflow-hidden shrink-0 text-lg border-[1px] 
           border-solid border-primary-black-7 lmobile:w-[391px]" />
             {/* <div className="absolute top-[15px] left-[29px] font-light">
               Email/Phone number

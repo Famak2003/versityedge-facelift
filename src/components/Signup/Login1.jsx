@@ -10,7 +10,7 @@ const Login1 =() => {
             <div className="absolute top-[0px] left-[167px] text-6xl font-semi-bold">
               Login
             </div>
-            <div className="absolute px-9 top-[73px] left-[0px] text-5xl font-light">
+            <div className="absolute px-9 top-[73px] left-[40px] right-[40px] text-5xl font-light lmobile:left-[0px] right-[0px]">
               <p className="m-0">Kindly input your phone number with password to login.</p>
              
             </div>
