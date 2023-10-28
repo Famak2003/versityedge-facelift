@@ -26,7 +26,7 @@ const Congrats1 =() => {
           />
           <div className="relative w-[391px] h-[49px] text-xl text-primary-white-1">
             <Link to="/login1">
-            <div className="absolute top-[0px] left-[0px] rounded-2xl bg-primary-blue-1 box-border w-[391px] overflow-hidden flex flex-row items-center justify-center py-[11px] px-[24px] border-[1px] border-solid border-primary-blue-1">
+            <div className="absolute top-[0px] left-[64px] rounded-2xl bg-primary-blue-1 box-border w-[280px] overflow-hidden flex flex-row items-center justify-center py-[11px] px-[24px] border-[1px] border-solid border-primary-blue-1 lmobile:w-[391px] lmobile:left-[0px]">
               <div className="relative font-medium">Login</div>
             </div>
             </Link>

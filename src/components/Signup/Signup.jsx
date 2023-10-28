@@ -6,12 +6,11 @@ import flag from './../../assets/twemoji_flag-nigeria.png'
 import Stepper from './stepper';
 
 
-const Signup = ({onSignUpSuccess}) => {
+const Signup = () => {
 
-    const handleSignup = (e) =>{
-      e.preventDefault();
-    }
-    const txt1 = "text-primary-white-1"
+ 
+    const txt1 = "text-primary-white-1";
+
     return (
       <div className="relative w-full flex flex-col items-center justify-start gap-[40px] text-center text-5xl text-primary-blue-1 font-text-xl-medium">
         <div className="relative w-[289px] h-[59px]">
@@ -63,8 +62,8 @@ const Signup = ({onSignUpSuccess}) => {
           </div>
           <Link to='/signUp2'>
           <div className="relative top-[0px] left-[0px] mt-6 rounded-2xl bg-primary-blue-1 box-border 
-            w-[391px] overflow-hidden flex flex-row items-center justify-center 
-            py-[11px] px-[24px] text-xl text-primary-white-1 border-[1px] border-solid border-primary-blue-1">
+            w-[280px] overflow-hidden flex flex-row items-center justify-center 
+            py-[11px] px-[24px] text-xl text-primary-white-1 border-[1px] border-solid border-primary-blue-1 lmobile:w-[391px]">
               <div className="relative font-medium">Sign Up</div>
             </div>
           </Link>

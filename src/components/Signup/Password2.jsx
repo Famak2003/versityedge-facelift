@@ -1,8 +1,12 @@
 import React from 'react'
 
 import { Link } from 'react-router-dom';
+import Input from './input';
+
+
 
 const Password2 =() => {
+
     return (
         <div className="flex flex-col items-center justify-start text-left">
         <div className="flex flex-col items-center justify-start">
@@ -18,6 +22,7 @@ const Password2 =() => {
                 <p className="m-0">sent to your phone number/email.</p>
               </div>
             </div>
+            <Input />
             <div className="relative w-[476px] h-[134px] text-lg text-primary-black-5">
               <div className="absolute top-[41px] left-[0px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-center py-[15px] px-[29px] border-[1px] border-solid border-primary-black-7">
                 <div className="relative font-light">-</div>
