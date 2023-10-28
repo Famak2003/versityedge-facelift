@@ -66,7 +66,7 @@ const SignUp2 = () => {
             </div>
             </Link>
             <Link to="/signup3">
-            <div className="absolute top-[0px] left-[64px] rounded-2xl bg-primary-blue-1 box-border w-[280px] overflow-hidden flex flex-row items-center justify-center 
+            <div className="absolute top-[0px] left-[60px] rounded-2xl bg-primary-blue-1 box-border w-[270px] overflow-hidden flex flex-row items-center justify-center 
             py-[11px] px-[24px] text-xl text-primary-white-1 border-[1px] border-solid border-primary-blue-1 lmobile:w-[391px] lmobile:left-[0px]">
               <div className="relative font-medium">Submit</div>
             </div>

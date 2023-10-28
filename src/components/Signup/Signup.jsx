@@ -62,7 +62,7 @@ const Signup = () => {
           </div>
           <Link to='/signUp2'>
           <div className="relative top-[0px] left-[0px] mt-6 rounded-2xl bg-primary-blue-1 box-border 
-            w-[280px] overflow-hidden flex flex-row items-center justify-center 
+            w-[270px] overflow-hidden flex flex-row items-center justify-center 
             py-[11px] px-[24px] text-xl text-primary-white-1 border-[1px] border-solid border-primary-blue-1 lmobile:w-[391px]">
               <div className="relative font-medium">Sign Up</div>
             </div>
