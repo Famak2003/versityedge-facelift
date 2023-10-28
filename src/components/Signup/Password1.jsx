@@ -14,8 +14,8 @@ const Password1 =() => {
             </div>
           </div>
           <input type='tel' placeholder='Phone number' className="relative rounded-2xl bg-primary-white-1 box-border 
-          w-[391px] h-[55px] px-[24px] text-black font-light outline-none overflow-hidden shrink-0 text-lg border-[1px] 
-          border-solid border-primary-black-7" />
+          w-[270px] h-[55px] px-[24px] text-black font-light outline-none overflow-hidden shrink-0 text-lg border-[1px] 
+          border-solid border-primary-black-7 lmobile:w-[391px]" />
             {/* <div className="absolute top-[15px] left-[29px] font-light">
               Email/Phone number
             </div>
@@ -23,7 +23,7 @@ const Password1 =() => {
           <div className="relative w-[391px] h-[87px] text-base">
             <Link to="/password2">
             <Link to='/login1'>
-            <div className="absolute top-[65px] left-[0px] font-light">
+            <div className="absolute top-[65px] left-[60px] font-light lmobile:left-[0px]">
               <span>{`Already have an account?   `}</span>
               <span className="text-primary-blue-1">Login</span>
             </div>
