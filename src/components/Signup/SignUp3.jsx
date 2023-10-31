@@ -24,7 +24,7 @@ const SignUp3 = () => {
             <div className="absolute top-[0px] left-[164px] font-semibold">
               Sign up
             </div>
-            <div className="absolute top-[73px] left-[60px] right-[60px] text-3xl font-light text-center lmobile:text-5xl lmobile:left-[8px] lmobile:right-[8px] ">
+            <div className="absolute top-[73px] left-[70px] right-[70px] text-3xl font-light text-center lmobile:text-5xl lmobile:left-[8px] lmobile:right-[8px] ">
               <p className="m-0 mr-3 mt-6 lmobile:m:0">
                 Kindly fill in the information below to complete the sign up process.
               </p>

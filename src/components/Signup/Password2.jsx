@@ -46,11 +46,10 @@ const Password2 =() => {
               <div className="absolute top-[0px] text-6xl right-[66px] left-[66px] font-semibold">
                 Password reset
               </div>
-              <div className="absolute top-[73px] left-[0px] text-5xl font-light">
+              <div className="absolute top-[73px] left-[44px] right-[44px] text-3xl font-light mb-2px lmobile:text-5xl lmobile:left-[0px] lmobile:right-[0px]">
                 <p className="m-0">
-                  Reset password by entering the 6-digit code
+                  Reset password by entering the 6-digit code sent to your phone number/email.
                 </p>
-                <p className="m-0">sent to your phone number/email.</p>
               </div>
             </div>
             
@@ -74,13 +73,13 @@ const Password2 =() => {
               <div className="absolute top-[0px] left-[197px] font-light text-black">
                 Enter code
               </div>
-              <div className="absolute top-[112px] left-[386px] text-base text-primary-blue-1">
+              <div className="absolute top-[112px] left-[308px] text-base text-primary-blue-1 lmobile:left-[386px]">
                 Resend OTP
               </div>
             </div>
             <div className="relative w-[391px] h-[87px] text-base">
             <Link to='/login1'>
-            <div className="absolute top-[65px] left-[0px] font-light">
+            <div className="absolute top-[65px] left-[60px] font-light lmobile:left-[0px]">
                 <span>{`Already have an account?   `}</span>
                 <span className="text-primary-blue-1">Login</span>
               </div>

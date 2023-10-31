@@ -62,9 +62,8 @@ const SignUp2 = () => {
             <div className="absolute top-[0px] left-[160px] font-semibold">
               Sign up
             </div>
-            <div className="absolute top-[73px] left-[0px] text-5xl font-light text-center">
-              <p className="m-0">Complete sign up by entering the 6-digit code</p>
-              <p className="m-0">sent to your phone number.</p>
+            <div className="absolute top-[73px] left-[60px] right-[60px] text-3xl font-light text-center lmobile:left-[40px] lmobile:right-[40px] lmobile:text-5xl">
+              <p className="m-0">Complete sign up by entering the 6-digit code sent to your phone number.</p>
             </div>
           </div>
 
@@ -82,7 +81,7 @@ const SignUp2 = () => {
                           handlePaste(e)
                         }}
                         maxLength={1}
-                        className='w-24 h-24 bg-primary-white-1 overflow-hidden  ml-[14px] mt-[36px] left-[246px] right-[246px] text-3xl border-[1px] border-solid border-primary-black-7 rounded-2xl  mx-2 text-center focus:outline-none'  />
+                        className='m-auto w-16 h-16 bg-primary-white-1 overflow-hidden  ml-[14px] mt-[36px]  text-3xl border-[1px] border-solid border-primary-black-7 rounded-2xl mx-2 text-center focus:outline-none lmobile:w-24 lmobile:h-24 lmobile:left-[240px] right-[240px]'  />
                   })
                 }
      
@@ -90,13 +89,13 @@ const SignUp2 = () => {
               <div className="absolute top-[0px] mb-[4px] left-[197px] font-light text-black">
                 Enter code
               </div>
-              <div className="absolute top-[112px] left-[386px] text-base text-primary-blue-1">
+              <div className="absolute top-[112px] left-[308px] text-base text-primary-blue-1 lmobile:left-[386px]">
                 Resend OTP
               </div>
             </div>          
           <div className="relative w-[391px] h-[87px] text-base">
             <Link to='/login1'>
-            <div className="absolute top-[65px] left-[0px] font-light">
+            <div className="absolute top-[65px] left-[60px] font-light lmobile:left-[0px]">
               <span>{`Already have an account?   `}</span>
               <span className="text-primary-blue-1">Login</span>
             </div>
