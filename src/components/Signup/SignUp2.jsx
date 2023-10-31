@@ -1,9 +1,42 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState} from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
 import Stepper from './stepper';
 import useFetch from '../useFetch/useFetch';
 
+
 const SignUp2 = () => {
+
+  const navigate = useNavigate();
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate('/signup3')
+  }
+
+  const [otp, setOtp] = useState(new Array(6).fill(""));
+
+      const handleChange =(e, index)=> {
+        if(isNaN(e.target.value)) return false;
+
+        setOtp([...otp.map((data, indx) => (indx === index ? e.target.value:data))]);
+
+        if (e.target.value && e.target.nextSibling) {
+          e.target.nextSibling.focus()
+        }
+      }
+
+      const handlePaste =(e)=> {
+        const value = e.clipboardData.getData("text")
+        if(isNaN(value)) return false;
+
+        const updatedValue = value.toString().split("").slice(0, otp.length);
+
+        setOtp(updatedValue)
+
+      } 
+
+
   // const {data: code, error, isPending} = useFetch(baseURL + "posts");
 
   // const codeSuccess = () => {
@@ -14,10 +47,12 @@ const SignUp2 = () => {
   //     <Link to={'/signup3'} ><div className="relative font-medium" disabled>Submit</div></Link>
   //   }
   // }
+
+
   const bg2 = "bg-primary-blue-1"
   const txt2 = "text-primary-white-1"
     return (
-      <div className="relative w-full flex flex-col items-center justify-start gap-[40px] text-center text-5xl text-primary-blue-1 font-text-xl-medium">
+      <form onSubmit={handleSubmit} className="relative w-full flex flex-col items-center justify-start gap-[40px] text-center text-5xl text-primary-blue-1 font-text-xl-medium">
         <div className="relative w-[289px] h-[59px]">
           <div className="absolute top-[29.5px] left-[58.5px] box-border w-[172px] h-px border-t-[1px] border-solid border-primary-blue-7" />
           <Stepper bg2={bg2} txt2={txt2}/>
@@ -32,32 +67,33 @@ const SignUp2 = () => {
               <p className="m-0">sent to your phone number.</p>
             </div>
           </div>
+
           <div className="relative w-[476px] h-[134px] text-lg text-primary-black-5">
-            <div className="absolute top-[41px] left-[0px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-center py-[15px] px-[29px] border-[1px] border-solid border-primary-black-7">
-              <div className="relative font-light">-</div>
+              <div className='relative w-[476px] h-[134px] text-lg text-primary-black-5'>
+                  {
+                  otp.map((data, i) => {
+                        return <input 
+                        type='password' 
+                        placeholder='-'
+                        required
+                        value={data} 
+                        onChange={(e)=>handleChange(e, i)}
+                        onPaste={(e)=>{
+                          handlePaste(e)
+                        }}
+                        maxLength={1}
+                        className='w-24 h-24 bg-primary-white-1 overflow-hidden  ml-[14px] mt-[36px] left-[246px] right-[246px] text-3xl border-[1px] border-solid border-primary-black-7 rounded-2xl  mx-2 text-center focus:outline-none'  />
+                  })
+                }
+     
             </div>
-            <div className="absolute top-[41px] left-[82px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-center py-[15px] px-[29px] border-[1px] border-solid border-primary-black-7">
-              <div className="relative font-light">-</div>
-            </div>
-            <div className="absolute top-[41px] left-[164px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-center py-[15px] px-[29px] border-[1px] border-solid border-primary-black-7">
-              <div className="relative font-light">-</div>
-            </div>
-            <div className="absolute top-[41px] left-[246px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-center py-[15px] px-[29px] border-[1px] border-solid border-primary-black-7">
-              <div className="relative font-light">-</div>
-            </div>
-            <div className="absolute top-[41px] left-[328px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-center py-[15px] px-[29px] border-[1px] border-solid border-primary-black-7">
-              <div className="relative font-light">-</div>
-            </div>
-            <div className="absolute top-[41px] left-[410px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-center py-[15px] px-[29px] border-[1px] border-solid border-primary-black-7">
-              <div className="relative font-light">-</div>
-            </div>
-            <div className="absolute top-[0px] left-[197px] font-light text-black">
-              Enter code
-            </div>
-            <div className="absolute top-[112px] left-[386px] text-base text-primary-blue-1">
-              Resend OTP
-            </div>
-          </div>
+              <div className="absolute top-[0px] mb-[4px] left-[197px] font-light text-black">
+                Enter code
+              </div>
+              <div className="absolute top-[112px] left-[386px] text-base text-primary-blue-1">
+                Resend OTP
+              </div>
+            </div>          
           <div className="relative w-[391px] h-[87px] text-base">
             <Link to='/login1'>
             <div className="absolute top-[65px] left-[0px] font-light">
@@ -65,16 +101,14 @@ const SignUp2 = () => {
               <span className="text-primary-blue-1">Login</span>
             </div>
             </Link>
-            <Link to="/signup3">
-            <div className="absolute top-[0px] left-[60px] rounded-2xl bg-primary-blue-1 box-border w-[270px] overflow-hidden flex flex-row items-center justify-center 
+            
+            <button className="absolute top-[0px] left-[60px] rounded-2xl bg-primary-blue-1 box-border w-[270px] overflow-hidden flex flex-row items-center justify-center 
             py-[11px] px-[24px] text-xl text-primary-white-1 border-[1px] border-solid border-primary-blue-1 lmobile:w-[391px] lmobile:left-[0px]">
               <div className="relative font-medium">Submit</div>
-            </div>
-            </Link>
-           
+            </button>          
           </div>
         </div>
-      </div>
+      </form>
     );
   };
   

@@ -1,15 +1,46 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
 
 const Password2 =() => {
 
+  const navigate = useNavigate();
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate('/password3')
+  }
+
+  const [otp, setOtp] = useState(new Array(6).fill(""));
+
+      const handleChange =(e, index)=> {
+        if(isNaN(e.target.value)) return false;
+
+        setOtp([...otp.map((data, indx) => (indx === index ? e.target.value:data))]);
+
+        if (e.target.value && e.target.nextSibling) {
+          e.target.nextSibling.focus()
+        }
+      }
+
+      const handlePaste =(e)=> {
+        const value = e.clipboardData.getData("text")
+        if(isNaN(value)) return false;
+
+        const updatedValue = value.toString().split("").slice(0, otp.length);
+
+        setOtp(updatedValue)
+
+        // const focusedInput = e.target.parentNode.querySelector("input:focus")
+      } 
+
     return (
         <div className="flex flex-col items-center justify-start text-left">
-        <div className="flex flex-col items-center justify-start">
+        <form onSubmit={handleSubmit}  className="flex flex-col items-center justify-start">
           <div className="flex flex-col items-center justify-start gap-[40px]">
             <div className="relative w-[470px] h-[139px] text-center">
               <div className="absolute top-[0px] text-6xl right-[66px] left-[66px] font-semibold">
@@ -23,25 +54,23 @@ const Password2 =() => {
               </div>
             </div>
             
-            <div className="relative w-[476px] h-[134px] text-lg text-primary-black-5">
-              <div className="absolute top-[41px] left-[0px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-center py-[15px] px-[29px] border-[1px] border-solid border-primary-black-7">
-                <div className="relative font-light">-</div>
-              </div>
-              <div className="absolute top-[41px] left-[82px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-center py-[15px] px-[29px] border-[1px] border-solid border-primary-black-7">
-                <div className="relative font-light">-</div>
-              </div>
-              <div className="absolute top-[41px] left-[164px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-center py-[15px] px-[29px] border-[1px] border-solid border-primary-black-7">
-                <div className="relative font-light">-</div>
-              </div>
-              <div className="absolute top-[41px] left-[246px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-center py-[15px] px-[29px] border-[1px] border-solid border-primary-black-7">
-                <div className="relative font-light">-</div>
-              </div>
-              <div className="absolute top-[41px] left-[328px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-center py-[15px] px-[29px] border-[1px] border-solid border-primary-black-7">
-                <div className="relative font-light">-</div>
-              </div>
-              <div className="absolute top-[41px] left-[410px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-center py-[15px] px-[29px] border-[1px] border-solid border-primary-black-7">
-                <div className="relative font-light">-</div>
-              </div>
+            
+            <div className='relative w-[476px] h-[134px] text-lg text-primary-black-5'>
+                  {
+                  otp.map((data, i) => {
+                        return <input 
+                        type='password' 
+                        placeholder='-'
+                        required
+                        value={data} 
+                        onChange={(e)=>handleChange(e, i)}
+                        onPaste={(e)=>{
+                          handlePaste(e)
+                        }}
+                        maxLength={1}
+                        className='w-24 h-24 bg-primary-white-1 overflow-hidden  ml-[14px] mt-[36px] left-[246px] right-[246px] text-3xl border-[1px] border-solid border-primary-black-7 rounded-2xl  mx-2 text-center focus:outline-none'  />
+                  })
+                  }
               <div className="absolute top-[0px] left-[197px] font-light text-black">
                 Enter code
               </div>
@@ -56,14 +85,13 @@ const Password2 =() => {
                 <span className="text-primary-blue-1">Login</span>
               </div>
             </Link>
-              <Link to='/password3'>
-              <div className="absolute top-[0px] left-[60px] rounded-2xl bg-primary-blue-1 box-border w-[270px] overflow-hidden flex flex-row items-center justify-center py-[11px] px-[24px] text-xl text-primary-white-1 border-[1px] border-solid border-primary-blue-1 lmobile:w-[391px] lmobile:left-[0px]">
+              <button className="absolute top-[0px] left-[60px] rounded-2xl bg-primary-blue-1 box-border w-[270px] overflow-hidden flex flex-row items-center justify-center py-[11px] px-[24px] text-xl text-primary-white-1 border-[1px] 
+              border-solid border-primary-blue-1 lmobile:w-[391px] lmobile:left-[0px]">
                 <div className="relative font-medium">Submit</div>
-              </div>
-              </Link>
+              </button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     )
 }

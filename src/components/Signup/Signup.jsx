@@ -1,15 +1,40 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-import flag from './../../assets/twemoji_flag-nigeria.png'
+import ngaFlag from './../../assets/twemoji_flag-nigeria.png'
 import Stepper from './stepper';
+import Country from './Country';
 
 
 const Signup = () => {
 
  
     const txt1 = "text-primary-white-1";
+    
+    // const countries = [
+    //   {
+    //     name: "nigeria",
+    //     code: 234,
+    //     flag: ngaFlag
+    //   },
+    //   {
+    //     name: "south-africa",
+    //     code: 335,
+    //     flag: ngaFlag
+    //   },
+    //   {
+    //     name: "egypt",
+    //     code: 390,
+    //     flag: ngaFlag
+    //   },
+    // ]
+
+    const navigate = useNavigate()
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      navigate('/signup2')
+    }
 
     return (
       <div className="relative w-full flex flex-col items-center justify-start gap-[40px] text-center text-5xl text-primary-blue-1 font-text-xl-medium">
@@ -17,7 +42,7 @@ const Signup = () => {
           <div className="absolute top-[29.5px] left-[58.5px] box-border w-[172px] h-px border-t-[1px] border-solid border-primary-blue-7" />
           <Stepper bg1={"bg-primary-blue-1"} txt1={txt1}/>
         </div>
-        <div className="flex flex-col items-center justify-start gap-[40px] text-left text-29xl text-black">
+        <form onSubmit={handleSubmit} className="flex flex-col items-center justify-start gap-[40px] text-left text-29xl text-black">
           <div className="relative w-[510px] h-[139px]">
             <div className="absolute top-[0px] left-[172px] font-semibold">
               Sign up
@@ -33,40 +58,43 @@ const Signup = () => {
           </div>
           <div className="relative w-[535px] h-[98px] text-lg text-primary-black-7">
             <div className="absolute top-[0px] left-[0px] w-[535px] h-[55px]">
-              <input type='tel' placeholder='Phone number' className="relative mt-0 ml-40 text-black top-[0px] px-[24px] left-[90px] 
+              <input type='tel' minLength={10} maxLength={11} required placeholder='Phone number' className="relative mt-0 ml-40 text-black top-[0px] px-[24px] left-[90px] 
               rounded-2xl bg-primary-white-1 box-border w-[230px] 
               h-[55px] outline-none overflow-hidden border-[1px] border-solid border-primary-black-7 top-[15px] left-[29px] font-light lmobile:w-[391px] lmobile:left-[14px]" />
-              {/* <div className="absolute mt-6 top-[0px] left-[144px] rounded-2xl bg-primary-white-1 box-border w-[391px] h-[55px] overflow-hidden border-[1px] border-solid border-primary-black-7">
-              <div className="absolute top-[15px] left-[29px] font-light">
-                  Phone number
-                </div>
-              </div> */}
+              
+              {/* <select className='absolute mt-6 top-[0px] left-[100px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-start py-[9.5px] px-2 gap-[16px] text-black border-[1px] border-solid border-primary-black-7 lmobile:left-[0px] lmobile:px-4' id="">
+                  {countries && countries.map((country) => {
+                    <option value={country.name} key={country.name}>
+                      <img src={country.flag} alt="country flag" />
+                      <h2>+{country.code}</h2>
+                    </option>
+                  }) }
+              </select> */}
               <div className="absolute mt-6 top-[0px] left-[100px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-start py-[9.5px] px-2 gap-[16px] text-black border-[1px] border-solid border-primary-black-7 lmobile:left-[0px] lmobile:px-4">
                 <img
                   className="relative w-7 h-9 overflow-hidden shrink-0 lmobile:w-9"
                   alt=""
-                  src={flag}
+                  src={ngaFlag}
                 />
                 <div className="relative font-light">+234</div>
               </div>
+              
             </div>
             <div className="absolute top-[79px] left-[0px] w-[458px] h-[19px] text-sm text-black">
               <div className="absolute top-[0px] left-[130px] lmobile:left-[35px]">
                 By signing up, you agree to our terms of services and privacy
                 policy.
               </div>
-              <input type='checkbox' className="absolute top-[0px] left-[100px] rounded bg-primary-white-2 
+              <input type='checkbox' required className="absolute top-[0px] left-[100px] rounded bg-primary-white-2 
               shadow-[0px_4px_4px_rgba(176,_176,_176,_0.25)_inset] box-border w-[19px] h-[19px] border-[1px] 
               border-solid border-primary-black-7 lmobile:left-[0px]" />
             </div>
           </div>
-          <Link to='/signUp2'>
-          <div className="relative top-[0px] left-[0px] mt-6 rounded-2xl bg-primary-blue-1 box-border 
+          <button className="relative top-[0px] left-[0px] mt-6 rounded-2xl bg-primary-blue-1 box-border 
             w-[270px] overflow-hidden flex flex-row items-center justify-center 
             py-[11px] px-[24px] text-xl text-primary-white-1 border-[1px] border-solid border-primary-blue-1 lmobile:w-[391px]">
               <div className="relative font-medium">Sign Up</div>
-            </div>
-          </Link>
+          </button>
           
           <div className="relative w-[270px] h-[20px] text-sm text-center lmobile:w-[391px]">
             <Link to='/login1'>
@@ -76,7 +104,7 @@ const Signup = () => {
             </div>
             </Link>
           </div>
-        </div>
+        </form>
       </div>
     );
   };
