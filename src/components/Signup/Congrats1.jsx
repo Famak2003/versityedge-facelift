@@ -14,9 +14,8 @@ const Congrats1 =() => {
             </div>
             <div className="absolute top-[73px] text-center left-[60px] right-[60px] text-5xl font-light lmobile:left-[0px] lmobile:right-[0px]">
               <p className="m-0">
-                Congratulations, your account has been created
+                Congratulations, your account has been created on Versityedge.
               </p>
-              <p className="m-0">on Versityedge.</p>
             </div>
           </div>
           <img

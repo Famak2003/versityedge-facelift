@@ -1,11 +1,9 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 
 import { Link, useNavigate } from 'react-router-dom';
 
 
-
-
-const Password2 =() => {
+  const Password2 =() => {
 
   const navigate = useNavigate();
 
@@ -15,7 +13,7 @@ const Password2 =() => {
     navigate('/password3')
   }
 
-  const [otp, setOtp] = useState(new Array(6).fill(""));
+      const [otp, setOtp] = useState(new Array(6).fill(""));
 
       const handleChange =(e, index)=> {
         if(isNaN(e.target.value)) return false;
@@ -35,7 +33,6 @@ const Password2 =() => {
 
         setOtp(updatedValue)
 
-        // const focusedInput = e.target.parentNode.querySelector("input:focus")
       } 
 
     return (
@@ -68,7 +65,10 @@ const Password2 =() => {
                           handlePaste(e)
                         }}
                         maxLength={1}
-                        className='w-16 h-16 bg-primary-white-1 overflow-hidden  ml-[14px] mt-[36px] left-[246px] right-[246px] text-3xl border-[1px] border-solid border-primary-black-7 rounded-2xl  mx-2 text-center focus:outline-none 
+                        id={`otp-input-${i}`}
+                        className='w-16 h-16 bg-primary-white-1 overflow-hidden  ml-[14px] mt-[36px] left-[246px] 
+                        right-[246px] text-3xl border-[1px] border-solid 
+                        border-primary-black-7 rounded-2xl  mx-2 text-center focus:outline-none 
                         lmobile:w-24 lmobile:h-24' />
                   })
                   }

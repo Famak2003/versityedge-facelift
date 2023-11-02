@@ -4,33 +4,15 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import ngaFlag from './../../assets/twemoji_flag-nigeria.png'
 import Stepper from './stepper';
-import Country from './Country';
-import useFetch from '../useFetch/useFetch';
+
+// import useFetch from '../useFetch/useFetch';
 
 
 const Signup = () => {
 
-    const {data: user, isPending, error} = useFetch("https://")
+    // const {data: user, isPending, error} = useFetch("https://")
     
     const txt1 = "text-primary-white-1";
-    
-    // const countries = [
-    //   {
-    //     name: "nigeria",
-    //     code: 234,
-    //     flag: ngaFlag
-    //   },
-    //   {
-    //     name: "south-africa",
-    //     code: 335,
-    //     flag: ngaFlag
-    //   },
-    //   {
-    //     name: "egypt",
-    //     code: 390,
-    //     flag: ngaFlag
-    //   },
-    // ]
 
     const navigate = useNavigate()
     const handleSubmit = (e) => {
@@ -64,14 +46,7 @@ const Signup = () => {
               rounded-2xl bg-primary-white-1 box-border w-[230px] 
               h-[55px] outline-none overflow-hidden border-[1px] border-solid border-primary-black-7 top-[15px] left-[29px] font-light lmobile:w-[391px] lmobile:left-[14px]" />
               
-              {/* <select className='absolute mt-6 top-[0px] left-[100px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-start py-[9.5px] px-2 gap-[16px] text-black border-[1px] border-solid border-primary-black-7 lmobile:left-[0px] lmobile:px-4' id="">
-                  {countries && countries.map((country) => {
-                    <option value={country.name} key={country.name}>
-                      <img src={country.flag} alt="country flag" />
-                      <h2>+{country.code}</h2>
-                    </option>
-                  }) }
-              </select> */}
+         
               <div className="absolute mt-6 top-[0px] left-[100px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-start py-[9.5px] px-2 gap-[16px] text-black border-[1px] border-solid border-primary-black-7 lmobile:left-[0px] lmobile:px-4">
                 <img
                   className="relative w-7 h-9 overflow-hidden shrink-0 lmobile:w-9"

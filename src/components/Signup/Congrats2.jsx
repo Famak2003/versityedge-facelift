@@ -14,9 +14,8 @@ const Congrats2 =()=> {
             </div>
             <div className="absolute top-[73px] px-6 left-[60px] right-[60px] text-center text-3xl font-light lmobile:text:5xl lmobile:right-[0px] lmobile:left-[0px]">
               <p className="m-0">
-                Congratulations, you have successfully reset
+                Congratulations, you have successfully reset your password.
               </p>
-              <p className="m-0">your password.</p>
             </div>
           </div>
           <img
