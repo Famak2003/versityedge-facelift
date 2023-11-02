@@ -31,10 +31,12 @@ const SignUp3 = () => {
             </div>
           </div>
           <div className="relative w-[391px] h-[419px] text-lg text-primary-black-7">
-            <input type='text' placeholder='First name' minLength={3} required className="absolute mt-0 text-black top-[1px] px-[24px]  
+            <input type='text' placeholder='First name' minLength={3} required className="absolute mt-0 text-black 
+              top-[1px] px-[24px]  
               rounded-2xl bg-primary-white-1 box-border w-[270px] 
               h-[55px] outline-none overflow-hidden border-[1px] 
-              border-solid border-primary-black-7 top-[15px] left-[60px] font-light lmobile:w-[391px] lmobile:left-[0px]"  />
+              border-solid border-primary-black-7 top-[15px] 
+              left-[60px] font-light lmobile:w-[391px] lmobile:left-[0px]"  />
 
             <input type='text' placeholder='Last name' minLength={3} required className="absolute top-[91px] left-[60px] 
             rounded-2xl bg-primary-white-1 box-border font-light 
@@ -63,7 +65,6 @@ const SignUp3 = () => {
             <button className="absolute top-[0px] left-[60px] rounded-2xl bg-primary-blue-1 box-border w-[270px] overflow-hidden flex flex-row items-center justify-center py-[11px] px-[24px] text-xl text-primary-white-1 border-[1px] border-solid border-primary-blue-1 lmobile:w-[391px] lmobile:left-[0px]">
               <div className="relative font-medium">Sign up</div>
             </button>
-         
           </div>
         </form>
       </div>

@@ -16,4 +16,4 @@ const Stepper = ({bg1, bg2, bg3, txt1, txt2, txt3}) => {
   )
 }
 
-export default Stepper
+export default Stepper;

@@ -2,7 +2,8 @@ import React from 'react'
 
 import { useNavigate } from 'react-router-dom';
 
-const Password3  =() => {
+  const Password3  =() => {
+    
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import Stepper from './stepper';
-import useFetch from '../useFetch/useFetch';
+// import useFetch from '../useFetch/useFetch';
 
 
 const SignUp2 = () => {

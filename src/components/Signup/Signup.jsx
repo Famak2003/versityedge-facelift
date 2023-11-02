@@ -76,7 +76,7 @@ const Signup = () => {
           <div className="relative w-[270px] h-[20px] text-sm text-center lmobile:w-[391px]">
             <Link to='/login1'>
             <div className="absolute top-[-10px] left-[0px] font-light lmobile:top-[0px]">
-              <span>{`Already have an account?   `}</span>
+              <span>{`Already have an account? `}</span>
               <span className="text-primary-blue-1">Login</span>
             </div>
             </Link>
