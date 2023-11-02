@@ -8,7 +8,7 @@ const Login1 =() => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/')
+    navigate('/');
   }
 
   

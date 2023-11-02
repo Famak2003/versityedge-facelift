@@ -5,11 +5,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import ngaFlag from './../../assets/twemoji_flag-nigeria.png'
 import Stepper from './stepper';
 import Country from './Country';
+import useFetch from '../useFetch/useFetch';
 
 
 const Signup = () => {
 
- 
+    const {data: user, isPending, error} = useFetch("https://")
+    
     const txt1 = "text-primary-white-1";
     
     // const countries = [

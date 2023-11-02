@@ -53,8 +53,9 @@ const Password2 =() => {
               </div>
             </div>
             
-            
-            <div className='relative w-[476px] h-[134px] text-lg text-primary-black-5'>
+            <div className="relative w-[476px] h-[134px] text-lg text-primary-black-5">
+            <div className='flex justify-center w-[476px] h-[134px] text-lg 
+            text-primary-black-5'>
                   {
                   otp.map((data, i) => {
                         return <input 
@@ -67,7 +68,8 @@ const Password2 =() => {
                           handlePaste(e)
                         }}
                         maxLength={1}
-                        className='w-24 h-24 bg-primary-white-1 overflow-hidden  ml-[14px] mt-[36px] left-[246px] right-[246px] text-3xl border-[1px] border-solid border-primary-black-7 rounded-2xl  mx-2 text-center focus:outline-none'  />
+                        className='w-16 h-16 bg-primary-white-1 overflow-hidden  ml-[14px] mt-[36px] left-[246px] right-[246px] text-3xl border-[1px] border-solid border-primary-black-7 rounded-2xl  mx-2 text-center focus:outline-none 
+                        lmobile:w-24 lmobile:h-24' />
                   })
                   }
               <div className="absolute top-[0px] left-[197px] font-light text-black">
@@ -77,6 +79,8 @@ const Password2 =() => {
                 Resend OTP
               </div>
             </div>
+            </div>
+            
             <div className="relative w-[391px] h-[87px] text-base">
             <Link to='/login1'>
             <div className="absolute top-[65px] left-[60px] font-light lmobile:left-[0px]">

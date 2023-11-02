@@ -32,8 +32,7 @@ const SignUp2 = () => {
 
         const updatedValue = value.toString().split("").slice(0, otp.length);
 
-        setOtp(updatedValue)
-
+        setOtp(updatedValue);
       } 
 
 
@@ -68,20 +67,21 @@ const SignUp2 = () => {
           </div>
 
           <div className="relative w-[476px] h-[134px] text-lg text-primary-black-5">
-              <div className='relative w-[476px] h-[134px] text-lg text-primary-black-5'>
+              <div className='flex justify-center w-[476px] h-[134px] text-lg text-primary-black-5'>
                   {
                   otp.map((data, i) => {
-                        return <input 
+                        return <input
                         type='password' 
                         placeholder='-'
                         required
                         value={data} 
                         onChange={(e)=>handleChange(e, i)}
                         onPaste={(e)=>{
-                          handlePaste(e)
+                        handlePaste(e)
                         }}
                         maxLength={1}
-                        className='m-auto w-16 h-16 bg-primary-white-1 overflow-hidden  ml-[14px] mt-[36px]  text-3xl border-[1px] border-solid border-primary-black-7 rounded-2xl mx-2 text-center focus:outline-none lmobile:w-24 lmobile:h-24 lmobile:left-[240px] right-[240px]'  />
+                        className='w-16 h-16 bg-primary-white-1 overflow-hidden left-[246px] ml-[14px] mt-[36px]  
+                        text-3xl border-[1px] border-solid border-primary-black-7 rounded-2xl mx-2 text-center focus:outline-none lmobile:w-24 lmobile:h-24 lmobile:left-[240px] right-[240px]'  />
                   })
                 }
      
