@@ -9,8 +9,7 @@ import PopularNews from "./popular";
 import HotNews from "./hotposts";
 
 const Blogs = () => {
-  // const baseURLR = "http://versityedge1.eastus.cloudapp.azure.com/"
-  const baseURL = "https://jsonplaceholder.typicode.com/"
+  const baseURL = "http://versityedge1.eastus.cloudapp.azure.com/v1/"
   const carouselDetails = [
     {
       image: ImgHero1,
