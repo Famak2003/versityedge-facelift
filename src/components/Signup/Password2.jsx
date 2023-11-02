@@ -65,7 +65,6 @@ import { Link, useNavigate } from 'react-router-dom';
                           handlePaste(e)
                         }}
                         maxLength={1}
-                        id={`otp-input-${i}`}
                         className='w-16 h-16 bg-primary-white-1 overflow-hidden  ml-[14px] mt-[36px] left-[246px] 
                         right-[246px] text-3xl border-[1px] border-solid 
                         border-primary-black-7 rounded-2xl  mx-2 text-center focus:outline-none 
