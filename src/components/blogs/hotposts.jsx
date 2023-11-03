@@ -18,7 +18,7 @@ const HotNews = ({ baseURL }) => {
           hotPosts.map((hotPost) => (
             <div key={hotPost.id}>
               {hotPost.id  && (
-                <Link to="/">
+                <Link to={"/blog/post/" + hotPost.id}>
                   <div className="hot-news-col">
                     <img src={!hotPost.img_url ? img3 : hotPost.img_url} alt="" />
                     <div className="flex-center">
