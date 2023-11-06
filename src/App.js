@@ -19,6 +19,7 @@ import PredictChanceCongratulations from "./components/predictChanceComponents/C
 // import AboutUs from "./components/aboutUs/AboutUs";
 
 export function App() {
+  
   return (
     <>
       <ScrollToTop />
