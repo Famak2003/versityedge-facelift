@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const HotNews = ({ baseURL }) => {
   const {data: hotPosts, error, isPending} = useFetch(baseURL + "blog/posts"); 
   return (
-    <div className="hot-news">
+    <div className="hot-news" id="hotnews">
       <h2>Hot News</h2>
       <div className="hot-news-flex flex">
         {error && <div>{ error }</div>}
