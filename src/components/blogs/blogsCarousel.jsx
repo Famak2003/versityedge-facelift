@@ -1,5 +1,6 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import { Link } from "react-router-dom";
 
 const BlogsCarousel = ({ carouselDetails }) => {
     const renderSlides =  carouselDetails.map((carouselDetail) => (
@@ -19,7 +20,9 @@ const BlogsCarousel = ({ carouselDetails }) => {
               <div className="hero-text">
                   {carouselDetail.text}
               </div>
-              <button className="btn black hero-btn">Read More</button>
+              <Link to={"/blogs#hotnews"} >
+                <button className="btn black hero-btn">Read More</button>
+              </Link>
             </div>
         </div>
 ))

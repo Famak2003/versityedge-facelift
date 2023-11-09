@@ -5,11 +5,11 @@ import img3 from "../../assets/hotpost3.png";
 import uiLogo from "../../assets/universityOfIbadan.png";
 import ulLogo from "../../assets/universityOfLagos.png";
 import useFetch from "../useFetch/useFetch";
-// import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link } from 'react-router-dom';
 const HotNews = ({ baseURL }) => {
   const {data: hotPosts, error, isPending} = useFetch(baseURL + "blog/posts"); 
   return (
-    <div className="hot-news">
+    <div className="hot-news" id="hotnews">
       <h2>Hot News</h2>
       <div className="hot-news-flex flex">
         {error && <div>{ error }</div>}
@@ -17,8 +17,8 @@ const HotNews = ({ baseURL }) => {
         {!hotPosts ? "" :
           hotPosts.map((hotPost) => (
             <div key={hotPost.id}>
-              {hotPost.category === "hotnews"  && (
-                <div to="/">
+              {hotPost.id  && (
+                <Link to={"/blog/post/" + hotPost.id}>
                   <div className="hot-news-col">
                     <img src={!hotPost.img_url ? img3 : hotPost.img_url} alt="" />
                     <div className="flex-center">
@@ -49,7 +49,7 @@ const HotNews = ({ baseURL }) => {
                       <h6>{!hotPost.readTime ? "5" : hotPost.readTime} mins read</h6>
                     </div>
                   </div>
-                </div>
+                </Link>
               )}
             </div>
           ))}
