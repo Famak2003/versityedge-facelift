@@ -10,6 +10,7 @@ import HotNews from "./hotposts";
 
 const Blogs = () => {
   const baseURL = "http://versityedge1.eastus.cloudapp.azure.com/v1/"
+  // const baseURL = "https://jsonplaceholder.typicode.com/"
   const carouselDetails = [
     {
       image: ImgHero1,
@@ -36,8 +37,8 @@ const Blogs = () => {
     <div className="blogs" style={{}}>
       <BlogsCarousel carouselDetails={carouselDetails} />
       <HotNews baseURL={ baseURL }/>
-      <PopularNews />
-      <AdmissionTip />
+      <PopularNews baseURL={ baseURL }/>
+      <AdmissionTip baseURL={ baseURL }/>
     </div>
   );
 };

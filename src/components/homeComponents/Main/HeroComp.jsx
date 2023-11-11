@@ -11,12 +11,13 @@ export default function HeroComp() {
         flipped={true}
         paint={["#0A66C2", "#FFCB21"]}
         btnText="Sign up"
-        showBtnMobile={true}
+        // showBtnMobile={true}
         painHeaderText={"journey simple"}
       >
         Attend daily live classes, receive study materials, clarify your doubts,
-        and do mock tests to identify your strengths and pinpoint your weaknesses. Receive personalized
-        guidance that sets you apart from your peers.
+        and do mock tests to identify your strengths and pinpoint your
+        weaknesses. Receive personalized guidance that sets you apart from your
+        peers.
       </Hero>
     </section>
   );

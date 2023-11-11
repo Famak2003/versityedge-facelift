@@ -1,5 +1,5 @@
 import MENUICON from "./../../assets/majesticons_menu.png";
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useRef } from "react";
 import AVATAR from "./../../assets/avatar.png";
 import LOGOUT from "./../../assets/logout.png";
 import Button from "../common/Button";
@@ -26,12 +26,36 @@ function reducer(state, action) {
   }
 }
 
-export default function AvatarAndLogout() {
+export default function AvatarAndLogout({
+  handleMenu,
+  setIsMenuOpen,
+  menuRef,
+}) {
   const [{ isUserLoggedIn }, dispatch] = useReducer(reducer, initialState);
+  const menuToggle = useRef();
+
+  // handles clicks outside the intended elements(harmburger menu and the elements inside it)
+  useEffect(function () {
+    let handleClickOutside = (e) => {
+      if (
+        !menuToggle.current.contains(e.target) &&
+        !menuRef.current.contains(e.target)
+      )
+        setIsMenuOpen(false);
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  });
 
   // OnLoad, log in state will be set to false/notLoggedIn
   useEffect(function () {
     dispatch({ type: "notLoggedIn" });
+
+    return () => {};
   }, []);
 
   return (
@@ -57,8 +81,14 @@ export default function AvatarAndLogout() {
               Sign up
             </Button>
           </Link>
-          <button className=" inline-block mobile:hidden">
+
+          <button
+            ref={menuToggle}
+            onClick={() => handleMenu()}
+            className=" inline-block mobile:hidden"
+          >
             <img src={MENUICON} alt="menu" />
+            {}
           </button>
         </div>
       )}

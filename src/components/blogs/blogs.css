@@ -426,6 +426,40 @@
 form:focus-within {
   outline: none;
 }
+/* Create blog */
+.create-blog {
+  max-width: 400px;
+  text-align: center;
+  margin: 10px auto;
+}
+.create-blog h1 {
+  font-size: 22px;
+  font-weight: 600;
+  padding-bottom: 50px;
+}
+.create-blog label {
+  text-align: center;
+  display: block;
+  font-weight: 700;
+}
+.create-blog input, .create-blog textarea{
+  width: 100%;
+  padding: 10px;
+  margin: 10px auto ;
+  box-sizing: border-box;
+  display:block;
+  border: 2px solid #CDCDCE;
+}
+.create-blog button {
+  background-color: #0a66c2;
+  padding: 10px 18px;
+  color: #FFF;
+  border: none;
+}
+.disabled {
+  background-color: #cdcdcd;
+  cursor: not-allowed;
+}
 @media screen and (max-width: 767.9px) {
   .grid {
     display: flex;

@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const HotNews = ({ baseURL }) => {
   const {data: hotPosts, error, isPending} = useFetch(baseURL + "blog/posts"); 
   return (
-    <div className="hot-news">
+    <div className="hot-news" id="hotnews">
       <h2>Hot News</h2>
       <div className="hot-news-flex flex">
         {error && <div>{ error }</div>}
@@ -18,7 +18,7 @@ const HotNews = ({ baseURL }) => {
           hotPosts.map((hotPost) => (
             <div key={hotPost.id}>
               {hotPost.id < 7 && (
-                <Link to={`/blogs/post/${hotPost.id}`}>
+                <div to="/">
                   <div className="hot-news-col">
                     <img src={!hotPost.img_url ? img3 : hotPost.img_url} alt="" />
                     <div className="flex-center">
