@@ -27,10 +27,7 @@ module.exports = {
       "29xl": "48px",
       inherit: "inherit",
       },
-      fontFamily: {
-        "text medium": "Nunito",
-        "text xl": "Nunito"
-      },
+  
       screens: {
         Lxl: "1420px",
         large: "1340px",
