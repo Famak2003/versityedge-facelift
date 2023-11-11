@@ -58,7 +58,38 @@ const Blog = () => {
           </div>
         )}
       </div>
-    )
-  }
-  
-  export default Blog
+      <div className="impression-readTime-section">
+        <h6>
+          {blogDetail.readTime > 59
+            ? `${blogDetail.readTime / 60} hours`
+            : `${blogDetail.readTime} mins`}{" "}
+          read
+        </h6>
+        <div className="impressions-section">
+          <h6>
+            {blogDetail.postComment > 999
+              ? `${blogDetail.postComment / 1000}k`
+              : `${blogDetail.postComment}`}{" "}
+            comments
+          </h6>
+          <h6>
+            {blogDetail.postImpressions > 999
+              ? `${blogDetail.postImpressions / 1000}k`
+              : `${blogDetail.postImpressions}`}{" "}
+            impressions
+          </h6>
+          <button className="share-btn">share</button>
+        </div>
+      </div>
+      <p className="blog-contents">{blogDetail.postContent}</p>
+      <Comments />
+      <div className="btn-div">
+        <Link to="/blogs" className="go-back-btn right">
+          Go back
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default Blog;

@@ -1,19 +1,30 @@
 import Menu from "./Menu/Menu";
 import AvatarAndLogout from "./AvatarAndLogout";
 import Logo from "./Logo";
-import MobileHeader from "./MobileHeader";
+import { useRef, useState } from "react";
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef();
+
+  function handleMenu() {
+    setIsMenuOpen((open) => !open);
+  }
+
+  // console.log(menuRef);
+
   return (
     <header className=" flex h-[7rem] items-center px-[2rem] md:mt-[2rem] md:px-[4rem] lg:mt-[3rem] lg:px-[5rem]">
-      <nav className=" my-[1rem] flex w-[100%] items-center justify-between ">
+      <nav className=" relative my-[1rem] flex w-[100%] items-center justify-between">
         <Logo />
 
-        <MobileHeader />
+        <Menu isMenuOpen={isMenuOpen} menuRef={menuRef} />
 
-        <Menu />
-
-        <AvatarAndLogout />
+        <AvatarAndLogout
+          handleMenu={handleMenu}
+          setIsMenuOpen={setIsMenuOpen}
+          menuRef={menuRef}
+        />
       </nav>
     </header>
   );

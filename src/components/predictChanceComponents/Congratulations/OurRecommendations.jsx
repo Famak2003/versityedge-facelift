@@ -5,6 +5,7 @@ import Card from "../../common/Card";
 import IMG1 from "./../../../assets/Chemistry.png";
 import IMG2 from "./../../../assets/universityOfLagos.png";
 
+//ask backend to specify if its subject, or university
 const cards = [
   {
     image: IMG1,
@@ -44,7 +45,7 @@ function OurRecommendations() {
       </div>
       <form className="flex h-[3.5rem] w-[80%] items-center justify-between rounded-[2rem] bg-[#ffffff] px-[1rem] ring-1 ring-[var(--gray-texture)] mobile:h-[2.4rem] mobile:w-[40%] mobile:px-[.5rem] lmobile:h-[3.2rem] sm:h-[4.5rem] sm:px-[.7rem] md:px-[1.2rem] lg:px-[2rem] ">
         <input
-          type="email"
+          type="text"
           required
           className=" float-left w-[70%] bg-transparent text-[1rem] text-[#000000] focus:outline-none mobile:text-[.6rem] lmobile:text-[.8rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.5rem] "
           placeholder="Search"

@@ -1,4 +1,4 @@
-export function Line({ img, line }) {
+export function Line({ line }) {
   return (
     <img
       src={line}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Menu.css";
 
 import { NavLinks } from "../../common/NavLinks";
@@ -22,18 +22,39 @@ const menuLinks = [
   { text: "Contact Us", path: "/contactUs" },
 ];
 
-export default function Menu() {
+export default function Menu({ isMenuOpen, menuRef }) {
   const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
+  const featuresToggle = useRef();
 
   // handles Features dropdow
   function handleFeaturesClick() {
     setIsFeaturesOpen((open) => !open);
   }
+
+  useEffect(function () {
+    let handler = (e) => {
+      if (!featuresToggle.current.contains(e.target)) setIsFeaturesOpen(false);
+    };
+
+    document.addEventListener("mousedown", handler);
+  });
+
   return (
-    <menu className="main-nav hidden gap-[1rem] mobile:flex sm:gap-[2rem] md:ml-[8rem] md:text-[1.8rem] ">
+    <menu
+      ref={menuRef}
+      className={` ${
+        isMenuOpen
+          ? "right-[0] opacity-[1]"
+          : "right-[-100%] opacity-[0] mobile:right-0 mobile:opacity-[1]"
+      } main-nav absolute top-[80%] z-[999] flex h-[90vh] w-[12rem] flex-col items-center gap-[1rem] pt-5 backdrop-blur-sm transition-all duration-500 smobile:w-[15rem] mobile:relative mobile:flex mobile:h-fit mobile:w-fit mobile:flex-row mobile:items-start mobile:justify-center mobile:bg-transparent mobile:p-0 sm:gap-[2rem] md:ml-[8rem] md:text-[1.8rem] `}
+    >
       {menuLinks.map((item, index) => {
         return item.text === "Features" ? (
-          <li key={index} className={` duration-500} relative cursor-pointer`}>
+          <li
+            ref={featuresToggle}
+            key={index}
+            className={`relative cursor-pointer transition-all duration-500 `}
+          >
             <Features
               handleFeaturesClick={handleFeaturesClick}
               isFeaturesOpen={isFeaturesOpen}

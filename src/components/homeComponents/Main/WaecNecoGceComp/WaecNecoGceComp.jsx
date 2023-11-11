@@ -3,11 +3,6 @@ import FRAME6 from "./../../../../assets/img2.png";
 import FRAME7 from "./../../../../assets/img4.png";
 import FRAME8 from "./../../../../assets/img10.png";
 
-// import LINE4 from "./../../../assets/Line4.png";
-// import LINE5 from "./../../../assets/Line5.png";
-// import LINE6 from "./../../../assets/Line7.png";
-// import LINE7 from "./../../../assets/Line6.png";
-
 import CLUSTERIMG from "./../../../../assets/ClusterImage.png";
 import WaecNecoGceElement from "./WaecNecoGceElement";
 import ConnectedLine from "./ConnectedLine";

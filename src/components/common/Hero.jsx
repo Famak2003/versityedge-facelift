@@ -4,6 +4,7 @@ import Button from "./Button";
 function Hero({
   heroImg,
   btnText = "",
+  btnPath = "",
   flipped = false,
   header,
   painHeaderText,
@@ -19,7 +20,7 @@ function Hero({
           flipped ? "mobile:order-2 " : "mobile:order-1 "
         } order-2 flex h-[50%] w-[100%] items-center justify-center mobile:order-1 mobile:h-[100%] mobile:w-[50%] `}
       >
-        <img className=" h-[100%] " src={heroImg} alt="img" />
+        <img className=" h-[100%] object-contain " src={heroImg} alt="img" />
       </figure>
 
       {/* flipped checks to know what layout to render */}
@@ -44,17 +45,20 @@ function Hero({
           ""
         )}
         <p className=" heroResponsiveText text-left">{children}</p>
-        {btnText ? (
-          <Button
-            addstyle={`${
-              showBtnMobile ? "mobile:hidden block" : ""
-            } self-start xs:text-[.9rem] smobile:text-[1rem] mobile:self-end py-[.7rem] mobile:py-[1rem] text-[#ffff] mobile:text-[1rem] md:text-[1.2rem] lg:text-[1.4rem] btnText xs:py-0 mobile:py-[.2rem] sm:py-[.5rem] md:py-[.7rem] lg:py-[1rem] `}
-          >
-            {btnText}
-          </Button>
-        ) : (
-          ""
-        )}
+        <div className=" flex mobile:justify-end">
+          {btnText ? (
+            <Button
+              path={btnPath ? btnPath : ""}
+              addstyle={`${
+                showBtnMobile ? "mobile:hidden block" : ""
+              } self-start xs:text-[1rem] smobile:text-[1.2rem] mobile:self-end text-[#ffff] mobile:text-[1rem] md:text-[1.2rem] lg:text-[1.4rem] btnText xs:py-0 mobile:py-[.2rem] sm:py-[.5rem] md:py-[.7rem] lg:py-[1rem] `}
+            >
+              {btnText}
+            </Button>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </div>
   );

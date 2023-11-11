@@ -1,45 +1,52 @@
-// import { useState } from "react";
-// import Stepper from "./Stepper";
-// import StepperControl from "./StepperControl";
+import { useState } from "react";
+import Stepper from "./Stepper";
+import StepperControl from "./StepperControl";
 
-// import AcamedicBackground from "./steps/AcamedicBackground";
-// import DemographicsPreference from "./steps/DemographicsPreference";
-// import UtmeScore from "./steps/UtmeScore";
+import DemographicsPreference from "./steps/DemographicsPreference";
+import AcamedicBackground from "./steps/AcamedicBackground";
+import UtmeScore from "./steps/UtmeScore";
 
-// export default function Form() {
-//   const [currentStep, setCurrentStep] = useState(1);
-//   const steps = [
-//     "Demographics & preference",
-//     "Academic background",
-//     "Utme Score",
-//   ];
+export default function Form() {
+  const [currentStep, setCurrentStep] = useState(1);
+  const steps = [
+    "Demographics & preference",
+    "Academic background",
+    "Utme Score",
+  ];
 
-//   const displayStep = (step) => {
-//     switch (step) {
-//       case 1:
-//         return <DemographicsPreference />;
-//       case 2:
-//         return <AcamedicBackground />;
-//       case 3:
-//         return <UtmeScore />;
-//       default:
-//     }
-//   };
+  function handleClick(index) {
+    setCurrentStep(index);
+  }
 
-//   return (
-//     <section className=" generalPadding flex flex-col items-center justify-center gap-[3rem]">
-//       <h1 className=" responsiveHeader font-bold">Predict Admission Chances</h1>
+  const displayStep = (step) => {
+    switch (step) {
+      case 1:
+        return <DemographicsPreference />;
+      case 2:
+        return <AcamedicBackground />;
+      case 3:
+        return <UtmeScore />;
+      default:
+    }
+  };
 
-//       {/* Stepper */}
-//       <Stepper steps={steps} currentStep={currentStep} />
+  return (
+    <section className=" generalPadding flex flex-col items-center justify-center gap-[5rem]">
+      <h1 className=" responsiveHeader font-bold">Predict Admission Chances</h1>
 
-//       <form>
-//         <label></label>
-//         <input placeholder="hhdhd" />
-//       </form>
+      {/* Stepper */}
+      <Stepper
+        steps={steps}
+        currentStep={currentStep}
+        handleClick={handleClick}
+      />
 
-//       {/* Stepper control */}
-//       <StepperControl />
-//     </section>
-//   );
-// }
+      <form className=" w-full px-[3rem] pt-[3rem]">
+        {displayStep(currentStep)}
+      </form>
+
+      {/* Stepper control */}
+      <StepperControl currentStep={currentStep} handleClick={handleClick} />
+    </section>
+  );
+}

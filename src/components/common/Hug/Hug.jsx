@@ -22,7 +22,7 @@ export default function Hug({
             className={` ${
               staggered
                 ? id === 1 || id === 3
-                  ? "w-full mobile:mt-[2rem] sm:mt-[6rem]"
+                  ? "w-full mobile:mt-[2rem] sm:mt-[3rem] md:mt-[6rem]"
                   : "mt-[1rem] mobile:mt-0"
                 : ""
             } relative flex flex-col items-center justify-center`}

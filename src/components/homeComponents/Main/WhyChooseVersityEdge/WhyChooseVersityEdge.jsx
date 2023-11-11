@@ -60,7 +60,7 @@ export default function WhyChooseVersityEdge() {
           </p>
         </div>
 
-        <ul className="cards relative h-fit w-full  place-items-center items-center justify-center gap-x-[2rem] gap-y-[2rem] smobile:gap-x-[2rem] mobile:flex mobile:gap-[2rem] md:gap-[3.5rem]">
+        <ul className="cards relative flex h-fit w-full place-items-center items-center justify-center gap-x-[2rem] gap-y-[2rem] smobile:gap-x-[2rem] mobile:flex mobile:gap-[2rem] md:gap-[3.5rem]">
           {Array.from({ length: text.length }, (_, i) => i + 1).map((num) => (
             // Cards
             <Hug

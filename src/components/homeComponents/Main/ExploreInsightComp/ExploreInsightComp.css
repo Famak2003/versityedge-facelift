@@ -1,0 +1,7 @@
+.ExploreSlider::-webkit-scrollbar {
+  display: none;
+}
+
+.ExploreSlider::-webkit-scrollbar-thumb {
+  display: none;
+}

@@ -42,7 +42,7 @@ const teamThumbnail = [
 
 function OurTeam() {
   return (
-    <section className=" generalPadding flex h-fit flex-col items-center justify-center gap-[5rem] bg-[var(--lightblue-texture)] py-[2rem] sm:py-[3rem] md:py-[5rem]">
+    <section className=" generalPadding flex h-fit w-full flex-col items-center justify-center gap-[5rem] bg-[var(--lightblue-texture)] py-[2rem] sm:py-[3rem] md:py-[5rem]">
       <h1 className="responsiveHeader font-bold"> Our Team</h1>
       <div className="flex w-full flex-col gap-[10rem]">
         <div className="ourTeam h-fit w-full">
