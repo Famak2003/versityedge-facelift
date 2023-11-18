@@ -1,14 +1,5 @@
 import { useState } from "react";
-
-function Years() {
-  const currentYear = new Date().getFullYear();
-  const startYear = 1960;
-  const years = [];
-  for (let year = startYear; year <= currentYear; year++) {
-    years.push(year);
-  }
-  return years;
-}
+import Years from "../Year";
 
 function UtmeScore() {
   const [attempts, setAttemps] = useState(1);

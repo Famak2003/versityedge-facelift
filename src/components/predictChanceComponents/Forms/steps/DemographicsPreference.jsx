@@ -1,50 +1,56 @@
-import Input from "./Input";
-import NigeriaStates from "./../Files/nigeria-states.json";
+import Input from "../Input";
 
 const formContent = [
   {
     label: "Please list the tertiary institutions you are interested in",
-    input: "multipleSelection",
+    options: "universities",
+    type: "multipleSelection",
   },
   {
     label: "Please list the courses you are interested in",
-    input: "multipleSelection",
+    options: "courses",
+    type: "dropDown",
   },
   {
     label: "State of origin",
     comment:
       '"knowing your state of origin helps us account for any state-based admission quotas"',
-    input: "dropDown",
-    content: NigeriaStates,
+    options: "states",
+    type: "dropDown",
   },
   {
     label: "Are You Currently in Secondary School or Have You Graduated?",
     comment:
       '"Please select the option that best describes your current educational status"',
-    input: "dropDown",
+    options: "yes/no",
+    type: "dropDown",
   },
   {
     label: "Year of Graduation or Expected Graduation:",
     comment:
       '"We want to understand your education timeline. Enter the year you graduated from or expect to geaduate from secondary school"',
-    input: "dropDown",
+    options: "yearOfGraduation",
+    type: "dropDown",
   },
   {
     label: "Study Hours:",
     comment:
       '"On average, how many hours do you dedicate to studying or preparing for your upcoming exams per week?"',
-    input: "dropDown",
+    options: "studyHours",
+    type: "dropDown",
   },
   {
     label: "Secondary School Type",
     comment: '"Did you attend a private or public secondary school?"',
-    input: "dropDown",
+    options: "secondarySchool",
+    type: "dropDown",
   },
   {
     label: "Academic Reputation Rating",
     comment:
       '"On a scale of 1 to 10, how would you rate your academic reputation in your current or last secondary school?"',
-    input: "number",
+    option: "rating",
+    type: "dropDown",
   },
 ];
 
@@ -58,7 +64,7 @@ function DemographicsPreference() {
             num={index}
             comment={obj.comment}
             content={obj.content}
-            input={obj.input}
+            type={obj.type}
           >
             {obj.label}
           </Input>

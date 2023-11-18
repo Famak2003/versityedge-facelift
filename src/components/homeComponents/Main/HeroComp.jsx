@@ -11,6 +11,7 @@ export default function HeroComp() {
         flipped={true}
         paint={["#0A66C2", "#FFCB21"]}
         btnText="Sign up"
+        btnPath="/signUp"
         // showBtnMobile={true}
         painHeaderText={"journey simple"}
       >

@@ -3,7 +3,7 @@ import Stepper from "./Stepper";
 import StepperControl from "./StepperControl";
 
 import DemographicsPreference from "./steps/DemographicsPreference";
-import AcamedicBackground from "./steps/AcamedicBackground";
+import AcamedicBackground from "./steps/AcademicBackground/AcamedicBackground";
 import UtmeScore from "./steps/UtmeScore";
 
 export default function Form() {

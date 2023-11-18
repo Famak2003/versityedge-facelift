@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 const useFetch = (baseURL) => {
   const [data, setData] = useState(null);
-  const [isPending, setIsPending] = useState(null);
+  const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -15,16 +15,20 @@ const useFetch = (baseURL) => {
         return res.json();
       })
       .then((data) => {
-        setData(data);
-        setIsPending(false);
-        setError(null);
+        if (!signal.aborted) {
+          setData(data);
+          setIsPending(false);
+          setError(null);
+        }
       })
       .catch((err) => {
-        if (err.name === "AbortError") {
-          console.log("Error Aborted");
-        } else {
-          setError(err.message);
-          setIsPending(false);
+        if (!signal.aborted) {
+          if (err.name === "AbortError") {
+            console.log("Error Aborted", err);
+          } else {
+            setError(err.message);
+            setIsPending(false);
+          }
         }
       });
 
@@ -32,5 +36,4 @@ const useFetch = (baseURL) => {
   }, [baseURL]);
   return { data, isPending, error };
 };
-
 export default useFetch;

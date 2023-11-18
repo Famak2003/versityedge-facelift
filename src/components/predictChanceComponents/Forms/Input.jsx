@@ -1,13 +1,85 @@
+// import Years from "../Year";
+// import NigeriaStates from "./../Files/nigeria-states.json";
 import { Select, Space } from "antd";
 
-export default function Input({ children, comment, num, input }) {
-  const options = [];
-  for (let i = 10; i < 36; i++) {
-    options.push({
-      label: i.toString(36) + i,
-      value: i.toString(36) + i,
-    });
-  }
+export default function Input({ children, comment, num, type }) {
+  const universities = [
+    {
+      label: "university of ibadan",
+      value: "university of ibadan",
+    },
+    {
+      label: "university of lagos",
+      value: "university of lagos",
+    },
+    {
+      label: "university of akure",
+      value: "university of akure",
+    },
+    {
+      label: "ogun state university",
+      value: "ogun state university",
+    },
+    {
+      label: "osun state university",
+      value: "osun state university",
+    },
+    {
+      label: "university of ilorin",
+      value: "university of ilorin",
+    },
+  ];
+
+  // const courses = [
+  //   {
+  //     label: "math",
+  //     value: "math",
+  //   },
+  //   {
+  //     label: "eng",
+  //     value: "eng",
+  //   },
+  //   {
+  //     label: "biology",
+  //     value: "biology",
+  //   },
+  //   {
+  //     label: "physics",
+  //     value: "physics",
+  //   },
+  //   {
+  //     label: "chemistry",
+  //     value: "chemistry",
+  //   },
+  //   {
+  //     label: "literature",
+  //     value: "literature",
+  //   },
+  //   {
+  //     label: "e-commerce",
+  //     value: "e-commerce",
+  //   },
+  // ];
+
+  // const states = [];
+  // for (let i = 0; (i = NigeriaStates.length); i++) {
+  //   states.push({
+  //     label: NigeriaStates[i],
+  //     value: NigeriaStates[i],
+  //   });
+  // }
+
+  // console.log(states);
+
+  // const yearOfGraduation = [];
+  // const Year = Years(2015);
+  // for (let i = 0; i <= Year.length; i++) {
+  //   yearOfGraduation.push({
+  //     label: Year[i],
+  //     value: Year[i],
+  //   });
+  // }
+  // console.log(yearOfGraduation);
 
   const handleChange = (value) => {
     console.log(`selected ${value}`);
@@ -30,7 +102,7 @@ export default function Input({ children, comment, num, input }) {
           )}
         </label>
 
-        {input === "dropDown" && (
+        {type === "dropDown" && (
           <Space
             style={{
               width: "35%",
@@ -40,6 +112,7 @@ export default function Input({ children, comment, num, input }) {
           >
             <Select
               defaultValue="lucy"
+              required
               style={{
                 width: "100%",
               }}
@@ -66,7 +139,7 @@ export default function Input({ children, comment, num, input }) {
             />
           </Space>
         )}
-        {input === "multipleSelection" && (
+        {type === "multipleSelection" && (
           <Space
             style={{
               width: "35%",
@@ -75,28 +148,30 @@ export default function Input({ children, comment, num, input }) {
           >
             <Select
               mode="multiple"
+              required
               allowClear
               style={{
                 width: "100%",
               }}
               placeholder="Please select"
-              defaultValue={["a10", "c12"]}
+              defaultValue={["university of ibadan", "university of lagos"]}
               onChange={handleChange}
-              options={options}
+              options={universities}
             />
           </Space>
         )}
-        {input === "number" && (
+        {type === "number" && (
           <input
             className=" h-[2.8rem] w-[35%] min-w-[15rem] rounded-lg py-[.7rem] pl-[1.5rem] ring-1 ring-[#D9DADB] active:ring-black "
-            type={input}
+            type="number"
             id={`input${num}`}
+            required
             max={10}
             min={0}
             name={`input${num}`}
           />
         )}
-        {input === "radio" && <input type={input} id={`input${num}`} />}
+        {type === "radio" && <input type="radio" id={`input${num}`} />}
       </div>
     </li>
   );
