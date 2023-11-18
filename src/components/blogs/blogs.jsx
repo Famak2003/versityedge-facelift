@@ -37,8 +37,8 @@ const Blogs = () => {
     <div className="blogs" style={{}}>
       <BlogsCarousel carouselDetails={carouselDetails} />
       <HotNews baseURL={ baseURL }/>
-      <PopularNews />
-      <AdmissionTip />
+      <PopularNews baseURL={ baseURL }/>
+      <AdmissionTip baseURL={ baseURL }/>
     </div>
   );
 };
