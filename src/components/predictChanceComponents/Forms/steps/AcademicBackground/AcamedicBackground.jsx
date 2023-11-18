@@ -84,6 +84,8 @@ function AcamedicBackground() {
     dispatch({ type: "setNumOfOlevelSitting", payload: value });
   }
 
+  console.log(listOfSecondarySchoolGrade, listOfSecondarySchoolSubject)
+
   console.log(displayDetails);
   console.log(secondarySchoolGrade);
   console.log(secondarySchoolSubject);
