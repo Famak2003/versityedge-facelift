@@ -45,8 +45,8 @@ function Hero({
           ""
         )}
         <p className=" heroResponsiveText text-left">{children}</p>
-        <div className=" flex mobile:justify-end">
-          {btnText ? (
+        {btnText ? (
+          <div className=" flex mobile:justify-end">
             <Button
               path={btnPath ? btnPath : ""}
               addstyle={`${
@@ -55,10 +55,10 @@ function Hero({
             >
               {btnText}
             </Button>
-          ) : (
-            ""
-          )}
-        </div>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
