@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -6,21 +6,38 @@ import ngaFlag from "./../../assets/twemoji_flag-nigeria.png";
 import Stepper from "./stepper";
 import { useDispatch } from "react-redux";
 import { getNextSignupPage } from "../../redux/slice/authSlice";
-
+import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import useFetch from '../useFetch/useFetch';
 
 const Page1 = () => {
   const dispatch = useDispatch();
 
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/auth/signup", {
+      phone: phoneNumber,
+      password: "Abba@111"
+    })
+    .then(() => {
+      dispatch(getNextSignupPage(2));
+    }).catch((err) => {
+      toast(err.response.data.message);
+      console.log("err", err.response.data.message);
+    })
+}
  
   
   const bg1 = "bg-primary-blue-1";
   const txt1 = "text-primary-white-1";
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(getNextSignupPage(2));
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   dispatch(getNextSignupPage(2));
+  // };
 
   return (
 
@@ -49,7 +66,8 @@ const Page1 = () => {
               minLength={10} 
               maxLength={11} 
               required 
-              placeholder='Phone number' 
+              placeholder='Phone number'
+              onChange={(e) => setPhoneNumber(e.target.value)} 
               className="relative mt-0 ml-40 text-black top-[0px] px-[24px] left-[90px] 
               rounded-2xl bg-primary-white-1 box-border w-[230px] 
               h-[55px] outline-none overflow-hidden border-[1px] border-solid border-primary-black-7 top-[15px] left-[29px] font-light lmobile:w-[391px] lmobile:left-[14px]" />
@@ -93,6 +111,7 @@ const Page1 = () => {
             </Link>
           </div>
         </form>
+        <ToastContainer />
       </div>
   );
 };

@@ -1,22 +1,50 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginUserIn } from "../../redux/slice/authSlice";
+
+import axios from "axios";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login1 = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [password, setPassword] = useState("")
+
   // console.log("AUTH PAGE =========>", location.state.destination);
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   dispatch(loginUserIn());
+  //   if (location.state) {
+  //     navigate(`${location.state.destination}`, { replace: true });
+  //   } else navigate("/", { replace: true });
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(loginUserIn());
-    if (location.state) {
-      navigate(`${location.state.destination}`, { replace: true });
-    } else navigate("/", { replace: true });
-  };
+    axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/auth/signin", {
+      phone: phoneNumber,
+      password: password
+    })
+    .then(() => {
+      toast("Sign in successfull");
+      dispatch(loginUserIn());
+      setTimeout(() => {
+        if (location.state) {
+          navigate(`${location.state.destination}`, { replace: true });
+        } else navigate("/", { replace: true });
+      }, 2000);
+    }).catch((err)   => {
+      toast(err.response.data.message);
+      console.log("err", err.response.data.message);
+    })
+}
 
   return (
     <div className="flex flex-col items-center justify-start text-left">
@@ -58,6 +86,7 @@ const Login1 = () => {
               minLength={10}
               maxLength={11}
               required
+              onChange={(e) => setPhoneNumber(e.target.value)}
               className="absolute left-[60px] top-[0px] box-border h-[55px] w-[270px] 
               overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 px-[24px] font-light text-black outline-none lmobile:left-[0px] lmobile:w-[391px]"
             />
@@ -66,6 +95,7 @@ const Login1 = () => {
               type="password"
               placeholder="Password"
               required
+              onChange={(e) => setPassword(e.target.value)}
               className="absolute left-[60px] top-[91px] box-border h-[55px] w-[270px] 
               overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 px-[24px] font-light text-black outline-none lmobile:left-[0px] lmobile:w-[391px]"
             />
@@ -84,6 +114,7 @@ const Login1 = () => {
           </button>
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 };
