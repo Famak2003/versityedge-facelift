@@ -47,7 +47,7 @@ const Page1 = () => {
             <input
               type="tel"
               minLength={10}
-              maxLength={10}
+              maxLength={11}
               required
               placeholder="Phone number"
               className="relative left-[29px] top-[15px] ml-40 mt-0 
