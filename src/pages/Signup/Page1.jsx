@@ -50,14 +50,14 @@ const Page1 = () => {
               maxLength={11}
               required
               placeholder="Phone number"
-              className="relative left-[29px] top-[15px] ml-40 mt-0 
-                  box-border h-[55px] w-[230px] overflow-hidden 
-                  rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 px-[24px] font-light text-black outline-none lmobile:left-[14px] lmobile:w-[391px]"
+              className="relative mt-0 ml-40 text-black top-[0px] px-[24px] left-[90px] 
+              rounded-2xl bg-primary-white-1 box-border w-[230px] 
+              h-[55px] outline-none overflow-hidden border-[1px] border-solid border-primary-black-7 top-[15px] left-[29px] font-light lmobile:w-[391px] lmobile:left-[14px]"
             />
-
-            <div className="absolute left-[100px] top-[0px] mt-6 flex flex-row items-center justify-start gap-[16px] overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 px-2 py-[9.5px] text-black lmobile:left-[0px] lmobile:px-4">
+    
+            <div className="absolute mt-6 top-[0px] left-[100px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-start py-[9.5px] px-2 gap-[16px] text-black border-[1px] border-solid border-primary-black-7 lmobile:left-[0px] lmobile:px-4">
               <img
-                className="relative h-9 w-7 shrink-0 overflow-hidden lmobile:w-9"
+                className="relative w-7 h-9 overflow-hidden shrink-0 lmobile:w-9"
                 alt=""
                 src={ngaFlag}
               />
