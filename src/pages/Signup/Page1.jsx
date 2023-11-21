@@ -12,7 +12,7 @@ import { getNextSignupPage } from "../../redux/slice/authSlice";
 const Page1 = () => {
   const dispatch = useDispatch();
 
-  // const txt1 = "text-primary-white-1";
+ 
   
   const bg1 = "bg-primary-blue-1";
   const txt1 = "text-primary-white-1";
@@ -27,7 +27,7 @@ const Page1 = () => {
     <div className="relative w-full flex flex-col items-center justify-start gap-[40px] text-center text-5xl text-primary-blue-1 font-text-xl-medium">
         <div className="relative w-[289px] h-[59px]">
           <div className="absolute top-[29.5px] left-[58.5px] box-border w-[172px] h-px border-t-[1px] border-solid border-primary-blue-7" />
-          <Stepper bg1={"bg-primary-blue-1"} txt1={txt1}/>
+          <Stepper bg1={bg1} txt1={txt1}/>
         </div>
         <form onSubmit={handleSubmit} className="flex flex-col items-center justify-start gap-[40px] text-left text-29xl text-black">
           <div className="relative w-[510px] h-[139px]">
