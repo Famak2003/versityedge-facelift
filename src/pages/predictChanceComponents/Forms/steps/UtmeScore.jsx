@@ -42,7 +42,7 @@ function UtmeScore() {
           </div>
         </li>
       </ul>
-      <div className=" flex flex-col gap-[.5rem] mobile:gap-[1rem] sm:gap-[1.5rem] ">
+      <div className=" mt-5 flex flex-col gap-[.5rem] mobile:gap-[1rem] sm:gap-[1.5rem] ">
         <UtmeAttempts
           idx={0}
           setUtme={setUtme}
@@ -55,7 +55,7 @@ function UtmeScore() {
         <p className=" responsiveHeader text-[var(--gray-texture)]">
           Other Settings
         </p>
-        <div className=" flex flex-col gap-[3rem] smobile:gap-[.5rem] mobile:gap-[1rem] sm:gap-[1.5rem] md:gap-[2rem]">
+        <div className=" flex flex-col gap-[3rem] smobile:gap-[2rem] mobile:gap-[1rem] sm:gap-[1.5rem] md:gap-[2rem]">
           {numAttempts.map((_, index) => {
             return (
               <UtmeAttempts
