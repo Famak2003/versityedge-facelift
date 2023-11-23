@@ -18,7 +18,7 @@ function UtmeScore() {
   // }, [years, utme, attempts])
   return (
     <div className=" flex flex-col gap-[.5rem] mobile:gap-[1rem] sm:gap-[1.5rem] md:gap-[3rem]">
-      <p className=" Text24px text-center">
+      <p className=" responsiveHeader text-center">
         Please provide your UTME score for the most recent exam you have taken,
         along with any previous UTME scores if applicable.
       </p>

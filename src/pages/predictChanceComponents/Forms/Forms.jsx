@@ -41,7 +41,7 @@ export default function Form() {
         handleClick={handleClick}
       />
 
-      <form className=" mb-[5rem] w-full px-[3rem] mobile:pt-[3rem]">
+      <form className=" mb-[5rem] w-full px-[2rem] mobile:px-[3rem] mobile:pt-[3rem]">
         {displayStep(currentStep)}
       </form>
 

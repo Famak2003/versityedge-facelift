@@ -84,14 +84,14 @@ function AcamedicBackground() {
     dispatch({ type: "setNumOfOlevelSitting", payload: value });
   }
 
-  console.log(listOfSecondarySchoolGrade, listOfSecondarySchoolSubject)
+  console.log(listOfSecondarySchoolGrade, listOfSecondarySchoolSubject);
 
   console.log(displayDetails);
   console.log(secondarySchoolGrade);
   console.log(secondarySchoolSubject);
   return (
     <div className=" flex flex-col gap-[3rem]">
-      <p className=" Text24px text-center md:leading-[3rem]">
+      <p className=" responsiveHeader text-center md:leading-[3rem]">
         Your O'Level grades play a crucial role in assessing your eligibility
         for admission. Accurate and up-to-date grades will enhance the accuracy
         of our prediction and personalized recommendations.
