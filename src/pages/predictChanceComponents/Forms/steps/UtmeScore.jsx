@@ -42,7 +42,7 @@ function UtmeScore() {
           </div>
         </li>
       </ul>
-      <div className=" mt-5 flex flex-col gap-[.5rem] mobile:gap-[1rem] sm:gap-[1.5rem] ">
+      <div className=" mt-5 flex flex-col gap-[1.5rem] mobile:gap-[1rem] sm:gap-[1.5rem] ">
         <UtmeAttempts
           idx={0}
           setUtme={setUtme}
@@ -88,7 +88,7 @@ const UtmeAttempts = ({
 }) => {
   return (
     <div className=" flex flex-col gap-[1rem] smobile:flex-row smobile:items-center smobile:gap-[2rem] mobile:gap-[5rem]">
-      <div className="flex gap-[1rem]">
+      <div className="flex items-center gap-[1rem]">
         <label className="Text24px">Utme Score</label>{" "}
         <input
           id={idx}
@@ -105,7 +105,7 @@ const UtmeAttempts = ({
           placeholder="..."
         />
       </div>
-      <div className=" flex gap-[1rem]">
+      <div className=" flex items-center gap-[1rem]">
         <label className="Text24px">Year</label>
         <select
           id={idx}
