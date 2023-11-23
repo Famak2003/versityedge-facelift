@@ -25,19 +25,19 @@ function UtmeScore() {
       <ul className=" ">
         <li className=" list-disc">
           <div className=" flex items-center gap-5">
-            <label htmlFor="UTMEAttemps">Number of UTME attempts</label>
+            <label className=" Text24px" htmlFor="UTMEAttemps">
+              Number of UTME attempts
+            </label>
             <select
               onChange={(e) => setAttemps(e.target.value)}
               value={attempts}
               name="UTMEAttemps"
               id="UTMEAttemps"
-              className="h-[2.8rem] w-[5rem] rounded-lg px-[1rem] ring-1 ring-[var(--gray-texture)]"
+              className="WCVCardHeader h-[2.8rem] w-[5rem] rounded-lg px-[1rem] ring-1 ring-[var(--gray-texture)]"
             >
               <option value={1}>1</option>
               <option value={2}>2</option>
               <option value={3}>3</option>
-              <option value={4}>4</option>
-              <option value={5}>5</option>
             </select>
           </div>
         </li>
@@ -52,8 +52,10 @@ function UtmeScore() {
           setYearDataObjSetter={setYearDataObj}
           setUtmeDataObjSetter={setUtmeDataObj}
         />
-        <p className=" text-[var(--gray-texture)]">Other Settings</p>
-        <div className=" flex flex-col gap-[.5rem] mobile:gap-[1rem] sm:gap-[1.5rem] md:gap-[2rem]">
+        <p className=" responsiveHeader text-[var(--gray-texture)]">
+          Other Settings
+        </p>
+        <div className=" flex flex-col gap-[3rem] smobile:gap-[.5rem] mobile:gap-[1rem] sm:gap-[1.5rem] md:gap-[2rem]">
           {numAttempts.map((_, index) => {
             return (
               <UtmeAttempts
@@ -85,9 +87,9 @@ const UtmeAttempts = ({
   setYearDataObjSetter,
 }) => {
   return (
-    <div className=" flex items-center gap-[5rem]">
+    <div className=" flex flex-col gap-[1rem] smobile:flex-row smobile:items-center smobile:gap-[2rem] mobile:gap-[5rem]">
       <div className="flex gap-[1rem]">
-        <label>Utme Score</label>{" "}
+        <label className="Text24px">Utme Score</label>{" "}
         <input
           id={idx}
           onChange={(e) => {
@@ -99,12 +101,12 @@ const UtmeAttempts = ({
               };
             });
           }}
-          className=" h-[2.8rem] w-[5rem] rounded-lg px-[1rem] ring-1 ring-[var(--gray-texture)]"
+          className=" WCVCardHeader h-[2.8rem] w-[5rem] rounded-lg px-[1rem] ring-1 ring-[var(--gray-texture)]"
           placeholder="..."
         />
       </div>
       <div className=" flex gap-[1rem]">
-        <label>Year</label>
+        <label className="Text24px">Year</label>
         <select
           id={idx}
           onChange={(e) => {
@@ -117,7 +119,7 @@ const UtmeAttempts = ({
             });
             setYears(() => [...years, (years[idx] = e.target.value)]);
           }}
-          className=" h-[2.8rem] w-[7rem]  rounded-lg pl-[.5rem] ring-1 ring-[var(--gray-texture)]"
+          className=" WCVCardHeader h-[2.8rem] w-[7rem]  rounded-lg pl-[.5rem] ring-1 ring-[var(--gray-texture)]"
         >
           {Years().map((yr, index) => {
             return (

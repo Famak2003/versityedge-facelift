@@ -112,13 +112,13 @@ export default function GalleryCarousel({ carouselData, type = "" }) {
           onClick={() => prevBtn()}
           className=" flex h-3 w-3 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_1.2863757610321045px_2.572751522064209px_0_rgba(180,180,180,0.25)] mobile:h-4 mobile:w-4 lmobile:h-6 lmobile:w-6 md:h-10 md:w-10"
         >
-          <img className="rotate-180 scale-50" src={BUTTON} alt="back" />
+          <img className="rotate-180 scale-75" src={BUTTON} alt="back" />
         </button>
         <button
           onClick={() => nextBtn()}
           className="flex h-3 w-3 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_2.572751522064209px_5.145503044128418px_0_rgba(180,180,180,0.25)] mobile:h-4 mobile:w-4 lmobile:h-6 lmobile:w-6 md:h-10 md:w-10"
         >
-          <img className="scale-50" src={BUTTON} alt="back" />
+          <img className="scale-75" src={BUTTON} alt="back" />
         </button>
       </div>
     </div>

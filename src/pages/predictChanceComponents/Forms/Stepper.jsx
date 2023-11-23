@@ -76,7 +76,7 @@ export default function Stepper({ steps, currentStep, handleClick }) {
         <div className=" relative flex flex-col items-center">
           <p
             onClick={() => handleClick(index + 1)}
-            className={` flex h-[3rem] w-[3rem] items-center justify-center rounded-full text-center  ring-1 ring-[#0A66C2] duration-500 ease-in-out
+            className={` Text24px flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-full text-center ring-1 ring-[#0A66C2]  duration-500 ease-in-out mobile:h-[3rem] mobile:w-[3rem]
             ${
               step.highlighted
                 ? "bg-[var(--blue-texture)] text-white"
@@ -92,7 +92,7 @@ export default function Stepper({ steps, currentStep, handleClick }) {
             {index + 1}
           </p>
           <p
-            className={` absolute top-0 mt-[4rem] w-fit whitespace-nowrap ${
+            className={` absolute top-0 mt-[4rem] hidden w-fit whitespace-nowrap text-[1rem] mobile:block mobile:text-[1.1rem] md:text-[1.3rem] ${
               step.highlighted ? "text-gray-900" : "text-gray-400"
             }`}
           >
@@ -113,7 +113,7 @@ export default function Stepper({ steps, currentStep, handleClick }) {
   });
 
   return (
-    <div className=" mx-[5rem] flex w-[75%] items-center justify-between sm:w-[70%] lg:w-[50%] ">
+    <div className=" mx-[5rem] flex w-[60%] items-center justify-between mobile:w-[80%] sm:w-[70%] md:w-[75%] lg:w-[60%] ">
       {displaySteps}
     </div>
   );

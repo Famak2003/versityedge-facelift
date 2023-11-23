@@ -182,13 +182,13 @@ const Carousel = ({ carouselData, quoteAuthor }) => {
           onClick={() => prevBtn()}
           className=" flex h-4 w-4 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_1.2863757610321045px_2.572751522064209px_0_rgba(180,180,180,0.25)]  lmobile:h-6 lmobile:w-6 md:h-10 md:w-10"
         >
-          <img className="rotate-180 scale-50" src={ARROWBTN} alt="back" />
+          <img className="rotate-180 scale-75" src={ARROWBTN} alt="back" />
         </button>
         <button
           onClick={() => nextBtn()}
           className="flex h-4 w-4 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_2.572751522064209px_5.145503044128418px_0_rgba(180,180,180,0.25)]  lmobile:h-6 lmobile:w-6 md:h-10 md:w-10"
         >
-          <img className="scale-50" src={ARROWBTN} alt="back" />
+          <img className="scale-75" src={ARROWBTN} alt="back" />
         </button>
       </div>
     </div>
