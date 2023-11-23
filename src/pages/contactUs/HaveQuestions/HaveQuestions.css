@@ -10,7 +10,7 @@
   flex-direction: column;
 }
 
-@media only screen and (max-width: 760px) {
+@media (min-width: 431px) and (max-width: 760px) {
   .haveQuestion {
     background-image: url(./../../../assets/Logowithripple.png);
     background-repeat: no-repeat;
@@ -25,8 +25,20 @@
   }
 }
 
+/* @media  {
+  .haveQuestion {
+    background-image: none;
+  }
+} */
+
 @media only screen and (max-width: 600px) {
   .upperInputArea {
     grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 431px) {
+  .upperInputArea {
+    row-gap: 1rem;
   }
 }

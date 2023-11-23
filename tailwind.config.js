@@ -35,7 +35,7 @@ module.exports = {
         Lmd: "900px",
         xlmobile: "560px",
         lmobile: "500px",
-        mobile: "420px",
+        mobile: "431px",
         smobile: "300px",
         ss: "370px",
         xs: "0px",
