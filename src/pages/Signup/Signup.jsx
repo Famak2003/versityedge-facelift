@@ -4,9 +4,11 @@ import Page2 from "./Page2";
 import Page3 from "./Page3";
 import Congrats from "./Congrats";
 
+
 function Signup() {
   const currentPage = useSelector((state) => state.auth.currentSignupPage);
   console.log(currentPage);
+
 
   switch (currentPage) {
     case 1:

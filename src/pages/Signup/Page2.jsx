@@ -6,13 +6,27 @@ import Stepper from "./stepper";
 import { useDispatch } from "react-redux";
 import { getNextSignupPage } from "../../redux/slice/authSlice";
 
-const Page2 = () => {
+import axios from "axios";
+
+const Page2 = ({ phoneNumber }) => {
   const dispatch = useDispatch();
+
+  const [otpCode, setOtpCode] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(getNextSignupPage(3));
     console.log("signUp page 2");
+
+    axios.post('', {
+      otp : otpCode
+    }, 
+    {
+      headers: {
+        'Content-Type' :'application.json',
+        'Authorization' : 'VersityEdge TLOzvmbPC79cr2VCrWyHzDmxTvIeVv0PAc5eh3s4puB0q475Cdm6uQl5TpvE4q'
+      }
+    })
   };
 
   const [otp, setOtp] = useState(new Array(6).fill(""));
@@ -48,6 +62,7 @@ const Page2 = () => {
   //     <Link to={'/signup3'} ><div className="relative font-medium" disabled>Submit</div></Link>
   //   }
   // }
+  
 
   const bg2 = "bg-primary-blue-1";
   const txt2 = "text-primary-white-1";
@@ -82,7 +97,10 @@ const Page2 = () => {
                   placeholder="-"
                   required
                   value={data}
-                  onChange={(e) => handleChange(e, i)}
+                  onChange={(e) => {
+                    handleChange(e, i)
+                    setOtpCode(e.target.value)
+                  }}
                   onPaste={(e) => {
                     handlePaste(e);
                   }}

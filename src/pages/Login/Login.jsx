@@ -15,6 +15,7 @@ const Login1 = () => {
 
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("")
+  // const [keepLoggedIn, setKeepLoggedIn] = useState(false);
 
   // console.log("AUTH PAGE =========>", location.state.destination);
 
@@ -70,6 +71,9 @@ const Login1 = () => {
               </div>
               <input
                 type="checkbox"
+                // onChange={
+                //   (e) => setKeepLoggedIn(e.target.checked)
+                // }
                 className="absolute left-[0px] top-[0px] box-border h-[19px] w-[19px] rounded border-[1px] border-solid border-primary-black-7 bg-primary-white-2 shadow-[0px_4px_4px_rgba(176,_176,_176,_0.25)_inset] outline-none"
               />
             </div>

@@ -12,15 +12,15 @@ import 'react-toastify/dist/ReactToastify.css';
 // import useFetch from '../useFetch/useFetch';
 
 const Page1 = () => {
-  const dispatch = useDispatch();
 
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState('')
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/auth/signup", {
       phone: phoneNumber,
-      password: "Abba@111"
+      password: "Abba@111"  
     })
     .then(() => {
       dispatch(getNextSignupPage(2));
@@ -29,6 +29,27 @@ const Page1 = () => {
       console.log("err", err.response.data.message);
     })
 }
+
+// const apiKey = 'TLOzvmbPC79cr2VCrWyHzDmxTvIeVv0PAc5eh3s4puB0q475Cdm6uQl5TpvE4q';
+// const senderId = 'VersityEdge';
+// const termiiBaseUrl = 'https://termii.com/api/sms/otp';
+//   const requestOTP = async () => {
+//     try {
+//       const response = await axios.post(`${termiiBaseUrl}/generate`, {
+//         api_key: apiKey,
+//         sender_id: senderId,
+//         phone_number: phoneNumber,
+//         channel: 'sms', // You can use 'voice' for voice OTP
+//       });
+  
+//       // Handle the response
+//       console.log('OTP Request Response:', response.data);
+//       return response.data;
+//     } catch (error) {
+//       console.error('Error requesting OTP:', error);
+//       throw error;
+//     }
+//   };
  
   
   const bg1 = "bg-primary-blue-1";
