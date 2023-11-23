@@ -51,7 +51,7 @@ export default function AvatarAndLogout({
       ) : (
         <div className=" flex gap-[1rem] ">
           <Link to={"/auth"}>
-            <Button addstyle=" text-[#ffff] heroResponsiveText xs:py-[.1rem] mobile:py-[.4rem] lmobile:py-[.6rem] md:py-[.8rem]">
+            <Button addstyle="hidden text-[#ffff] heroResponsiveText xs:py-[.1rem] mobile:py-[.4rem] lmobile:py-[.6rem] md:py-[.8rem] mobile:block">
               Sign up
             </Button>
           </Link>
