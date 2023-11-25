@@ -37,7 +37,11 @@ export default function Menu({ isMenuOpen, menuRef }) {
     };
 
     document.addEventListener("mousedown", handler);
-  });
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  }, []);
 
   return (
     <menu

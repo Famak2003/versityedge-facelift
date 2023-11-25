@@ -63,7 +63,7 @@ const Carousel = ({ carouselData, quoteAuthor }) => {
           return (
             <div key={id} className="flex w-full">
               {/* LEFT */}
-              <div className="flex basis-3/6 items-start justify-center ">
+              <div className="flex basis-3/6 items-start justify-center  ">
                 {item.displaceImg ? (
                   <div className="group relative inline-block w-full xs:h-[18rem] mobile:h-[26rem] sm:h-[35rem] md:h-[40rem] lg:h-[50rem]">
                     {item.displaceImg.map((img, idx) => {
@@ -80,8 +80,8 @@ const Carousel = ({ carouselData, quoteAuthor }) => {
                 ) : (
                   <img
                     src={item.image[0]}
-                    alt=""
-                    className="block object-contain"
+                    alt="img"
+                    className=" block w-full object-contain"
                   />
                 )}
               </div>

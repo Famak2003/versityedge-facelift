@@ -12,6 +12,9 @@ export { default as Signup } from "./Signup/Signup";
 export { default as Login } from "./Login/Login";
 export { default as CreateBlog } from "./blogs/newBlog";
 export { default as ResetPassword } from "./resetPassword/ResetPassword";
+export { default as MockLandingPage } from "./quiz/MockLandingPage/MockLandingPage";
+export { default as Mock } from "./quiz/Mock/Mock";
+export { default as Quiz } from "./quiz/Quiz";
 
 export { default as Footer } from "./footer/Footer";
 

@@ -46,6 +46,14 @@ export function App() {
               <Route path="forums/:title" element={<Pages.ForumBlog />} />
             </Route>
           </Route>
+
+          <Route element={<RequireAuthentication />}>
+            <Route path="/quiz">
+              <Route index element={<Pages.Quiz />} />
+              <Route path="mock-home" element={<Pages.MockLandingPage />} />
+              <Route path="mock" element={<Pages.Mock />} />
+            </Route>
+          </Route>
         </Route>
       </Routes>
     </>
