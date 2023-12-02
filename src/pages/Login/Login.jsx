@@ -34,7 +34,7 @@ const Login1 = () => {
       password: password
     })
     .then(() => {
-      toast("Sign in successfull");
+      toast("Sign in successful");
       dispatch(loginUserIn());
       setTimeout(() => {
         if (location.state) {

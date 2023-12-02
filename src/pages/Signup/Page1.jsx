@@ -13,8 +13,16 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Page1 = () => {
 
-  const [phoneNumber, setPhoneNumber] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [otp, setOtp] = useState('');
   const dispatch = useDispatch();
+
+
+  const generateOtp = () => {
+    const randomOtp = Math.floor(100000 + Math.random() * 900000);
+    setOtp(randomOtp.toString());
+  }
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,12 +30,24 @@ const Page1 = () => {
       phone: phoneNumber,
       password: "Abba@111"  
     })
+    axios.post("https://api.ng.termii.com/api/sms/send", {
+      api_key : "TLOzvmbPC79cr2VCrWyHzDmxTvIeVv0PAc5eh3s4puB0q475Cdm6uQl5TpvE4q",
+      // to : "+2347018472054",
+      to : `${phoneNumber.split('+')[1]}`,
+      from : "VersityEdge",
+      channel : "generic",
+      type : "plain",
+      sms : `Your VersityEdge verification pin code is: ${otp}. This code 
+      will expire in 10 minutes`,
+      // sms : "Your pin is < 123456 >"
+    })
     .then(() => {
       dispatch(getNextSignupPage(2));
     }).catch((err) => {
       toast(err.response.data.message);
       console.log("err", err.response.data.message);
     })
+
 }
 
 // const apiKey = 'TLOzvmbPC79cr2VCrWyHzDmxTvIeVv0PAc5eh3s4puB0q475Cdm6uQl5TpvE4q';
@@ -85,7 +105,7 @@ const Page1 = () => {
             <div className="absolute top-[0px] left-[0px] w-[535px] h-[55px]">
               <input type='tel' 
               minLength={10} 
-              maxLength={11} 
+              maxLength={15} 
               required 
               placeholder='Phone number'
               onChange={(e) => setPhoneNumber(e.target.value)} 
@@ -117,11 +137,14 @@ const Page1 = () => {
               border-solid border-primary-black-7 lmobile:left-[0px]" />
             </div>
           </div>
-          <button className="relative top-[0px] left-[0px] mt-6 rounded-2xl bg-primary-blue-1 box-border 
+          <button 
+          onClick={generateOtp}
+          className="relative top-[0px] left-[0px] mt-6 rounded-2xl bg-primary-blue-1 box-border 
             w-[270px] overflow-hidden flex flex-row items-center justify-center 
             py-[11px] px-[24px] text-xl text-primary-white-1 border-[1px] border-solid border-primary-blue-1 lmobile:w-[391px]">
               <div className="relative font-medium">Sign Up</div>
           </button>
+          
           
           <div className="relative w-[270px] h-[20px] text-sm text-center lmobile:w-[391px]">
             <Link to='/login'>
