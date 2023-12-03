@@ -7,35 +7,39 @@ import { useDispatch } from "react-redux";
 import { getNextSignupPage } from "../../redux/slice/authSlice";
 
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const Page2 = () => {
   const dispatch = useDispatch();
 
-  const [otpCode, setOtpCode] = useState('');
+  const [otp, setOtp] = useState('');
+  // const [phoneNumber, setPhoneNumber] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(getNextSignupPage(3));
-    console.log("signUp page 2");
-
-    axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/auth/signup", {
-      otp : otpCode
-    }, 
-    {
-      headers: {
-        'Content-Type' :'application.json',
-        'Authorization' : 'VersityEdge TLOzvmbPC79cr2VCrWyHzDmxTvIeVv0PAc5eh3s4puB0q475Cdm6uQl5TpvE4q'
-      }
+    
+    axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/auth/verify-otp", {
+      // phone: phoneNumber,
+      otp : otp
+    })
+    .then(()=>{
+      toast("Sign in successful");
+      dispatch(getNextSignupPage(3));
+      console.log("signUp page 2");
+    })
+    .catch((err)=>{
+        toast(err.response.data.message);
+        console.log("err", err.response.data.message);
     })
   };
 
-  const [otp, setOtp] = useState(new Array(6).fill(""));
+  const [otpInput, setOtpInput] = useState(new Array(6).fill(""));
 
   const handleChange = (e, index) => {
     if (isNaN(e.target.value)) return false;
 
-    setOtp([
-      ...otp.map((data, indx) => (indx === index ? e.target.value : data)),
+    setOtpInput([
+      ...otpInput.map((data, indx) => (indx === index ? e.target.value : data)),
     ]);
 
     if (e.target.value && e.target.nextSibling) {
@@ -47,9 +51,9 @@ const Page2 = () => {
     const value = e.clipboardData.getData("text");
     if (isNaN(value)) return false;
 
-    const updatedValue = value.toString().split("").slice(0, otp.length);
+    const updatedValue = value.toString().split("").slice(0, otpInput.length);
 
-    setOtp(updatedValue);
+    setOtpInput(updatedValue);
   };
 
   // const {data: code, error, isPending} = useFetch(baseURL + "posts");
@@ -90,7 +94,7 @@ const Page2 = () => {
 
         <div className="text-primary-black-5 relative h-[134px] w-[476px] text-lg">
           <div className="text-primary-black-5 flex h-[134px] w-[476px] justify-center text-lg">
-            {otp.map((data, i) => {
+            {otpInput.map((data, i) => {
               return (
                 <input
                   type="password"
@@ -99,7 +103,7 @@ const Page2 = () => {
                   value={data}
                   onChange={(e) => {
                     handleChange(e, i)
-                    setOtpCode(e.target.value)
+                    setOtp(e.target.value)
                   }}
                   onPaste={(e) => {
                     handlePaste(e);

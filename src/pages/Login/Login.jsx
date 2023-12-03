@@ -41,7 +41,7 @@ const Login1 = () => {
           navigate(`${location.state.destination}`, { replace: true });
         } else navigate("/", { replace: true });
       }, 2000);
-    }).catch((err)   => {
+    }).catch((err) => {
       toast(err.response.data.message);
       console.log("err", err.response.data.message);
     })
