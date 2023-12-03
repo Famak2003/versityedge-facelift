@@ -7,7 +7,8 @@ import { useDispatch } from "react-redux";
 import { getNextSignupPage } from "../../redux/slice/authSlice";
 
 import axios from "axios";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Page2 = () => {
   const dispatch = useDispatch();
@@ -17,7 +18,6 @@ const Page2 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
     axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/auth/verify-otp", {
       // phone: phoneNumber,
       otp : otp
@@ -71,6 +71,9 @@ const Page2 = () => {
   const bg2 = "bg-primary-blue-1";
   const txt2 = "text-primary-white-1";
   return (
+    <div>
+
+    
     <form
       onSubmit={handleSubmit}
       className="font-text-xl-medium relative flex w-full flex-col items-center justify-start gap-[40px] text-center text-5xl text-primary-blue-1"
@@ -139,6 +142,9 @@ const Page2 = () => {
         </div>
       </div>
     </form>
+    <ToastContainer />
+    </div>
+  
   );
 };
 
