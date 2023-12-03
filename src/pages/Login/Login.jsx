@@ -14,7 +14,7 @@ const Login1 = () => {
   const dispatch = useDispatch();
 
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [password, setPassword] = useState("")
+  const [password, setPassword] = useState("");
   // const [keepLoggedIn, setKeepLoggedIn] = useState(false);
 
   // console.log("AUTH PAGE =========>", location.state.destination);

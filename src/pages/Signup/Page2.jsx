@@ -8,7 +8,7 @@ import { getNextSignupPage } from "../../redux/slice/authSlice";
 
 import axios from "axios";
 
-const Page2 = ({ phoneNumber }) => {
+const Page2 = () => {
   const dispatch = useDispatch();
 
   const [otpCode, setOtpCode] = useState('');
@@ -18,7 +18,7 @@ const Page2 = ({ phoneNumber }) => {
     dispatch(getNextSignupPage(3));
     console.log("signUp page 2");
 
-    axios.post('', {
+    axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/auth/signup", {
       otp : otpCode
     }, 
     {

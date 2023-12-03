@@ -14,14 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Page1 = () => {
 
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [otp, setOtp] = useState('');
   const dispatch = useDispatch();
-
-
-  const generateOtp = () => {
-    const randomOtp = Math.floor(100000 + Math.random() * 900000);
-    setOtp(randomOtp.toString());
-  }
 
 
   const handleSubmit = (e) => {
@@ -30,16 +23,8 @@ const Page1 = () => {
       phone: phoneNumber,
       password: "Abba@111"  
     })
-    axios.post("https://api.ng.termii.com/api/sms/send", {
-      api_key : "TLOzvmbPC79cr2VCrWyHzDmxTvIeVv0PAc5eh3s4puB0q475Cdm6uQl5TpvE4q",
-      // to : "+2347018472054",
-      to : `${phoneNumber.split('+')[1]}`,
-      from : "VersityEdge",
-      channel : "generic",
-      type : "plain",
-      sms : `Your VersityEdge verification pin code is: ${otp}. This code 
-      will expire in 10 minutes`,
-      // sms : "Your pin is < 123456 >"
+    axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1//auth/request-otp", {
+      phone : phoneNumber
     })
     .then(() => {
       dispatch(getNextSignupPage(2));
@@ -75,10 +60,6 @@ const Page1 = () => {
   const bg1 = "bg-primary-blue-1";
   const txt1 = "text-primary-white-1";
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   dispatch(getNextSignupPage(2));
-  // };
 
   return (
 
@@ -138,8 +119,7 @@ const Page1 = () => {
             </div>
           </div>
           <button 
-          onClick={generateOtp}
-          className="relative top-[0px] left-[0px] mt-6 rounded-2xl bg-primary-blue-1 box-border 
+              className="relative top-[0px] left-[0px] mt-6 rounded-2xl bg-primary-blue-1 box-border 
             w-[270px] overflow-hidden flex flex-row items-center justify-center 
             py-[11px] px-[24px] text-xl text-primary-white-1 border-[1px] border-solid border-primary-blue-1 lmobile:w-[391px]">
               <div className="relative font-medium">Sign Up</div>
