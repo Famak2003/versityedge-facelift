@@ -21,7 +21,9 @@ const Password3 = () => {
     })
     .then(()=> {
       toast('Password reset successful');
-      dispatch(getNextResetPasswordPage("congratulations"));
+      setTimeout(() => {
+        dispatch(getNextResetPasswordPage("congratulations"));
+      }, 2000);
     })
     .catch((err) => {
       toast(err.response.data.message);
