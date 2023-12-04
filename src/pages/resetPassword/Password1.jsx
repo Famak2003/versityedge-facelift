@@ -19,7 +19,10 @@ const Password1 = () => {
     })
     .then(() => {
       toast('OTP Sent');
-      dispatch(getNextResetPasswordPage("OTP"));
+      setTimeout(() => {
+        dispatch(getNextResetPasswordPage("OTP"));
+      }, 2000);
+      
     })
     .catch((err) => {
       toast(err.response.data.message);
@@ -49,7 +52,7 @@ const Password1 = () => {
           onChange={(e) => setPhoneNumber(e.target.value)}
           required
           minLength={10}
-          maxLength={11}
+          maxLength={15}
           className="relative mt-12 box-border h-[55px] 
           w-[270px] shrink-0 overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 px-[24px] text-lg font-light 
           text-black outline-none lmobile:w-[391px]"

@@ -28,7 +28,8 @@ const Page1 = () => {
     })
     .then(() => {
       dispatch(getNextSignupPage(2));
-    }).catch((err) => {
+    })
+    .catch((err) => {
       toast(err.response.data.message);
       console.log("err", err.response.data.message);
     })
