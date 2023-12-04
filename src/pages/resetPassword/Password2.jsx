@@ -4,26 +4,23 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { getNextResetPasswordPage } from "../../redux/slice/authSlice";
 import axios from "axios";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 const Password2 = () => {
   const dispatch = useDispatch();
 
-  const [phoneNumber, setPhoneNumber] = useState('');
+  // const [phoneNumber, setPhoneNumber] = useState('');
   const [otp, setOtp] = useState('');
   
   
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('http://versityedge1.eastus.cloudapp.azure.com/v1/auth/verify-otp', {
-      phone : phoneNumber,
+      // phone : phoneNumber,
       otp : otp
     })
     .then(() => {
-      toast('OTP Entered');
-      setTimeout(() => {
-        dispatch(getNextResetPasswordPage("passwordReset"));
-      }, 2000);
+      dispatch(getNextResetPasswordPage("passwordReset"));
     })
     .catch((err) => {
         toast(err.response.data.message);
@@ -89,7 +86,6 @@ const Password2 = () => {
                     onChange={(e) => {
                       handleChange(e, i) 
                       setOtp(e.target.value)
-                      
                     }
                       }
 
@@ -129,6 +125,7 @@ const Password2 = () => {
           </div>
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 };
