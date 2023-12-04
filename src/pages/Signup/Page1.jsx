@@ -9,7 +9,7 @@ import { getNextSignupPage } from "../../redux/slice/authSlice";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import useFetch from '../useFetch/useFetch';
+
 
 const Page1 = () => {
 
