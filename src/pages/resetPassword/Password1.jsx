@@ -15,7 +15,7 @@ const Password1 = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('http://versityedge1.eastus.cloudapp.azure.com/v1/auth/request-otp',{
-      phone : phoneNumber
+      phone : "+234" + phoneNumber
     })
     .then(() => {
       toast('OTP Sent');

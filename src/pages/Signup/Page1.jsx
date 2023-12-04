@@ -24,6 +24,7 @@ const Page1 = () => {
     })
     .then(() => {
       setTimeout(() => {
+        toast('OTP Sent')
         dispatch(getNextSignupPage(2));
       }, 2000);
     })

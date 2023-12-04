@@ -22,12 +22,12 @@ const Page2 = () => {
       // phone: phoneNumber,
       otp : otp
     })
-    .then(()=>{
+    .then(() => {
       toast("Sign in successful");
       dispatch(getNextSignupPage(3));
       console.log("signUp page 2");
     })
-    .catch((err)=>{
+    .catch((err) => {
         toast(err.response.data.message);
         console.log("err", err.response.data.message);
     })
