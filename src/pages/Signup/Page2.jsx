@@ -54,19 +54,7 @@ const Page2 = () => {
     const updatedValue = value.toString().split("").slice(0, otpInput.length);
 
     setOtpInput(updatedValue);
-  };
-
-  // const {data: code, error, isPending} = useFetch(baseURL + "posts");
-
-  // const codeSuccess = () => {
-  //   if(code === codeInput) {
-  //     <Link to={'/signup3'} ><div className="relative font-medium">Submit</div></Link>
-  //   }else
-  //   {
-  //     <Link to={'/signup3'} ><div className="relative font-medium" disabled>Submit</div></Link>
-  //   }
-  // }
-  
+  };  
 
   const bg2 = "bg-primary-blue-1";
   const txt2 = "text-primary-white-1";

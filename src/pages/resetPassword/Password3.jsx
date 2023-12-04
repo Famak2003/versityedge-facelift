@@ -1,14 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { getNextResetPasswordPage } from "../../redux/slice/authSlice";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Password3 = () => {
   const dispatch = useDispatch();
-  dispatch(getNextResetPasswordPage("congratulations"));
+  // dispatch(getNextResetPasswordPage("congratulations"));
+
+  const [password, setPassword] = useState('');
+  // const [phoneNumber, setPhoneNumber] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    axios.post('http://versityedge1.eastus.cloudapp.azure.com/v1/auth/password/new', {
+      // phone : phoneNumber,
+      password : password
+    })
+    .then(()=> {
+      toast('Password reset successful');
+      dispatch(getNextResetPasswordPage("congratulations"));
+    })
+    .catch((err) => {
+      toast(err.response.data.message);
+      console.log("err", err.response.data.message);
+    })
   };
 
   return (
@@ -27,6 +45,7 @@ const Password3 = () => {
         </div>
         <div className="relative h-[146px] w-[391px] text-lg text-primary-black-7">
           <input
+            onChange={(e) => setPassword(e.target.value)}
             type="password"
             required
             placeholder="Enter password"
@@ -51,6 +70,7 @@ const Password3 = () => {
           </button>
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 };
