@@ -19,15 +19,13 @@ const Page1 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/auth/signup", {
-      phone: phoneNumber,
-      password: "Abba@111"  
-    })
     axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1//auth/request-otp", {
-      phone : phoneNumber
+      phone : "+234" + phoneNumber
     })
     .then(() => {
-      dispatch(getNextSignupPage(2));
+      setTimeout(() => {
+        dispatch(getNextSignupPage(2));
+      }, 2000);
     })
     .catch((err) => {
       toast(err.response.data.message);
@@ -35,6 +33,8 @@ const Page1 = () => {
     })
 
 }
+
+console.log(phoneNumber);
   
   const bg1 = "bg-primary-blue-1";
   const txt1 = "text-primary-white-1";
@@ -106,7 +106,7 @@ const Page1 = () => {
           
           
           <div className="relative w-[270px] h-[20px] text-sm text-center lmobile:w-[391px]">
-            <Link to='/login'>
+            <Link to='/auth/login'>
             <div className="absolute top-[-10px] left-[0px] font-light lmobile:top-[0px]">
               <span>{`Already have an account? `}</span>
               <span className="text-primary-blue-1">Login</span>
