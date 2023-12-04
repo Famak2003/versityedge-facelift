@@ -8,8 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Password3 = () => {
   const dispatch = useDispatch();
-  // dispatch(getNextResetPasswordPage("congratulations"));
-
+  
   const [password, setPassword] = useState('');
   // const [phoneNumber, setPhoneNumber] = useState('');
 
