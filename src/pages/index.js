@@ -17,21 +17,3 @@ export { default as Mock } from "./quiz/Mock/Mock";
 export { default as Quiz } from "./quiz/Quiz";
 
 export { default as Footer } from "./footer/Footer";
-
-// export { default as SignUp2 } from "./Signup/Page2";
-// export { default as SignUp3 } from "./Signup/Page3";
-// export { default as Congrats1 } from "./Signup/Congrats1";
-// export { default as Congrats2 } from "./Signup/Congrats2";
-// export { default as Password1 } from "./Signup/Password1";
-// export { default as Password2 } from "./Signup/Password2";
-// export { default as Password3 } from "./Signup/Password3";
-// export {default as Password3} from './Signup/Password3'
-
-// <Route path="/signup" element={<Signup />}></Route>
-//           <Route exact path="/signup2" element={<SignUp2 />}></Route>
-//           <Route exact path="/signup3" element={<SignUp3 />}></Route>
-//           <Route exact path="/password1" element={<Password1 />}></Route>
-//           <Route exact path="/password2" element={<Password2 />}></Route>
-//           <Route exact path="/password3" element={<Password3 />}></Route>
-//           <Route exact path="/congrats1" element={<Congrats1 />}></Route>
-//         <Route exact path="/congrats2" element={<Congrats2 />}></Route>
