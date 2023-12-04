@@ -100,7 +100,7 @@ const Page3 = () => {
         </div>
 
         <div className="relative h-[87px] w-[391px] text-base">
-          <Link to="/login">
+          <Link to="/auth/login">
             <div className="absolute left-[60px] top-[65px] font-light lmobile:left-[0.5px]">
               <span>{`Already have an account?   `}</span>
               <span className="text-primary-blue-1">Login</span>

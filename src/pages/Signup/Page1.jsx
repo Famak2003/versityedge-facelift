@@ -33,8 +33,6 @@ const Page1 = () => {
     })
 
 }
-
-console.log(phoneNumber);
   
   const bg1 = "bg-primary-blue-1";
   const txt1 = "text-primary-white-1";

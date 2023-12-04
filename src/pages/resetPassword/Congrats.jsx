@@ -23,7 +23,7 @@ const Congrats = () => {
           src={teenyicon}
         />
         <div className="relative h-[49px] w-[391px] text-xl text-primary-white-1">
-          <Link to="/login">
+          <Link to="/auth/login">
             <div
               className="absolute left-[60px] top-[0px] box-border flex w-[270px] flex-row 
             items-center justify-center overflow-hidden rounded-2xl border-[1px] border-solid border-primary-blue-1 bg-primary-blue-1 px-[24px] py-[11px] lmobile:left-[0px] lmobile:w-[391px]"
