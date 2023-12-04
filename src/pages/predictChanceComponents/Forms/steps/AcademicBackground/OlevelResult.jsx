@@ -17,7 +17,7 @@ export const OlevelSettingInfo = ({ id }) => {
       <h2 className="Text24px text-[var(--gray-texture)]">
         {`${numTextArr.find(NumberToString)} setting`}
       </h2>
-      <ul className=" flex  justify-between">
+      <ul className=" flex w-full flex-col gap-[2rem] xlmobile:flex-row xlmobile:justify-between">
         {Olevelcontent.map((obj, index) => (
           <li
             key={index}
@@ -26,7 +26,7 @@ export const OlevelSettingInfo = ({ id }) => {
             <label className="  block whitespace-nowrap text-[12px] sm:text-[16px]">
               {obj.label}
             </label>
-            <select className=" h-[2.3rem] min-w-[7rem] max-w-[10rem] rounded-lg py-[.2rem] pl-[1.5rem] ring-1 ring-[#D9DADB] sm:h-[2.8rem]">
+            <select className=" WCVCardHeader h-[2.3rem] min-w-[7rem] max-w-[10rem] rounded-lg py-[.2rem] pl-[1rem] ring-1 ring-[#D9DADB] xlmobile:pl-[1.5rem] sm:h-[2.8rem]">
               <option disabled>Please Select</option>
               <option>1</option>
               <option>2</option>
@@ -49,7 +49,7 @@ function OlevelResult({
     <div className=" flex flex-col gap-[2rem] ">
       <h2 className=" Text24px text-center">O"Level Result</h2>
       <div className=" flex flex-col gap-[3rem]">
-        <div className="flex gap-[5rem]">
+        <div className="flex gap-[2rem] mobile:gap-[5rem]">
           <label
             htmlFor="olevelSitting"
             className="  mr-6 block text-[12px] sm:text-[16px]"
@@ -59,7 +59,7 @@ function OlevelResult({
           <select
             id="olevelSitting"
             onChange={(e) => handleOlevelSetting(e.target.value)}
-            className="h-[2.8rem] w-[30%] rounded-lg py-[.2rem] pl-[1.5rem] ring-1 ring-[#D9DADB]"
+            className="WCVCardHeader h-[2.8rem] min-w-[7rem] max-w-[10rem] rounded-lg py-[.2rem] pl-[1.5rem] ring-1 ring-[#D9DADB]"
             value={numOfOlevelSitting}
           >
             <option value={0}>0</option>

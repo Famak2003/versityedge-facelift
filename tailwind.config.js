@@ -6,7 +6,7 @@ module.exports = {
       fontFamily: {
         nunito: ["Nunito", "sans-serif"],
       },
-      colors:{
+      colors: {
         "primary-blue-1": "#0a66c2",
         "primary-white-1": "#fff",
         black: "#000",
@@ -15,19 +15,19 @@ module.exports = {
         "primary-blue-7": "#9dceff",
       },
       spacing: {},
-      borderRadius : {
-        "17xl" : "36px",
+      borderRadius: {
+        "17xl": "36px",
       },
-      fontSize : {
-      xl: "20px",
-      base: "16px",
-      sm: "14px",
-      lg: "18px",
-      "5xl": "24px",
-      "29xl": "48px",
-      inherit: "inherit",
+      fontSize: {
+        xl: "20px",
+        base: "16px",
+        sm: "14px",
+        lg: "18px",
+        "5xl": "24px",
+        "29xl": "48px",
+        inherit: "inherit",
       },
-  
+
       screens: {
         Lxl: "1420px",
         large: "1340px",
@@ -35,7 +35,7 @@ module.exports = {
         Lmd: "900px",
         xlmobile: "560px",
         lmobile: "500px",
-        mobile: "420px",
+        mobile: "431px",
         smobile: "300px",
         ss: "370px",
         xs: "0px",
@@ -47,4 +47,3 @@ module.exports = {
   },
   plugins: [],
 };
-

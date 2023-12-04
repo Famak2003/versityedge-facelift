@@ -46,12 +46,12 @@ function HaveQuestions() {
   console.log(formData);
   return (
     <section className="haveQuestion generalPadding flex flex-col gap-[2rem] ">
-      <h1 className=" mobile:SliderResponsiveHeader text-center text-[1.5rem] font-bold ">
+      <h1 className=" mobile:SliderResponsiveHeader text-center text-[2rem] font-bold ">
         Have questions or need assistance? <br /> Feel free to reach out to us.{" "}
       </h1>
       <div className=" ml-auto mr-auto flex gap-[2rem] xs:flex-col md:flex-row">
-        <div className="right flex w-full flex-col gap-[1.5rem] px-10 mobile:px-5 md:w-[70%] ">
-          <p className="KYCResponsiveText hidden font-semibold lmobile:block ">
+        <div className="right flex w-full flex-col gap-[1.5rem] mobile:px-5 md:w-[70%] ">
+          <p className=" mobile:KYCResponsiveText text-[1.6rem] font-semibold lmobile:block ">
             Have a specific query or need more information? Use the form below
             to send us a message. We'll get back to you as soon as possible.
             Before contacting us, check out our FAQs for quick answers to common
@@ -60,10 +60,10 @@ function HaveQuestions() {
           {/* Form */}
           <form
             onSubmit={(e) => handleSubmit(e)}
-            className=" flex flex-col gap-[3rem]"
+            className=" flex flex-col gap-[1rem] mobile:gap-[3rem]"
           >
             {/* Upper input area */}
-            <div className="upperInputArea">
+            <div className="upperInputArea ">
               {forms.map((item, index) => {
                 const textToLowerCase = item.text
                   .split(" ")
@@ -75,13 +75,13 @@ function HaveQuestions() {
                     className="ml-auto mr-auto flex w-full flex-col gap-[.3rem]"
                   >
                     <label
-                      className=" mobile:reponsiveMiniText1 w-full text-[1rem]"
+                      className=" mobile:reponsiveMiniText1 hidden w-full text-[2rem] mobile:block"
                       htmlFor={textToLowerCase}
                     >
                       {item.text}
                     </label>
                     <input
-                      className=" mobile:reponsiveMiniText1 w-full rounded-lg py-[.7rem] pl-[1.5rem] text-[1rem] ring-1 ring-[#D9DADB] active:ring-black"
+                      className=" mobile:reponsiveMiniText1 h-[5rem] w-full rounded-3xl py-[.7rem] pl-[1.5rem] text-[1.6rem] ring-1 ring-[#D9DADB] active:ring-black mobile:h-[4rem]"
                       required
                       name={textToLowerCase}
                       id={textToLowerCase}
@@ -95,13 +95,13 @@ function HaveQuestions() {
             {/* TextArea */}
             <div className=" flex w-full flex-col gap-[.3rem]">
               <label
-                className=" mobile:reponsiveMiniText1 w-full text-[1rem]"
+                className="mobile:reponsiveMiniText1 hidden w-full text-[2rem] mobile:block"
                 htmlFor="message"
               >
                 Leave a message
               </label>
               <textarea
-                className=" mobile:reponsiveMiniText1 h-[13rem] w-full resize-none rounded-lg px-[.5rem] py-[.5rem] text-[1rem] ring-1 ring-[#D9DADB] active:ring-black"
+                className=" mobile:reponsiveMiniText1 h-[13rem] w-full resize-none rounded-3xl px-[.5rem] py-[.5rem] text-[1.8rem] ring-1 ring-[#D9DADB] active:ring-black"
                 id="message"
                 name="message"
                 placeholder="Type a text"
@@ -117,17 +117,20 @@ function HaveQuestions() {
             </Button>
           </form>
         </div>
-        <div className="left flex flex-col items-center gap-[12rem] pt-[5rem] mobile:px-[3rem] md:w-[30%]">
+        <div className="left flex flex-col items-center pt-[5rem] mobile:gap-[12rem] mobile:px-[3rem] md:w-[30%]">
           <figure className=" hidden h-[12rem] w-[12rem] items-center justify-center rounded-full bg-white shadow-[0px_10.743005752563477px_21.486011505126953px_0px_rgba(180,180,180,0.25)] lmobile:h-[14rem] lmobile:w-[14rem] sm:h-[16rem] sm:w-[16rem] md:flex md:h-[18rem] md:w-[18rem] lg:h-[20rem] lg:w-[20rem] ">
             <img src={LOGO} className=" scale-[260%]" alt="VersityEdge" />
           </figure>
-          <div className="contact mobile:KYCResponsiveText">
+          <div className="contact mobile:KYCResponsiveText text-[16px]">
             <p className=" ">Email: versityedge@gmail.com</p>
             <p className=" order-3 md:order-2">Phone: +2348127111398</p>
             <p className=" order-2 md:order-3">
-              Address: Independence hostel, University of Ibadan, Oyo, Ibadan
+              Address: Independence hostel, University of Ibadan
             </p>
           </div>
+          <figure className="flex items-center justify-center py-16 mobile:hidden ">
+            <img className=" " src={LOGO} alt="versityEdge" />
+          </figure>
         </div>
       </div>
     </section>

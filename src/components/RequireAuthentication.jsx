@@ -11,7 +11,7 @@ const RequireAuthentication = () => {
         <Outlet />
       ) : (
         <Navigate
-          to={"/login"}
+          to={"/auth/login"}
           replace={true}
           state={{ destination: location.pathname }}
         />

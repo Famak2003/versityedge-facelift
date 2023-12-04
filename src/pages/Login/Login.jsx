@@ -63,7 +63,7 @@ const Login1 = () => {
                 className="absolute left-[0px] top-[0px] box-border h-[19px] w-[19px] rounded border-[1px] border-solid border-primary-black-7 bg-primary-white-2 shadow-[0px_4px_4px_rgba(176,_176,_176,_0.25)_inset] outline-none"
               />
             </div>
-            <Link to="/forgotPassword">
+            <Link to="/auth/forgotPassword">
               <div className="absolute left-[60px] top-[30px] text-primary-blue-1 lmobile:left-[279px] lmobile:top-[0px]">
                 Forgot password?
               </div>
@@ -92,7 +92,7 @@ const Login1 = () => {
           </div>
         </div>
         <div className="relative h-[87px] w-[391px] text-base">
-          <Link to="/signup">
+          <Link to="/auth/signup">
             <div className="absolute left-[60px] top-[65px] font-light lmobile:left-[0px]">
               <span>{`Don’t have an account?   `}</span>
               <span className="text-primary-blue-1">Sign up</span>

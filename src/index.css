@@ -99,12 +99,12 @@ code {
     @apply xs:text-[.6rem] xs:leading-3 smobile:text-[.7rem] smobile:leading-[.9rem] mobile:text-[.7rem] mobile:leading-[.9rem] lmobile:text-[.8rem] lmobile:leading-[1.1rem] sm:text-[.9rem] sm:leading-5 md:text-[1rem] md:leading-5 lg:text-[1.3rem] lg:leading-7 xl:text-[1.5rem] xl:leading-8;
   }
   .generalPadding {
-    @apply px-[2rem] md:px-[4rem] lg:px-[5rem];
+    @apply px-[1rem] sm:px-[2rem] md:px-[4rem] lg:px-[5rem];
   }
   .Text24px {
-    @apply text-[.8rem] smobile:text-[.9rem] mobile:text-[1.3rem] lmobile:text-[1.5rem] sm:text-[1.8rem] md:text-[2.1rem] lg:text-[2.4rem] lg:leading-[2.5rem];
+    @apply text-[1.2rem] smobile:text-[1.2rem] mobile:text-[1.3rem] lmobile:text-[1.5rem] sm:text-[1.8rem] md:text-[2.1rem] lg:text-[2.4rem] lg:leading-[2.5rem];
   }
   .Text16px {
-    @apply text-[.7rem] leading-[.9rem] lmobile:text-[.8rem] lmobile:leading-[1.1rem] sm:text-[.9rem] sm:leading-5 md:text-[1rem] md:leading-5 lg:text-[1.3rem] lg:leading-7 xl:text-[1.5rem] xl:leading-8;
+    @apply text-[.9rem] leading-[.9rem] lmobile:text-[.8rem] lmobile:leading-[1.1rem] sm:text-[.9rem] sm:leading-5 md:text-[1.1rem] md:leading-5 lg:text-[1.4rem] lg:leading-7 xl:text-[1.6rem] xl:leading-8;
   }
 }

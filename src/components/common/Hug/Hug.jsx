@@ -60,6 +60,33 @@ export default function Hug({
         </div>
       );
 
+    case "numbered":
+      return (
+        <div
+          className={` flex min-w-[6rem] max-w-[14rem] ${
+            separateImg ? "flex-row gap-[2rem]" : "flex-col"
+          } items-center justify-center mobile:max-w-fit`}
+        >
+          {/* Card Content */}
+          <figure
+            className={`${
+              separateImg && "self-start"
+            } mb-[.5rem] h-[3rem] mobile:mb-[1.5rem] md:h-[3rem]`}
+          >
+            <img className=" h-full object-contain" src={img} alt="img" />
+          </figure>
+          <p className=""> {id} </p>
+          <div>
+            <h3 className=" WCVCardHeader text-center mobile:pb-[.5rem] md:pb-[1rem]">
+              {header}
+            </h3>
+            <p className=" reponsiveMiniText1 min-w-fit max-w-[35rem] text-center">
+              {children}
+            </p>
+          </div>
+        </div>
+      );
+
     default:
       return (
         <div

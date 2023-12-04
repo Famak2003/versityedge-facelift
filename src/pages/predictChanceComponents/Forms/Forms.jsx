@@ -31,7 +31,7 @@ export default function Form() {
   };
 
   return (
-    <section className=" generalPadding flex flex-col items-center justify-center gap-[5rem]">
+    <section className=" generalPadding flex flex-col items-center justify-center gap-[2rem] mobile:gap-[5rem]">
       <h1 className=" responsiveHeader font-bold">Predict Admission Chances</h1>
 
       {/* Stepper */}
@@ -41,12 +41,14 @@ export default function Form() {
         handleClick={handleClick}
       />
 
-      <form className=" w-full px-[3rem] pt-[3rem]">
+      <form className=" mb-[5rem] w-full px-[2rem] mobile:px-[3rem] mobile:pt-[3rem]">
         {displayStep(currentStep)}
       </form>
 
       {/* Stepper control */}
-      <StepperControl currentStep={currentStep} handleClick={handleClick} />
+      <div className=" w-[100%]">
+        <StepperControl currentStep={currentStep} handleClick={handleClick} />
+      </div>
     </section>
   );
 }

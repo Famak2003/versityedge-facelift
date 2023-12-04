@@ -16,9 +16,6 @@ export function App() {
           {/* PUBLIC ROUTES */}
           <Route path="/" element={<Pages.Home />} />
           <Route path="/contactUs" element={<Pages.ContactUs />}></Route>
-          <Route path="/auth" element={<Pages.Signup />}></Route>
-          <Route path="/login" element={<Pages.Login />} />
-          <Route path="/forgotPassword" element={<Pages.ResetPassword />} />
 
           {/* PROTECTED ROUTES */}
           <Route element={<RequireAuthentication />}>
@@ -46,6 +43,19 @@ export function App() {
               <Route path="forums/:title" element={<Pages.ForumBlog />} />
             </Route>
           </Route>
+
+          <Route element={<RequireAuthentication />}>
+            <Route path="/quiz">
+              <Route index element={<Pages.Quiz />} />
+              <Route path="mock-home" element={<Pages.MockLandingPage />} />
+              <Route path="mock" element={<Pages.Mock />} />
+            </Route>
+          </Route>
+        </Route>
+        <Route path="/auth">
+          <Route index element={<Pages.Signup />} />
+          <Route path="login" element={<Pages.Login />} />
+          <Route path="forgotPassword" element={<Pages.ResetPassword />} />
         </Route>
       </Routes>
     </>

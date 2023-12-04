@@ -86,15 +86,15 @@ export default function Input({ children, comment, num, type }) {
   };
 
   return (
-    <li className=" w-[90%]">
-      <div className=" flex">
+    <li className=" w-full mobile:w-[90%]">
+      <div className=" flex flex-col xlmobile:flex-row">
         <label
-          className=" Text24px mr-6 block w-[40%] min-w-[20rem] md:leading-9"
+          className=" Text24px mr-6 block w-[90%] leading-8 xlmobile:w-[40%] md:leading-9"
           htmlFor={`input${num}`}
         >
           {children} <br />
           {comment ? (
-            <small className=" Text16px italic leading-4 md:leading-7 ">
+            <small className=" xlmobile:Text16px text-[.9rem] italic leading-[.2rem] mobile:text-[1rem] mobile:leading-[.3rem] xlmobile:leading-3 md:leading-5 ">
               {comment}
             </small>
           ) : (
@@ -104,9 +104,10 @@ export default function Input({ children, comment, num, type }) {
 
         {type === "dropDown" && (
           <Space
-            style={{
-              width: "35%",
-            }}
+            className=" w-full xlmobile:w-[50%] md:w-[35%]"
+            // style={{
+            //   width: "35%",
+            // }}
             direction="vertical"
             wrap
           >
@@ -141,9 +142,10 @@ export default function Input({ children, comment, num, type }) {
         )}
         {type === "multipleSelection" && (
           <Space
-            style={{
-              width: "35%",
-            }}
+            className=" w-full xlmobile:w-[50%] md:w-[35%]"
+            // style={{
+            //   width: "35%",
+            // }}
             direction="vertical"
           >
             <Select
@@ -162,7 +164,7 @@ export default function Input({ children, comment, num, type }) {
         )}
         {type === "number" && (
           <input
-            className=" h-[2.8rem] w-[35%] min-w-[15rem] rounded-lg py-[.7rem] pl-[1.5rem] ring-1 ring-[#D9DADB] active:ring-black "
+            className=" h-[2.8rem] w-full min-w-[15rem] rounded-lg py-[.7rem] pl-[1.5rem] ring-1 ring-[#D9DADB] active:ring-black xlmobile:w-[50%] md:w-[35%] "
             type="number"
             id={`input${num}`}
             required

@@ -34,7 +34,7 @@ export default function AvatarAndLogout({
 
   return (
     //isUserLoggedIn checks if user is logged to display the right UI
-    <>
+    <div className=" flex items-center justify-center ">
       {isUserLoggedIn ? (
         <div className="avatar-logout hidden h-[4rem] items-center justify-center gap-[2.5rem] mobile:flex">
           <img
@@ -65,6 +65,6 @@ export default function AvatarAndLogout({
         <img src={MENUICON} alt="menu" />
         {}
       </button>
-    </>
+    </div>
   );
 }
