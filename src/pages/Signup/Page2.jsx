@@ -16,11 +16,15 @@ const Page2 = () => {
   const [otp, setOtp] = useState('');
   // const [phoneNumber, setPhoneNumber] = useState('');
 
+  // const handlePhoneNumber = (e) => {
+  //   setPhoneNumber(e.target.value)
+  // }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/auth/verify-otp", {
       // phone: phoneNumber,
-      otp : otp
+      otp : otp,
     })
     .then(() => {
       toast("Sign in successful");
@@ -60,8 +64,7 @@ const Page2 = () => {
   const txt2 = "text-primary-white-1";
   return (
     <div>
-
-    
+      
     <form
       onSubmit={handleSubmit}
       className="font-text-xl-medium relative flex w-full flex-col items-center justify-start gap-[40px] text-center text-5xl text-primary-blue-1"
