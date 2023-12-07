@@ -22,7 +22,6 @@ const Page2 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // if (phoneNumber) {
       axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/auth/verify-otp" , {
         // phone: phoneNumber,
         otp : otp,
@@ -36,7 +35,6 @@ const Page2 = () => {
           toast(err.response.data.message);
           console.log("err", err.response.data.message);
       })
-    // }
     
   };
 
