@@ -9,6 +9,7 @@ import { getNextSignupPage } from "../../redux/slice/authSlice";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import SignupHead from "./SignupHead";
 
 const Page2 = () => {
   const dispatch = useDispatch();
@@ -68,7 +69,7 @@ const Page2 = () => {
       
     <form
       onSubmit={handleSubmit}
-      className="font-text-xl-medium relative flex w-full flex-col items-center justify-start gap-[40px] text-center text-5xl text-primary-blue-1"
+      className="font-text-xl-medium relative flex w-full flex-col items-center justify-start gap-[40px] top-[40px] text-center text-5xl text-primary-blue-1"
     >
       <div className="relative h-[59px] w-[289px]">
         <div className="absolute left-[58.5px] top-[29.5px] box-border h-px w-[172px] border-t-[1px] border-solid border-primary-blue-7" />
@@ -76,9 +77,11 @@ const Page2 = () => {
       </div>
       <div className="flex flex-col items-center justify-start gap-[40px] text-left text-29xl text-black">
         <div className="relative h-[139px] w-[486px]">
-          <div className="absolute left-[160px] top-[0px] font-semibold">
+          {/* <div className="absolute left-[160px] top-[0px] font-semibold">
             Sign up
-          </div>
+          </div> */}
+
+          <SignupHead />
           <div className="absolute left-[60px] right-[60px] top-[73px] text-center text-3xl font-light lmobile:left-[40px] lmobile:right-[40px] lmobile:text-5xl">
             <p className="m-0">
               Complete sign up by entering the 6-digit code sent to your phone
