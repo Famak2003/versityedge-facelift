@@ -9,6 +9,7 @@ import { getNextSignupPage } from "../../redux/slice/authSlice";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SignupHead from "./SignupHead";
 
 
 const Page1 = () => {
@@ -48,9 +49,11 @@ const Page1 = () => {
         </div>
         <form onSubmit={handleSubmit} className="flex flex-col items-center justify-start gap-[40px] text-left text-29xl text-black">
           <div className="relative w-[510px] h-[139px]">
-            <div className="absolute top-[0px] left-[172px] font-semibold">
+            {/* <div className="absolute top-[0px] left-[172px] font-semibold">
               Sign up
-            </div>
+            </div> */}
+
+            <SignupHead />
             <div className="absolute top-[90px] left-[80px] text-2xl font-light whitespace-pre-wrap text-center lmobile:left-[0px] lmobile:text-4xl lmobile:top-[73px]">
               <p className="m-4">
                 <span className="text-black">{`Admission success is `}</span>
