@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 
 import Stepper from "./stepper";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getNextSignupPage } from "../../redux/slice/authSlice";
 
 const Page2 = () => {
+  const phonenumber = useSelector((state) => state.auth.phonenumber);
+  console.log(phonenumber);
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -78,6 +80,7 @@ const Page2 = () => {
             {otp.map((data, i) => {
               return (
                 <input
+                  key={i}
                   type="password"
                   placeholder="-"
                   required

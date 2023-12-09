@@ -21,7 +21,7 @@ const authSlice = createSlice({
     loginUserOut: (state, action) => {
       state.user = false;
     },
-    getPhoneNumber(state, action) {
+    setPhoneNumber(state, action) {
       state.phoneNumber = action.payload;
     },
     getOTPcode(state, action) {
@@ -40,7 +40,7 @@ const authSlice = createSlice({
 });
 
 export const {
-  getPhoneNumber,
+  setPhoneNumber,
   getOTPcode,
   getUserInfo,
   getNextSignupPage,

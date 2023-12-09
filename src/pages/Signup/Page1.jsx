@@ -18,6 +18,8 @@ const Page1 = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(getNextSignupPage(2));
+    // console.log(e.target.phone);
+    // dispatch(setPhoneNumber())
   };
 
   return (
@@ -47,6 +49,7 @@ const Page1 = () => {
           <div className="absolute top-[0px] left-[0px] w-[535px] h-[55px]">
             <input
               type="tel"
+              name="phone"
               minLength={10}
               maxLength={11}
               required
