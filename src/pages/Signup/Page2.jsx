@@ -77,11 +77,9 @@ const Page2 = () => {
       </div>
       <div className="flex flex-col items-center justify-start gap-[40px] text-left text-29xl text-black">
         <div className="relative h-[139px] w-[486px]">
-          {/* <div className="absolute left-[160px] top-[0px] font-semibold">
+          <div className="absolute left-[160px] top-[0px] font-semibold">
             Sign up
-          </div> */}
-
-          <SignupHead />
+          </div>
           <div className="absolute left-[60px] right-[60px] top-[73px] text-center text-3xl font-light lmobile:left-[40px] lmobile:right-[40px] lmobile:text-5xl">
             <p className="m-0">
               Complete sign up by entering the 6-digit code sent to your phone
