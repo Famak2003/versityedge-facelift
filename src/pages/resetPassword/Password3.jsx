@@ -14,6 +14,7 @@ const Password3 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(getNextResetPasswordPage("congratulations"));
     axios.post('http://versityedge1.eastus.cloudapp.azure.com/v1/auth/password/new', {
       // phone : phoneNumber,
       password : password
@@ -37,10 +38,10 @@ const Password3 = () => {
         className="flex flex-col items-center justify-start gap-[40px]"
       >
         <div className="relative h-[106px] w-[418px] text-center">
-          <div className="absolute left-[40px] right-[40px] top-[0px] text-6xl font-semibold">
+          <div className="absolute left-[40px] right-[40px] top-[40px] text-6xl font-semibold">
             Password reset
           </div>
-          <div className="absolute left-[40px] right-[40px] top-[73px] text-5xl font-light lmobile:left-[0px] lmobile:right-[0px]">
+          <div className="absolute left-[40px] right-[40px] top-[90px] text-5xl font-light lmobile:left-[0px] lmobile:right-[0px]">
             Enter a new password for your account.
           </div>
         </div>

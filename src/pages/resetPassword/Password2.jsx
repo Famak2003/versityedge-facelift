@@ -15,6 +15,7 @@ const Password2 = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(getNextResetPasswordPage("passwordReset"));
     axios.post('http://versityedge1.eastus.cloudapp.azure.com/v1/auth/verify-otp', {
       // phone : phoneNumber,
       otp : otp
@@ -60,10 +61,10 @@ const Password2 = () => {
       >
         <div className="flex flex-col items-center justify-start gap-[40px]">
           <div className="relative h-[139px] w-[470px] text-center">
-            <div className="absolute left-[66px] right-[66px] top-[0px] text-6xl font-semibold">
+            <div className="absolute left-[66px] right-[66px] top-[40px] text-6xl font-semibold">
               Password reset
             </div>
-            <div className="mb-2px absolute left-[44px] right-[44px] top-[73px] text-3xl font-light lmobile:left-[0px] lmobile:right-[0px] lmobile:text-5xl">
+            <div className="mb-2px absolute left-[44px] right-[44px] top-[90px] text-3xl font-light lmobile:left-[0px] lmobile:right-[0px] lmobile:text-5xl">
               <p className="m-0">
                 Reset password by entering the 6-digit code sent to your phone
                 number/email.

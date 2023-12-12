@@ -16,6 +16,7 @@ const Password1 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(getNextResetPasswordPage("OTP"));
     axios.post('http://versityedge1.eastus.cloudapp.azure.com/v1/auth/request-otp',{
       phone : "+234" + phoneNumber,
     })
@@ -39,10 +40,10 @@ const Password1 = () => {
         className="flex flex-col items-center justify-start gap-[40px]"
       >
         <div className="relative h-[139px] w-[475px] text-center">
-          <div className="absolute left-[52px] right-[52px] top-[0px] text-6xl font-semibold">
+          <div className="absolute left-[52px] right-[52px] top-[40px] text-6xl font-semibold">
             Forgot password
           </div>
-          <div className="absolute left-[90px] right-[90px] top-[73px] text-5xl font-light lmobile:left-[0px] lmobile:right-[0px]">
+          <div className="absolute left-[90px] right-[90px] top-[100px] text-5xl font-light lmobile:left-[0px] lmobile:right-[0px]">
             <p className="m-0">
               Enter phone number to reset password +23481 27*** 98/
             </p>

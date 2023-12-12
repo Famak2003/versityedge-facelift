@@ -8,10 +8,10 @@ const Congrats = () => {
     <div className="flex flex-col items-center justify-start">
       <div className="flex flex-col items-center justify-start gap-[40px]">
         <div className="relative h-[139px] w-[469px]">
-          <div className="absolute left-[53px] top-[0px] px-20 text-6xl font-semibold">
+          <div className="absolute left-[53px] top-[40px] px-20 text-6xl font-semibold">
             Congratulations!
           </div>
-          <div className="lmobile:text:5xl absolute left-[60px] right-[60px] top-[73px] px-6 text-center text-3xl font-light lmobile:left-[0px] lmobile:right-[0px]">
+          <div className="lmobile:text:5xl absolute left-[60px] right-[60px] top-[90px] px-6 text-center text-3xl font-light lmobile:left-[0px] lmobile:right-[0px]">
             <p className="m-0">
               Congratulations, you have successfully reset your password.
             </p>
