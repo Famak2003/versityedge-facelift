@@ -3,23 +3,52 @@ import Stepper from "./stepper";
 
 import { Link } from "react-router-dom";
 
-import { useDispatch } from "react-redux";
-import { getNextSignupPage } from "../../redux/slice/authSlice";
+// import { useDispatch } from "react-redux";
+// import { getNextSignupPage } from "../../redux/slice/authSlice";
+// import axios from "axios";
+// import { toast, ToastContainer } from "react-toastify";
+// import 'react-toastify/dist/ReactToastify.css';
+
 
 const Page3 = () => {
   const bg3 = "bg-primary-blue-1";
   const txt3 = "text-primary-white-1";
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
+
+  // const [phoneNumber, setPhoneNumber] = useState('');
+  // const [password, setPassword] = useState('');
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(getNextSignupPage("congratulations"));
-    console.log("signUp page 3");
+    // axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/auth/signup", {
+    //   phone : phoneNumber,
+    //   password : password
+    // })
+    // axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/user/:id/profile", {
+    //   firstName : firstName,
+    //   lastName : lastName
+    // })
+    // axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/auth/signin", {
+    //   phone: phoneNumber,
+    //   password: password
+    // })
+    // .then(() => {
+    //   dispatch(getNextSignupPage("congratulations"));
+    //   console.log("signUp page 3");
+    // })
+    // .catch((err) => {
+    //   toast(err.res.data.message)
+    //   console.log(err.res.data.message);
+    // })
+    
   };
 
   return (
+    
+    <div>
     <div className="flex flex-col items-center justify-start gap-[40px] text-5xl text-primary-blue-1">
-      <div className="relative h-[59px] w-[289px]">
+      <div className="relative top-[40px] h-[59px] w-[289px]">
         <div className="absolute left-[58.5px] top-[29.5px] box-border h-px w-[172px] border-t-[1px] border-solid border-primary-blue-7" />
         <Stepper bg3={bg3} txt3={txt3} />
       </div>
@@ -65,7 +94,7 @@ const Page3 = () => {
 
           <input
             type="tel"
-            placeholder="Enter your parent/guidiance phone number"
+            placeholder="Enter your parent/guardian's phone number"
             required
             maxLength={11}
             minLength={10}
@@ -115,6 +144,8 @@ const Page3 = () => {
         </div>
       </form>
     </div>
+    {/* <ToastContainer /> */}
+  </div>
   );
 };
 

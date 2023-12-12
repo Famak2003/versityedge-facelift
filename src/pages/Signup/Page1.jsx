@@ -11,7 +11,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-
 const Page1 = () => {
 
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -20,8 +19,9 @@ const Page1 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // dispatch(getNextSignupPage(2))
     axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1//auth/request-otp", {
-      phone : "+234" + phoneNumber.slice(-10)
+      phone : "+234" + phoneNumber.slice(-10),
     })
     .then(() => {
       setTimeout(() => {
@@ -39,9 +39,7 @@ const Page1 = () => {
   const bg1 = "bg-primary-blue-1";
   const txt1 = "text-primary-white-1";
 
-
   return (
-
     <div className="relative w-full flex flex-col items-center justify-start gap-[40px] top-[40px] text-center text-5xl text-primary-blue-1 font-text-xl-medium">
         <div className="relative w-[289px] h-[59px]">
           <div className="absolute top-[29.5px] left-[58.5px] box-border w-[172px] h-px border-t-[1px] border-solid border-primary-blue-7" />
