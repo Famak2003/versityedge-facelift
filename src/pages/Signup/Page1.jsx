@@ -46,14 +46,14 @@ const Page1 = () => {
   return (
     <div>
       <div className="">
-          <img className="hidden absolute left-[1000px] top-[500px]" 
+          <img className="absolute left-[1000px] top-[500px]" 
           src={arc2} 
           alt="" />
           <img
-          className="hidden absolute left-[0px] top-[600px]" 
+          className="absolute left-[0px] top-[600px]" 
           src={arc3} 
           alt="" />
-          <img className="hidden absolute top-[-150px]"
+          <img className="absolute top-[-150px]"
           src={arc4} 
           alt=""/>
       </div>
