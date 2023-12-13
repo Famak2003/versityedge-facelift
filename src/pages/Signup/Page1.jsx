@@ -2,6 +2,10 @@ import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 
+import arc2 from "./../../assets/arc2.jpg";
+import arc3 from "./../../assets/arc3.jpg";
+import arc4 from "./../../assets/arc4.jpg";
+
 import ngaFlag from "./../../assets/twemoji_flag-nigeria.png";
 import Stepper from "./stepper";
 import { useDispatch } from "react-redux";
@@ -19,7 +23,7 @@ const Page1 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // dispatch(getNextSignupPage(2))
+    dispatch(getNextSignupPage(2))
     axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1//auth/request-otp", {
       phone : "+234" + phoneNumber.slice(-10),
     })
@@ -40,6 +44,19 @@ const Page1 = () => {
   const txt1 = "text-primary-white-1";
 
   return (
+    <div>
+      <div className="">
+          <img className="hidden absolute left-[1000px] top-[500px]" 
+          src={arc2} 
+          alt="" />
+          <img
+          className="hidden absolute left-[0px] top-[600px]" 
+          src={arc3} 
+          alt="" />
+          <img className="hidden absolute top-[-150px]"
+          src={arc4} 
+          alt=""/>
+      </div>
     <div className="relative w-full flex flex-col items-center justify-start gap-[40px] top-[40px] text-center text-5xl text-primary-blue-1 font-text-xl-medium">
         <div className="relative w-[289px] h-[59px]">
           <div className="absolute top-[29.5px] left-[58.5px] box-border w-[172px] h-px border-t-[1px] border-solid border-primary-blue-7" />
@@ -64,13 +81,20 @@ const Page1 = () => {
               <input type='tel' 
               minLength={10} 
               maxLength={11} 
-              required 
+              // required 
               placeholder='Phone number'
               onChange={(e) => setPhoneNumber(e.target.value)} 
               className="relative mt-0 ml-40 text-black top-[0px] px-[24px] left-[90px] 
               rounded-2xl bg-primary-white-1 box-border w-[230px] 
               h-[55px] outline-none overflow-hidden border-[1px] border-solid border-primary-black-7 top-[15px] left-[29px] font-light lmobile:w-[391px] lmobile:left-[14px]" />
               
+              {/* <div className="absolute mt-0">
+                <img 
+                className="absolute mt-6"
+                alt=""
+                src={arc2}
+                />
+              </div> */}
          
               <div className="absolute mt-6 top-[0px] left-[100px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-start py-[9.5px] px-2 gap-[16px] text-black border-[1px] border-solid border-primary-black-7 lmobile:left-[0px] lmobile:px-4">
                 <img
@@ -89,7 +113,7 @@ const Page1 = () => {
               </div>
               <input 
               type='checkbox' 
-              required 
+              // required 
               className="absolute top-[0px] left-[100px] rounded bg-primary-white-2 
               shadow-[0px_4px_4px_rgba(176,_176,_176,_0.25)_inset] box-border w-[19px] h-[19px] border-[1px] 
               border-solid border-primary-black-7 lmobile:left-[0px]" />
@@ -114,6 +138,7 @@ const Page1 = () => {
         </form>
         <ToastContainer />
       </div>
+    </div>
   );
 };
 
