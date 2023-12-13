@@ -58,7 +58,7 @@ const Page1 = () => {
           className="hidden large:block absolute left-[0px] top-[600px]" 
           src={arc3} 
           alt="" />
-          <img className="hidden large:block absolute top-[-150px]"
+          <img className="hidden large:block w-[32px] h-[6px] absolute top-[-150px]"
           src={arc4} 
           alt=""/>
       </div>
