@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 
+import arc1 from "./../../assets/arc1.jpg";
 import arc2 from "./../../assets/arc2.jpg";
 import arc3 from "./../../assets/arc3.jpg";
 import arc4 from "./../../assets/arc4.jpg";
@@ -46,14 +47,18 @@ const Page1 = () => {
   return (
     <div>
       <div className="">
-          <img className="absolute left-[1000px] top-[500px]" 
+        <img className=""
+          src={arc1}
+          alt="" />
+
+          <img className="hidden large:block absolute left-[1000px] top-[500px]" 
           src={arc2} 
           alt="" />
           <img
-          className="absolute left-[0px] top-[600px]" 
+          className="hidden large:block absolute left-[0px] top-[600px]" 
           src={arc3} 
           alt="" />
-          <img className="absolute top-[-150px]"
+          <img className="hidden large:block absolute top-[-150px]"
           src={arc4} 
           alt=""/>
       </div>
