@@ -1,0 +1,19 @@
+export { default as Header } from "./header/Header";
+export { default as Home } from "./homeComponents/Home";
+export { default as Blogs } from "./blogs/blogs";
+export { default as BlogDetails } from "./blogs/blogDetail";
+export { default as ForumHome } from "./forum/forumHome";
+export { default as ForumBlog } from "./forum/forumBlog";
+export { default as PredictChance } from "./predictChanceComponents/PredictChance/PredictChance";
+export { default as PredictChanceForm } from "./predictChanceComponents/Forms/Forms";
+export { default as PredictChanceCongratulations } from "./predictChanceComponents/Congratulations/Congratulations";
+export { default as ContactUs } from "./contactUs/ContactUs";
+export { default as Signup } from "./Signup/Signup";
+export { default as Login } from "./Login/Login";
+export { default as CreateBlog } from "./blogs/newBlog";
+export { default as ResetPassword } from "./resetPassword/ResetPassword";
+export { default as MockLandingPage } from "./quiz/MockLandingPage/MockLandingPage";
+export { default as Mock } from "./quiz/Mock/Mock";
+export { default as Quiz } from "./quiz/Quiz";
+
+export { default as Footer } from "./footer/Footer";
