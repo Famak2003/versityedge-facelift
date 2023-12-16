@@ -3,22 +3,39 @@ import { useDispatch } from "react-redux";
 
 import { Link } from "react-router-dom";
 import { getNextResetPasswordPage } from "../../redux/slice/authSlice";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
 const Password2 = () => {
   const dispatch = useDispatch();
 
+  // const [phoneNumber, setPhoneNumber] = useState('');
+  const [otp, setOtp] = useState('');
+  
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(getNextResetPasswordPage("passwordReset"));
+    axios.post('http://versityedge1.eastus.cloudapp.azure.com/v1/auth/verify-otp', {
+      // phone : phoneNumber,
+      otp : otp
+    })
+    .then(() => {
+      dispatch(getNextResetPasswordPage("passwordReset"));
+    })
+    .catch((err) => {
+        toast(err.response.data.message);
+        console.log('err', err.response.data.message);
+    })
+    
   };
 
-  const [otp, setOtp] = useState(new Array(6).fill(""));
+  const [otpInput, setOtpInput] = useState(new Array(6).fill(""));
 
   const handleChange = (e, index) => {
     if (isNaN(e.target.value)) return false;
 
-    setOtp([
-      ...otp.map((data, indx) => (indx === index ? e.target.value : data)),
+    setOtpInput([
+      ...otpInput.map((data, indx) => (indx === index ? e.target.value : data)),
     ]);
 
     if (e.target.value && e.target.nextSibling) {
@@ -30,9 +47,9 @@ const Password2 = () => {
     const value = e.clipboardData.getData("text");
     if (isNaN(value)) return false;
 
-    const updatedValue = value.toString().split("").slice(0, otp.length);
+    const updatedValue = value.toString().split("").slice(0, otpInput.length);
 
-    setOtp(updatedValue);
+    setOtpInput(updatedValue);
   };
 
   return (
@@ -59,14 +76,19 @@ const Password2 = () => {
               className="text-primary-black-5 flex h-[134px] w-[476px] justify-center 
             text-lg"
             >
-              {otp.map((data, i) => {
+              {otpInput.map((data, i) => {
                 return (
                   <input
                     type="password"
                     placeholder="-"
                     required
                     value={data}
-                    onChange={(e) => handleChange(e, i)}
+                    onChange={(e) => {
+                      handleChange(e, i) 
+                      setOtp(e.target.value)
+                    }
+                      }
+
                     onPaste={(e) => {
                       handlePaste(e);
                     }}
@@ -103,6 +125,7 @@ const Password2 = () => {
           </div>
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 };

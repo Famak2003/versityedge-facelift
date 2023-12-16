@@ -1,14 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { getNextResetPasswordPage } from "../../redux/slice/authSlice";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Password1 = () => {
   const dispatch = useDispatch();
 
+  const [phoneNumber, setPhoneNumber] = useState('');
+
+  
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(getNextResetPasswordPage("OTP"));
+    axios.post('http://versityedge1.eastus.cloudapp.azure.com/v1/auth/request-otp',{
+      phone : "+234" + phoneNumber,
+    })
+    .then(() => {
+      toast('OTP Sent');
+      setTimeout(() => {
+        dispatch(getNextResetPasswordPage("OTP"));
+      }, 2000);
+      
+    })
+    .catch((err) => {
+      toast(err.response.data.message);
+      console.log("err", err.response.data.message);
+    })
   };
 
   return (
@@ -30,6 +51,7 @@ const Password1 = () => {
         <input
           type="tel"
           placeholder="Phone number"
+          onChange={(e) => setPhoneNumber(e.target.value)}
           required
           minLength={10}
           maxLength={11}
@@ -51,6 +73,7 @@ const Password1 = () => {
           </button>
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 };

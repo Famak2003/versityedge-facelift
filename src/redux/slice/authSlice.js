@@ -14,14 +14,14 @@ const authSlice = createSlice({
   initialState,
   // Add reducers for the synchronous actions on the UI
   reducers: {
-    loginUserIn: (state, action) => {
+    loginUserIn: (state) => {
       state.user = true;
     },
 
-    loginUserOut: (state, action) => {
+    loginUserOut: (state) => {
       state.user = false;
     },
-    setPhoneNumber(state, action) {
+    setPhone(state, action) {
       state.phoneNumber = action.payload;
     },
     getOTPcode(state, action) {
@@ -40,7 +40,7 @@ const authSlice = createSlice({
 });
 
 export const {
-  setPhoneNumber,
+  setPhone,
   getOTPcode,
   getUserInfo,
   getNextSignupPage,
