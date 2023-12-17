@@ -22,12 +22,9 @@ const Page1 = () => {
 
     if (!requestSent) {
       axios
-        .post(
-          "http://versityedge1.eastus.cloudapp.azure.com/v1//auth/request-otp",
-          {
-            phone: verfiedPhoneNumber,
-          },
-        )
+        .post(`${process.env.REACT_APP_ENDPOINT}/auth/request-otp`, {
+          phone: verfiedPhoneNumber,
+        })
         .then(() => {
           setTimeout(() => {
             toast("OTP Sent");
