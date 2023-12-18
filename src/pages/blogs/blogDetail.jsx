@@ -1,4 +1,4 @@
-import useFetch from '../useFetch/useFetch'
+import useFetch from '../../components/useFetch/useFetch';
 import img1 from './../../assets/blog-hero4.jpeg'
 import Comments from './comments'
 import { Link, useNavigate, useParams } from "react-router-dom"
