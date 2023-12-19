@@ -4,7 +4,7 @@ import TEAMIMG3 from "./../../../assets/Prof Idowu Olayinka.jpg";
 import TEAMIMG4 from "./../../../assets/Isa AbdulMajeed(Head of Design).jpg";
 import TEAMIMG5 from "./../../../assets/Chantel Onyebuchi(COO).jpg";
 
-import GalleryCarousel from "./../../../components/carousel/GalleryCarousel/GalleryCarousel";
+import GalleryCarousel from "../../../components/carousel/GalleryCarousel";
 // import TeamImg from "../../carousel/GalleryCarousel/TeamImg";
 
 export const team = [
@@ -44,27 +44,6 @@ export const team = [
         "4+ years of experience in operations managements in the education sector",
     },
   ],
-  // [
-  //   { img: TEAMIMG1, name: "CEO" },
-  //   { img: TEAMIMG2, name: "Head Designer" },
-  //   { img: TEAMIMG3, name: "Head Dev" },
-  //   { img: TEAMIMG4, name: "CTO" },
-  //   { img: TEAMIMG5, name: "COO" },
-  // ],
-  // [
-  //   { img: TEAMIMG1, name: "CEO" },
-  //   { img: TEAMIMG2, name: "Head Designer" },
-  //   { img: TEAMIMG3, name: "Head Dev" },
-  //   { img: TEAMIMG4, name: "CTO" },
-  //   { img: TEAMIMG5, name: "COO" },
-  // ],
-  // [
-  //   { img: TEAMIMG1, name: "CEO" },
-  //   { img: TEAMIMG2, name: "Head Designer" },
-  //   { img: TEAMIMG3, name: "Head Dev" },
-  //   { img: TEAMIMG4, name: "CTO" },
-  //   { img: TEAMIMG5, name: "COO" },
-  // ],
 ];
 
 export default function OurTeamComp() {

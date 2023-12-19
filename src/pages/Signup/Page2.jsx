@@ -3,41 +3,38 @@ import { Link } from "react-router-dom";
 
 import Stepper from "./stepper";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getNextSignupPage } from "../../redux/slice/authSlice";
 
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-
+import "react-toastify/dist/ReactToastify.css";
 
 const Page2 = () => {
   const dispatch = useDispatch();
-
-  const [otp, setOtp] = useState('');
-  // const [phoneNumber, setPhoneNumber] = useState('');
-
-  // const handlePhoneNumber = (e) => {
-  //   setPhoneNumber(e.target.value)
-  // }
+  const [otp, setOtp] = useState("");
+  const phoneNumber = useSelector((state) => state.auth.phoneNumber);
+  console.log("phonenumber", phoneNumber);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // dispatch(getNextSignupPage(3))
-      axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/auth/verify-otp" , {
-        // phone: phoneNumber,
-        otp : otp,
-      })
+    axios
+      .post(
+        "http://versityedge1.eastus.cloudapp.azure.com/v1/auth/verify-otp",
+        {
+          phone: phoneNumber,
+          otp: otp,
+        },
+      )
       .then(() => {
         toast("Sign in successful");
         dispatch(getNextSignupPage(3));
         console.log("signUp page 2");
       })
       .catch((err) => {
-          toast(err.response.data.message);
-          console.log("err", err.response.data.message);
-      })
-    
+        toast(err.response.data.message);
+        console.log("err", err.response.data.message);
+      });
   };
 
   const [otpInput, setOtpInput] = useState(new Array(6).fill(""));
@@ -61,7 +58,7 @@ const Page2 = () => {
     const updatedValue = value.toString().split("").slice(0, otpInput.length);
 
     setOtpInput(updatedValue);
-  };  
+  };
 
   const bg2 = "bg-primary-blue-1";
   const txt2 = "text-primary-white-1";
@@ -117,37 +114,36 @@ const Page2 = () => {
                   maxLength={1}
                   className="left-[246px] right-[240px] mx-2 ml-[14px] mt-[36px] h-16 w-16  
                         overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 text-center text-3xl focus:outline-none lmobile:left-[240px] lmobile:h-24 lmobile:w-24"
-                />
-              );
-            })}
-          </div>
-          <div className="absolute left-[197px] top-[0px] mb-[4px] font-light text-black">
-            Enter code
-          </div>
-          <div className="absolute left-[308px] top-[112px] text-base text-primary-blue-1 lmobile:left-[386px]">
-            Resend OTP
-          </div>
-        </div>
-        <div className="relative h-[87px] w-[391px] text-base">
-          <Link to="/auth/login">
-            <div className="absolute left-[60px] top-[65px] font-light lmobile:left-[0px]">
-              <span>{`Already have an account?   `}</span>
-              <span className="text-primary-blue-1">Login</span>
+                  />
+                );
+              })}
             </div>
-          </Link>
+            <div className="absolute left-[197px] top-[0px] mb-[4px] font-light text-black">
+              Enter code
+            </div>
+            <div className="absolute left-[308px] top-[112px] text-base text-primary-blue-1 lmobile:left-[386px]">
+              Resend OTP
+            </div>
+          </div>
+          <div className="relative h-[87px] w-[391px] text-base">
+            <Link to="/auth/login">
+              <div className="absolute left-[60px] top-[65px] font-light lmobile:left-[0px]">
+                <span>{`Already have an account?   `}</span>
+                <span className="text-primary-blue-1">Login</span>
+              </div>
+            </Link>
 
-          <button
-            className="absolute left-[60px] top-[0px] box-border flex w-[270px] flex-row items-center justify-center overflow-hidden rounded-2xl border-[1px] 
+            <button
+              className="absolute left-[60px] top-[0px] box-border flex w-[270px] flex-row items-center justify-center overflow-hidden rounded-2xl border-[1px] 
             border-solid border-primary-blue-1 bg-primary-blue-1 px-[24px] py-[11px] text-xl text-primary-white-1 lmobile:left-[0px] lmobile:w-[391px]"
-          >
-            <div className="relative font-medium">Submit</div>
-          </button>
+            >
+              <div className="relative font-medium">Submit</div>
+            </button>
+          </div>
         </div>
-      </div>
-    </form>
-    <ToastContainer />
+      </form>
+      <ToastContainer />
     </div>
-  
   );
 };
 
