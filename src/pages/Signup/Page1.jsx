@@ -46,7 +46,7 @@ const Page1 = () => {
   const txt1 = "text-primary-white-1";
 
   return (
-    <div className="relative w-full flex flex-col items-center justify-start gap-[40px] text-center text-5xl text-primary-blue-1 font-text-xl-medium">
+    <div className="relative w-full flex flex-col top-[40px] items-center justify-start gap-[40px] text-center text-5xl text-primary-blue-1 font-text-xl-medium">
       <div className="relative w-[289px] h-[59px]">
         <div className="absolute top-[29.5px] left-[58.5px] box-border w-[172px] h-px border-t-[1px] border-solid border-primary-blue-7" />
         <Stepper bg1={bg1} txt1={txt1} />
@@ -69,9 +69,9 @@ const Page1 = () => {
           </div>
         </div>
         <div className="flex flex-col justify-between w-[535px] h-[9.8rem] text-lg text-primary-black-7">
-          <div className="w-[535px] justify-between items-center flex h-[55px]">
+          <div className="w-[430px] px-24px justify-between items-center flex h-[55px] lmobile:w-[650px]">
             <label
-              className="flex items-center ring-1 ring-[var(--gray-texture)] py-1 px-6 h-full rounded-3xl gap-5"
+              className="flex items-center ring-1 ring-[var(--gray-texture)] py-1 px-2 ml-40 w-[250px] h-full rounded-3xl gap-2 lmobile:gap-3 lmobile:w-[100px]"
               htmlFor="phone"
             >
               <img src={ngaFlag} alt="Nigeria" />
@@ -86,8 +86,8 @@ const Page1 = () => {
               required
               placeholder="Phone number"
               onChange={(e) => setPhoneNumber(e.target.value)}
-              className=" text-black px-[24px]
-              rounded-3xl bg-primary-white-1 box-border w-[230px] 
+              className="text-black px-[24px]
+              rounded-3xl bg-primary-white-1 box-border w-[590px] ml-4 
               h-[55px] outline-none overflow-hidden border-[1px] border-solid border-primary-black-7 top-[15px] left-[29px] font-light lmobile:w-[391px] lmobile:left-[14px]"
             />
 
@@ -103,7 +103,7 @@ const Page1 = () => {
           <div className=" Policy flex gap-4 items-center">
             <label
               htmlFor="policy"
-              className=" whitespace-nowrap order-2 text-[1.4rem] lmobile:left-[35px]"
+              className="ml-14 whitespace-nowrap order-2 text-[1.3rem] lmobile:left-[35px]"
             >
               By signing up, you agree to our terms of services and privacy
               policy.
@@ -112,7 +112,7 @@ const Page1 = () => {
               name="policy"
               type="checkbox"
               required
-              className=" order-1 top-[0px] left-[100px] rounded bg-primary-white-2 
+              className="order-1 top-[0px] left-[100px] rounded bg-primary-white-2 
               shadow-[0px_4px_4px_rgba(176,_176,_176,_0.25)_inset] box-border w-[19px] h-[19px] border-[1px] 
               border-solid border-primary-black-7 lmobile:left-[0px]"
             />
