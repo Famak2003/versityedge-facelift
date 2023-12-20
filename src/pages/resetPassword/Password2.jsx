@@ -1,25 +1,27 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { Link } from "react-router-dom";
 import { getNextResetPasswordPage } from "../../redux/slice/authSlice";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Password2 = () => {
   const dispatch = useDispatch();
-
-  // const [phoneNumber, setPhoneNumber] = useState('');
   const [otp, setOtp] = useState('');
+  const phoneNumber = useSelector((state) => state.auth.phoneNumber);
+  
+  console.log("phonenumber", phoneNumber);
   
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(getNextResetPasswordPage("passwordReset"));
-    axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/verify-otp`, 
+    axios
+    .post(`${process.env.REACT_APP_ENDPOINT}/auth/verify-otp`, 
     {
-      // phone : phoneNumber,
-      otp : otp
+      phone : phoneNumber,
+      otp : otp,
     })
     .then(() => {
       dispatch(getNextResetPasswordPage("passwordReset"));

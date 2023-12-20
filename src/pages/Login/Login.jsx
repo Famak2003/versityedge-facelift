@@ -26,12 +26,11 @@ const Login1 = () => {
     .then(() => {
       toast("Sign in successful");
       dispatch(loginUserIn());
-      setTimeout(() => {
         if (location.state) {
           navigate(`${location.state.destination}`, { replace: true });
         } else navigate("/", { replace: true });
-      }, 2000);
-    }).catch((err) => {
+    })
+    .catch((err) => {
       toast(err.response.data.message);
       console.log("err", err?.response?.data?.message);
     })

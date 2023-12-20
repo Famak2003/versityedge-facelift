@@ -25,12 +25,9 @@ const Password1 = () => {
     })
       .then(() => {
         toast('OTP Sent');
-        setTimeout(() => {
           dispatch(setPhone(verfiedPhoneNumber));
           setRequestSent(true);
-          dispatch(getNextResetPasswordPage("OTP"));
-        }, 2000);
-        
+          dispatch(getNextResetPasswordPage("OTP"));       
       })
       .catch((err) => {
         toast(err.response.data.message);
