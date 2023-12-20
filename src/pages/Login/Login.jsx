@@ -33,7 +33,7 @@ const Login1 = () => {
       }, 2000);
     }).catch((err) => {
       toast(err.response.data.message);
-      console.log("err", err.response.data.message);
+      console.log("err", err?.response?.data?.message);
     })
 }
 

@@ -19,7 +19,7 @@ const Password1 = () => {
     dispatch(getNextResetPasswordPage("OTP"));
     axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/request-otp`,
     {
-      phone : "+234" + phoneNumber,
+      phone : "+234" + phoneNumber.slice(-10),
     })
     .then(() => {
       toast('OTP Sent');

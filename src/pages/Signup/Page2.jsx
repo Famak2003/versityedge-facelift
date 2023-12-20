@@ -23,8 +23,7 @@ const Page2 = () => {
       {
           phone: phoneNumber,
           otp: otp,
-        },
-      )
+      })
       .then(() => {
         toast("Sign in successful");
         dispatch(getNextSignupPage(3));
