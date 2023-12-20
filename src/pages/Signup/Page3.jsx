@@ -21,26 +21,27 @@ const Page3 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/auth/signup", {
-    //   phone : phoneNumber,
-    //   password : password
-    // })
-    // axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/user/:id/profile", {
-    //   firstName : firstName,
-    //   lastName : lastName
-    // })
-    // axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/auth/signin", {
-    //   phone: phoneNumber,
-    //   password: password
-    // })
-    // .then(() => {
-    //   dispatch(getNextSignupPage("congratulations"));
-    //   console.log("signUp page 3");
-    // })
-    // .catch((err) => {
-    //   toast(err.res.data.message)
-    //   console.log(err.res.data.message);
-    // })
+    axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signup`, {
+      phone : phoneNumber,
+      password : password
+    })
+    
+    axios.post(`${process.env.REACT_APP_ENDPOINT}/user/:id/profile`, {
+      firstName : firstName,
+      lastName : lastName
+    })
+    axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, {
+      phone: phoneNumber,
+      password: password
+    })
+    .then(() => {
+      dispatch(getNextSignupPage("congratulations"));
+      console.log("signUp page 3");
+    })
+    .catch((err) => {
+      toast(err.res.data.message)
+      console.log(err.res.data.message);
+    })
     
   };
 
