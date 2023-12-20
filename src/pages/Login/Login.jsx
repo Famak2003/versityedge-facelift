@@ -18,7 +18,7 @@ const Login1 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/auth/signin", {
+    axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, {
       phone: phoneNumber,
       password: password
     })
