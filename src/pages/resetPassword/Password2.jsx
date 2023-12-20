@@ -12,7 +12,7 @@ const Password2 = () => {
   const [otp, setOtp] = useState('');
   const phoneNumber = useSelector((state) => state.auth.phoneNumber);
   
-  console.log("phonenumber", phoneNumber);
+  console.log("phonenumber:", phoneNumber);
   
   
   const handleSubmit = (e) => {
