@@ -17,7 +17,7 @@ const Password1 = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(getNextResetPasswordPage("OTP"));
-    axios.post('http://versityedge1.eastus.cloudapp.azure.com/v1/auth/request-otp',{
+    axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/request-otp`,{
       phone : "+234" + phoneNumber,
     })
     .then(() => {

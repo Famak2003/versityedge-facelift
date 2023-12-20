@@ -15,7 +15,7 @@ const Password3 = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(getNextResetPasswordPage("congratulations"));
-    axios.post('http://versityedge1.eastus.cloudapp.azure.com/v1/auth/password/new', {
+    axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/password/new`, {
       // phone : phoneNumber,
       password : password
     })
