@@ -15,7 +15,8 @@ const Password3 = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(getNextResetPasswordPage("congratulations"));
-    axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/password/new`, {
+    axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/password/new`, 
+    {
       // phone : phoneNumber,
       password : password
     })

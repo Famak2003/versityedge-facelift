@@ -16,7 +16,8 @@ const Password2 = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(getNextResetPasswordPage("passwordReset"));
-    axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/verify-otp`, {
+    axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/verify-otp`, 
+    {
       // phone : phoneNumber,
       otp : otp
     })

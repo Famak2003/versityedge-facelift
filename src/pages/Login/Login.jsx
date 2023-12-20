@@ -18,7 +18,8 @@ const Login1 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, {
+    axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, 
+    {
       phone: phoneNumber,
       password: password
     })

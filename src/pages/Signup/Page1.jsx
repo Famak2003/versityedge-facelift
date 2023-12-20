@@ -22,7 +22,8 @@ const Page1 = () => {
 
     if (!requestSent) {
       axios
-        .post(`${process.env.REACT_APP_ENDPOINT}/auth/request-otp`, {
+        .post(`${process.env.REACT_APP_ENDPOINT}/auth/request-otp`, 
+        {
           phone: verfiedPhoneNumber,
         })
         .then(() => {
