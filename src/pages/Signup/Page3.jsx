@@ -1,47 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import Stepper from "./stepper";
 
 import { Link } from "react-router-dom";
 
-// import { useDispatch } from "react-redux";
-// import { getNextSignupPage } from "../../redux/slice/authSlice";
-// import axios from "axios";
-// import { toast, ToastContainer } from "react-toastify";
-// import 'react-toastify/dist/ReactToastify.css';
+import { useDispatch, useSelector } from "react-redux";
+import { getNextSignupPage } from "../../redux/slice/authSlice";
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Page3 = () => {
   const bg3 = "bg-primary-blue-1";
   const txt3 = "text-primary-white-1";
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // const [phoneNumber, setPhoneNumber] = useState('');
-  // const [password, setPassword] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const phoneNumber = useSelector((state) => state.auth.phoneNumber)
+  
+  const passwordMatch = password === confirmPassword;
   
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signup`, {
-    //   phone : phoneNumber,
-    //   password : password
-    // })
-    
-    // axios.post(`${process.env.REACT_APP_ENDPOINT}/user/:id/profile`, {
-    //   firstName : firstName,
-    //   lastName : lastName
-    // })
-    // axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, {
-    //   phone: phoneNumber,
-    //   password: password
-    // })
-    // .then(() => {
-    //   dispatch(getNextSignupPage("congratulations"));
-    //   console.log("signUp page 3");
-    // })
-    // .catch((err) => {
-    //   toast(err.res.data.message)
-    //   console.log(err.res.data.message);
-    // })
+    if (passwordMatch) {
+      await axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signup`, {
+        phone : phoneNumber,
+        password : password,  
+      })
+      await axios.post(`${process.env.REACT_APP_ENDPOINT}/user/:id/profile`, {
+        firstName : firstName,
+        lastName : lastName,
+      })
+      await axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, {
+        phone: phoneNumber,
+        password: password,
+      })
+      .then(() => {
+        dispatch(getNextSignupPage("congratulations"));
+        console.log("signUp page 3");
+      })
+      .catch((err) => {
+        toast(err.res.data.message)
+        console.log(err.res.data.message);
+      })
+    }
+    else{
+      toast("Password Mismatch");
+      console.log("Err: Password mismatch");
+    }
     
   };
 
@@ -74,6 +84,7 @@ const Page3 = () => {
             placeholder="First name"
             minLength={3}
             required
+            onChange={(e) => setFirstName(e.target.value)}
             className="absolute left-[60px]
               top-[1px] mt-0  
               box-border h-[55px] w-[270px] overflow-hidden 
@@ -87,6 +98,7 @@ const Page3 = () => {
             placeholder="Last name"
             minLength={3}
             required
+            onChange={(e) => setLastName(e.target.value)}
             className="absolute left-[60px] top-[91px] 
             box-border h-[55px] w-[270px] overflow-hidden 
             rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 
@@ -117,6 +129,7 @@ const Page3 = () => {
             type="password"
             placeholder="Enter password"
             required
+            onChange={(e) => setPassword(e.target.value)}
             className="absolute left-[60px] top-[273px] box-border h-[55px] w-[270px] 
             overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 px-[24px] font-light 
             text-black outline-none lmobile:left-[0px]  lmobile:w-[391px]"
@@ -126,6 +139,7 @@ const Page3 = () => {
             type="password"
             placeholder="Re-enter password"
             required
+            onChange={(e) => setConfirmPassword(e.target.value)}
             className="absolute left-[60px] top-[364px] box-border h-[55px] w-[270px] 
             overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1  px-[24px] font-light text-black outline-none lmobile:left-[0px]  lmobile:w-[391px]"
           />
@@ -145,7 +159,7 @@ const Page3 = () => {
         </div>
       </form>
     </div>
-    {/* <ToastContainer /> */}
+    <ToastContainer />
   </div>
   );
 };
