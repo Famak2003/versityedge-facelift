@@ -1,37 +1,43 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { getNextResetPasswordPage } from "../../redux/slice/authSlice";
+import { getNextResetPasswordPage, setPhone } from "../../redux/slice/authSlice";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 
 const Password1 = () => {
-  const dispatch = useDispatch();
-
+ 
   const [phoneNumber, setPhoneNumber] = useState('');
-
+  const [requestSent, setRequestSent] = useState(false);
+  const dispatch = useDispatch();
+  let verfiedPhoneNumber;
   
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(getNextResetPasswordPage("OTP"));
-    axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/request-otp`,
+    verfiedPhoneNumber = "+234" + phoneNumber.slice(-10);
+   
+    if(!requestSent){
+      axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/request-otp`,
     {
-      phone : "+234" + phoneNumber.slice(-10),
+      phone : verfiedPhoneNumber,
     })
-    .then(() => {
-      toast('OTP Sent');
-      setTimeout(() => {
-        dispatch(getNextResetPasswordPage("OTP"));
-      }, 2000);
-      
-    })
-    .catch((err) => {
-      toast(err.response.data.message);
-      console.log("err", err.response.data.message);
-    })
+      .then(() => {
+        toast('OTP Sent');
+        setTimeout(() => {
+          dispatch(setPhone(verfiedPhoneNumber));
+          setRequestSent(true);
+          dispatch(getNextResetPasswordPage("OTP"));
+        }, 2000);
+        
+      })
+      .catch((err) => {
+        toast(err.response.data.message);
+        console.log("err", err.response.data.message);
+      })
+    }
+    
   };
 
   return (
@@ -70,7 +76,9 @@ const Password1 = () => {
             </div>
           </Link>
 
-          <button className="absolute left-[60px] top-[0px] box-border flex w-[270px] flex-row items-center justify-center overflow-hidden rounded-2xl border-[1px] border-solid border-primary-blue-1 bg-primary-blue-1 px-[24px] py-[11px] text-center text-xl text-primary-white-1 lmobile:left-[0px] lmobile:w-[391px]">
+          <button
+           disabled={requestSent}
+           className="absolute left-[60px] top-[0px] box-border flex w-[270px] flex-row items-center justify-center overflow-hidden rounded-2xl border-[1px] border-solid border-primary-blue-1 bg-primary-blue-1 px-[24px] py-[11px] text-center text-xl text-primary-white-1 lmobile:left-[0px] lmobile:w-[391px]">
             <div className="relative font-medium">Submit</div>
           </button>
         </div>
