@@ -15,6 +15,7 @@ const Page3 = () => {
   const txt3 = "text-primary-white-1";
   const dispatch = useDispatch();
 
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [firstName, setFirstName] = useState('');
@@ -34,6 +35,7 @@ const Page3 = () => {
       await axios.post(`${process.env.REACT_APP_ENDPOINT}/user/:id/profile`, {
         firstName : firstName,
         lastName : lastName,
+        email : email,
       })
       await axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, {
         phone: phoneNumber,
@@ -52,6 +54,8 @@ const Page3 = () => {
       toast("Password Mismatch");
       console.log("Err: Password mismatch");
     }
+
+    return;
     
   };
 
@@ -106,11 +110,10 @@ const Page3 = () => {
           />
 
           <input
-            type="tel"
-            placeholder="Enter your parent/guardian's phone number"
+            type="email"
+            placeholder="Enter your email"
             required
-            maxLength={11}
-            minLength={10}
+            onChange={(e) => setEmail(e.target.value)}
             className="absolute left-[60px] top-[182px] 
             box-border h-[55px] w-[270px] overflow-hidden rounded-2xl border-[1px] border-solid 
             border-primary-black-7 bg-primary-white-1 px-[24px] font-light text-black outline-none lmobile:left-[0px] lmobile:w-[391px]"
