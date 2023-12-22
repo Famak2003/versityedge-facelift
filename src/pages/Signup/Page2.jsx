@@ -26,7 +26,7 @@ const Page2 = () => {
           otp: otp,
       })
       .then(() => {
-        toast("Sign in successful");
+        toast("OTP Success");
         dispatch(getNextSignupPage(3));
         console.log("signUp page 2");
       })
@@ -111,9 +111,10 @@ const Page2 = () => {
             <div className="absolute left-[197px] top-[0px] mb-[4px] font-light text-black">
               Enter code
             </div>
-            <div className="absolute left-[308px] top-[112px] text-base text-primary-blue-1 lmobile:left-[386px]">
+            <button
+            className="absolute left-[308px] top-[112px] text-base text-primary-blue-1 lmobile:left-[386px]">
               Resend OTP
-            </div>
+            </button>
           </div>
           <div className="relative h-[87px] w-[391px] text-base">
             <Link to="/auth/login">
