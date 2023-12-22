@@ -18,7 +18,6 @@ const Page1 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(getNextSignupPage(2));
     verfiedPhoneNumber = "+234" + phoneNumber.slice(-10);
 
     if (!requestSent) {
@@ -28,7 +27,9 @@ const Page1 = () => {
           phone: verfiedPhoneNumber,
         })
         .then(() => {
-          toast("OTP Sent");
+          setTimeout(() => {
+            toast("OTP Sent");
+          }, 2000)
           dispatch(setPhone(verfiedPhoneNumber));
           setRequestSent(true);
           dispatch(getNextSignupPage(2));

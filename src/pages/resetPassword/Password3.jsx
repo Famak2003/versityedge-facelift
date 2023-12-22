@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { getNextResetPasswordPage } from "../../redux/slice/authSlice";
 import axios from "axios";
@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Password3 = () => {
   const dispatch = useDispatch();
   
+  const phoneNumber = useSelector((state) => state.auth.phoneNumber);
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -19,6 +20,7 @@ const Password3 = () => {
     if(passwordMatch) {
       axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/password/new`, 
     {
+      phone : phoneNumber,
       password : password,
     })
     .then(()=> {

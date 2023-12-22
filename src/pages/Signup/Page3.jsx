@@ -28,7 +28,8 @@ const Page3 = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (passwordMatch) {
-      await axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signup`, {
+      await axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signup`, 
+      {
         phone : phoneNumber,
         password : password,  
       })
