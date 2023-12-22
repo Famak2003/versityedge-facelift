@@ -63,7 +63,7 @@ const Page1 = () => {
           </div>
           <div className="absolute top-[90px] left-[80px] text-2xl font-light whitespace-pre-wrap text-center lmobile:left-[0px] lmobile:text-4xl lmobile:top-[73px]">
             <p className="m-4">
-              <span className="text-black">{`Admission success is `}</span>
+              <span className="text-black ml-4">{`Admission success is `}</span>
               <span className="text-primary-blue-1">guaranteed.</span>
               <span> Kindly sign up</span>
             </p>
@@ -71,9 +71,9 @@ const Page1 = () => {
           </div>
         </div>
         <div className="flex flex-col justify-between w-[535px] h-[9.8rem] text-lg text-primary-black-7 lmobile:w-[672px]">
-          <div className="w-[430px] px-24px justify-between items-center flex h-[55px] lmobile:w-[650px] lmobile:px-[72px]">
+          <div className="w-[430px] ml-4 px-24px justify-between items-center flex h-[55px] lmobile:w-[650px] lmobile:px-[72px]">
             <label
-              className="flex items-center ring-1 ring-[var(--gray-texture)] py-1 px-2 ml-40 w-[250px] h-full rounded-3xl gap-2 lmobile:gap-3 lmobile:w-[100px] lmobile:ml-8"
+              className="flex items-center ring-1 ring-[var(--gray-texture)] py-1 px-2 ml-32 w-[300px] h-full rounded-3xl gap-2 lmobile:gap-3 lmobile:w-[100px] lmobile:ml-4"
               htmlFor="phone"
             >
               <img src={ngaFlag} alt="Nigeria" />
@@ -89,23 +89,14 @@ const Page1 = () => {
               placeholder="Phone number"
               onChange={(e) => setPhoneNumber(e.target.value)}
               className="text-black px-[24px]
-              rounded-3xl bg-primary-white-1 box-border w-[590px] ml-4 
-              h-[55px] outline-none overflow-hidden border-[1px] border-solid border-primary-black-7 top-[15px] left-[29px] font-light lmobile:w-[391px] lmobile:left-[14px]"
+              rounded-3xl bg-primary-white-1 box-border w-[710px] ml-4 
+              h-[55px] outline-none overflow-hidden border-[1px] border-solid border-primary-black-7 top-[15px] left-[29px] font-light lmobile:w-[390px] lmobile:left-[14px]"
             />
-
-            {/* <div className="absolute mt-6 top-[0px] left-[100px] rounded-2xl bg-primary-white-1 overflow-hidden flex flex-row items-center justify-start py-[9.5px] px-2 gap-[16px] text-black border-[1px] border-solid border-primary-black-7 lmobile:left-[0px] lmobile:px-4">
-              <img
-                className="relative w-7 h-9 overflow-hidden shrink-0 lmobile:w-9"
-                alt=""
-                src={ngaFlag}
-              />
-              <div className="relative font-light">+234</div>
-            </div> */}
           </div>
-          <div className="Policy flex gap-4 items-center lmobile:left-[0px] lmobile:w-[67px]">
+          <div className="Policy flex text-[1.1rem] gap-0 ml-4 w-[12px] items-center lmobile:left-[0px] lmobile:w-[67px]">
             <label
               htmlFor="policy"
-              className="ml-16 whitespace-nowrap order-2 text-[1.3rem] lmobile:ml-4"
+              className="ml-2 whitespace-nowrap order-2 text-[1.1rem] lmobile:ml-4 lmobile:text-[1.4rem]"
             >
               By signing up, you agree to our terms of services and privacy
               policy.
@@ -114,9 +105,9 @@ const Page1 = () => {
               name="policy"
               type="checkbox"
               required
-              className="order-1 top-[0px] left-[100px] rounded bg-primary-white-2 
+              className="order-1 top-[0px] ml-32 justify-center rounded bg-primary-white-2 
               shadow-[0px_4px_4px_rgba(176,_176,_176,_0.25)_inset] box-border w-[19px] h-[19px] border-[1px] 
-              border-solid border-primary-black-7 lmobile:ml-48"
+              border-solid border-primary-black-7 lmobile:ml-32"
             />
           </div>
         </div>
