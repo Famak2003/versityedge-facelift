@@ -17,6 +17,7 @@ const Password2 = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(getNextResetPasswordPage("passwordReset"));
     axios
     .post(`${process.env.REACT_APP_ENDPOINT}/auth/verify-otp`, 
     {
@@ -24,6 +25,7 @@ const Password2 = () => {
       otp : otp,
     })
     .then(() => {
+      toast("OTP Success")
       dispatch(getNextResetPasswordPage("passwordReset"));
     })
     .catch((err) => {
@@ -107,9 +109,10 @@ const Password2 = () => {
               <div className="absolute left-[197px] top-[0px] font-light text-black">
                 Enter code
               </div>
-              <div className="absolute left-[308px] top-[112px] text-base text-primary-blue-1 lmobile:left-[386px]">
+              <button
+              className="absolute left-[308px] top-[112px] text-base text-primary-blue-1 lmobile:left-[386px]">
                 Resend OTP
-              </div>
+              </button>
             </div>
           </div>
 

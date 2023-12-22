@@ -10,26 +10,30 @@ const Password3 = () => {
   const dispatch = useDispatch();
   
   const [password, setPassword] = useState('');
-  // const [phoneNumber, setPhoneNumber] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const passwordMatch = password === confirmPassword;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(getNextResetPasswordPage("congratulations"));
-    axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/password/new`, 
+    if(passwordMatch) {
+      axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/password/new`, 
     {
-      // phone : phoneNumber,
-      password : password
+      password : password,
     })
     .then(()=> {
       toast('Password reset successful');
-      setTimeout(() => {
         dispatch(getNextResetPasswordPage("congratulations"));
-      }, 2000);
     })
     .catch((err) => {
       toast(err.response.data.message);
       console.log("err", err.response.data.message);
     })
+    }
+    else {
+      toast("Password mismatch");
+      console.log("Error: password mismatch");
+    }
   };
 
   return (
@@ -60,6 +64,7 @@ const Password3 = () => {
             type="password"
             required
             placeholder="Re-enter password"
+            onChange={(e) => setConfirmPassword(e.target.value)}
             className="absolute left-[60px] top-[91px] box-border h-[55px] w-[270px] 
             overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 px-[24px] font-light text-black outline-none lmobile:left-[0px] lmobile:w-[391px]"
           />

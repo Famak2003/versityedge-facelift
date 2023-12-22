@@ -105,7 +105,7 @@ const Page1 = () => {
               required
               className="order-1 top-[0px] ml-32 justify-center rounded bg-primary-white-2 
               shadow-[0px_4px_4px_rgba(176,_176,_176,_0.25)_inset] box-border w-[19px] h-[19px] border-[1px] 
-              border-solid border-primary-black-7 lmobile:ml-32"
+              border-solid border-primary-black-7 lmobile:ml-38"
             />
           </div>
         </div>
