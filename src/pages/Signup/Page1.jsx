@@ -73,7 +73,7 @@ const Page1 = () => {
         <div className="flex flex-col justify-between w-[535px] h-[9.8rem] text-lg text-primary-black-7 lmobile:w-[672px]">
           <div className="w-[430px] px-24px justify-between items-center flex h-[55px] lmobile:w-[650px] lmobile:px-[72px]">
             <label
-              className="flex items-center ring-1 ring-[var(--gray-texture)] py-1 px-2 ml-40 w-[250px] h-full rounded-3xl gap-2 lmobile:gap-3 lmobile:w-[100px] lmobile:ml-0"
+              className="flex items-center ring-1 ring-[var(--gray-texture)] py-1 px-2 ml-40 w-[250px] h-full rounded-3xl gap-2 lmobile:gap-3 lmobile:w-[100px] lmobile:ml-8"
               htmlFor="phone"
             >
               <img src={ngaFlag} alt="Nigeria" />
@@ -102,10 +102,10 @@ const Page1 = () => {
               <div className="relative font-light">+234</div>
             </div> */}
           </div>
-          <div className=" Policy flex gap-4 items-center">
+          <div className="Policy flex gap-4 items-center lmobile:left-[0px] lmobile:w-[67px]">
             <label
               htmlFor="policy"
-              className="ml-14 whitespace-nowrap order-2 text-[1.3rem] lmobile:left-[35px]"
+              className="ml-16 whitespace-nowrap order-2 text-[1.3rem] lmobile:ml-4"
             >
               By signing up, you agree to our terms of services and privacy
               policy.
@@ -116,7 +116,7 @@ const Page1 = () => {
               required
               className="order-1 top-[0px] left-[100px] rounded bg-primary-white-2 
               shadow-[0px_4px_4px_rgba(176,_176,_176,_0.25)_inset] box-border w-[19px] h-[19px] border-[1px] 
-              border-solid border-primary-black-7 lmobile:left-[0px]"
+              border-solid border-primary-black-7 lmobile:ml-48"
             />
           </div>
         </div>
