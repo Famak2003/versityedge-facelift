@@ -32,11 +32,20 @@ const Page3 = () => {
         phone : phoneNumber,
         password : password,  
       })
+      .then(() => {
+        toast("signup initiated")
+        console.log("signup initiated");
+      });
+
       await axios.post(`${process.env.REACT_APP_ENDPOINT}/user/:id/profile`, {
         firstName : firstName,
         lastName : lastName,
         email : email,
       })
+      .then(() => {
+        toast("user profile initiated")
+        console.log("user profile initiated");
+      });
       await axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, {
         phone: phoneNumber,
         password: password,
@@ -51,7 +60,7 @@ const Page3 = () => {
       })
     }
     else{
-      toast("Password Mismatch");
+      toast("Passwords Mismatch");
       console.log("Err: Password mismatch");
     }
 

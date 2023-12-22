@@ -70,10 +70,10 @@ const Page1 = () => {
             <p className="m-0">{`to get access to those amazing features. `}</p>
           </div>
         </div>
-        <div className="flex flex-col justify-between w-[535px] h-[9.8rem] text-lg text-primary-black-7 lmobile:px-0 lmobile:">
-          <div className="w-[430px] px-24px justify-between items-center flex h-[55px] lmobile:w-[650px]">
+        <div className="flex flex-col justify-between w-[535px] h-[9.8rem] text-lg text-primary-black-7 lmobile:w-[672px]">
+          <div className="w-[430px] px-24px justify-between items-center flex h-[55px] lmobile:w-[650px] lmobile:px-[72px]">
             <label
-              className="flex items-center ring-1 ring-[var(--gray-texture)] py-1 px-2 ml-40 w-[250px] h-full rounded-3xl gap-2 lmobile:gap-3 lmobile:w-[100px]"
+              className="flex items-center ring-1 ring-[var(--gray-texture)] py-1 px-2 ml-40 w-[250px] h-full rounded-3xl gap-2 lmobile:gap-3 lmobile:w-[100px] lmobile:ml-0"
               htmlFor="phone"
             >
               <img src={ngaFlag} alt="Nigeria" />
