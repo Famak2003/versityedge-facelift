@@ -12,11 +12,12 @@ const Password2 = () => {
   const [otp, setOtp] = useState('');
   const phoneNumber = useSelector((state) => state.auth.phoneNumber);
   
-  console.log("phonenumber:", phoneNumber);
+  // console.log("phonenumber:", phoneNumber);
   
   
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(getNextResetPasswordPage("passwordReset"));
     axios
     .post(`${process.env.REACT_APP_ENDPOINT}/auth/verify-otp`, 
     {

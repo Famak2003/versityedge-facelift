@@ -58,7 +58,7 @@ const Password3 = () => {
             type="password"
             required
             placeholder="Enter password"
-            className="absolute left-[60px] top-[0px] box-border h-[55px] w-[270px] 
+            className="absolute left-[60px] top-[18px] box-border h-[55px] w-[270px] 
             overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 px-[24px] font-light text-black outline-none lmobile:left-[0px] lmobile:w-[391px]"
           />
 
@@ -73,7 +73,7 @@ const Password3 = () => {
         </div>
         <div className="relative h-[49px] w-[391px] text-xl text-primary-white-1">
           <button
-            className="absolute left-[60px] top-[0px] box-border flex w-[270px] flex-row items-center 
+            className="absolute left-[60px] top-[-10px] box-border flex w-[270px] flex-row items-center 
            justify-center overflow-hidden rounded-2xl border-[1px] border-solid border-primary-blue-1 bg-primary-blue-1 px-[24px] py-[11px] lmobile:left-[0px] lmobile:w-[391px]"
           >
             <div className="relative font-medium">Submit</div>

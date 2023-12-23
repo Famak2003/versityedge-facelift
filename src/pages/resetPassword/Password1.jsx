@@ -15,7 +15,8 @@ const Password1 = () => {
   let verfiedPhoneNumber;
   
   const handleSubmit = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
+    dispatch(getNextResetPasswordPage("OTP")); 
     verfiedPhoneNumber = "+234" + phoneNumber.slice(-10);
    
     if(!requestSent){
