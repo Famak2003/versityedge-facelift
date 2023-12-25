@@ -64,7 +64,7 @@ const PopularNews = () => {
         <h2>Popular News</h2>
         { popularPosts && popularPosts.map((popularPost) => (
           <div className={popularPost.class} key={popularPost.id}>
-          <Link className="section">
+          <Link to={"/blog/popular/:id"} className="section">
             <div className={popularPost.position} style={{
               backgroundImage : `url(${popularPost.image})`,
               backgroundSize: 'cover',

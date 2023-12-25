@@ -69,7 +69,7 @@ export function App() {
             <Route path="/forum" element={<ForumHome />}></Route>
             <Route path="/forums/:title" element={<ForumBlog />}></Route>
             {/* <Route path="/about-us " element={<AboutUs />}></Route> */}
-            <Route path="/blog/:id" element={<Blog />}></Route>
+            <Route path="/blog/popular/:id" element={<CreateBlog />}></Route>
           </Routes>
         </main>
 
