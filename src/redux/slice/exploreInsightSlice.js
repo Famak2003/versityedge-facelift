@@ -12,7 +12,7 @@ export const getAllPosts = createAsyncThunk(
   async (thunkAPI) => {
     try {
       const response = await axios.get(
-        `http://versityedge1.eastus.cloudapp.azure.com/v1/blog/posts`,
+        `${process.env.REACT_APP_ENDPOINT}/blog/posts`,
       );
       // sort data coming from the backend with their updated time, and get the first 3 in the sorted array
       const sortData = response.data.sort(

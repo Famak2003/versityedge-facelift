@@ -1,9 +1,9 @@
 import { useState } from "react";
-import TeamImg from "./TeamImg";
+import TeamImg from "../common/Teamimg/TeamImg";
 import { useEffect } from "react";
 
-import BUTTON from "./../../../assets/forward.png";
-import Card from "../../common/Card";
+import BUTTON from "./../../assets/forward.png";
+import Card from "../common/Card";
 
 export default function GalleryCarousel({ carouselData, type = "" }) {
   const [slideNum, setSlideNum] = useState(0);
