@@ -14,7 +14,7 @@ const Password3 = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const passwordMatch = password === confirmPassword;
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     if(passwordMatch) {

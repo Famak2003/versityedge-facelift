@@ -28,25 +28,32 @@ const Page3 = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (passwordMatch) {
-      await axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signup`, 
+      await axios
+      .post(`${process.env.REACT_APP_ENDPOINT}/auth/signup`, 
       {
         phone : phoneNumber,
         password : password,  
       })
-      .then(() => {
-        toast("signup initiated")
+      .then((res) => {
+        setTimeout(()=>{
+          toast(res.data.message)
+        }, 2000)
         console.log("signup initiated");
       });
-
+      
+      //Unauthorized error
       await axios.post(`${process.env.REACT_APP_ENDPOINT}/user/:id/profile`, {
         firstName : firstName,
         lastName : lastName,
         email : email,
       })
       .then(() => {
-        toast("user profile initiated")
-        console.log("user profile initiated");
+        setTimeout(() => {
+          toast("user profile created");
+        })
+        console.log("user profile created");
       });
+      //Sign in no response yet
       await axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, {
         phone: phoneNumber,
         password: password,

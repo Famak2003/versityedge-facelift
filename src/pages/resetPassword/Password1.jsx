@@ -11,12 +11,13 @@ const Password1 = () => {
  
   const [phoneNumber, setPhoneNumber] = useState('');
   const [requestSent, setRequestSent] = useState(false);
+  // const [requestOtp, setRequestOtp] = useState(true);
   const dispatch = useDispatch();
   let verfiedPhoneNumber;
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(getNextResetPasswordPage("OTP")); 
+    // dispatch(getNextResetPasswordPage("OTP")); 
     verfiedPhoneNumber = "+234" + phoneNumber.slice(-10);
    
     if(!requestSent){
