@@ -35,7 +35,7 @@ const Page3 = () => {
         password : password,  
       })
       .then((res) => {
-        setTimeout(()=>{
+        setTimeout(() => {
           toast(res.data.message)
         }, 2000)
         console.log("signup initiated");
