@@ -1,17 +1,17 @@
 import useFetch from '../../components/useFetch/useFetch';
-import img1 from './../../assets/blog-hero4.jpeg'
+// import img1 from './../../assets/blog-hero4.jpeg'
 import Comments from './comments'
 import { Link, useNavigate, useParams } from "react-router-dom"
 const Blog = () => {
   const {id}  = useParams();
-  const {date: blogDetail, isPending, error} = useFetch("http://versityedge1.eastus.cloudapp.azure.com/v1/blog/post/" + id)
-  const handleDelete = () => {
-    fetch("http://versityedge1.eastus.cloudapp.azure.com/v1/blog/posts/" + blogDetail.id , {
-      method : "DELETE"
-    }).then(() => {
-      navigate("/blogs")
-    })
-  }
+  const {date: blogDetail, isPending, error} = useFetch("https://versityedge1.eastus.cloudapp.azure.com/v1/blog/post/" + id)
+  // const handleDelete = () => {
+  //   fetch("http://versityedge1.eastus.cloudapp.azure.com/v1/blog/posts/" + blogDetail.id , {
+  //     method : "DELETE"
+  //   }).then(() => {
+  //     navigate("/blogs")
+  //   })
+  // }
   const navigate = useNavigate()
     return (
          <div className="blogDetail">

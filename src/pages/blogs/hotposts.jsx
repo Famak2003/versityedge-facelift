@@ -14,11 +14,9 @@ const HotNews = ({ baseURL }) => {
       <div className="hot-news-flex flex">
         {error && <div>{error}</div>}
         {isPending && <div>Loading...</div>}
-        {!hotPosts
-          ? ""
-          : hotPosts.map((hotPost) => (
+        {hotPosts && hotPosts.map((hotPost) => (
               <div key={hotPost.id}>
-                {hotPost.id < 7 && (
+                {hotPost.id  && (
                   <Link to="/">
                     <div className="hot-news-col">
                       <img

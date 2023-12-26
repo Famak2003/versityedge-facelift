@@ -11,45 +11,53 @@ export function App() {
   return (
     <>
       <ScrollToTop />
-      <div className="App flex max-w-[150rem] flex-col gap-[2rem] font-nunito text-xl sm:gap-[3rem] md:gap-[5rem] ">
-        <Header />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          {/* PUBLIC ROUTES */}
+          <Route path="/" element={<Pages.Home />} />
+          <Route path="/contactUs" element={<Pages.ContactUs />}></Route>
 
-        <main className="content">
-          <Routes>
-          <Route path="/signup" element={<Signup />}></Route>
-            <Route exact path="/signup2" element={<SignUp2/>}></Route>
-            <Route exact path="/signup3" element={<SignUp3/>}></Route>
-            <Route exact path="/login1" element={<Login1/>}></Route>
-            <Route exact path="/password1" element={<Password1 />}></Route>
-            <Route exact path="/password2" element={<Password2 />}></Route>
-            <Route exact path="/password3" element={<Password3 />}></Route>
-            <Route exact path="/congrats1" element={<Congrats1 />}></Route>
-            <Route exact path="/congrats2" element={<Congrats2 />}></Route>      
+          {/* PROTECTED ROUTES */}
+          <Route element={<RequireAuthentication />}>
+            <Route path="/predictChance">
+              <Route index element={<Pages.PredictChance />} />
+              <Route
+                path="congratulation"
+                element={<Pages.PredictChanceCongratulations />}
+              />
+              <Route path="form" element={<Pages.PredictChanceForm />} />
+            </Route>
+          </Route>
 
-            <Route path="/predictChance" element={<PredictChance />}></Route>
-            <Route
-              path="/predictChance/congratulation"
-              element={<PredictChanceCongratulations />}
-            ></Route>
-            <Route
-              path="/predictChance/form"
-              element={<PredictChanceForm />}
-            ></Route>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/contactUs" element={<ContactUs />}></Route>
-            <Route path="/blogs" element={<Blogs />}></Route>
-            <Route path="/blogs/post/:id" element={<Blog />}></Route>
-            <Route path="/blog/create" element={<CreateBlog />}></Route>
-            <Route path="/forum" element={<ForumHome />}></Route>
-            <Route path="/forums/:title" element={<ForumBlog />}></Route>
-            {/* <Route path="/about-us " element={<AboutUs />}></Route> */}
-            <Route path="/blog/:id" element={<Blog />}></Route>
-          </Routes>
-        </main>
+          <Route path="/blogs">
+            <Route index element={<Pages.Blogs />} />
+            <Route element={<RequireAuthentication />}>
+              <Route path="post/:id" element={<Pages.BlogDetails />} />
+              <Route path="create" element={<Pages.CreateBlog />} />
+            </Route>
+          </Route>
 
-        <Footer />
-      
-      </div>
+          <Route path="/forum">
+            <Route index element={<Pages.ForumHome />} />
+            <Route element={<RequireAuthentication />}>
+              <Route path="forums/:title" element={<Pages.ForumBlog />} />
+            </Route>
+          </Route>
+
+          <Route element={<RequireAuthentication />}>
+            <Route path="/quiz">
+              <Route index element={<Pages.Quiz />} />
+              <Route path="mock-home" element={<Pages.MockLandingPage />} />
+              <Route path="mock" element={<Pages.Mock />} />
+            </Route>
+          </Route>
+        </Route>
+        <Route path="/auth">
+          <Route index element={<Pages.Signup />} />
+          <Route path="login" element={<Pages.Login />} />
+          <Route path="forgotPassword" element={<Pages.ResetPassword />} />
+        </Route>
+      </Routes>
     </>
   );
 }
