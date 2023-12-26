@@ -17,6 +17,7 @@ const Password3 = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     if(passwordMatch) {
       axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/password/new`, 
     {
