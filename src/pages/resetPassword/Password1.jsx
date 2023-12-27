@@ -11,7 +11,7 @@ const Password1 = () => {
  
   const [phoneNumber, setPhoneNumber] = useState('');
   const [requestSent, setRequestSent] = useState(false);
-  // const [requestOtp, setRequestOtp] = useState(true);
+  const [resetPassword, setResetPassword] = useState(true);
   const dispatch = useDispatch();
   let verfiedPhoneNumber;
   
@@ -23,12 +23,15 @@ const Password1 = () => {
     if(!requestSent){
       axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/request-otp`,
     {
+      resetPassword : resetPassword,
       phone : verfiedPhoneNumber,
+     
     })
       .then(() => {
         toast('OTP Sent');
           dispatch(setPhone(verfiedPhoneNumber));
           setRequestSent(true);
+          setResetPassword(false)
           dispatch(getNextResetPasswordPage("OTP"));       
       })
       .catch((err) => {
