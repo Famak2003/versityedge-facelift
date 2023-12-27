@@ -17,7 +17,7 @@ const Password2 = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(getNextResetPasswordPage("passwordReset"));
+    // dispatch(getNextResetPasswordPage("passwordReset"));
     axios
     .post(`${process.env.REACT_APP_ENDPOINT}/auth/verify-otp`, 
     {
@@ -87,6 +87,7 @@ const Password2 = () => {
                   <input
                     type="password"
                     placeholder="-"
+                    key={i}
                     required
                     value={data}
                     onChange={(e) => {

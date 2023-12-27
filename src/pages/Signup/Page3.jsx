@@ -25,41 +25,36 @@ const Page3 = () => {
   const passwordMatch = password === confirmPassword;
   
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (passwordMatch) {
-      await axios
-      .post(`${process.env.REACT_APP_ENDPOINT}/auth/signup`, 
+     axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signup`, 
       {
         phone : phoneNumber,
         password : password,  
       })
-      .then((res) => {
-        setTimeout(() => {
-          toast(res.data.message)
-        }, 2000)
-        console.log("signup initiated");
-      });
-      axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, {
+      .then(() => {
+        toast('Sign up done')
+        console.log("Sign up success");
+      })
+      axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, 
+      {
         phone : phoneNumber,
         password : password,
       })
       .then(() => {
-        setTimeout(() => {
           toast('user signed in successfully');
-        }, 2000)
       })
-       //Unauthorized error
-      await axios.post(`${process.env.REACT_APP_ENDPOINT}/user/:id/profile`, {
+       axios.post(`${process.env.REACT_APP_ENDPOINT}/user/:id/profile`, {
         firstName : firstName,
         lastName : lastName,
         email : email,
       })
       .then(() => {
         toast("user profile created");
-        console.log("user profile created");
+        // console.log("user profile created");
         dispatch(getNextSignupPage("congratulations"));
-        console.log("signUp page 3");
+        // console.log("signUp page 3");
       })
       .catch((err) => {
         toast(err.res.data.message)
@@ -74,15 +69,6 @@ const Page3 = () => {
     return;
     
   };
-      //Sign in no response yet
-      // await axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, {
-      //   phone: phoneNumber,
-      //   password: password,
-      // })
-      // .then(() => {
-        
-        
-      // })
      
 
   return (

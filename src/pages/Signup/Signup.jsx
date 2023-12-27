@@ -7,7 +7,7 @@ import Congrats from "./Congrats";
 
 function Signup() {
   const currentPage = useSelector((state) => state.auth.currentSignupPage);
-  console.log(currentPage);
+  // console.log(currentPage);
 
 
   switch (currentPage) {
