@@ -14,12 +14,10 @@ const HotNews = ({ baseURL }) => {
       <div className="hot-news-flex flex">
         {error && <div>{error}</div>}
         {isPending && <div>Loading...</div>}
-        {!hotPosts
-          ? ""
-          : hotPosts.map((hotPost) => (
+        {hotPosts && hotPosts.map((hotPost) => (
               <div key={hotPost.id}>
-                {hotPost.id < 7 && (
-                  <Link to="/">
+                {hotPost.id  && (
+                  <Link to={"/blogs/post/" + hotPost.id}>
                     <div className="hot-news-col">
                       <img
                         src={!hotPost.img_url ? img3 : hotPost.img_url}

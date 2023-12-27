@@ -73,6 +73,14 @@
   font-weight: 700;
   color: #0a66c2;
 }
+.forum-join-a-session p, .forum-start-a-discussion p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 20px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
 .recent-discussions {
   padding: 20px 5%;
 }
@@ -206,3 +214,4 @@
     align-items: center;
     gap: 10px;
 }
+/* Mobile view */

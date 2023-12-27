@@ -2,10 +2,8 @@
 const CreateBlog = () => {
 
     return (
-        <div className="create-blog">
-            <form action="" method="post">
-
-            </form>
+        <div className="popular-blog">
+            
         </div>
     )
 }
