@@ -15,7 +15,7 @@ const Blog = () => {
   const navigate = useNavigate()
     return (
          <div className="blogDetail">
-        {error && <div> {error} </div>}
+        {error && <div> { error } </div>}
         {isPending && <div> Fetching Blog ... </div>}
         {blogDetail && (
           <div className="blog">
@@ -32,13 +32,13 @@ const Blog = () => {
             </div>
             <div className='blog-hero-imgs'>
               <div className="blog-img img-12-deg" style={{
-                backgroundImage : `url(${blogDetail.image})`,
+                backgroundImage : `url(${blogDetail.img_url})`,
               }}></div>
               <div className="blog-img img-6-deg" style={{
-                backgroundImage : `url(${blogDetail.image})`,
+                backgroundImage : `url(${blogDetail.img_url})`,
               }}></div>
               <div className="blog-img img-0-deg" style={{
-                backgroundImage : `url(${blogDetail.image}) `,
+                backgroundImage : `url(${blogDetail.img_url}) `,
               }}></div>
             </div>
           </div>
