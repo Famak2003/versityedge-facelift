@@ -40,25 +40,24 @@ const Page3 = () => {
         }, 2000)
         console.log("signup initiated");
       });
-      
-      //Unauthorized error
+      axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, {
+        phone : phoneNumber,
+        password : password,
+      })
+      .then(() => {
+        setTimeout(() => {
+          toast('user signed in successfully');
+        }, 2000)
+      })
+       //Unauthorized error
       await axios.post(`${process.env.REACT_APP_ENDPOINT}/user/:id/profile`, {
         firstName : firstName,
         lastName : lastName,
         email : email,
       })
       .then(() => {
-        setTimeout(() => {
-          toast("user profile created");
-        })
+        toast("user profile created");
         console.log("user profile created");
-      });
-      //Sign in no response yet
-      await axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, {
-        phone: phoneNumber,
-        password: password,
-      })
-      .then(() => {
         dispatch(getNextSignupPage("congratulations"));
         console.log("signUp page 3");
       })
@@ -67,7 +66,7 @@ const Page3 = () => {
         console.log(err.res.data.message);
       })
     }
-    else{
+    else {
       toast("Passwords Mismatch");
       console.log("Err: Password mismatch");
     }
@@ -75,6 +74,16 @@ const Page3 = () => {
     return;
     
   };
+      //Sign in no response yet
+      // await axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, {
+      //   phone: phoneNumber,
+      //   password: password,
+      // })
+      // .then(() => {
+        
+        
+      // })
+     
 
   return (
     
