@@ -43,10 +43,10 @@ const Blog = () => {
             </div>
           </div>
           <div className="impression-readTime-section">
-              <h6>{blogDetail.readTime > 59 ? `${blogDetail.readTime / 60} hours` : `${blogDetail.readTime} mins`} read</h6>
+              <h6>{blogDetail.shares > 59 ? `${blogDetail.shares / 60} hours` : `${blogDetail.shares} mins`} read</h6>
           <div className="impressions-section">
-              <h6>{blogDetail.postComment > 999 ? `${blogDetail.postComment / 1000}k` : `${blogDetail.postComment}`} comments</h6>
-              <h6>{blogDetail.postImpressions > 999 ? `${blogDetail.postImpressions / 1000}k` : `${blogDetail.postImpressions}`} impressions</h6>
+              <h6>{blogDetail.comments > 999 ? `${blogDetail.comments / 1000}k` : `${blogDetail.postComment}`} comments</h6>
+              <h6>{blogDetail.analytic.views > 999 ? `${blogDetail.analytic.views / 1000}k` : `${blogDetail.postImpressions}`} impressions</h6>
               <button className='share-btn'>share</button>
           </div>
           </div>
