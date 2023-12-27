@@ -1,12 +1,12 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginUserIn } from "../../redux/slice/authSlice";
 
 import axios from "axios";
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login1 = () => {
   const location = useLocation();
@@ -18,23 +18,25 @@ const Login1 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/auth/signin", {
-      phone: phoneNumber,
-      password: password
-    })
-    .then(() => {
-      toast("Sign in successful");
-      dispatch(loginUserIn());
-      setTimeout(() => {
-        if (location.state) {
-          navigate(`${location.state.destination}`, { replace: true });
-        } else navigate("/", { replace: true });
-      }, 2000);
-    }).catch((err) => {
-      toast(err.response.data.message);
-      console.log("err", err.response.data.message);
-    })
-}
+    axios
+      .post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, {
+        phone: phoneNumber,
+        password: password,
+      })
+      .then(() => {
+        toast("Sign in successful");
+        dispatch(loginUserIn());
+        setTimeout(() => {
+          if (location.state) {
+            navigate(`${location.state.destination}`, { replace: true });
+          } else navigate("/", { replace: true });
+        }, 2000);
+      })
+      .catch((err) => {
+        toast(err.response.data.message);
+        console.log("err", err.response.data.message);
+      });
+  };
 
   return (
     <div className="flex flex-col items-center justify-start text-left">

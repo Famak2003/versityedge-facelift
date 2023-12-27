@@ -1,22 +1,77 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Stepper from "./stepper";
 
-import { Link } from "react-router-dom";
-
-import { useDispatch } from "react-redux";
-import { getNextSignupPage } from "../../redux/slice/authSlice";
+// import { useDispatch } from "react-redux";
+// import { getNextSignupPage } from "../../redux/slice/authSlice";
+// import HandlePassword from "../../Utility/HandlePassword";
 
 const Page3 = () => {
+  const [passwrordMessage, setPasswordMessage] = useState(" ");
+  const [password, setPassword] = useState(" ");
+  const [reEnterPasswordMessage, setReEnterPasswordMessage] = useState(" ");
+  const [reEnterPassword, setReEnterPassword] = useState(" ");
+  const [equalPassword, setEqualPassword] = useState(false);
   const bg3 = "bg-primary-blue-1";
   const txt3 = "text-primary-white-1";
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(getNextSignupPage("congratulations"));
-    console.log("signUp page 3");
+
+    if (!equalPassword) {
+      setPasswordMessage("Password and Re-Entered Password must match");
+      setReEnterPasswordMessage(
+        " Password and Re-Entered Password must match ",
+      );
+      return;
+    }
+    // This is the regular expression filter that check if the password meets the requirement
+    const regEx =
+      /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])(?=.*[0-9]).+$/;
+    // We check by testing the password
+    const isPasswordValid = regEx.test(password);
+    const isreEnterPasswordValid = regEx.test(reEnterPassword);
+
+    if (isPasswordValid) {
+      setPasswordMessage("Strong Password");
+    } else if (!isPasswordValid) {
+      setPasswordMessage(
+        " Password must contain at least one uppercase letter, one special character, and one number.",
+      );
+    }
+
+    if (isreEnterPasswordValid) {
+      setReEnterPasswordMessage("Strong Password");
+    } else if (!isreEnterPasswordValid) {
+      setReEnterPasswordMessage(
+        " Password must contain at least one uppercase letter, one special character, and one number.",
+      );
+    }
+    // dispatch(getNextSignupPage("congratulations"));
   };
 
+  function handlePassword(e) {
+    if (e.target.name === "password") {
+      setPassword(e.target.value);
+    } else if (e.target.name === "reEnterPassword") {
+      setReEnterPassword(e.target.value);
+    }
+    console.log(e);
+  }
+
+  function onBlurr(e) {
+    if (password === reEnterPassword) {
+      setEqualPassword(true);
+      setPasswordMessage("Password Match");
+      setReEnterPasswordMessage(" Password Match ");
+    } else {
+      setPasswordMessage("Password and Re-Entered Password must match");
+      setReEnterPasswordMessage(
+        " Password and Re-Entered Password must match ",
+      );
+    }
+  }
   return (
     <div className="flex flex-col items-center justify-start gap-[40px] text-5xl text-primary-blue-1">
       <div className="relative h-[59px] w-[289px]">
@@ -38,13 +93,13 @@ const Page3 = () => {
             </p>
           </div>
         </div>
-        <div className="relative h-[419px] w-[391px] text-lg text-primary-black-7">
+        <div className="flex flex-col gap-5 h-[419px] w-[391px] text-lg text-primary-black-7">
           <input
             type="text"
             placeholder="First name"
             minLength={3}
             required
-            className="absolute left-[60px]
+            className=" left-[60px]
               top-[1px] mt-0  
               box-border h-[55px] w-[270px] overflow-hidden 
               rounded-2xl border-[1px] border-solid border-primary-black-7 
@@ -57,7 +112,7 @@ const Page3 = () => {
             placeholder="Last name"
             minLength={3}
             required
-            className="absolute left-[60px] top-[91px] 
+            className=" left-[60px] top-[91px] 
             box-border h-[55px] w-[270px] overflow-hidden 
             rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 
             px-[24px] font-light text-black outline-none lmobile:left-[0px] lmobile:w-[391px]"
@@ -69,36 +124,43 @@ const Page3 = () => {
             required
             maxLength={11}
             minLength={10}
-            className="absolute left-[60px] top-[182px] 
+            className=" left-[60px] top-[182px] 
             box-border h-[55px] w-[270px] overflow-hidden rounded-2xl border-[1px] border-solid 
             border-primary-black-7 bg-primary-white-1 px-[24px] font-light text-black outline-none lmobile:left-[0px] lmobile:w-[391px]"
           />
 
-            {/* <select required className="absolute top-[182px] left-[60px] 
+          {/* <select required className=" top-[182px] left-[60px] 
             rounded-2xl bg-primary-white-1 box-border w-[270px] h-[55px] outline-none px-[24px] 
             font-light text-black overflow-hidden border-[1px] border-solid border-primary-black-7 lmobile:w-[391px] lmobile:left-[0px]" >
             <option value="" hidden>What best describes you?</option>
             <option value="option 1">I am a parent</option>
             <option value="option 2">I am a student</option>
             </select> */}
-
-
-          <input
-            type="password"
-            placeholder="Enter password"
-            required
-            className="absolute left-[60px] top-[273px] box-border h-[55px] w-[270px] 
+          <div>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter password"
+              onChange={(e) => handlePassword(e)}
+              required
+              className=" left-[60px] top-[273px] box-border h-[55px] w-[270px] 
             overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 px-[24px] font-light 
             text-black outline-none lmobile:left-[0px]  lmobile:w-[391px]"
-          />
+            />
+            {passwrordMessage && <small> {passwrordMessage} </small>}
+          </div>
 
           <input
             type="password"
+            name="reEnterPassword"
+            onBlur={(e) => onBlurr(e)}
             placeholder="Re-enter password"
+            onChange={(e) => handlePassword(e)}
             required
-            className="absolute left-[60px] top-[364px] box-border h-[55px] w-[270px] 
+            className=" left-[60px] top-[364px] box-border h-[55px] w-[270px] 
             overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1  px-[24px] font-light text-black outline-none lmobile:left-[0px]  lmobile:w-[391px]"
           />
+          {reEnterPasswordMessage && <small> {reEnterPasswordMessage} </small>}
         </div>
 
         <div className="relative h-[87px] w-[391px] text-base">
