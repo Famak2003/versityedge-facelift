@@ -127,16 +127,6 @@ const Page3 = () => {
             box-border h-[55px] w-[270px] overflow-hidden rounded-2xl border-[1px] border-solid 
             border-primary-black-7 bg-primary-white-1 px-[24px] font-light text-black outline-none lmobile:left-[0px] lmobile:w-[391px]"
           />
-
-            {/* <select required className="absolute top-[182px] left-[60px] 
-            rounded-2xl bg-primary-white-1 box-border w-[270px] h-[55px] outline-none px-[24px] 
-            font-light text-black overflow-hidden border-[1px] border-solid border-primary-black-7 lmobile:w-[391px] lmobile:left-[0px]" >
-            <option value="" hidden>What best describes you?</option>
-            <option value="option 1">I am a parent</option>
-            <option value="option 2">I am a student</option>
-            </select> */}
-
-
           <input
             type="password"
             placeholder="Enter password"
