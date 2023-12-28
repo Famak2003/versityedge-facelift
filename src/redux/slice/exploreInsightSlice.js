@@ -16,7 +16,7 @@ export const getAllPosts = createAsyncThunk(
       );
       // sort data coming from the backend with their updated time, and get the first 3 in the sorted array
       const sortData = response.data.sort(
-        (a, b) => new Date(b.updatedAt) - new Date(a.updatedAt),
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt),
       );
       const sortedData = sortData.slice(0, 3);
       return sortedData;
