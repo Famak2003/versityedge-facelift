@@ -18,7 +18,7 @@ const Page1 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // dispatch(getNextSignupPage(2));
+    dispatch(getNextSignupPage(2));
     verfiedPhoneNumber = "+234" + phoneNumber.slice(-10);
 
     if (!requestSent) {
