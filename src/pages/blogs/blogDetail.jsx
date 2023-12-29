@@ -8,9 +8,7 @@ const Blog = () => {
     data: blogDetail,
     isPending,
     error,
-  } = useFetch(
-    "https://versityedge1.eastus.cloudapp.azure.com/v1/blog/post/" + id,
-  );
+  } = useFetch(`{${process.env.REACT_APP_ENDPOINT}}` + id);
   // const handleDelete = () => {
   //   fetch("http://versityedge1.eastus.cloudapp.azure.com/v1/blog/posts/" + blogDetail.id , {
   //     method : "DELETE"

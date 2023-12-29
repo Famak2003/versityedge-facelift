@@ -1,80 +1,78 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import Stepper from "./stepper";
 
-// import { useDispatch } from "react-redux";
-// import { getNextSignupPage } from "../../redux/slice/authSlice";
-// import HandlePassword from "../../Utility/HandlePassword";
+import { Link } from "react-router-dom";
+
+import { useDispatch, useSelector } from "react-redux";
+import { getNextSignupPage } from "../../redux/slice/authSlice";
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Page3 = () => {
-  const [passwrordMessage, setPasswordMessage] = useState(" ");
-  const [password, setPassword] = useState(" ");
-  const [reEnterPasswordMessage, setReEnterPasswordMessage] = useState(" ");
-  const [reEnterPassword, setReEnterPassword] = useState(" ");
-  const [equalPassword, setEqualPassword] = useState(false);
   const bg3 = "bg-primary-blue-1";
   const txt3 = "text-primary-white-1";
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
+  const [email, setEmail] = useState('');
+  const [passwords, setpasswords] = useState('');
+  const [confirmpasswords, setConfirmpasswords] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const phoneNumber = useSelector((state) => state.auth.phoneNumber)
+  
+  const passwordsMatch = passwords === confirmpasswords;
+  
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!equalPassword) {
-      setPasswordMessage("Password and Re-Entered Password must match");
-      setReEnterPasswordMessage(
-        " Password and Re-Entered Password must match ",
-      );
-      return;
+    if (passwordsMatch) {
+      await axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signup`, 
+      {
+        phone : phoneNumber,
+        password : passwords,  
+      })
+      .then(() => {
+        toast("signup initiated")
+        console.log("signup initiated");
+      })
+      await axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, {
+        phone: phoneNumber,
+        password: passwords,
+      })
+      .then(() => {
+        console.log("signUp page 3");
+      })
+      await axios.post(`${process.env.REACT_APP_ENDPOINT}/user/:id/profile`, {
+        firstName : firstName,
+        lastName : lastName,
+        email : email,
+      })
+      .then(() => {
+        toast("user profile initiated")
+        console.log("user profile initiated");
+        dispatch(getNextSignupPage("congratulations"));
+      })
+      .catch((err) => {
+        toast(err.res.data.message)
+        console.log(err.res.data.message);
+      })
     }
-    // This is the regular expression filter that check if the password meets the requirement
-    const regEx =
-      /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])(?=.*[0-9]).+$/;
-    // We check by testing the password
-    const isPasswordValid = regEx.test(password);
-    const isreEnterPasswordValid = regEx.test(reEnterPassword);
-
-    if (isPasswordValid) {
-      setPasswordMessage("Strong Password");
-    } else if (!isPasswordValid) {
-      setPasswordMessage(
-        " Password must contain at least one uppercase letter, one special character, and one number.",
-      );
+    else{
+      toast("Passwords Mismatch");
+      console.log("Err: Password mismatch");
     }
 
-    if (isreEnterPasswordValid) {
-      setReEnterPasswordMessage("Strong Password");
-    } else if (!isreEnterPasswordValid) {
-      setReEnterPasswordMessage(
-        " Password must contain at least one uppercase letter, one special character, and one number.",
-      );
-    }
-    // dispatch(getNextSignupPage("congratulations"));
+    return;
+    
   };
 
-  function handlePassword(e) {
-    if (e.target.name === "password") {
-      setPassword(e.target.value);
-    } else if (e.target.name === "reEnterPassword") {
-      setReEnterPassword(e.target.value);
-    }
-    console.log(e);
-  }
-
-  function onBlurr(e) {
-    if (password === reEnterPassword) {
-      setEqualPassword(true);
-      setPasswordMessage("Password Match");
-      setReEnterPasswordMessage(" Password Match ");
-    } else {
-      setPasswordMessage("Password and Re-Entered Password must match");
-      setReEnterPasswordMessage(
-        " Password and Re-Entered Password must match ",
-      );
-    }
-  }
   return (
+    
+    <div>
     <div className="flex flex-col items-center justify-start gap-[40px] text-5xl text-primary-blue-1">
-      <div className="relative h-[59px] w-[289px]">
+      <div className="relative top-[40px] h-[59px] w-[289px]">
         <div className="absolute left-[58.5px] top-[29.5px] box-border h-px w-[172px] border-t-[1px] border-solid border-primary-blue-7" />
         <Stepper bg3={bg3} txt3={txt3} />
       </div>
@@ -93,13 +91,14 @@ const Page3 = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col gap-5 h-[419px] w-[391px] text-lg text-primary-black-7">
+        <div className="relative h-[419px] w-[391px] text-lg text-primary-black-7">
           <input
             type="text"
             placeholder="First name"
             minLength={3}
             required
-            className=" left-[60px]
+            onChange={(e) => setFirstName(e.target.value)}
+            className="absolute left-[60px]
               top-[1px] mt-0  
               box-border h-[55px] w-[270px] overflow-hidden 
               rounded-2xl border-[1px] border-solid border-primary-black-7 
@@ -112,55 +111,40 @@ const Page3 = () => {
             placeholder="Last name"
             minLength={3}
             required
-            className=" left-[60px] top-[91px] 
+            onChange={(e) => setLastName(e.target.value)}
+            className="absolute left-[60px] top-[91px] 
             box-border h-[55px] w-[270px] overflow-hidden 
             rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 
             px-[24px] font-light text-black outline-none lmobile:left-[0px] lmobile:w-[391px]"
           />
 
           <input
-            type="tel"
-            placeholder="Enter your parent/guidiance phone number"
+            type="email"
+            placeholder="Enter your email"
             required
-            maxLength={11}
-            minLength={10}
-            className=" left-[60px] top-[182px] 
+            onChange={(e) => setEmail(e.target.value)}
+            className="absolute left-[60px] top-[182px] 
             box-border h-[55px] w-[270px] overflow-hidden rounded-2xl border-[1px] border-solid 
             border-primary-black-7 bg-primary-white-1 px-[24px] font-light text-black outline-none lmobile:left-[0px] lmobile:w-[391px]"
           />
-
-          {/* <select required className=" top-[182px] left-[60px] 
-            rounded-2xl bg-primary-white-1 box-border w-[270px] h-[55px] outline-none px-[24px] 
-            font-light text-black overflow-hidden border-[1px] border-solid border-primary-black-7 lmobile:w-[391px] lmobile:left-[0px]" >
-            <option value="" hidden>What best describes you?</option>
-            <option value="option 1">I am a parent</option>
-            <option value="option 2">I am a student</option>
-            </select> */}
-          <div>
-            <input
-              type="password"
-              name="password"
-              placeholder="Enter password"
-              onChange={(e) => handlePassword(e)}
-              required
-              className=" left-[60px] top-[273px] box-border h-[55px] w-[270px] 
+          <input
+            type="password"
+            placeholder="Enter password"
+            required
+            onChange={(e) => setpasswords(e.target.value)}
+            className="absolute left-[60px] top-[273px] box-border h-[55px] w-[270px] 
             overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 px-[24px] font-light 
             text-black outline-none lmobile:left-[0px]  lmobile:w-[391px]"
-            />
-            {passwrordMessage && <small> {passwrordMessage} </small>}
-          </div>
+          />
 
           <input
             type="password"
-            name="reEnterPassword"
-            onBlur={(e) => onBlurr(e)}
             placeholder="Re-enter password"
-            onChange={(e) => handlePassword(e)}
             required
-            className=" left-[60px] top-[364px] box-border h-[55px] w-[270px] 
+            onChange={(e) => setConfirmpasswords(e.target.value)}
+            className="absolute left-[60px] top-[364px] box-border h-[55px] w-[270px] 
             overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1  px-[24px] font-light text-black outline-none lmobile:left-[0px]  lmobile:w-[391px]"
           />
-          {reEnterPasswordMessage && <small> {reEnterPasswordMessage} </small>}
         </div>
 
         <div className="relative h-[87px] w-[391px] text-base">
@@ -177,6 +161,8 @@ const Page3 = () => {
         </div>
       </form>
     </div>
+    <ToastContainer />
+  </div>
   );
 };
 
