@@ -1,25 +1,31 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { Link } from "react-router-dom";
 import { getNextResetPasswordPage } from "../../redux/slice/authSlice";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Password2 = () => {
   const dispatch = useDispatch();
-
-  // const [phoneNumber, setPhoneNumber] = useState('');
   const [otp, setOtp] = useState('');
+  const phoneNumber = useSelector((state) => state.auth.phoneNumber);
+  
+  // console.log("phonenumber:", phoneNumber);
   
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://versityedge1.eastus.cloudapp.azure.com/v1/auth/verify-otp', {
-      // phone : phoneNumber,
-      otp : otp
+    // dispatch(getNextResetPasswordPage("passwordReset"));
+    axios
+    .post(`${process.env.REACT_APP_ENDPOINT}/auth/verify-otp`, 
+    {
+      phone : phoneNumber,
+      otp : otp,
     })
     .then(() => {
+      toast("OTP Success")
       dispatch(getNextResetPasswordPage("passwordReset"));
     })
     .catch((err) => {
@@ -60,10 +66,10 @@ const Password2 = () => {
       >
         <div className="flex flex-col items-center justify-start gap-[40px]">
           <div className="relative h-[139px] w-[470px] text-center">
-            <div className="absolute left-[66px] right-[66px] top-[0px] text-6xl font-semibold">
+            <div className="absolute left-[66px] right-[66px] top-[40px] text-6xl font-semibold">
               Password reset
             </div>
-            <div className="mb-2px absolute left-[44px] right-[44px] top-[73px] text-3xl font-light lmobile:left-[0px] lmobile:right-[0px] lmobile:text-5xl">
+            <div className="mb-2px absolute left-[44px] right-[44px] top-[90px] text-3xl font-light lmobile:left-[0px] lmobile:right-[0px] lmobile:text-5xl">
               <p className="m-0">
                 Reset password by entering the 6-digit code sent to your phone
                 number/email.
@@ -81,6 +87,7 @@ const Password2 = () => {
                   <input
                     type="password"
                     placeholder="-"
+                    key={i}
                     required
                     value={data}
                     onChange={(e) => {
@@ -103,9 +110,10 @@ const Password2 = () => {
               <div className="absolute left-[197px] top-[0px] font-light text-black">
                 Enter code
               </div>
-              <div className="absolute left-[308px] top-[112px] text-base text-primary-blue-1 lmobile:left-[386px]">
+              <button
+              className="absolute left-[308px] top-[112px] text-base text-primary-blue-1 lmobile:left-[386px]">
                 Resend OTP
-              </div>
+              </button>
             </div>
           </div>
 

@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import * as Pages from "./pages/index";
 
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "./Utility/ScrollToTop";
 
 import Layout from "./components/Layout";
 import RequireAuthentication from "./components/RequireAuthentication";
@@ -37,9 +37,9 @@ export function App() {
 
           <Route path="/forum">
             <Route index element={<Pages.ForumHome />} />
-            <Route element={<RequireAuthentication />}>
-              <Route path="forums/:title" element={<Pages.ForumBlog />} />
-            </Route>
+            <Route path="forums/:title" element={<Pages.ForumBlog />} />
+            {/* <Route element={<RequireAuthentication />}>
+            </Route> */}
           </Route>
 
           <Route element={<RequireAuthentication />}>

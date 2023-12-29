@@ -4,7 +4,7 @@ import React from "react";
 import img3 from "../../assets/hotpost3.png";
 import uiLogo from "../../assets/universityOfIbadan.png";
 import ulLogo from "../../assets/universityOfLagos.png";
-import useFetch from "./../../components/useFetch/useFetch";
+import useFetch from "./../../Utility/useFetch/useFetch";
 import { Link } from "react-router-dom";
 const HotNews = ({ baseURL }) => {
   const { data: hotPosts, error, isPending } = useFetch(baseURL + "blog/posts");

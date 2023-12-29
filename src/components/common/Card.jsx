@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "./Button";
 
 export default function Card({ header, img, children, type }) {
@@ -81,9 +82,11 @@ export default function Card({ header, img, children, type }) {
             <p className=" Text16px text-center">{children}</p>
           </article>
 
-          <Button addstyle="self-center text-[#ffff] xs:text-[.5rem] smobile:text-[.7rem] mobile:text-[.8rem] md:text-[1.2rem] lg:text-[1.4rem] btnText xs:py-[.1rem] mobile:py-[.2rem] sm:py-[.5rem] md:py-[.7rem]">
-            Read More
-          </Button>
+          <Link to={"/"}>
+            <Button addstyle="self-center text-[#ffff] xs:text-[.5rem] smobile:text-[.7rem] mobile:text-[.8rem] md:text-[1.2rem] lg:text-[1.4rem] btnText xs:py-[.1rem] mobile:py-[.2rem] sm:py-[.5rem] md:py-[.7rem]">
+              Read More
+            </Button>
+          </Link>
         </li>
       );
   }

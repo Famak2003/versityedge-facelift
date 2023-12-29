@@ -11,7 +11,7 @@ const ForumBlogs = ({ forumPosts }) => {
       {forumPosts &&
         forumPosts.map((post) => (
           <Link
-            to={`/forums/${post.title}`}
+            to={`/forum/forums/${post.title}`}
             className="post grid-0"
             key={post.id}
           >

@@ -1,12 +1,12 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginUserIn } from "../../redux/slice/authSlice";
 
 import axios from "axios";
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login1 = () => {
   const location = useLocation();
@@ -18,21 +18,21 @@ const Login1 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://versityedge1.eastus.cloudapp.azure.com/v1/auth/signin", {
+    axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, 
+    {
       phone: phoneNumber,
       password: password
     })
     .then(() => {
       toast("Sign in successful");
       dispatch(loginUserIn());
-      setTimeout(() => {
         if (location.state) {
           navigate(`${location.state.destination}`, { replace: true });
         } else navigate("/", { replace: true });
-      }, 2000);
-    }).catch((err) => {
+    })
+    .catch((err) => {
       toast(err.response.data.message);
-      console.log("err", err.response.data.message);
+      console.log("err", err?.response?.data?.message);
     })
 }
 
@@ -43,10 +43,10 @@ const Login1 = () => {
         className="flex flex-col items-center justify-start gap-[40px]"
       >
         <div className="relative h-[139px] w-[456px] text-center">
-          <div className="font-semi-bold absolute left-[167px] top-[0px] text-6xl">
+          <div className="font-semi-bold absolute left-[167px] top-[40px] text-6xl">
             Login
           </div>
-          <div className="absolute left-[40px] right-[40px] top-[73px] px-9 text-5xl font-light lmobile:left-[0px] lmobile:right-[0px]">
+          <div className="absolute left-[40px] right-[40px] top-[90px] px-9 text-5xl font-light lmobile:left-[0px] lmobile:right-[0px]">
             <p className="m-0">
               Kindly input your phone number with password to login.
             </p>
