@@ -46,7 +46,6 @@ const Blog = () => {
               <h6>{blogDetail.shares > 59 ? `${blogDetail.shares / 60} hours` : `${blogDetail.shares} mins`} read</h6>
           <div className="impressions-section">
               <h6>{blogDetail.comments > 999 ? `${blogDetail.comments / 1000}k` : `${blogDetail.postComment}`} comments</h6>
-              <h6>{blogDetail.analytic.views > 999 ? `${blogDetail.analytic.views / 1000}k` : `${blogDetail.postImpressions}`} impressions</h6>
               <button className='share-btn'>share</button>
           </div>
           </div>
