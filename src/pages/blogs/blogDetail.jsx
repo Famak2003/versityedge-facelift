@@ -49,7 +49,7 @@ const Blog = () => {
               <button className='share-btn'>share</button>
           </div>
           </div>
-          <p className="blog-contents">{blogDetail.postContent}</p>
+          <p className="blog-contents">{blogDetail.body}</p>
           <Comments />
           <div className="btn-div">
             <Link to="/blogs" className="go-back-btn right">Go back</Link>
