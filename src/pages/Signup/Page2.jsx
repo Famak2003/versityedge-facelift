@@ -18,7 +18,6 @@ const Page2 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(getNextSignupPage(3));
     axios
       .post(`${process.env.REACT_APP_ENDPOINT}/auth/verify-otp`,
       {
