@@ -15,26 +15,27 @@ const Page2 = () => {
   const [otp, setOtp] = useState("");
   const phoneNumber = useSelector((state) => state.auth.phoneNumber);
   console.log("phonenumber", phoneNumber);
-
+  
+  dispatch(getNextSignupPage(3));
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post(
-        "http://versityedge1.eastus.cloudapp.azure.com/v1/auth/verify-otp",
-        {
-          phone: phoneNumber,
-          otp: otp,
-        },
-      )
-      .then(() => {
-        toast("Sign in successful");
-        dispatch(getNextSignupPage(3));
-        console.log("signUp page 2");
-      })
-      .catch((err) => {
-        toast(err.response.data.message);
-        console.log("err", err.response.data.message);
-      });
+    // axios
+    //   .post(
+    //     "http://versityedge1.eastus.cloudapp.azure.com/v1/auth/verify-otp",
+    //     {
+    //       phone: phoneNumber,
+    //       otp: otp,
+    //     },
+    //   )
+    //   .then(() => {
+    //     toast("Sign in successful");
+    //     dispatch(getNextSignupPage(3));
+    //     console.log("signUp page 2");
+    //   })
+    //   .catch((err) => {
+    //     toast(err.response.data.message);
+    //     console.log("err", err.response.data.message);
+    //   });
   };
 
   const [otpInput, setOtpInput] = useState(new Array(6).fill(""));

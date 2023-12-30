@@ -7,48 +7,42 @@ import Stepper from "./stepper";
 // import HandlePassword from "../../Utility/HandlePassword";
 
 const Page3 = () => {
-  const [passwrordMessage, setPasswordMessage] = useState(" ");
   const [password, setPassword] = useState(" ");
-  const [reEnterPasswordMessage, setReEnterPasswordMessage] = useState(" ");
   const [reEnterPassword, setReEnterPassword] = useState(" ");
-  const [equalPassword, setEqualPassword] = useState(false);
+  const [message, setMessage] = useState({
+    passwrordMessage: "",
+    reEnterPasswordMessage: "",
+  });
   const bg3 = "bg-primary-blue-1";
   const txt3 = "text-primary-white-1";
   // const dispatch = useDispatch();
 
+  function passwordValidation(password) {
+    let message;
+    const regEx =
+      /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])(?=.*[0-9]).+$/;
+
+    const isPasswordValid = regEx.test(password);
+
+    if (isPasswordValid) {
+      message = "Strong Password";
+    } else if (!isPasswordValid) {
+      message =
+        " Password must contain at least one uppercase letter, one special character, and one number.";
+    }
+    return message;
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!equalPassword) {
-      setPasswordMessage("Password and Re-Entered Password must match");
-      setReEnterPasswordMessage(
-        " Password and Re-Entered Password must match ",
-      );
-      return;
-    }
-    // This is the regular expression filter that check if the password meets the requirement
-    const regEx =
-      /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])(?=.*[0-9]).+$/;
-    // We check by testing the password
-    const isPasswordValid = regEx.test(password);
-    const isreEnterPasswordValid = regEx.test(reEnterPassword);
+    setMessage((prevMessage) => ({
+      ...prevMessage,
+      passwrordMessage: passwordValidation(password),
+      reEnterPasswordMessage: passwordValidation(reEnterPassword),
+    }));
 
-    if (isPasswordValid) {
-      setPasswordMessage("Strong Password");
-    } else if (!isPasswordValid) {
-      setPasswordMessage(
-        " Password must contain at least one uppercase letter, one special character, and one number.",
-      );
-    }
-
-    if (isreEnterPasswordValid) {
-      setReEnterPasswordMessage("Strong Password");
-    } else if (!isreEnterPasswordValid) {
-      setReEnterPasswordMessage(
-        " Password must contain at least one uppercase letter, one special character, and one number.",
-      );
-    }
-    // dispatch(getNextSignupPage("congratulations"));
+    console.log(message);
   };
 
   function handlePassword(e) {
@@ -57,21 +51,8 @@ const Page3 = () => {
     } else if (e.target.name === "reEnterPassword") {
       setReEnterPassword(e.target.value);
     }
-    console.log(e);
   }
 
-  function onBlurr(e) {
-    if (password === reEnterPassword) {
-      setEqualPassword(true);
-      setPasswordMessage("Password Match");
-      setReEnterPasswordMessage(" Password Match ");
-    } else {
-      setPasswordMessage("Password and Re-Entered Password must match");
-      setReEnterPasswordMessage(
-        " Password and Re-Entered Password must match ",
-      );
-    }
-  }
   return (
     <div className="flex flex-col items-center justify-start gap-[40px] text-5xl text-primary-blue-1">
       <div className="relative h-[59px] w-[289px]">
@@ -147,20 +128,24 @@ const Page3 = () => {
             overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 px-[24px] font-light 
             text-black outline-none lmobile:left-[0px]  lmobile:w-[391px]"
             />
-            {passwrordMessage && <small> {passwrordMessage} </small>}
+            {message.passwrordMessage && (
+              <small> {message.passwrordMessage} </small>
+            )}
           </div>
 
           <input
             type="password"
             name="reEnterPassword"
-            onBlur={(e) => onBlurr(e)}
+            // onBlur={(e) => onBlurr(e)}
             placeholder="Re-enter password"
             onChange={(e) => handlePassword(e)}
             required
             className=" left-[60px] top-[364px] box-border h-[55px] w-[270px] 
             overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1  px-[24px] font-light text-black outline-none lmobile:left-[0px]  lmobile:w-[391px]"
           />
-          {reEnterPasswordMessage && <small> {reEnterPasswordMessage} </small>}
+          {message.reEnterPasswordMessage && (
+            <small> {message.reEnterPasswordMessage} </small>
+          )}
         </div>
 
         <div className="relative h-[87px] w-[391px] text-base">

@@ -16,28 +16,29 @@ const Page1 = () => {
   const dispatch = useDispatch();
   let verfiedPhoneNumber;
 
+  dispatch(getNextSignupPage(2));
   const handleSubmit = (e) => {
     e.preventDefault();
-    verfiedPhoneNumber = "+234" + phoneNumber.slice(-10);
+    // verfiedPhoneNumber = "+234" + phoneNumber.slice(-10);
 
-    if (!requestSent) {
-      axios
-        .post(`${process.env.REACT_APP_ENDPOINT}/auth/request-otp`, {
-          phone: verfiedPhoneNumber,
-        })
-        .then(() => {
-          setTimeout(() => {
-            toast("OTP Sent");
-          }, 1000);
-          dispatch(setPhone(verfiedPhoneNumber));
-          setRequestSent(true);
-          dispatch(getNextSignupPage(2));
-        })
-        .catch((err) => {
-          toast(err.message);
-          console.log("err", err?.response?.data?.message);
-        });
-    }
+    // if (!requestSent) {
+    //   axios
+    //     .post(`${process.env.REACT_APP_ENDPOINT}/auth/request-otp`, {
+    //       phone: verfiedPhoneNumber,
+    //     })
+    //     .then(() => {
+    //       setTimeout(() => {
+    //         toast("OTP Sent");
+    //       }, 1000);
+    //       dispatch(setPhone(verfiedPhoneNumber));
+    //       setRequestSent(true);
+    //       dispatch(getNextSignupPage(2));
+    //     })
+    //     .catch((err) => {
+    //       toast(err.message);
+    //       console.log("err", err?.response?.data?.message);
+    //     });
+    // }
 
     return;
   };
