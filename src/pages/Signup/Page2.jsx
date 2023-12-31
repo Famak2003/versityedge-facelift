@@ -12,30 +12,27 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Page2 = () => {
   const dispatch = useDispatch();
-  const [otp, setOtp] = useState("");
   const phoneNumber = useSelector((state) => state.auth.phoneNumber);
-  console.log("phonenumber", phoneNumber);
-  
-  dispatch(getNextSignupPage(3));
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // axios
-    //   .post(
-    //     "http://versityedge1.eastus.cloudapp.azure.com/v1/auth/verify-otp",
-    //     {
-    //       phone: phoneNumber,
-    //       otp: otp,
-    //     },
-    //   )
-    //   .then(() => {
-    //     toast("Sign in successful");
-    //     dispatch(getNextSignupPage(3));
-    //     console.log("signUp page 2");
-    //   })
-    //   .catch((err) => {
-    //     toast(err.response.data.message);
-    //     console.log("err", err.response.data.message);
-    //   });
+    // join the otpInput to make a single string
+    const otp = otpInput.join("");
+
+    axios
+      .post(`${process.env.REACT_APP_ENDPOINT}/auth/verify-otp`, {
+        phone: phoneNumber,
+        otp: otp,
+      })
+      .then(() => {
+        toast("OTP Success");
+        dispatch(getNextSignupPage(3));
+        console.log("signUp page 2");
+      })
+      .catch((err) => {
+        toast(err.response.data.message);
+        console.log("err", err.response.data.message);
+      });
   };
 
   const [otpInput, setOtpInput] = useState(new Array(6).fill(""));
@@ -57,7 +54,7 @@ const Page2 = () => {
     if (isNaN(value)) return false;
 
     const updatedValue = value.toString().split("").slice(0, otpInput.length);
-
+    console.log(updatedValue);
     setOtpInput(updatedValue);
   };
 
@@ -67,7 +64,7 @@ const Page2 = () => {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="font-text-xl-medium relative flex w-full flex-col items-center justify-start gap-[40px] text-center text-5xl text-primary-blue-1"
+        className="font-text-xl-medium relative flex w-full flex-col items-center justify-start gap-[40px] top-[40px] text-center text-5xl text-primary-blue-1"
       >
         <div className="relative h-[59px] w-[289px]">
           <div className="absolute left-[58.5px] top-[29.5px] box-border h-px w-[172px] border-t-[1px] border-solid border-primary-blue-7" />
@@ -91,14 +88,13 @@ const Page2 = () => {
               {otpInput.map((data, i) => {
                 return (
                   <input
-                    key={i}
                     type="password"
                     placeholder="-"
+                    key={i}
                     required
                     value={data}
                     onChange={(e) => {
                       handleChange(e, i);
-                      setOtp(e.target.value);
                     }}
                     onPaste={(e) => {
                       handlePaste(e);
@@ -113,9 +109,9 @@ const Page2 = () => {
             <div className="absolute left-[197px] top-[0px] mb-[4px] font-light text-black">
               Enter code
             </div>
-            <div className="absolute left-[308px] top-[112px] text-base text-primary-blue-1 lmobile:left-[386px]">
+            <button className="absolute left-[308px] top-[112px] text-base text-primary-blue-1 lmobile:left-[386px]">
               Resend OTP
-            </div>
+            </button>
           </div>
           <div className="relative h-[87px] w-[391px] text-base">
             <Link to="/auth/login">

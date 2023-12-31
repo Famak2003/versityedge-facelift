@@ -2,6 +2,7 @@ import React from 'react'
 import img1 from '../../assets/blogPopular1.png';
 import img2 from '../../assets/blogPopular2.png'
 import img3 from '../../assets/blogPopular3.png'
+import { Link } from 'react-router-dom';
 
 
 const PopularNews = () => {
@@ -63,7 +64,7 @@ const PopularNews = () => {
         <h2>Popular News</h2>
         { popularPosts && popularPosts.map((popularPost) => (
           <div className={popularPost.class} key={popularPost.id}>
-          <div className="section">
+          <Link to={"/blog/popular/:id"} className="section">
             <div className={popularPost.position} style={{
               backgroundImage : `url(${popularPost.image})`,
               backgroundSize: 'cover',
@@ -79,7 +80,7 @@ const PopularNews = () => {
               <p> {popularPost.text}</p>
                 <h5> Read more ...</h5>
             </div>
-          </div>
+          </Link>
         </div>
         ))}
     </div>

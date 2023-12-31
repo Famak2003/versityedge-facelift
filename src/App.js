@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import * as Pages from "./pages/index";
 
-import ScrollToTop from "./Utility/ScrollToTop";
+import * as Utility from "./Utility/index";
 
 import Layout from "./components/Layout";
 import RequireAuthentication from "./components/RequireAuthentication";
@@ -10,12 +10,12 @@ import RequireAuthentication from "./components/RequireAuthentication";
 export function App() {
   return (
     <>
-      <ScrollToTop />
+      <Utility.ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           {/* PUBLIC ROUTES */}
           <Route path="/" element={<Pages.Home />} />
-          <Route path="/contactUs" element={<Pages.ContactUs />}></Route>
+          <Route path="/contactUs" element={<Pages.ContactUs />} />
 
           {/* PROTECTED ROUTES */}
           <Route element={<RequireAuthentication />}>

@@ -8,10 +8,10 @@ const Congrats1 = () => {
     <div className="flex flex-col items-center justify-start">
       <div className="flex flex-col items-center justify-start gap-[40px]">
         <div className="relative h-[139px] w-[502px]">
-          <div className="absolute left-[70px] right-[70px] top-[0px] px-24 text-6xl font-semibold">
+          <div className="absolute left-[70px] right-[70px] top-[40px] px-24 text-6xl font-semibold">
             Congratulations!
           </div>
-          <div className="absolute left-[60px] right-[60px] top-[73px] text-center text-5xl font-light lmobile:left-[0px] lmobile:right-[0px]">
+          <div className="absolute left-[60px] right-[60px] top-[90px] text-center text-5xl font-light lmobile:left-[0px] lmobile:right-[0px]">
             <p className="m-0">
               Congratulations, your account has been created on Versityedge.
             </p>
