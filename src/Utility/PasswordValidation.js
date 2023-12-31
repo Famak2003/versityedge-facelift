@@ -1,17 +1,17 @@
 function passwordValidation(password) {
-  let message;
+  let msg;
   const regEx =
     /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])(?=.*[0-9]).+$/;
 
   const isPasswordValid = regEx.test(password);
 
   if (isPasswordValid) {
-    message = "Strong Password";
+    msg = "Strong Password";
   } else {
-    message =
+    msg =
       " Password must contain at least one uppercase letter, one special character, and one number.";
   }
-  return message;
+  return msg;
 }
 
 export default passwordValidation;
