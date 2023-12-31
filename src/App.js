@@ -31,10 +31,8 @@ export function App() {
 
           <Route path="/blogs">
             <Route index element={<Pages.Blogs />} />
-            <Route element={<RequireAuthentication />}>
               <Route path="post/:id" element={<Pages.BlogDetails />} />
               <Route path="create" element={<Pages.CreateBlog />} />
-            </Route>
           </Route>
 
           <Route path="/forum">
