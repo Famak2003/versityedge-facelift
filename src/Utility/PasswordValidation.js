@@ -1,4 +1,4 @@
-function passwordValidation(password) {
+function PasswordValidation(password) {
   let msg;
   const regEx =
     /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])(?=.*[0-9]).+$/;
@@ -14,4 +14,4 @@ function passwordValidation(password) {
   return msg;
 }
 
-export default passwordValidation;
+export default PasswordValidation;

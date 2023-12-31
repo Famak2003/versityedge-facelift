@@ -52,8 +52,8 @@ const Page3 = () => {
     // Set password, setPassword warning messages
     setMessage((prevMessage) => ({
       ...prevMessage,
-      passwrordMessage: Utility.passwordValidation(password),
-      confirmPasswordMessage: Utility.passwordValidation(confirmPassword),
+      passwrordMessage: Utility.PasswordValidation(password),
+      confirmPasswordMessage: Utility.PasswordValidation(confirmPassword),
     }));
 
     if (
