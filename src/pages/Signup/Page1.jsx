@@ -18,13 +18,15 @@ const Page1 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(getNextSignupPage(2));
     verfiedPhoneNumber = "+234" + phoneNumber.slice(-10);
 
     if (!requestSent) {
       axios
-        .post(`${process.env.REACT_APP_ENDPOINT}/auth/request-otp`, {
-          phone: verfiedPhoneNumber,
-        })
+        // .post(`${process.env.REACT_APP_ENDPOINT}/auth/request-otp`, 
+        // {
+        //   phone: verfiedPhoneNumber,
+        // })
         .then(() => {
           setTimeout(() => {
             toast("OTP Sent");
