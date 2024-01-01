@@ -146,7 +146,7 @@ const Page3 = () => {
               }
               className=" left-[60px]
               top-[1px] mt-0  
-              box-border h-[55px] w-[270px] overflow-hidden 
+              box-border h-[55px] w-[270px] ml-[60px] overflow-hidden 
               rounded-2xl border-[1px] border-solid border-primary-black-7 
               bg-primary-white-1 px-[24px] font-light 
               text-black outline-none lmobile:left-[0px] lmobile:w-[391px]"
@@ -163,7 +163,7 @@ const Page3 = () => {
                   lastName: e.target.value,
                 }))
               }
-              className=" left-[60px] top-[91px] mt-[25px]
+              className=" left-[60px] top-[91px] mt-[25px] ml-[60px]
             box-border h-[55px] w-[270px] overflow-hidden 
             rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 
             px-[24px] font-light text-black outline-none lmobile:left-[0px] lmobile:w-[391px]"
@@ -179,8 +179,7 @@ const Page3 = () => {
                   email: e.target.value,
                 }))
               }
-              className=" left-[60px] top-[182px]  mt-[25px]
-            box-border h-[55px] w-[270px] overflow-hidden rounded-2xl border-[1px] border-solid 
+              className=" left-[60px] top-[182px]  mt-[25px] ml-[60px] box-border h-[55px] w-[270px] overflow-hidden rounded-2xl border-[1px] border-solid 
             border-primary-black-7 bg-primary-white-1 px-[24px] font-light text-black outline-none lmobile:left-[0px] lmobile:w-[391px]"
             />
             <div>
@@ -190,7 +189,7 @@ const Page3 = () => {
                 name="password"
                 required
                 onChange={(e) => handlePassword(e)}
-                className=" left-[60px] top-[273px] mt-[25px] box-border h-[55px] w-[270px] 
+                className=" left-[60px] top-[273px] mt-[25px] ml-[60px] box-border h-[55px] w-[270px] 
             overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 px-[24px] font-light 
             text-black outline-none lmobile:left-[0px]  lmobile:w-[391px]"
               />
@@ -207,7 +206,7 @@ const Page3 = () => {
                 placeholder="Re-enter password"
                 required
                 onChange={(e) => handlePassword(e)}
-                className=" left-[60px] top-[364px] mt-[25px] box-border h-[55px] w-[270px] 
+                className=" left-[60px] top-[364px] mt-[25px] ml-[60px] box-border h-[55px] w-[270px] 
             overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1  px-[24px] font-light text-black outline-none lmobile:left-[0px]  lmobile:w-[391px]"
               />
               {message.confirmPasswordMessage && (
