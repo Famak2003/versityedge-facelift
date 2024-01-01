@@ -39,7 +39,7 @@ const Page3 = () => {
     }
   }
 
-  // checks if password is equall to confirm password, and if its a strong password
+  // checks if password is equal to confirm password, and if its a strong password
   const isPasswordValid = () => {
     let status = false;
     const isPasswordEqual = password === confirmPassword;

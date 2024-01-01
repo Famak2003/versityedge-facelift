@@ -21,7 +21,8 @@ const Password1 = () => {
     verfiedPhoneNumber = "+234" + phoneNumber.slice(-10);
    
     if(!requestSent){
-      axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/request-otp`,
+      axios
+      .post(`${process.env.REACT_APP_ENDPOINT}/auth/request-otp`,
     {
       resetPassword : resetPassword,
       phone : verfiedPhoneNumber,

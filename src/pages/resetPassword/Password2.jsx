@@ -17,7 +17,9 @@ const Password2 = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    // dispatch(getNextResetPasswordPage("passwordReset"));
+    
+    // join the otpInput to make a single string
+    const otp = otpInput.join('')
     axios
     .post(`${process.env.REACT_APP_ENDPOINT}/auth/verify-otp`, 
     {
