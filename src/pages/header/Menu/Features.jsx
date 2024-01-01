@@ -1,5 +1,5 @@
 import { useRef } from "react";
-// import useOutsideClick from "../../useOutsideClick/useOutsideClick";
+
 import ARROW from "./../../../assets/arrow.png";
 
 export function Features({
@@ -9,7 +9,6 @@ export function Features({
   setIsFeaturesOpen,
 }) {
   const featuresToggle = useRef();
-  // useOutsideClick(featuresToggle, setIsFeaturesOpen(false));
 
   return (
     <button

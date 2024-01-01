@@ -22,14 +22,13 @@ const Page1 = () => {
 
     if (!requestSent) {
       axios
-        .post(`${process.env.REACT_APP_ENDPOINT}/auth/request-otp`, 
-        {
+        .post(`${process.env.REACT_APP_ENDPOINT}/auth/request-otp`, {
           phone: verfiedPhoneNumber,
         })
         .then(() => {
           setTimeout(() => {
             toast("OTP Sent");
-          }, 2000)
+          }, 2000);
           dispatch(setPhone(verfiedPhoneNumber));
           setRequestSent(true);
           dispatch(getNextSignupPage(2));

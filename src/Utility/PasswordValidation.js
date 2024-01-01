@@ -1,23 +1,17 @@
-import { useState } from "react";
-
-function PasswordValidation({ password }) {
-  const [message, setMessage] = useState(" ");
-
+function PasswordValidation(password) {
+  let msg;
   const regEx =
     /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])(?=.*[0-9]).+$/;
 
   const isPasswordValid = regEx.test(password);
 
   if (isPasswordValid) {
-    setMessage("Strong Password");
-  } else if (!isPasswordValid) {
-    setMessage(
-      " Password must contain at least one uppercase letter, one special character, and one number.",
-    );
+    msg = "Strong Password";
   } else {
-    setMessage(" ");
+    msg =
+      " Password must contain at least one uppercase letter, one special character, and one number.";
   }
-  return message;
+  return msg;
 }
 
 export default PasswordValidation;
