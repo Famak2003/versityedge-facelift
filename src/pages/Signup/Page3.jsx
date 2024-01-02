@@ -166,7 +166,7 @@ const Page3 = () => {
               className=" left-[60px] top-[91px] mt-[25px] ml-[60px]
             box-border h-[55px] w-[270px] overflow-hidden 
             rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 
-            px-[24px] font-light text-black outline-none lmobile:left-[0px] lmobile:w-[391px]"
+            px-[24px] font-light text-black outline-none lmobile:ml-[0px] lmobile:left-[0px] lmobile:w-[391px]"
             />
 
             <input
@@ -180,7 +180,7 @@ const Page3 = () => {
                 }))
               }
               className=" left-[60px] top-[182px]  mt-[25px] ml-[60px] box-border h-[55px] w-[270px] overflow-hidden rounded-2xl border-[1px] border-solid 
-            border-primary-black-7 bg-primary-white-1 px-[24px] font-light text-black outline-none lmobile:left-[0px] lmobile:w-[391px]"
+            border-primary-black-7 bg-primary-white-1 px-[24px] font-light text-black outline-none lmobile:ml-[0px] lmobile:left-[0px] lmobile:w-[391px]"
             />
             <div>
               <input
@@ -191,7 +191,7 @@ const Page3 = () => {
                 onChange={(e) => handlePassword(e)}
                 className=" left-[60px] top-[273px] mt-[25px] ml-[60px] box-border h-[55px] w-[270px] 
             overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 px-[24px] font-light 
-            text-black outline-none lmobile:left-[0px]  lmobile:w-[391px]"
+            text-black outline-none lmobile:ml-[0px] lmobile:left-[0px] lmobile:w-[391px]"
               />
               {message.passwrordMessage && (
                 <small> {message.passwrordMessage} </small>
@@ -207,7 +207,7 @@ const Page3 = () => {
                 required
                 onChange={(e) => handlePassword(e)}
                 className=" left-[60px] top-[364px] mt-[25px] ml-[60px] box-border h-[55px] w-[270px] 
-            overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1  px-[24px] font-light text-black outline-none lmobile:left-[0px]  lmobile:w-[391px]"
+            overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 px-[24px] font-light text-black outline-none lmobile:ml-[0px]  lmobile:left-[0px]  lmobile:w-[391px]"
               />
               {message.confirmPasswordMessage && (
                 <small> {message.confirmPasswordMessage} </small>
