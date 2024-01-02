@@ -16,7 +16,7 @@ const Page2 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+    dispatch(getNextSignupPage(3));
     // join the otpInput to make a single string
     const otp = otpInput.join("");
 

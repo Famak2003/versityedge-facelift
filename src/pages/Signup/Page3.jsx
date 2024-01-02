@@ -149,7 +149,7 @@ const Page3 = () => {
               box-border h-[55px] w-[270px] ml-[60px] overflow-hidden 
               rounded-2xl border-[1px] border-solid border-primary-black-7 
               bg-primary-white-1 px-[24px] font-light 
-              text-black outline-none lmobile:left-[0px] lmobile:w-[391px]"
+              text-black outline-none lmobile:ml-[0px] lmobile:left-[0px] lmobile:w-[391px]"
             />
 
             <input
