@@ -9,7 +9,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Password2 = () => {
   const dispatch = useDispatch();
-  const [otp, setOtp] = useState('');
   const phoneNumber = useSelector((state) => state.auth.phoneNumber);
   
   // console.log("phonenumber:", phoneNumber);
@@ -19,7 +18,7 @@ const Password2 = () => {
     e.preventDefault();
     
     // join the otpInput to make a single string
-    const otp = otpInput.join('')
+    const otp = otpInput.join("");
     axios
     .post(`${process.env.REACT_APP_ENDPOINT}/auth/verify-otp`, 
     {
@@ -94,7 +93,6 @@ const Password2 = () => {
                     value={data}
                     onChange={(e) => {
                       handleChange(e, i) 
-                      setOtp(e.target.value)
                     }
                       }
 
