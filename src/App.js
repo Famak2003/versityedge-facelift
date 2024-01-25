@@ -11,6 +11,7 @@ export function App() {
   return (
     <>
       <Utility.ScrollToTop />
+      <Utility.Logout />
       <Routes>
         <Route path="/" element={<Layout />}>
           {/* PUBLIC ROUTES */}
@@ -31,8 +32,8 @@ export function App() {
 
           <Route path="/blogs">
             <Route index element={<Pages.Blogs />} />
-              <Route path="post/:id" element={<Pages.BlogDetails />} />
-              <Route path="create" element={<Pages.CreateBlog />} />
+            <Route path="post/:id" element={<Pages.BlogDetails />} />
+            <Route path="create" element={<Pages.CreateBlog />} />
           </Route>
 
           <Route path="/forum">

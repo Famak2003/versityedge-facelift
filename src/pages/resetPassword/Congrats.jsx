@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import teenyicon from "../../assets/teenyicons_tick-circle-solid.svg";
 
 import { Link } from "react-router-dom";

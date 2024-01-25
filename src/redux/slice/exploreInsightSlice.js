@@ -21,7 +21,7 @@ export const getAllPosts = createAsyncThunk(
       const sortedData = sortData.slice(0, 3);
       return sortedData;
     } catch (err) {
-      console.log(err);
+      console.error(err);
       return thunkAPI.rejectWithValue({ error: err.message });
     }
   },

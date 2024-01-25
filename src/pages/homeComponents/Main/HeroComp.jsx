@@ -5,6 +5,8 @@ import Hero from "./../../../components/common/Hero";
 
 export default function HeroComp() {
   const isUserLoggedin = useSelector((state) => state.auth.user);
+  // const userInfo = useSelector((state) => state.auth.userInfo);
+  // console.log(userInfo);
 
   return (
     <section className=" generalPadding mb-[2rem] flex h-fit xs:flex-col mobile:flex-row lmobile:mb-[3rem] md:mb-[5rem] lg:h-[50rem] ">

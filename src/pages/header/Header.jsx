@@ -11,8 +11,6 @@ export default function Header() {
     setIsMenuOpen((open) => !open);
   }
 
-  // console.log(menuRef);
-
   return (
     <header className=" flex h-[7rem] items-center px-[2rem] md:mt-[2rem] md:px-[4rem] lg:mt-[3rem] lg:px-[5rem]">
       <nav className=" relative my-[1rem] flex w-[100%] items-center justify-between">

@@ -11,24 +11,25 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Page2 = () => {
+  const [requestSent, setRequestSent] = useState(false);
   const dispatch = useDispatch();
-  const phoneNumber = useSelector((state) => state.auth.phoneNumber);
+  const userInfo = useSelector((state) => state.auth.userInfo);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // join the otpInput to make a single string
     const otp = otpInput.join("");
 
     axios
       .post(`${process.env.REACT_APP_ENDPOINT}/auth/verify-otp`, {
-        phone: phoneNumber,
-        otp: otp,
+        phone: userInfo.phoneNumber,
+        otp,
       })
       .then(() => {
         toast("OTP Success");
-        dispatch(getNextSignupPage(3));
         console.log("signUp page 2");
+        dispatch(getNextSignupPage(3));
       })
       .catch((err) => {
         toast(err.response.data.message);
@@ -58,6 +59,24 @@ const Page2 = () => {
     console.log(updatedValue);
     setOtpInput(updatedValue);
   };
+
+  function resendOTP(e) {
+    e.preventDefault()
+      .axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/request-otp`, {
+        phone: userInfo.phoneNumber,
+      })
+      .then((response) => {
+        console.log(response.data.message);
+        setTimeout(() => {
+          toast("OTP re-sent");
+        }, 2000);
+        setRequestSent(true);
+      })
+      .catch((err) => {
+        toast(err.message);
+        console.log("err", err?.response?.data?.message);
+      });
+  }
 
   const bg2 = "bg-primary-blue-1";
   const txt2 = "text-primary-white-1";
@@ -110,7 +129,11 @@ const Page2 = () => {
             <div className="absolute left-[197px] top-[0px] mb-[4px] font-light text-black">
               Enter code
             </div>
-            <button className="absolute left-[308px] top-[112px] text-base text-primary-blue-1 lmobile:left-[386px]">
+            <button
+              disabled={requestSent}
+              onClick={() => resendOTP()}
+              className="absolute left-[308px] top-[112px] text-base text-primary-blue-1 lmobile:left-[386px]"
+            >
               Resend OTP
             </button>
           </div>

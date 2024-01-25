@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import ngaFlag from "./../../assets/twemoji_flag-nigeria.png";
 import Stepper from "./stepper";
 import { useDispatch } from "react-redux";
-import { getNextSignupPage, setPhone } from "../../redux/slice/authSlice";
+import { getNextSignupPage, setUserInfo } from "../../redux/slice/authSlice";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -26,17 +26,18 @@ const Page1 = () => {
         .post(`${process.env.REACT_APP_ENDPOINT}/auth/request-otp`, {
           phone: verfiedPhoneNumber,
         })
-        .then(() => {
+        .then((response) => {
+          console.log(response.data.message);
           setTimeout(() => {
             toast("OTP Sent");
           }, 2000);
-          dispatch(setPhone(verfiedPhoneNumber));
+          dispatch(setUserInfo({ phoneNumber: verfiedPhoneNumber }));
           setRequestSent(true);
           dispatch(getNextSignupPage(2));
         })
         .catch((err) => {
-          toast(err.message);
-          console.log("err", err?.response?.data?.message);
+          toast(err.response.data.message);
+          console.log("err", err.response.data);
         });
     }
 

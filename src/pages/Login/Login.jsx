@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { loginUserIn } from "../../redux/slice/authSlice";
+import { loginUser, setUserInfo } from "../../redux/slice/authSlice";
 
 import axios from "axios";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+// import * as Utility from "../../Utility";
 
 const Login1 = () => {
   const location = useLocation();
@@ -18,23 +19,34 @@ const Login1 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, 
-    {
-      phone: phoneNumber,
-      password: password
-    })
-    .then(() => {
-      toast("Sign in successful");
-      dispatch(loginUserIn());
+
+    const verfiedPhoneNumber = "+234" + phoneNumber.slice(-10);
+    // const data = { phone: verfiedPhoneNumber, password: password };
+
+    // Utility.SigninPost(data, false, location, navigate);
+
+    axios
+      .post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, {
+        phone: verfiedPhoneNumber,
+        password: password,
+      })
+      .then((res) => {
+        toast("Signin successful");
+        // user authorization key and id
+        dispatch(setUserInfo({ userKey: res.headers.authorization }));
+        dispatch(setUserInfo({ userID: res.data.data.id }));
+
+        dispatch(loginUser());
+
         if (location.state) {
           navigate(`${location.state.destination}`, { replace: true });
         } else navigate("/", { replace: true });
-    })
-    .catch((err) => {
-      toast(err.response.data.message);
-      console.log("err", err?.response?.data?.message);
-    })
-}
+      })
+      .catch((err) => {
+        toast(err.response.data.message);
+        console.log("err", err?.response?.data?.message);
+      });
+  };
 
   return (
     <div className="flex flex-col items-center justify-start text-left">

@@ -12,7 +12,6 @@ export default function AvatarAndLogout({
   menuRef,
 }) {
   const isUserLoggedIn = useSelector((state) => state.auth.user);
-  // const dispatch = useDispatch();
   const menuToggle = useRef();
 
   // handles clicks outside the intended elements(harmburger menu and the elements inside it)

@@ -2,9 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   user: false,
-  phoneNumber: "",
   otpCode: "",
-  userInfo: {},
+  userInfo: {
+    userKey: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    userID: "",
+  },
   currentSignupPage: 1,
   currentResetPasswordPage: "resetPassword",
 };
@@ -14,11 +20,11 @@ const authSlice = createSlice({
   initialState,
   // Add reducers for the synchronous actions on the UI
   reducers: {
-    loginUserIn: (state) => {
+    loginUser: (state) => {
       state.user = true;
     },
 
-    loginUserOut: (state) => {
+    logoutUser: (state) => {
       state.user = false;
     },
     setPhone(state, action) {
@@ -27,8 +33,9 @@ const authSlice = createSlice({
     getOTPcode(state, action) {
       state.otpCode = action.payload;
     },
-    getUserInfo(state, action) {
-      state.userInfo = action.payload;
+    setUserInfo(state, action) {
+      // Immer is implicitly used here to update the userInfo
+      state.userInfo = { ...state.userInfo, ...action.payload };
     },
     getNextSignupPage(state, action) {
       state.currentSignupPage = action.payload;
@@ -42,11 +49,11 @@ const authSlice = createSlice({
 export const {
   setPhone,
   getOTPcode,
-  getUserInfo,
+  setUserInfo,
   getNextSignupPage,
   getNextResetPasswordPage,
-  loginUserIn,
-  loginUserOut,
+  loginUser,
+  logoutUser,
 } = authSlice.actions;
 
 export default authSlice.reducer;

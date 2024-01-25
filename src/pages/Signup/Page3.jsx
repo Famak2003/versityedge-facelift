@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Stepper from "./stepper";
 
 import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getNextSignupPage } from "../../redux/slice/authSlice";
+import { getNextSignupPage, setUserInfo } from "../../redux/slice/authSlice";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -12,103 +12,114 @@ import "react-toastify/dist/ReactToastify.css";
 import * as Utility from "./../../Utility/index";
 
 const Page3 = () => {
-  const bg3 = "bg-primary-blue-1";
-  const txt3 = "text-primary-white-1";
   const dispatch = useDispatch();
+  const phoneNumber = useSelector((state) => state.auth.userInfo.phoneNumber);
 
   const [password, setPassword] = useState(" ");
   const [confirmPassword, setConfirmPassword] = useState(" ");
+  const [passwordValid, setPasswordValid] = useState("");
+
   const [message, setMessage] = useState({
     passwrordMessage: "",
     confirmPasswordMessage: "",
   });
-  const phoneNumber = useSelector((state) => state.auth.phoneNumber);
-  const [userInfo, setUSerInfo] = useState({
+  const [userDetail, setUSerDetail] = useState({
     email: "",
     firstName: "",
     lastName: "",
     phoneNumber,
   });
 
-  //handle password
-  function handlePassword(e) {
-    if (e.target.name === "password") {
-      setPassword(e.target.value);
-    } else if (e.target.name === "confirmPassword") {
-      setConfirmPassword(e.target.value);
+  async function SignupPost(data) {
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_ENDPOINT}/auth/signup`,
+        data,
+      );
+      toast(response.data.message);
+      SignInPost(data, true);
+    } catch (error) {
+      toast(error.response.data.message);
+      // console.error(error.response.data.message);
     }
   }
 
-  // checks if password is equal to confirm password, and if its a strong password
-  const isPasswordValid = () => {
-    let status = false;
-    const isPasswordEqual = password === confirmPassword;
+  async function SignInPost(data, shouldCreatProfile = false) {
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_ENDPOINT}/auth/signin`,
+        data,
+      );
 
-    // checks is password is equall to each other
-    if (!isPasswordEqual) {
-      toast("Passwords Mismatch");
+      const authorization = await response.headers.authorization;
+      const userID = await response.data.data.id;
+
+      dispatch(setUserInfo({ userID }));
+      dispatch(setUserInfo({ userKey: authorization }));
+
+      if (shouldCreatProfile) {
+        await CreateProfile(userID, authorization);
+      }
+    } catch (error) {
+      toast(error.response.data.message);
+      // console.error("error from signup:", error.response.data.message);
     }
+  }
 
-    // Set password, setPassword warning messages
-    setMessage((prevMessage) => ({
-      ...prevMessage,
-      passwrordMessage: Utility.PasswordValidation(password),
-      confirmPasswordMessage: Utility.PasswordValidation(confirmPassword),
-    }));
-
-    if (
-      isPasswordEqual &&
-      message.passwrordMessage === "Strong Password" &&
-      message.confirmPasswordMessage === "Strong Password"
-    ) {
-      status = true;
+  async function CreateProfile(id, authorization) {
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_ENDPOINT}/user/${id}/profile`,
+        {
+          firstname: userDetail.firstName,
+          lastname: userDetail.lastName,
+          email: userDetail.email,
+        },
+        { headers: { Authorization: authorization } },
+      );
+      toast(response.data.message);
+      dispatch(getNextSignupPage("congratulations"));
+      // console.log(userInfoFromRedux);
+    } catch (error) {
+      toast(error.response.data.message);
+      // console.error("error from create profile:", error.response.data.message);
     }
-    return status;
-  };
+  }
 
   const handleSubmit = async (e) => {
+    console.log(userInfoFromRedux);
     e.preventDefault();
-    console.log(message);
 
-    console.log(isPasswordValid());
+    console.log(passwordValid);
 
-    if (isPasswordValid()) {
-      await axios
-        .post(`${process.env.REACT_APP_ENDPOINT}/auth/signup`, {
-          phone: userInfo.phoneNumber,
-          password: password,
-        })
-        .then(() => {
-          toast("signup initiated");
-          console.log("signup initiated");
-        });
-      await axios
-        .post(`${process.env.REACT_APP_ENDPOINT}/auth/signin`, {
-          phone: userInfo.phoneNumber,
-          password: password,
-        })
-        .then(() => {
-          console.log("signUp page 3");
-        });
-      await axios
-        .post(`${process.env.REACT_APP_ENDPOINT}/user/:id/profile`, {
-          firstName: userInfo.firstName,
-          lastName: userInfo.lastName,
-          email: userInfo.email,
-        })
-        .then(() => {
-          toast("user profile initiated");
-          console.log("user profile initiated");
-          dispatch(getNextSignupPage("congratulations"));
-        })
-        .catch((err) => {
-          toast(err.res.data.message);
-          console.log(err.res.data.message);
-        });
+    if (passwordValid) {
+      SignupPost({
+        phone: userDetail.phoneNumber,
+        password,
+      });
     } else {
       return;
     }
   };
+
+  useEffect(() => {
+    dispatch(setUserInfo(userDetail));
+  }, [userDetail, dispatch]);
+
+  const userInfoFromRedux = useSelector((state) => state.auth.userInfo);
+
+  function onBlurr() {
+    const isPasswordValid = Utility.isPasswordValid(
+      setMessage,
+      message,
+      password,
+      confirmPassword,
+    );
+    setPasswordValid(isPasswordValid);
+  }
+
+  const bg3 = "bg-primary-blue-1";
+  const txt3 = "text-primary-white-1";
 
   return (
     <div>
@@ -139,7 +150,7 @@ const Page3 = () => {
               minLength={3}
               required
               onChange={(e) =>
-                setUSerInfo((prevMessage) => ({
+                setUSerDetail((prevMessage) => ({
                   ...prevMessage,
                   firstName: e.target.value,
                 }))
@@ -158,7 +169,7 @@ const Page3 = () => {
               minLength={3}
               required
               onChange={(e) =>
-                setUSerInfo((prevMessage) => ({
+                setUSerDetail((prevMessage) => ({
                   ...prevMessage,
                   lastName: e.target.value,
                 }))
@@ -174,7 +185,7 @@ const Page3 = () => {
               placeholder="Enter your email"
               required
               onChange={(e) =>
-                setUSerInfo((prevMessage) => ({
+                setUSerDetail((prevMessage) => ({
                   ...prevMessage,
                   email: e.target.value,
                 }))
@@ -187,8 +198,9 @@ const Page3 = () => {
                 type="password"
                 placeholder="Enter password"
                 name="password"
+                onBlur={(e) => onBlurr()}
                 required
-                onChange={(e) => handlePassword(e)}
+                onChange={(e) => setPassword(e.target.value)}
                 className=" left-[60px] top-[273px] mt-[25px] ml-[60px] box-border h-[55px] w-[270px] 
             overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 px-[24px] font-light 
             text-black outline-none lmobile:ml-[0px] lmobile:left-[0px] lmobile:w-[391px]"
@@ -202,10 +214,10 @@ const Page3 = () => {
               <input
                 type="password"
                 name="confirmPassword"
-                // onBlur={(e) => onBlurr(e)}
+                onBlur={(e) => onBlurr()}
                 placeholder="Re-enter password"
                 required
-                onChange={(e) => handlePassword(e)}
+                onChange={(e) => setConfirmPassword(e.target.value)}
                 className=" left-[60px] top-[364px] mt-[25px] ml-[60px] box-border h-[55px] w-[270px] 
             overflow-hidden rounded-2xl border-[1px] border-solid border-primary-black-7 bg-primary-white-1 px-[24px] font-light text-black outline-none lmobile:ml-[0px]  lmobile:left-[0px]  lmobile:w-[391px]"
               />
