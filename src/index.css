@@ -2,24 +2,52 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+&::-webkit-scrollbar {
+  width: 8px;
+}
+
+&::-webkit-scrollbar-track {
+  background-color: var(--white);
+}
+&::-webkit-scrollbar-track:hover {
+  width: 10px;
+}
+
+&::-webkit-scrollbar-thumb {
+  background-color: var(--lightBlue);
+  border-radius: 6px;
+}
+
+&::-webkit-scrollbar-thumb:hover {
+  background-color: var(--blue);
+}
+
 :root {
-  --blue-texture: #0a66c2;
-  --white-texture: #ffffff;
-  --lightblue-texture: #f8fbff;
-  --yellow-texture: #ffcb21;
-  --gray-texture: #cdcdce;
-  --light-grey-texture: #e7e8e9;
+  --blue: #0a66c2;
+  --lightBlue: #c7dfff;
+  --paleBlue: #f8fbff;
+  --white: #ffffff;
+  --lightblue: #f8fbff;
+  --yellow: #ffcb21;
+  --gray: #9c9c9c;
+  --lightgray: #e7e8e9;
+  --transparentgray: #e7e8e9;
+  --successGreen: #25a506;
+  --primaryRed: #ff2121;
+  --black: #000;
 }
 
 body {
-  overflow-x: hidden;
-  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 html {
   font-size: 62.5%;
+  font-family: "Nunito", sans-serif;
+  max-width: 150rem;
+  margin-left: auto;
+  margin-right: auto;
   overflow-x: hidden;
 }
 
@@ -27,6 +55,13 @@ html {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* 
+////////
+////////
+////////
+////////
+ */
 
 .team-back {
   background-image: url(./assets/Backgroundball1.png);
@@ -36,10 +71,27 @@ html {
   background-position-y: 15rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+li {
+  cursor: pointer;
 }
+
+.DisableScrollBar {
+  scroll-behavior: smooth;
+}
+.DisableScrollBar::-webkit-scrollbar {
+  display: none;
+}
+
+.DisableScrollBar::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+/* 
+////////
+////////
+////////
+////////
+ */
 
 @layer components {
   .bb {
@@ -99,12 +151,94 @@ code {
     @apply xs:text-[.6rem] xs:leading-3 smobile:text-[.7rem] smobile:leading-[.9rem] mobile:text-[.7rem] mobile:leading-[.9rem] lmobile:text-[.8rem] lmobile:leading-[1.1rem] sm:text-[.9rem] sm:leading-5 md:text-[1rem] md:leading-5 lg:text-[1.3rem] lg:leading-7 xl:text-[1.5rem] xl:leading-8;
   }
   .generalPadding {
-    @apply px-[1rem] sm:px-[2rem] md:px-[4rem] lg:px-[5rem];
+    @apply px-[3rem] md:px-[5rem];
   }
   .Text24px {
     @apply text-[1.2rem] smobile:text-[1.2rem] mobile:text-[1.3rem] lmobile:text-[1.5rem] sm:text-[1.8rem] md:text-[2.1rem] lg:text-[2.4rem] lg:leading-[2.5rem];
   }
+  .Text20px {
+    @apply text-[1.1rem] smobile:text-[.8rem] mobile:text-[1rem] lmobile:text-[1.3rem] sm:text-[1.6rem] md:text-[1.8rem] lg:text-[2rem] lg:leading-[2.2rem];
+  }
   .Text16px {
-    @apply text-[.9rem] leading-[.9rem] lmobile:text-[.8rem] lmobile:leading-[1.1rem] sm:text-[.9rem] sm:leading-5 md:text-[1.1rem] md:leading-5 lg:text-[1.4rem] lg:leading-7 xl:text-[1.6rem] xl:leading-8;
+    @apply text-[1rem] smobile:text-[.9rem] mobile:text-[1rem] lmobile:text-[1rem] sm:text-[1.1rem] md:text-[1.4rem] lg:text-[1.6rem] lg:leading-[2.5rem];
+  }
+  .Text36px {
+    @apply xs:text-[1.5rem] xs:leading-[1rem] smobile:text-[1.8rem] smobile:leading-[1.1rem] mobile:text-[2rem] mobile:leading-[1.4rem] lmobile:text-[2.3rem] sm:text-[2.5rem] sm:leading-[2rem] md:text-[3rem] md:leading-[2rem] lg:text-[3.6rem] lg:leading-[3rem];
+  }
+  .Text18px {
+    @apply xs:text-[.8rem] xs:leading-3 smobile:text-[1rem] smobile:leading-[.9rem] mobile:text-[1.1rem] mobile:leading-[1.2rem] lmobile:text-[1.2rem] lmobile:leading-[1.3rem] sm:text-[1.4rem] sm:leading-6 md:text-[1.6rem] md:leading-6 lg:text-[1.8rem] lg:leading-8;
+  }
+  .Text14px {
+    @apply xs:text-[.6rem] xs:leading-3 smobile:text-[.7rem] smobile:leading-[.9rem] mobile:text-[.7rem] mobile:leading-[.9rem] lmobile:text-[.8rem] lmobile:leading-[1.1rem] sm:text-[.9rem] sm:leading-5 md:text-[1rem] md:leading-5 lg:text-[1.3rem] lg:leading-7 xl:text-[1.5rem] xl:leading-8;
+  }
+  .Text12px {
+    @apply xs:text-[.6rem] xs:leading-3 smobile:text-[.7rem] smobile:leading-[.9rem] mobile:text-[.7rem] mobile:leading-[.9rem] lmobile:text-[.8rem] lmobile:leading-[1.1rem] sm:text-[.9rem] sm:leading-5 md:text-[1rem] md:leading-5 lg:text-[1.2rem];
+  }
+  .Text10px {
+    @apply text-[.6rem] lmobile:leading-[1.1rem] sm:text-[.7rem] sm:leading-5 md:text-[.9rem] md:leading-5 lg:text-[1rem] lg:leading-7;
+  }
+  .Truncate {
+    @apply w-56 truncate hover:w-full md:w-full duration-300;
+  }
+  .MobileHeader {
+    @apply text-[1.6rem] font-bold;
+  }
+}
+
+/* 
+////////
+////////
+////////
+////////
+ */
+
+@media only screen and (max-width: 1250px) {
+  html {
+    font-size: 58%;
+  }
+}
+@media only screen and (max-width: 1150px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media only screen and (max-width: 1090px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  html {
+    font-size: 46%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 42%;
+  }
+}
+@media only screen and (max-width: 510px) {
+  html {
+    font-size: 40%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+@media only screen and (max-width: 339px) {
+  html {
+    font-size: 58%;
+  }
+}
+@media only screen and (max-width: 300px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media only screen and (max-width: 285px) {
+  html {
+    font-size: 53%;
   }
 }

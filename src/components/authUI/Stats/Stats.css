@@ -1,0 +1,25 @@
+.statistics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-area: 2rem; */
+  row-gap: 5rem;
+  column-gap: 5rem;
+
+  /* gap: 2rem; */
+}
+@media only screen and (max-width: 1111px) {
+  .statistics {
+    column-gap: 4rem;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .statistics {
+    column-gap: 2rem;
+  }
+}
+@media only screen and (max-width: 970px) {
+  .statistics {
+    column-gap: 1rem;
+    row-gap: 3rem;
+  }
+}

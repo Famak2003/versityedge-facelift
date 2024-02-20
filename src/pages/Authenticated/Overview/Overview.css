@@ -1,0 +1,31 @@
+.table {
+  display: grid;
+  grid-template-columns: 10rem 10rem 10rem 15rem;
+}
+
+.blogContent {
+  display: grid;
+  column-gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.Group {
+  scroll-behavior: smooth;
+}
+.Groups::-webkit-scrollbar {
+  display: none;
+}
+
+.Groups::-webkit-scrollbar-thumb {
+  display: none;
+}
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 4rem;
+  justify-items: center;
+}
+
+.Features {
+  position: sticky;
+  top: 1rem;
+}

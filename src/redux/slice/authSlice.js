@@ -13,6 +13,8 @@ const initialState = {
   },
   currentSignupPage: 1,
   currentResetPasswordPage: "resetPassword",
+  currentUnboardingPage: "personalInfo",
+  examType: "",
 };
 
 const authSlice = createSlice({
@@ -37,8 +39,14 @@ const authSlice = createSlice({
       // Immer is implicitly used here to update the userInfo
       state.userInfo = { ...state.userInfo, ...action.payload };
     },
+    setExamType(state, action) {
+      state.examType = action.payload;
+    },
     getNextSignupPage(state, action) {
       state.currentSignupPage = action.payload;
+    },
+    getNextUnboardingPage(state, action) {
+      state.currentUnboardingPage = action.payload;
     },
     getNextResetPasswordPage(state, action) {
       state.currentResetPasswordPage = action.payload;
@@ -50,8 +58,10 @@ export const {
   setPhone,
   getOTPcode,
   setUserInfo,
+  setExamType,
   getNextSignupPage,
   getNextResetPasswordPage,
+  getNextUnboardingPage,
   loginUser,
   logoutUser,
 } = authSlice.actions;

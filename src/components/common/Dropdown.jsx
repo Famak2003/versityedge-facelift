@@ -1,4 +1,4 @@
-import { NavLinks } from "./NavLinks";
+import NavLinks from "./NavLinks";
 
 export default function Dropdown({ content }) {
   return (

@@ -6,7 +6,7 @@ export default function Card({ header, img, children, type }) {
   switch (type) {
     case "universityCard":
       return (
-        <li className=" flex h-[18rem] w-[18rem] flex-col items-center justify-between overflow-hidden rounded-[7%] pt-[.5rem] shadow-[0_40px_80px_0_rgba(176,176,176,0.25)] ring-1 ring-[var(--light-grey-texture)] mobile:h-[20rem] mobile:w-[20rem] lmobile:h-[24rem] sm:h-[26rem] sm:w-[28rem] md:h-[29rem] md:pt-[1rem] lg:h-[35rem] lg:w-[33rem]">
+        <li className=" flex h-[18rem] w-[18rem] flex-col items-center justify-between overflow-hidden rounded-[7%] pt-[.5rem] shadow-[0_40px_80px_0_rgba(176,176,176,0.25)] ring-1 ring-[var(--lightgray)] mobile:h-[20rem] mobile:w-[20rem] lmobile:h-[24rem] sm:h-[26rem] sm:w-[28rem] md:h-[29rem] md:pt-[1rem] lg:h-[35rem] lg:w-[33rem]">
           <figure className="flex h-[60%] w-full items-center justify-center ">
             <img
               style={{
@@ -23,8 +23,8 @@ export default function Card({ header, img, children, type }) {
             {header}
           </h2>
 
-          <article className=" flex h-fit w-full flex-col justify-center gap-2 bg-[var(--blue-texture)] px-[1rem] py-[1rem] text-center ring-1 md:px-[2rem] md:leading-6 lg:leading-8 ">
-            <ul className=" list-disc px-[8%] text-[var(--white-texture)]">
+          <article className=" flex h-fit w-full flex-col justify-center gap-2 bg-[var(--blue)] px-[1rem] py-[1rem] text-center ring-1 md:px-[2rem] md:leading-6 lg:leading-8 ">
+            <ul className=" list-disc px-[8%] text-[var(--white)]">
               {children.map((text, index) => (
                 <li
                   key={index}
@@ -39,7 +39,7 @@ export default function Card({ header, img, children, type }) {
       );
     case "institution":
       return (
-        <li className=" flex h-[18rem] w-[18rem] flex-col items-center justify-between overflow-hidden rounded-[7%] shadow-[0_40px_80px_0_rgba(176,176,176,0.25)] ring-1 ring-[var(--light-grey-texture)] mobile:h-[20rem] mobile:w-[20rem] lmobile:h-[24rem] sm:h-[26rem] sm:w-[28rem] md:h-[29rem] lg:h-[35rem] lg:w-[33rem]">
+        <li className=" flex h-[18rem] w-[18rem] flex-col items-center justify-between overflow-hidden rounded-[7%] shadow-[0_40px_80px_0_rgba(176,176,176,0.25)] ring-1 ring-[var(--lightgray)] mobile:h-[20rem] mobile:w-[20rem] lmobile:h-[24rem] sm:h-[26rem] sm:w-[28rem] md:h-[29rem] lg:h-[35rem] lg:w-[33rem]">
           <figure className="relative flex h-[65%] w-full items-center justify-center ">
             <img
               style={{
@@ -50,13 +50,13 @@ export default function Card({ header, img, children, type }) {
               src={img}
               alt="img"
             />
-            <h2 className="mobile:Text24px absolute bottom-2 left-[50%] translate-x-[-50%] self-center whitespace-nowrap font-bold text-[var(--white-texture)] md:bottom-4">
+            <h2 className="mobile:Text24px absolute bottom-2 left-[50%] translate-x-[-50%] self-center whitespace-nowrap font-bold text-[var(--white)] md:bottom-4">
               {header}
             </h2>
           </figure>
 
-          <article className=" flex h-[35%] w-full flex-col justify-center gap-2 bg-[var(--blue-texture)] pl-[.8rem] text-center ring-1 mobile:pl-[1rem] md:pl-[2rem] md:leading-6 lg:leading-8 ">
-            <ul className=" list-disc px-[8%] text-[var(--white-texture)]">
+          <article className=" flex h-[35%] w-full flex-col justify-center gap-2 bg-[var(--blue)] pl-[.8rem] text-center ring-1 mobile:pl-[1rem] md:pl-[2rem] md:leading-6 lg:leading-8 ">
+            <ul className=" list-disc px-[8%] text-[var(--white)]">
               {children.map((text, index) => (
                 <li key={index} className=" Text16px text-left">
                   {text}

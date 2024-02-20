@@ -1,0 +1,7 @@
+menu a.active {
+  color: var(--blue);
+}
+
+menu a {
+  color: #000000;
+}

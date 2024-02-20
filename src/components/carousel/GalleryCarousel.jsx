@@ -4,8 +4,10 @@ import { useEffect } from "react";
 
 import BUTTON from "./../../assets/forward.png";
 import Card from "../common/Card";
+import Statistics from "../authUI/Stats/Statistics";
+import QuickAction from "../authUI/quickAction/QuickAction";
 
-export default function GalleryCarousel({ carouselData, type = "" }) {
+export default function GalleryCarousel({ carouselData, type = "", Slide }) {
   const [slideNum, setSlideNum] = useState(0);
   const [translatePosition, setTranslatePosition] = useState(0);
   const [carouselSliderWidth, setCarouselSliderWidth] = useState(
@@ -41,7 +43,7 @@ export default function GalleryCarousel({ carouselData, type = "" }) {
   }, [carouselData?.length]);
 
   return (
-    <div className=" relative w-full overflow-hidden ">
+    <div className=" relative flex pt-1 pl-1 flex-col h-[100%] justify-between w-full overflow-hidden ">
       {/* SLIDER */}
       <ul
         style={{
@@ -52,7 +54,8 @@ export default function GalleryCarousel({ carouselData, type = "" }) {
       >
         {carouselData.map((obj, idx) => {
           return (
-            <div key={idx} className="w-full">
+            <div key={idx} className="w-full ">
+              {/* {<Slide key={idx} content={obj} />} */}
               {type === "team" && (
                 <li className=" flex w-full items-center justify-start gap-[.5rem] smobile:gap-[1rem] mobile:gap-[1.5rem] sm:gap-[2rem] md:gap-[2.5rem] lg:gap-[3rem] xl:gap-[4rem]">
                   {obj.map((item, idx) => {
@@ -85,12 +88,14 @@ export default function GalleryCarousel({ carouselData, type = "" }) {
                   })}
                 </ul>
               )}
+              {type === "statistics" && <Statistics content={obj} />}
+              {type === "quickAction" && <QuickAction content={obj} />}
             </div>
           );
         })}
       </ul>
       {/* PAGINATION */}
-      <div className="mx-auto flex w-fit gap-x-3 py-4  ">
+      <div className="mx-auto mt-4 flex w-fit gap-x-3 py-4 ">
         {navigationButtonArr?.map((item, id) => {
           return (
             <span
@@ -107,18 +112,18 @@ export default function GalleryCarousel({ carouselData, type = "" }) {
       </div>
 
       {/* NAVIGATION BUTTON*/}
-      <div className="absolute bottom-[10%] right-0 z-20 flex w-fit gap-x-5">
+      <div className="absolute bottom-[.2rem] z-50 right-[.1rem] flex w-fit gap-x-10">
         <button
           onClick={() => prevBtn()}
-          className=" flex h-3 w-3 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_1.2863757610321045px_2.572751522064209px_0_rgba(180,180,180,0.25)] mobile:h-4 mobile:w-4 lmobile:h-6 lmobile:w-6 md:h-10 md:w-10"
+          className=" flex ring-1 ring-[var(--gray)] cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_1.2863757610321045px_2.572751522064209px_0_rgba(180,180,180,0.25)] h-[4rem] w-[4rem]"
         >
-          <img className="rotate-180 scale-75" src={BUTTON} alt="back" />
+          <img className=" h-[1.7rem] rotate-180 " src={BUTTON} alt="back" />
         </button>
         <button
           onClick={() => nextBtn()}
-          className="flex h-3 w-3 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_2.572751522064209px_5.145503044128418px_0_rgba(180,180,180,0.25)] mobile:h-4 mobile:w-4 lmobile:h-6 lmobile:w-6 md:h-10 md:w-10"
+          className=" flex ring-1 ring-[var(--gray)] cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_1.2863757610321045px_2.572751522064209px_0_rgba(180,180,180,0.25)] h-[4rem] w-[4rem]"
         >
-          <img className="scale-75" src={BUTTON} alt="back" />
+          <img className=" h-[1.7rem] " src={BUTTON} alt="back" />
         </button>
       </div>
     </div>

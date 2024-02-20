@@ -1,0 +1,7 @@
+@media only screen and (max-width: 500px) {
+  .rating {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 4rem;
+  }
+}

@@ -1,18 +1,18 @@
 import { NavLink } from "react-router-dom";
 
-export const NavLinks = ({ item }) => {
+function NavLinks({ item }) {
   return (
     <NavLink
       style={({ isActive }) => {
         return {
           fontWeight: isActive ? "bold" : "",
-          color: isActive ? "var(--blue-texture)" : "black",
+          color: isActive ? "var(--blue)" : "black",
         };
       }}
-      className=""
       to={item.path}
     >
       {item.text}
     </NavLink>
   );
-};
+}
+export default NavLinks;

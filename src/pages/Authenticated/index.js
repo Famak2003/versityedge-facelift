@@ -1,0 +1,9 @@
+export { default as Blog } from "./Blog/Blog";
+export { default as Classes } from "./Classes/Classes";
+export { default as Forum } from "./Forum/Forum";
+export { default as MockExam } from "./MockExams/MockExams";
+export { default as Overview } from "./Overview/Overview";
+export { default as Settings } from "./Settings/Settings";
+export { default as Wallet } from "./Wallet/Wallet";
+export { default as Advisor } from "./Advisors/Advisors";
+export { default as Materials } from "./Materials/Materials";

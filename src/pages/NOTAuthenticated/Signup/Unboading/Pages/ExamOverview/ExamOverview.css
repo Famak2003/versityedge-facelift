@@ -1,0 +1,10 @@
+.writeUp::-webkit-scrollbar {
+  width: 0.5rem;
+  background-color: var(--lightgray);
+  border-radius: 1rem;
+}
+.writeUp::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: var(--blue);
+  /* display: none; */
+}

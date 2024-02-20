@@ -10,7 +10,7 @@ export default function TeamImg({ img, name, title, experience, idx }) {
         <img src={img} alt="Team Img" className=" h-full object-cover " />
       </div>
       <figcaption className=" KYCResponsiveText">
-        <h2 className=" font-bold text-[var(--blue-texture)]">{title}</h2>
+        <h2 className=" font-bold text-[var(--blue)]">{title}</h2>
         <h3 className=" font-bold">{name}</h3>
         <small className=" Truncate ">{experience}</small>
       </figcaption>
