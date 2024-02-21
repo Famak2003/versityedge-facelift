@@ -4,7 +4,7 @@ import TEAMIMG3 from "./../../../../assets/Prof Idowu Olayinka.jpg";
 import TEAMIMG4 from "./../../../../assets/Isa AbdulMajeed(Head of Design).jpg";
 import TEAMIMG5 from "./../../../../assets/Chantel Onyebuchi(COO).jpg";
 
-import GalleryCarousel from "../../../../components/carousel/GalleryCarousel";
+import GalleryCarousel from "../../../../components/carousel/GalleryCarousel/GalleryCarousel";
 // import TeamImg from "../../carousel/GalleryCarousel/TeamImg";
 
 export const team = [

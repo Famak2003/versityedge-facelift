@@ -70,6 +70,10 @@ html {
   background-position-x: 13rem;
   background-position-y: 15rem;
 }
+h1 {
+  font-size: 3.6rem;
+  font-weight: bold;
+}
 
 li {
   cursor: pointer;
@@ -192,6 +196,7 @@ li {
 ////////
  */
 
+/* text-[2.4rem] sm:text-[2.5rem] */
 @media only screen and (max-width: 1250px) {
   html {
     font-size: 58%;
@@ -200,6 +205,10 @@ li {
 @media only screen and (max-width: 1150px) {
   html {
     font-size: 55%;
+  }
+  h1 {
+    font-size: 2.7rem;
+    font-weight: bold;
   }
 }
 @media only screen and (max-width: 1090px) {
@@ -215,6 +224,10 @@ li {
 @media only screen and (max-width: 600px) {
   html {
     font-size: 42%;
+  }
+  h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
   }
 }
 @media only screen and (max-width: 510px) {

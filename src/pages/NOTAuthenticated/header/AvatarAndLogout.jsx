@@ -43,7 +43,7 @@ export default function AvatarAndLogout({
 
   return (
     //isUserLoggedIn checks if user is logged to display the right UI
-    <div className=" flex items-center justify-center ">
+    <div className=" flex items-center justify-center h-[4rem] ">
       {isUserLoggedIn ? (
         <div className="avatar-logout hidden h-[4rem] items-center justify-center gap-[2.5rem] mobile:flex">
           <img
@@ -60,11 +60,11 @@ export default function AvatarAndLogout({
           </button>
         </div>
       ) : (
-        <div className=" flex gap-[1.5rem] md:gap-[2rem] ">
+        <div className=" flex justify-center items-center gap-[1.5rem] md:gap-[2rem] ">
           <Button
             path={"/auth/login"}
             glow={true}
-            addstyle="hidden rounded-[2rem] text-[#ffff] text-[1.8rem] xs:py-[.1rem] mobile:py-[.4rem] lmobile:py-[.6rem] md:py-[.8rem] lmobile:flex justify-center items-center gap-[.7rem] bg-[var(--white)] text-[var(--blue)] ring-1 ring-[var(--blue)]"
+            addstyle=" flex rounded-[1rem] lmobile:rounded-[2rem] text-[#ffff] text-[1.8rem] xs:py-[.1rem] mobile:py-[.4rem] lmobile:py-[.6rem] md:py-[.8rem] justify-center items-center gap-[.7rem] bg-[var(--white)] text-[var(--blue)] ring-1 ring-[var(--blue)]"
           >
             Join us{" "}
             <img className=" h-[2.4rem]" src={WHATSAPP} alt="whats-app" />
@@ -72,7 +72,7 @@ export default function AvatarAndLogout({
 
           <Button
             path={"/auth/login"}
-            addstyle="hidden rounded-[2rem] text-[#ffff] text-[1.8rem] xs:py-[.1rem] mobile:py-[.4rem] lmobile:py-[.6rem] md:py-[.8rem] lmobile:block"
+            addstyle=" hidden lmobile:flex rounded-[1rem] lmobile:rounded-[2rem] text-[#ffff] text-[1.8rem] xs:py-[.1rem] mobile:py-[.4rem] lmobile:py-[.6rem] md:py-[.8rem] lmobile:block"
           >
             Login
           </Button>
@@ -81,10 +81,9 @@ export default function AvatarAndLogout({
       <button
         ref={menuToggle}
         onClick={() => handleMenu()}
-        className=" inline-block lmobile:hidden"
+        className=" h-full inline-block lmobile:hidden"
       >
-        <img src={MENUICON} alt="menu" />
-        {}
+        <img className=" h-full object-contain" src={MENUICON} alt="menu" />
       </button>
     </div>
   );

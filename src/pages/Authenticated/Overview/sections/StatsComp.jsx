@@ -1,4 +1,4 @@
-import GalleryCarousel from "../../../../components/carousel/GalleryCarousel";
+import GalleryCarousel from "../../../../components/carousel/GalleryCarousel/GalleryCarousel";
 import * as data from "../../../../data/index";
 
 export function StatsComp() {

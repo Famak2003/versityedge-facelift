@@ -31,7 +31,7 @@ export default function Button({
         </a>
       ) : (
         <button
-          className={` ${addstyle} rounded-xl bg-[#0A66C2] xs:px-[1.5rem] sm:px-[2rem] md:px-[3.5rem]`}
+          className={` ${addstyle} bg-[#0A66C2] xs:px-[1.5rem] sm:px-[2rem] md:px-[3.5rem]`}
         >
           {children}
         </button>

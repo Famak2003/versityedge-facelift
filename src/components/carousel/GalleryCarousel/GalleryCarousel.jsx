@@ -1,19 +1,28 @@
-import { useState } from "react";
-import TeamImg from "../common/Teamimg/TeamImg";
+import "./style.css";
+
+import { useCallback, useRef, useState } from "react";
+import TeamImg from "../../common/Teamimg/TeamImg";
 import { useEffect } from "react";
 
-import BUTTON from "./../../assets/forward.png";
-import Card from "../common/Card";
-import Statistics from "../authUI/Stats/Statistics";
-import QuickAction from "../authUI/quickAction/QuickAction";
+import BUTTON from "./../../../assets/forward.png";
+import Card from "../../common/Card";
+import Statistics from "../../authUI/Stats/Statistics";
+import QuickAction from "../../authUI/quickAction/QuickAction";
+import Stories from "../../NotAuthUI/Stories/Stories";
+import useTouchSlide from "../../../hooks/useTouchSlide";
 
-export default function GalleryCarousel({ carouselData, type = "", Slide }) {
+export default function GalleryCarousel({ carouselData, type = "", controls }) {
+  const carouselRef = useRef();
   const [slideNum, setSlideNum] = useState(0);
   const [translatePosition, setTranslatePosition] = useState(0);
   const [carouselSliderWidth, setCarouselSliderWidth] = useState(
     carouselData?.length * 100,
   );
   const [navigationButtonArr, setNavigationButtonArr] = useState([]);
+
+  // touch slide hook
+  const { handleTouchStart, handleTouchMove, handleTouchEnd, direction } =
+    useTouchSlide();
 
   // PREV FUNCTION
   const prevBtn = () => {
@@ -31,6 +40,23 @@ export default function GalleryCarousel({ carouselData, type = "", Slide }) {
     return setSlideNum((prev) => (prev += 1));
   };
 
+  // Memoized the fuctions using useCallback
+  const memoizedPrevBtn = useCallback(prevBtn, [slideNum, carouselData]);
+  const memoizedNextBtn = useCallback(nextBtn, [slideNum, carouselData]);
+
+  useEffect(() => {
+    if (!direction) {
+      return;
+    } else if (direction === "next") {
+      memoizedNextBtn();
+      return;
+    } else if (direction === "prev") {
+      memoizedPrevBtn();
+      return;
+    }
+    // eslint-disable-next-line
+  }, [direction]);
+
   useEffect(() => {
     setTranslatePosition(slideNum * (100 / carouselData?.length));
   }, [slideNum, carouselData?.length]);
@@ -43,21 +69,29 @@ export default function GalleryCarousel({ carouselData, type = "", Slide }) {
   }, [carouselData?.length]);
 
   return (
-    <div className=" relative flex pt-1 pl-1 flex-col h-[100%] justify-between w-full overflow-hidden ">
+    <div className="relative flex pt-1 pl-1 flex-col h-[100%] justify-between w-full overflow-hidden ">
       {/* SLIDER */}
       <ul
+        onTouchStart={(e) => handleTouchStart(e)}
+        onTouchEnd={(e) => handleTouchEnd(e)}
+        onTouchMove={(e) => handleTouchMove(e)}
+        ref={carouselRef}
         style={{
           width: `${carouselSliderWidth}%`,
           transform: `translateX(-${translatePosition}%)`,
+          scrollLeft: 300,
         }}
-        className=" flex h-fit duration-300 xs:gap-[.5rem] "
+        className=" Carousel cursor-grab flex h-full duration-300 xs:gap-[.5rem] "
       >
         {carouselData.map((obj, idx) => {
           return (
-            <div key={idx} className="w-full ">
+            <div key={idx} className=" Slide w-full ">
               {/* {<Slide key={idx} content={obj} />} */}
               {type === "team" && (
-                <li className=" flex w-full items-center justify-start gap-[.5rem] smobile:gap-[1rem] mobile:gap-[1.5rem] sm:gap-[2rem] md:gap-[2.5rem] lg:gap-[3rem] xl:gap-[4rem]">
+                <li
+                  key={idx}
+                  className=" flex w-full items-center justify-start gap-[.5rem] smobile:gap-[1rem] mobile:gap-[1.5rem] sm:gap-[2rem] md:gap-[2.5rem] lg:gap-[3rem] xl:gap-[4rem]"
+                >
                   {obj.map((item, idx) => {
                     return (
                       <TeamImg
@@ -73,7 +107,10 @@ export default function GalleryCarousel({ carouselData, type = "", Slide }) {
                 </li>
               )}
               {type === "card" && (
-                <ul className="flex h-full w-full justify-center gap-[4%] py-[1rem] lg:gap-[6%]">
+                <ul
+                  key={idx}
+                  className="flex h-full w-full justify-center gap-[4%] py-[1rem] lg:gap-[6%]"
+                >
                   {obj.map((item, index) => {
                     return (
                       <Card
@@ -88,8 +125,11 @@ export default function GalleryCarousel({ carouselData, type = "", Slide }) {
                   })}
                 </ul>
               )}
-              {type === "statistics" && <Statistics content={obj} />}
-              {type === "quickAction" && <QuickAction content={obj} />}
+              {type === "statistics" && <Statistics key={idx} content={obj} />}
+              {type === "quickAction" && (
+                <QuickAction key={idx} content={obj} />
+              )}
+              {type === "studentStories" && <Stories key={idx} content={obj} />}
             </div>
           );
         })}
@@ -112,7 +152,11 @@ export default function GalleryCarousel({ carouselData, type = "", Slide }) {
       </div>
 
       {/* NAVIGATION BUTTON*/}
-      <div className="absolute bottom-[.2rem] z-50 right-[.1rem] flex w-fit gap-x-10">
+      <div
+        className={`absolute ${
+          controls === "top" ? "top-[0rem]" : "bottom-[.2rem]"
+        }  z-50 right-[.1rem] flex w-fit gap-x-10`}
+      >
         <button
           onClick={() => prevBtn()}
           className=" flex ring-1 ring-[var(--gray)] cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_1.2863757610321045px_2.572751522064209px_0_rgba(180,180,180,0.25)] h-[4rem] w-[4rem]"

@@ -6,8 +6,10 @@ import RatingComp from "./RatingComp/RatingComp";
 import OurTeamComp from "./Team";
 import TestimonialComp from "./TestimonialComp";
 import WaecNecoGceComp from "./WaecNecoGceComp/WaecNecoGceComp";
-import WhyChooseVersityEdge from "./WhyChooseVersityEdge/WhyChooseVersityEdge";
+import Cards from "./Cards/Cards";
 import HeroComp from "./HeroComp";
+import CheckForFree from "./CheckForFree";
+import StudentStories from "./StudentStories";
 
 function Main() {
   return (
@@ -16,7 +18,11 @@ function Main() {
 
       <RatingComp />
 
-      <WhyChooseVersityEdge />
+      <Cards />
+
+      <CheckForFree />
+
+      <StudentStories />
 
       <WaecNecoGceComp />
 
