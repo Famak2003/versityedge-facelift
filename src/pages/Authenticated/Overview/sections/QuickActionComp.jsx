@@ -1,3 +1,4 @@
+import { QuickAction } from "../../../../components/authUI";
 import GalleryCarousel from "../../../../components/carousel/GalleryCarousel/GalleryCarousel";
 import * as data from "../../../../data/index";
 
@@ -7,7 +8,8 @@ export function QuickActionComp() {
       <h1 className=" Text36px font-semibold">Quick Actions</h1>
       <GalleryCarousel
         carouselData={data.quickActionsContent}
-        type="quickAction"
+        // type="quickAction"
+        Slide={QuickAction}
       />
     </div>
   );

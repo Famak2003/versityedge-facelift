@@ -187,6 +187,9 @@ li {
   .MobileHeader {
     @apply text-[1.6rem] font-bold;
   }
+  h2 {
+    @apply text-[1.4rem] lmobile:text-[2rem];
+  }
 }
 
 /* 

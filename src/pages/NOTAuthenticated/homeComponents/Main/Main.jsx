@@ -10,6 +10,7 @@ import Cards from "./Cards/Cards";
 import HeroComp from "./HeroComp";
 import CheckForFree from "./CheckForFree";
 import StudentStories from "./StudentStories";
+import WhatParentsSay from "./WhatParentsSay";
 
 function Main() {
   return (
@@ -23,6 +24,8 @@ function Main() {
       <CheckForFree />
 
       <StudentStories />
+
+      <WhatParentsSay />
 
       <WaecNecoGceComp />
 

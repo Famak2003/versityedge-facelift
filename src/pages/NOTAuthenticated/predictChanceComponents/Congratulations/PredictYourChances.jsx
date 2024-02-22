@@ -117,9 +117,6 @@ function PredictYourChances() {
           )}
         </ul>
       </div>
-      {/* <div className=" w-full ">
-        <GalleryCarousel carouselData={cards} type="card" />
-      </div> */}
     </section>
   );
 }

@@ -5,6 +5,7 @@ import TEAMIMG4 from "./../../../../assets/Isa AbdulMajeed(Head of Design).jpg";
 import TEAMIMG5 from "./../../../../assets/Chantel Onyebuchi(COO).jpg";
 
 import GalleryCarousel from "../../../../components/carousel/GalleryCarousel/GalleryCarousel";
+import TeamImgParent from "../../../../components/common/Teamimg/TeamImgParent";
 // import TeamImg from "../../carousel/GalleryCarousel/TeamImg";
 
 export const team = [
@@ -52,7 +53,7 @@ export default function OurTeamComp() {
       <h1 className=" responsiveHeader text-center font-bold"> Our Team</h1>
 
       {/* slider */}
-      <GalleryCarousel carouselData={team} type={"team"} />
+      <GalleryCarousel carouselData={team} Slide={TeamImgParent} />
     </section>
   );
 }

@@ -1,12 +1,10 @@
-// import { useEffect, useState } from "react";
 import Stories from "../../../../components/NotAuthUI/Stories/Stories";
 import GalleryCarousel from "../../../../components/carousel/GalleryCarousel/GalleryCarousel";
 import storyContent, {
   mobileStoryContent,
 } from "../../../../data/storyContent";
 import * as Hooks from "./../../../../hooks/index";
-
-function StudentStories() {
+function WhatParentsSay() {
   const data = {
     content: storyContent,
     controlsPos: "top",
@@ -19,7 +17,7 @@ function StudentStories() {
 
   return (
     <section className=" ring-4 generalPadding bg-[var(--paleBlue)] flex flex-col h-fit py-[5rem] gap-[3rem] mobile:gap-[4.2rem]">
-      <h1 className=" text-center ">Our Student's Stories</h1>
+      <h1 className=" text-center ">What Parents Says About Us</h1>
       <div className=" flex justify-center items-center h-[40rem] lmobile:h-[50rem]">
         {
           <GalleryCarousel
@@ -33,4 +31,4 @@ function StudentStories() {
   );
 }
 
-export default StudentStories;
+export default WhatParentsSay;

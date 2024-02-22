@@ -40,4 +40,29 @@ const storyContent = [
   ],
 ];
 
+const mobileStoryContent = [
+  [
+    {
+      image: STD1,
+      text: "How VersityEdge helped Adewunmi got admission into the University of Ibadan with the right materials and proper guidance.",
+      stdName: "Adewumi Ojo",
+    },
+  ],
+  [
+    {
+      image: STD2,
+      text: "Bövobere jusa medan lamirat selogi. Juska Spere bebögisk. Berat prorad ped,  divis. Deciskapet speda sesk. Polysesm right Dälingar sajubuling, syktig, exosam. ",
+      stdName: "Wale Clole",
+    },
+  ],
+  [
+    {
+      image: STD1,
+      text: "How VersityEdge helped Adewunmi got admission into the University of Ibadan with the right materials and proper guidance.",
+      stdName: "Adewumi Ojo",
+    },
+  ],
+];
+
 export default storyContent;
+export { mobileStoryContent };
