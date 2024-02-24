@@ -1,14 +1,8 @@
-.footerList::before {
-  content: "-";
-  position: absolute;
-  margin-left: -5px;
-}
-
 .footerTop {
   border-bottom: 2px solid #ffffff;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 500px) {
   .footerListing {
     display: grid;
     grid-template-columns: 1fr 1fr;

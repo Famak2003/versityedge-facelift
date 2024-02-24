@@ -1,5 +1,5 @@
 export { default as Header } from "./header/Header";
-export { default as Home } from "./homeComponents/Home";
+export { default as Home } from "./homeComponents/Main/Home";
 export { default as Blogs } from "./blogs/blogs";
 export { default as BlogDetails } from "./blogs/blogDetail";
 export { default as ForumHome } from "./forum/forumHome";

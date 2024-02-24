@@ -1,11 +1,6 @@
-import ExploreInsigntComp from "./ExploreInsightComp/ExploreInsigntComp";
-import UpcomingEventsComp from "./UpcomingEventsComp";
-import KnowYourChancesComp from "./KnowYourChancesComp";
 import PartnersComp from "./Partners/PartnersComp";
 import RatingComp from "./RatingComp/RatingComp";
-import OurTeamComp from "./Team";
-import TestimonialComp from "./TestimonialComp";
-import WaecNecoGceComp from "./WaecNecoGceComp/WaecNecoGceComp";
+
 import Cards from "./Cards/Cards";
 import HeroComp from "./HeroComp";
 import CheckForFree from "./CheckForFree";
@@ -17,7 +12,7 @@ import HaveAnyQestions from "./HaveAnyQestions";
 
 function Main() {
   return (
-    <>
+    <div className=" flex flex-col gap-[5rem]">
       <HeroComp />
 
       <RatingComp />
@@ -32,24 +27,12 @@ function Main() {
 
       <WebinarAndEvents />
 
+      <PartnersComp />
+
       <LearnAllYouNeed />
 
       <HaveAnyQestions />
-
-      <WaecNecoGceComp />
-
-      <KnowYourChancesComp />
-
-      <TestimonialComp />
-
-      <ExploreInsigntComp />
-
-      <PartnersComp />
-
-      <UpcomingEventsComp />
-
-      <OurTeamComp />
-    </>
+    </div>
   );
 }
 

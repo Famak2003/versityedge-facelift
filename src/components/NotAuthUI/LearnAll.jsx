@@ -2,7 +2,7 @@ import Card from "./NewCard";
 
 function LearnAll({ content }) {
   return (
-    <ul className="flex flex-wrap justify-center gap-[4rem] md:gap-[8.1rem] items-center w-full h-fit ring-1">
+    <ul className="flex flex-wrap justify-center gap-[4rem] md:gap-[8.1rem] items-center w-full h-fit ">
       {content.map((obj, idx) => (
         <Card
           key={idx}

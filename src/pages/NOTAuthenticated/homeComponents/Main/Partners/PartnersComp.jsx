@@ -11,8 +11,8 @@ const partners = [PARTNER1, PARTNER2, PARTNER3, PARTNER4, PARTNER5];
 
 export default function PartnersComp() {
   return (
-    <section className=" generalPadding flex flex-col items-center gap-[1rem] overflow-x-hidden bg-[#F8FBFF] py-[2rem] lmobile:gap-[3rem]">
-      <h1 className=" SliderResponsiveHeader font-extrabold">
+    <section className=" generalPadding flex flex-col items-center gap-[1rem] overflow-x-hidden bg-[var(--white)] py-[2rem] lmobile:gap-[3rem]">
+      <h1 className=" text-center font-extrabold">
         Our Trusted Partners and Supporters
       </h1>
 

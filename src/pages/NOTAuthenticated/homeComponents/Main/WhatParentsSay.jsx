@@ -16,7 +16,7 @@ function WhatParentsSay() {
   const { carouselData } = Hooks.useDynamicCarouselContent(data, mobileData);
 
   return (
-    <section className=" ring-4 generalPadding bg-[var(--paleBlue)] flex flex-col h-fit py-[5rem] gap-[3rem] mobile:gap-[4.2rem]">
+    <section className=" generalPadding flex flex-col h-fit py-[5rem] gap-[3rem] mobile:gap-[4.2rem]">
       <h1 className=" text-center ">What Parents Says About Us</h1>
       <div className=" flex justify-center items-center h-[40rem] lmobile:h-[50rem]">
         {

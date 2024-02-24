@@ -2,9 +2,9 @@ import MAINLOGO from "./../../../assets/logo.png";
 
 export default function FooterButtom() {
   return (
-    <div className=" flex w-fit flex-col gap-[1.5rem] text-[#ffff] mobile:flex-row mobile:items-center mobile:gap-[10%] ">
+    <div className=" flex  justify-center items-center w-full ">
       <div className=" flex h-fit items-center gap-[1.5rem] mobile:gap-[1rem] md:gap-[2rem]">
-        <figure className="flex h-[6rem] w-[6rem] rounded-full bg-white sm:h-[8rem] sm:w-[8rem]">
+        <figure className="flex h-[6rem] w-[6rem] rounded-full sm:h-[8rem] sm:w-[8rem]">
           <img className="scale-[70%]" src={MAINLOGO} alt="versityedge" />
         </figure>
         <div className="">
@@ -17,7 +17,7 @@ export default function FooterButtom() {
         </div>
       </div>
 
-      <ul className=" mobile:reponsiveMiniText1 list-outside list-disc pl-[4%] text-[1rem] leading-6 mobile:pl-0 ">
+      {/* <ul className=" mobile:reponsiveMiniText1 list-outside list-disc pl-[4%] text-[1rem] leading-6 mobile:pl-0 ">
         <li>
           The content and materials on this website, including text, images, and
           documents belong to their repective owners unless specified otherwise
@@ -30,7 +30,7 @@ export default function FooterButtom() {
           The use of institution logos and brand names does not imply
           association with VersityEdge.
         </li>
-      </ul>
+      </ul> */}
     </div>
   );
 }

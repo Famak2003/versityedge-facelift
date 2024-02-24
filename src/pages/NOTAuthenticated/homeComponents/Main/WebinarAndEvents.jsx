@@ -6,9 +6,9 @@ import TextnImageDisplay from "../../../../components/NotAuthUI/TextnImageDispla
 
 function WebinarAndEvents() {
   return (
-    <section className=" flex flex-col gap-[5rem] generalPadding py-[5rem]">
+    <section className=" flex flex-col gap-[5rem] bg-[var(--paleBlue)] generalPadding py-[5rem]">
       <h1 className=" text-center ">Upcoming Events and Webinar</h1>
-      <div className="h-[71rem] lmobile:h-full">
+      <div className="h-[80rem] lmobile:h-full">
         <GalleryCarousel
           Slide={TextnImageDisplay}
           carouselData={webEventContent}

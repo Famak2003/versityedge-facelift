@@ -40,7 +40,7 @@ export const footerContent = [
 
 export default function Footer() {
   return (
-    <footer className=" flex h-fit flex-col gap-[3rem] bg-[#46A2FE] px-[2rem] py-[1rem] sm:px-[3rem] sm:py-[3rem] lg:px-[5rem] lg:py-[5rem]">
+    <footer className=" generalPadding flex h-fit flex-col gap-[3rem] bg-[var(--paleBlue)] py-[3rem] lmobile:py-[5rem]">
       <FooterTop />
       <FooterButtom />
     </footer>
