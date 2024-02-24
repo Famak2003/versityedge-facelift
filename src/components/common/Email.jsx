@@ -2,7 +2,7 @@ import SENDICON from "./../../assets/send-icon.png";
 
 export default function Email() {
   return (
-    <form className="flex w-[80%] items-center justify-between rounded-[3rem] lmobile:rounded-[2rem] bg-[var(--white)] mobile:w-full h-[7rem] py-[2rem] px-[2rem] lmobile:px-[1rem] ring-1 ring-[var(lightGray)] ">
+    <form className="flex lmobile:w-[80%] items-center justify-between rounded-[3rem] lmobile:rounded-[2rem] bg-[var(--white)] mobile:w-full h-[7rem] py-[2rem] px-[2rem] lmobile:px-[1rem] ring-1 ring-[var(lightGray)] ">
       <input
         type="email"
         required

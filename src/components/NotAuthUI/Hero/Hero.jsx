@@ -7,7 +7,7 @@ import NIG from "./../../../assets/flag-nigeria.png";
 function StoreButton({ img, text, bg = "black", textClr = "white" }) {
   return (
     <button
-      className={` flex gap-[1rem] justify-center items-center text-[var(--${textClr})] h-[5.6rem] rounded-[3rem] py-[.1rem] px-[1.5rem] bg-[var(--${bg})] ring-1 ring-[var(--gray)]`}
+      className={` flex gap-[1rem] justify-center items-center text-[1.4rem] lmobile:text-[1.6rem] text-[var(--${textClr})] h-[5.6rem] rounded-[3rem] py-[.1rem] px-[1.5rem] bg-[var(--${bg})] ring-1 ring-[var(--gray)]`}
     >
       <img className="object-contain h-[2.5rem]" src={img} alt={text} />
       {text}
