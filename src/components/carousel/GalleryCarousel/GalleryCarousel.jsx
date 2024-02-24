@@ -107,7 +107,7 @@ export default function GalleryCarousel({ carouselData, controlsPos, Slide }) {
       <div
         className={`absolute ${
           controlsPos === "top"
-            ? "top-[0rem] right-[.1rem]"
+            ? "top-[.2rem] right-[.1rem]"
             : " bottom-[.2rem] lmobile:right-[.1rem] translate-x-[50%] lmobile:translate-x-0 right-[50%]"
         }  z-50 flex w-fit gap-x-10`}
       >

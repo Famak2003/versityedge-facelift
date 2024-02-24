@@ -7,7 +7,6 @@ export default function Button({
   path,
   externalLink = "",
   addstyle = " ",
-  glow,
 }) {
   return (
     <>

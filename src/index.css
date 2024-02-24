@@ -70,14 +70,6 @@ html {
   background-position-x: 13rem;
   background-position-y: 15rem;
 }
-h1 {
-  font-size: 3.6rem;
-  font-weight: bold;
-}
-
-li {
-  cursor: pointer;
-}
 
 .DisableScrollBar {
   scroll-behavior: smooth;
@@ -187,8 +179,14 @@ li {
   .MobileHeader {
     @apply text-[1.6rem] font-bold;
   }
+  h1 {
+    @apply text-[2.4rem] lmobile:text-[3.6rem] font-bold;
+  }
   h2 {
     @apply text-[1.4rem] lmobile:text-[2rem];
+  }
+  li {
+    @apply cursor-pointer;
   }
 }
 
@@ -209,10 +207,6 @@ li {
   html {
     font-size: 55%;
   }
-  h1 {
-    font-size: 2.7rem;
-    font-weight: bold;
-  }
 }
 @media only screen and (max-width: 1090px) {
   html {
@@ -227,10 +221,6 @@ li {
 @media only screen and (max-width: 600px) {
   html {
     font-size: 42%;
-  }
-  h1 {
-    font-size: 2.4rem;
-    font-weight: bold;
   }
 }
 @media only screen and (max-width: 510px) {

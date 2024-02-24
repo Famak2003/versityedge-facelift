@@ -5,3 +5,4 @@ export { default as upcomingMockContent } from "./upcomingMockContent";
 export { mobileUpcomingClassContent } from "./upcomingClassContent";
 export { default as quickActionsContent } from "./quickActionContent'";
 export { default as features } from "./features";
+export { default as learnAllContent } from "./learnAllContent";

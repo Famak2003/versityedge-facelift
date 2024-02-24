@@ -11,6 +11,9 @@ import HeroComp from "./HeroComp";
 import CheckForFree from "./CheckForFree";
 import StudentStories from "./StudentStories";
 import WhatParentsSay from "./WhatParentsSay";
+import WebinarAndEvents from "./WebinarAndEvents";
+import LearnAllYouNeed from "./LearnAllYouNeed";
+import HaveAnyQestions from "./HaveAnyQestions";
 
 function Main() {
   return (
@@ -26,6 +29,12 @@ function Main() {
       <StudentStories />
 
       <WhatParentsSay />
+
+      <WebinarAndEvents />
+
+      <LearnAllYouNeed />
+
+      <HaveAnyQestions />
 
       <WaecNecoGceComp />
 
