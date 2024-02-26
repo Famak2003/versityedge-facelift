@@ -1,16 +1,16 @@
 import Stories from "../../../../components/NotAuthUI/Stories/Stories";
 import GalleryCarousel from "../../../../components/carousel/GalleryCarousel/GalleryCarousel";
-import storyContent, {
-  mobileStoryContent,
-} from "../../../../data/storyContent";
+import whatParentSaysContent, {
+  whatParentSaysMobileContent,
+} from "../../../../data/whatParentSays";
 import * as Hooks from "./../../../../hooks/index";
 function WhatParentsSay() {
   const data = {
-    content: storyContent,
+    content: whatParentSaysContent,
     controlsPos: "top",
   };
   const mobileData = {
-    content: mobileStoryContent,
+    content: whatParentSaysMobileContent,
     controlsPos: "",
   };
   const { carouselData } = Hooks.useDynamicCarouselContent(data, mobileData);
@@ -18,7 +18,7 @@ function WhatParentsSay() {
   return (
     <section className=" generalPadding flex flex-col h-fit py-[5rem] gap-[3rem] mobile:gap-[4.2rem]">
       <h1 className=" text-center ">What Parents Says About Us</h1>
-      <div className=" flex justify-center items-center h-[40rem] lmobile:h-[50rem]">
+      <div className=" flex justify-center items-center h-[45rem] smobile:h-[40rem] lmobile:h-[50rem] ">
         {
           <GalleryCarousel
             controlsPos={carouselData.controlsPos}

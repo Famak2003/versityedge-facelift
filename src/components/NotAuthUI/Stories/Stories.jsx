@@ -5,7 +5,13 @@ function Stories({ content }) {
     <ul className=" h-full flex gap-[4rem] justify-between items-center px-2 lg:px-[2rem]">
       {content.map((obj, idx) => {
         return (
-          <Story key={idx} img={obj.image} text={obj.text} name={obj.stdName} />
+          <Story
+            key={idx}
+            img={obj.image}
+            text={obj.text}
+            name={obj.name}
+            // type={"whatParentSays"}
+          />
         );
       })}
     </ul>

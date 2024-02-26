@@ -20,7 +20,7 @@ function StudentStories() {
   return (
     <section className=" generalPadding bg-[var(--paleBlue)] flex flex-col h-fit py-[5rem] gap-[3rem] mobile:gap-[4.2rem]">
       <h1 className=" text-center ">Our Student's Stories</h1>
-      <div className=" flex justify-center items-center h-[40rem] lmobile:h-[50rem]">
+      <div className=" flex justify-center items-center h-[45rem] smobile:h-[40rem] lmobile:h-[50rem] ">
         {
           <GalleryCarousel
             controlsPos={carouselData.controlsPos}

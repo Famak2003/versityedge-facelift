@@ -20,10 +20,10 @@ function useTouchSlide() {
     }
     const minimumWalk = 50;
     if (walk >= minimumWalk) {
-      setDirection("next");
+      setDirection("prev");
     }
     if (walk < -50) {
-      setDirection("prev");
+      setDirection("next");
     }
 
     setWalk(0);

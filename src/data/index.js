@@ -6,3 +6,5 @@ export { mobileUpcomingClassContent } from "./upcomingClassContent";
 export { default as quickActionsContent } from "./quickActionContent'";
 export { default as features } from "./features";
 export { default as learnAllContent } from "./learnAllContent";
+export { default as whatParentSaysContent } from "./whatParentSays";
+export { whatParentSaysMobileContent } from "./whatParentSays";
